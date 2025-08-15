@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Safari Itineraries — Safari Chic</title>
+  <meta name="description" content="Choose your adventure: 3, 5 or 8 days. A modern, premium itineraries hub in a gold & magenta aesthetic." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    :root{
+      --magenta:#c4006a;
+      --magenta-700:#a10057;
+      --magenta-900:#6e003a;
+      --gold:#ffb800;
+      --gold-700:#e6a300;
+      --ink:#1a1a1a;
+      --muted:#cfcfcf;
+      --bg:#0c0b10;
+      --panel:#121118;
+      --line:rgba(255,255,255,.08);
+      --radius:18px;
+      --shadow:0 12px 40px rgba(0,0,0,.35);
+      --shadow-sm:0 8px 24px rgba(0,0,0,.25);
+      --glass:rgba(255,255,255,.06);
+    }
+
+    *{box-sizing:border-box}
+    body{margin:0;background:
+      radial-gradient(1200px 700px at 10% -10%, rgba(196,0,106,.16), transparent 50%),
+      radial-gradient(900px 600px at 110% 10%, rgba(255,184,0,.14), transparent 60%),
+      var(--bg);
+      color:#eee; font-family:Manrope, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height:1.6;}
+
+    .container{width:min(1200px,92vw);margin:0 auto}
+    .grid{display:grid;gap:1.5rem}
+    .cols-3{grid-template-columns:repeat(3,1fr)}
+    .cols-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width: 980px){.cols-3,.cols-2{grid-template-columns:1fr}}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.3rem;border-radius:999px;font-weight:700;text-decoration:none;border:1px solid transparent;transition:.25s;cursor:pointer;box-shadow:var(--shadow-sm)}
+    .btn-primary{background:linear-gradient(135deg,var(--magenta),var(--magenta-700));color:#fff;border-color:#ffffff15}
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-700));color:#111;border-color:#00000010}
+    .chip{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .7rem;border-radius:999px;font-size:.85rem;font-weight:600;border:1px solid var(--line);background:var(--glass)}
+
+    /* Header */
+    .site-header{position:fixed;inset:0 0 auto 0;height:72px;z-index:50;display:flex;align-items:center;background:linear-gradient(to bottom, rgba(0,0,0,.55), transparent);transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent;backdrop-filter:saturate(120%) blur(6px)}
+    .site-header.scrolled{background:rgba(10,10,14,.75);border-bottom-color:var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.9rem}
+    .logo{width:40px;height:40px;border-radius:10px;background:conic-gradient(from 120deg,var(--gold),var(--magenta));box-shadow:0 0 0 2px #ffffff10 inset}
+    .brand h3{margin:0;font:800 1.1rem/1 Poppins, sans-serif;letter-spacing:.3px}
+    nav ul{display:flex;gap:1.2rem;list-style:none;padding:0;margin:0}
+    nav a{color:#ddd;text-decoration:none;font-weight:600;font-size:.95rem}
+    nav a:hover{color:#fff}
+    .hamburger{display:none;background:none;border:0;color:#fff}
+    @media (max-width: 900px){
+      nav ul{display:none}
+      .hamburger{display:block;font-size:1.5rem}
+      nav ul.show{display:flex;position:absolute;top:72px;left:0;right:0;background:#0f0e14;padding:1rem 1.2rem;flex-direction:column;border-bottom:1px solid var(--line)}
+    }
+
+    /* Hero */
+    section{padding:72px 0}
+    .hero{position:relative;padding:140px 0 90px;overflow:hidden;background:
+      radial-gradient(600px 240px at 15% 20%, rgba(255,184,0,.25), transparent 60%),
+      radial-gradient(500px 240px at 85% -10%, rgba(196,0,106,.35), transparent 60%);}
+    .hero .eyebrow{font-weight:800;color:#fff;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;opacity:.9}
+    .hero .title{font-family:Poppins, sans-serif;font-weight:800;line-height:1.1;font-size:clamp(2rem, 5vw, 3rem);margin:.6rem 0 1rem;
+      background:linear-gradient(135deg, #fff, #ffe7a6 30%, #ffd15a 40%, #fff 60%);
+      -webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{color:#eaeaea;max-width:70ch}
+    .hero-cards{margin-top:2rem}
+
+    /* Cards */
+    .card-link{display:block;text-decoration:none;color:inherit}
+    .card{
+      position:relative;border:1px solid var(--line);border-radius:20px;overflow:hidden;
+      background:linear-gradient(160deg, rgba(196,0,106,.08), rgba(255,184,0,.06));
+      box-shadow:var(--shadow-sm);
+      transition:.3s transform, .3s box-shadow;
+    }
+    .card:hover{transform:translateY(-6px); box-shadow:var(--shadow)}
+    .card-img{height:220px;background:#000;position:relative;overflow:hidden}
+    .card-img img{width:100%;height:100%;object-fit:cover;display:block;opacity:.9;transform:scale(1.02)}
+    .badge{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,var(--magenta),var(--magenta-700));padding:.45rem .7rem;border-radius:999px;font-weight:800;font-size:.82rem;box-shadow:var(--shadow-sm)}
+    .card-body{padding:1.2rem 1.2rem 1.3rem}
+    .card-head{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin-bottom:.4rem}
+    .card-title{font:800 1.15rem/1.15 Poppins;margin:0}
+    .dur{background:var(--glass);border:1px solid var(--line);border-radius:999px;padding:.35rem .65rem;font-weight:800;font-size:.82rem}
+    .muted{color:#cdcdcd}
+    .highlights{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.7rem}
+    .highlights .chip{border-color:#ffffff22}
+    .cta-row{display:flex;align-items:center;justify-content:space-between;gap:.8rem;margin-top:1rem}
+    .price{font:800 1.2rem/1 Poppins;background:linear-gradient(135deg,#fff,#ffe9af);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+    /* Comparison */
+    .compare{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--glass);box-shadow:var(--shadow-sm);margin-top:2rem}
+    .compare-head{padding:1.2rem;text-align:center;background:linear-gradient(135deg,var(--magenta),var(--magenta-700))}
+    .compare-head h3{margin:0;font:800 1.1rem/1.1 Poppins}
+    .row{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;border-top:1px solid var(--line)}
+    .cell{padding:1rem;border-right:1px solid var(--line);text-align:center}
+    .row .cell:first-child{text-align:left;background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));font-weight:700}
+    .row .cell:last-child{border-right:0}
+    @media (max-width:900px){
+      .row{grid-template-columns:1fr}
+      .cell{text-align:left;border-right:0}
+    }
+
+    /* Footer */
+    footer{padding:36px 0 60px;color:#cfcfcf}
+    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
+    .ft-brand{display:flex;align-items:center;gap:.8rem}
+    .ft-brand .logo{width:32px;height:32px;border-radius:10px;background:conic-gradient(from 120deg,var(--gold),var(--magenta))}
+    .ft-note{color:#9c9c9c;font-size:.95rem}
+
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(16px);transition:.6s ease}
+    .reveal.in{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h3>Safari Chic</h3>
+      </div>
+      <nav aria-label="Main">
+        <button class="hamburger" aria-controls="menu" aria-expanded="false"><i class="bi bi-list"></i></button>
+        <ul id="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#itineraries">Itineraries</a></li>
+          <li><a href="#compare">Compare</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <a class="btn btn-gold" href="#contact"><i class="bi bi-geo"></i> Book Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="reveal">
+        <div class="eyebrow">Curated Adventures</div>
+        <h1 class="title">Pick Your Perfect Tanzania & Zanzibar Itinerary</h1>
+        <p>From quick escapes to epic journeys, each itinerary blends wildlife, culture and beach time — all in our new luxe gold & magenta style.</p>
+        <div class="hero-cards grid cols-3">
+          <!-- Zulu Serenity -->
+          <a class="card-link" href="itinerary2.html">
+            <article class="card">
+              <div class="card-img">
+                <span class="badge">Quick Escape</span>
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop" alt="Elephants at golden hour">
+              </div>
+              <div class="card-body">
+                <div class="card-head">
+                  <h3 class="card-title">Zulu Serenity</h3>
+                  <span class="dur">3 Days</span>
+                </div>
+                <p class="muted">Safari from Zanzibar — fast, focused, unforgettable.</p>
+                <div class="highlights">
+                  <span class="chip"><i class="bi bi-tree"></i> Mikumi/Nyerere</span>
+                  <span class="chip"><i class="bi bi-binoculars"></i> Big Five</span>
+                  <span class="chip"><i class="bi bi-airplane"></i> ZNZ ⇄ DAR</span>
+                </div>
+                <div class="cta-row">
+                  <span class="price">From $1,287</span>
+                  <span class="muted">View details →</span>
+                </div>
+              </div>
+            </article>
+          </a>
+
+          <!-- Serengeti & Zanzibar Explorer -->
+          <a class="card-link" href="itinerary1.html">
+            <article class="card">
+              <div class="card-img">
+                <span class="badge">Most Popular</span>
+                <img src="https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1400&auto=format&fit=crop" alt="Savannah and ocean blend">
+              </div>
+              <div class="card-body">
+                <div class="card-head">
+                  <h3 class="card-title">Serengeti & Zanzibar Explorer</h3>
+                  <span class="dur">5 Days</span>
+                </div>
+                <p class="muted">Wildlife + Stone Town stories — the sweet spot.</p>
+                <div class="highlights">
+                  <span class="chip"><i class="bi bi-binoculars"></i> Tarangire</span>
+                  <span class="chip"><i class="bi bi-geo-alt"></i> Ngorongoro</span>
+                  <span class="chip"><i class="bi bi-buildings"></i> Stone Town</span>
+                </div>
+                <div class="cta-row">
+                  <span class="price">$1,400–$2,400+</span>
+                  <span class="muted">View details →</span>
+                </div>
+              </div>
+            </article>
+          </a>
+
+          <!-- Ultimate Tanzania & Zanzibar Journey -->
+          <a class="card-link" href="itinerary3.html">
+            <article class="card">
+              <div class="card-img">
+                <span class="badge">Ultimate Experience</span>
+                <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=1400&auto=format&fit=crop" alt="Zanzibar coastline at sunset">
+              </div>
+              <div class="card-body">
+                <div class="card-head">
+                  <h3 class="card-title">Ultimate Tanzania & Zanzibar Journey</h3>
+                  <span class="dur">8 Days</span>
+                </div>
+                <p class="muted">Safari, culture and beach — the complete arc.</p>
+                <div class="highlights">
+                  <span class="chip"><i class="bi bi-star"></i> Big Five</span>
+                  <span class="chip"><i class="bi bi-minecart-loaded"></i> Ngorongoro Crater</span>
+                  <span class="chip"><i class="bi bi-umbrella-beach"></i> Nungwi</span>
+                </div>
+                <div class="cta-row">
+                  <span class="price">$1,400–$2,400+ <span style="opacity:.7;font-weight:600">(+ ZNZ)</span></span>
+                  <span class="muted">View details →</span>
+                </div>
+              </div>
+            </article>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section id="compare">
+    <div class="container">
+      <div class="compare reveal">
+        <div class="compare-head"><h3>Compare Packages</h3></div>
+        <div class="row">
+          <div class="cell">Duration</div>
+          <div class="cell">3 Days</div>
+          <div class="cell">5 Days</div>
+          <div class="cell">8 Days</div>
+        </div>
+        <div class="row">
+          <div class="cell">Best For</div>
+          <div class="cell">Short time • authentic safari</div>
+          <div class="cell">Wildlife & culture lovers</div>
+          <div class="cell">Complete experience</div>
+        </div>
+        <div class="row">
+          <div class="cell">Parks Visited</div>
+          <div class="cell">Mikumi / Nyerere</div>
+          <div class="cell">Tarangire • Ngorongoro • Manyara</div>
+          <div class="cell">Major Northern Circuit + Zanzibar</div>
+        </div>
+        <div class="row">
+          <div class="cell">Zanzibar Time</div>
+          <div class="cell">1 Day</div>
+          <div class="cell">2 Days</div>
+          <div class="cell">3–4 Days</div>
+        </div>
+        <div class="row">
+          <div class="cell">Starting Price</div>
+          <div class="cell">$1,287</div>
+          <div class="cell">$1,400</div>
+          <div class="cell">$1,400</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact">
+    <div class="container">
+      <div class="reveal" style="text-align:center;border:1px solid var(--line);border-radius:24px;padding:2rem;background:var(--glass);box-shadow:var(--shadow)">
+        <h3 style="font:800 clamp(1.2rem,3.2vw,2rem)/1.15 Poppins;margin:.3rem 0 .7rem">Ready to Start Your Adventure?</h3>
+        <p class="muted" style="margin:0 auto 1.2rem;max-width:70ch">Tell us your dates, group size and style — we’ll tailor the perfect itinerary.</p>
+        <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap">
+          <a class="btn btn-primary" href="mailto:info@safarichic.com"><i class="bi bi-envelope"></i> info@safarichic.com</a>
+          <a class="btn btn-gold" href="tel:+255742930833"><i class="bi bi-telephone"></i> +255 742 930833</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="ft-brand">
+          <div class="logo"></div>
+          <h4 style="margin:0">Safari Chic</h4>
+        </div>
+        <p class="ft-note">Offering highly personalized, bespoke safaris across Tanzania & Zanzibar.</p>
+      </div>
+      <div>
+        <div class="grid cols-3">
+          <div style="border:1px solid var(--line);border-radius:16px;padding:1rem;background:var(--glass)">
+            <h4 style="margin:.2rem 0 .5rem">Office</h4>
+            <p class="muted">Zanzibar • Tanzania</p>
+          </div>
+          <div style="border:1px solid var(--line);border-radius:16px;padding:1rem;background:var(--glass)">
+            <h4 style="margin:.2rem 0 .5rem">Email</h4>
+            <p class="muted">info@safarichic.com</p>
+          </div>
+          <div style="border:1px solid var(--line);border-radius:16px;padding:1rem;background:var(--glass)">
+            <h4 style="margin:.2rem 0 .5rem">Phone</h4>
+            <p class="muted">+255 742 930833</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="margin-top:1rem;border-top:1px solid var(--line);padding-top:1rem;color:#a7a7a7">
+      © 2025 Safari Chic. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav
+    const burger=document.querySelector('.hamburger');
+    const menu=document.getElementById('menu');
+    burger?.addEventListener('click',()=>{
+      const open=menu.classList.toggle('show');
+      burger.setAttribute('aria-expanded', String(open));
+    });
+
+    // Header scrolled state
+    const header=document.getElementById('site-header');
+    const onScroll=()=>{
+      if(window.scrollY>10){ header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); }
+    };
+    document.addEventListener('scroll', onScroll); onScroll();
+
+    // Reveal on view
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>

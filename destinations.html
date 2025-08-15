@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Destinations — Safari Chic</title>
+  <meta name="description" content="Discover Tanzania’s most iconic destinations — Serengeti, Ngorongoro, Tarangire, Lake Manyara, the Highlands, and Zanzibar — in a luxe gold & magenta design." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    :root{
+      --magenta:#c4006a;
+      --magenta-700:#a10057;
+      --gold:#ffb800;
+      --gold-700:#e6a300;
+      --ink:#1a1a1a;
+      --muted:#cfcfcf;
+      --bg:#0c0b10;
+      --panel:#121118;
+      --line:rgba(255,255,255,.08);
+      --radius:18px;
+      --shadow:0 12px 40px rgba(0,0,0,.35);
+      --shadow-sm:0 8px 24px rgba(0,0,0,.25);
+      --glass:rgba(255,255,255,.06);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0; color:#eee;
+      background:
+        radial-gradient(1200px 700px at 10% -10%, rgba(196,0,106,.16), transparent 50%),
+        radial-gradient(900px 600px at 110% 10%, rgba(255,184,0,.14), transparent 60%),
+        var(--bg);
+      font-family:Manrope, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      line-height:1.6;
+      scroll-behavior:smooth;
+    }
+    .container{width:min(1200px,92vw);margin:0 auto}
+    .grid{display:grid;gap:1.5rem}
+
+    /* Buttons & Chips */
+    .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.3rem;border-radius:999px;font-weight:700;text-decoration:none;border:1px solid transparent;transition:.25s;cursor:pointer;box-shadow:var(--shadow-sm)}
+    .btn-primary{background:linear-gradient(135deg,var(--magenta),var(--magenta-700));color:#fff;border-color:#ffffff15}
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-700));color:#111;border-color:#00000010}
+    .chip{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .7rem;border-radius:999px;font-size:.85rem;font-weight:600;border:1px solid var(--line);background:var(--glass)}
+
+    /* Header */
+    .site-header{
+      position:fixed; inset:0 0 auto 0; height:72px; z-index:60;
+      display:flex; align-items:center;
+      background:linear-gradient(to bottom, rgba(0,0,0,.55), transparent);
+      transition: background .3s ease, border-color .3s ease, backdrop-filter .3s ease;
+      border-bottom:1px solid transparent;
+      backdrop-filter:saturate(120%) blur(6px);
+    }
+    .site-header.scrolled{ background:rgba(10,10,14,.75); border-bottom-color:var(--line); }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.9rem}
+    .logo{width:40px;height:40px;border-radius:10px;background:conic-gradient(from 120deg,var(--gold),var(--magenta));box-shadow:0 0 0 2px #ffffff10 inset}
+    .brand h3{margin:0;font:800 1.1rem/1 Poppins, sans-serif;letter-spacing:.3px}
+    nav ul{display:flex;gap:1.2rem;list-style:none;padding:0;margin:0}
+    nav a{color:#ddd;text-decoration:none;font-weight:600;font-size:.95rem}
+    nav a:hover{color:#fff}
+    .hamburger{display:none;background:none;border:0;color:#fff}
+    @media (max-width: 900px){
+      nav ul{display:none}
+      .hamburger{display:block;font-size:1.5rem}
+      nav ul.show{display:flex;position:absolute;top:72px;left:0;right:0;background:#0f0e14;padding:1rem 1.2rem;flex-direction:column;border-bottom:1px solid var(--line)}
+    }
+
+    /* Sections */
+    section{padding:100px 0}
+    .section-head{text-align:center;margin-bottom:1.6rem}
+    .section-head .kicker{font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;opacity:.9}
+    .section-head h2{font:800 clamp(1.6rem,3.5vw,2.4rem)/1.15 Poppins;margin:.2rem 0 .6rem}
+    .section-head p{color:#d9d9d9;max-width:70ch;margin:0 auto}
+
+    /* Hero with photo background */
+    .hero{position:relative; min-height:78vh; display:grid; align-items:center; isolation:isolate; overflow:hidden}
+    .hero::before{
+      content:""; position:absolute; inset:0;
+      background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000&auto=format&fit=crop');
+      background-size:cover; background-position:center;
+      transform:scale(1.02);
+      filter:brightness(.78) saturate(1.05);
+      z-index:-2;
+    }
+    .hero::after{
+      content:""; position:absolute; inset:0;
+      background:
+        radial-gradient(800px 400px at 85% -10%, rgba(196,0,106,.35), transparent 60%),
+        radial-gradient(700px 400px at 15% 110%, rgba(255,184,0,.22), transparent 60%);
+      z-index:-1;
+    }
+    .hero h1{font-family:Poppins, sans-serif;font-weight:800;line-height:1.05;font-size:clamp(2.2rem,5.4vw,3.6rem);margin:.5rem 0 .8rem;color:#fff;text-shadow:0 6px 28px rgba(0,0,0,.45)}
+    .hero p.subtitle{color:#f0f0f0;max-width:70ch}
+    .hero .cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.2rem}
+
+    /* Intro bullets */
+    .intro{display:grid;grid-template-columns:1fr;gap:1rem}
+    .bullet{display:flex;gap:.8rem;align-items:flex-start;padding:1rem;border:1px solid var(--line);border-radius:16px;background:var(--glass);box-shadow:var(--shadow-sm)}
+    .bullet i{font-size:1.2rem;background:linear-gradient(135deg,var(--gold),var(--gold-700));color:#111;border-radius:10px;width:34px;height:34px;display:grid;place-items:center;flex:0 0 34px}
+
+    /* Destination cards */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+    @media (max-width:1000px){.cards{grid-template-columns:1fr}}
+    .card{position:relative;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:linear-gradient(160deg, rgba(196,0,106,.08), rgba(255,184,0,.06));box-shadow:var(--shadow-sm);transition:.3s transform, .3s box-shadow}
+    .card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .card-img{height:220px;background:#000;position:relative;overflow:hidden}
+    .card-img img{width:100%;height:100%;object-fit:cover;display:block;opacity:.95;transform:scale(1.02)}
+    .badge{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,var(--magenta),var(--magenta-700));padding:.45rem .7rem;border-radius:999px;font-weight:800;font-size:.82rem;box-shadow:var(--shadow-sm)}
+    .card-body{padding:1.2rem}
+    .card-head{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin-bottom:.4rem}
+    .card-title{font:800 1.15rem/1.15 Poppins;margin:0}
+    .muted{color:#cdcdcd}
+    .highlights{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.7rem}
+    .highlights .chip{border-color:#ffffff22}
+    .read{display:inline-flex;gap:.4rem;align-items:center;margin-top:.8rem;color:#fff;text-decoration:none;font-weight:700}
+    .read i{transition:transform .25s}
+    .read:hover i{transform:translateX(4px)}
+
+    /* Detail sections per destination */
+    .dest-section{padding:72px 0;border-top:1px solid var(--line)}
+    .dest-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem;align-items:start}
+    @media (max-width:980px){.dest-wrap{grid-template-columns:1fr}}
+    .dest-media{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);min-height:300px}
+    .dest-media img{width:100%;height:100%;object-fit:cover;display:block}
+    .dest-body{border:1px solid var(--line);border-radius:20px;padding:1.2rem;background:var(--glass);box-shadow:var(--shadow-sm)}
+    .dest-body h3{font:800 1.3rem/1.15 Poppins;margin:.2rem 0 .6rem}
+    .list{margin:.4rem 0 .2rem;padding-left:1.1rem}
+    .list li{margin:.25rem 0}
+
+    /* Footer */
+    footer{padding:36px 0 60px;color:#cfcfcf}
+    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
+    .ft-brand{display:flex;align-items:center;gap:.8rem}
+    .ft-brand .logo{width:32px;height:32px;border-radius:10px;background:conic-gradient(from 120deg,var(--gold),var(--magenta))}
+    .ft-note{color:#9c9c9c;font-size:.95rem}
+
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(16px);transition:.6s ease}
+    .reveal.in{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h3>Safari Chic</h3>
+      </div>
+      <nav aria-label="Main">
+        <button class="hamburger" aria-controls="menu" aria-expanded="false"><i class="bi bi-list"></i></button>
+        <ul id="menu">
+          <li><a href="index-gold-magenta-full.html">Home</a></li>
+          <li><a href="itineraries-gold-magenta.html">Itineraries</a></li>
+          <li><a href="#top-destinations">Destinations</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <a class="btn btn-gold" href="itineraries-gold-magenta.html"><i class="bi bi-geo"></i> See Packages</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="top" style="padding:140px 0 110px">
+    <div class="container reveal">
+      <span class="chip"><i class="bi bi-compass"></i> Destinations</span>
+      <h1>Discover Tanzania’s Most Iconic Destinations</h1>
+      <p class="subtitle">Tanzania is a land of contrasts — from vast savannas teeming with wildlife to the spice-scented shores of the Indian Ocean. Whether you seek adventure, cultural immersion, or tranquil escapes, each destination offers a unique story waiting to be experienced.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#top-destinations"><i class="bi bi-arrow-down-right-circle"></i> Explore Top Destinations</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro: What makes Tanzania unforgettable -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>Here’s what makes Tanzania unforgettable</h2>
+        <p>Whether you’re a wildlife enthusiast, a culture seeker, or a beach lover, Tanzania’s diverse destinations ensure your journey will be as unforgettable as the memories you take home.</p>
+      </div>
+      <div class="intro">
+        <div class="bullet reveal"><i class="bi bi-binoculars"></i><div><strong>World-Famous Safari Experiences</strong> – Witness the Great Migration in the Serengeti, track the Big Five, and explore legendary game reserves.</div></div>
+        <div class="bullet reveal"><i class="bi bi-image-alt"></i><div><strong>Breathtaking Landscapes</strong> – From volcanic craters and lush highlands to shimmering lakes and endless plains.</div></div>
+        <div class="bullet reveal"><i class="bi bi-people"></i><div><strong>Cultural Richness</strong> – Meet the Maasai, Hadzabe, and other vibrant communities who have preserved their traditions for centuries.</div></div>
+        <div class="bullet reveal"><i class="bi bi-umbrella-beach"></i><div><strong>Tropical Paradise</strong> – White sandy beaches, turquoise waters, and a rich spice heritage in Zanzibar.</div></div>
+        <div class="bullet reveal"><i class="bi bi-backpack2"></i><div><strong>Adventure & Nature</strong> – Hiking trails, birdwatching, hot air balloon rides, and eco-tourism experiences.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Destinations cards -->
+  <section id="top-destinations">
+    <div class="container">
+      <div class="section-head">
+        <h2>Our Top Destinations</h2>
+        <p>Below is an overview of each destination. Click to jump to highlights and details.</p>
+      </div>
+
+      <div class="cards">
+        <!-- Serengeti -->
+        <article class="card reveal">
+          <div class="card-img">
+            <span class="badge">Great Migration</span>
+            <img src="https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1400&auto=format&fit=crop" alt="Serengeti savannah wildlife">
+          </div>
+          <div class="card-body">
+            <div class="card-head">
+              <h3 class="card-title">Serengeti National Park</h3>
+              <span class="chip"><i class="bi bi-star"></i> Big Five</span>
+            </div>
+            <p class="muted">Witness over two million wildebeest and zebras on the move — one of Earth’s greatest natural spectacles.</p>
+            <div class="highlights">
+              <span class="chip"><i class="bi bi-balloon"></i> Balloon safaris</span>
+              <span class="chip"><i class="bi bi-camera"></i> Iconic sightings</span>
+            </div>
+            <a class="read" href="#serengeti">Read More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Ngorongoro -->
+        <article class="card reveal">
+          <div class="card-img">
+            <span class="badge">UNESCO</span>
+            <img src="https://images.unsplash.com/photo-1605650462856-0f6a0b89441f?q=80&w=1400&auto=format&fit=crop" alt="Ngorongoro Crater rim view">
+          </div>
+          <div class="card-body">
+            <div class="card-head">
+              <h3 class="card-title">Ngorongoro Crater</h3>
+              <span class="chip"><i class="bi bi-geo-alt"></i> Caldera</span>
+            </div>
+            <p class="muted">The world’s largest intact volcanic caldera, with extraordinary wildlife density and sweeping views.</p>
+            <div class="highlights">
+              <span class="chip"><i class="bi bi-binoculars"></i> Predators</span>
+              <span class="chip"><i class="bi bi-sun"></i> Scenic rim</span>
+            </div>
+            <a class="read" href="#ngorongoro">Read More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Tarangire -->
+        <article class="card reveal">
+          <div class="card-img">
+            <span class="badge">Elephant Kingdom</span>
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1400&auto=format&fit=crop" alt="Tarangire baobabs and elephants">
+          </div>
+          <div class="card-body">
+            <div class="card-head">
+              <h3 class="card-title">Tarangire National Park</h3>
+              <span class="chip"><i class="bi bi-tree"></i> Baobabs</span>
+            </div>
+            <p class="muted">A secluded, atmospheric park famed for vast elephant herds and ancient baobab landscapes.</p>
+            <div class="highlights">
+              <span class="chip"><i class="bi bi-broadcast-pin"></i> 500+ birds</span>
+              <span class="chip"><i class="bi bi-droplet"></i> River scenes</span>
+            </div>
+            <a class="read" href="#tarangire">Read More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Lake Manyara -->
+        <article class="card reveal">
+          <div class="card-img">
+            <span class="badge">Flamingos</span>
+            <img src="https://images.unsplash.com/photo-1599050751776-9e2ca61dc3db?q=80&w=1400&auto=format&fit=crop" alt="Lake Manyara flamingos">
+          </div>
+          <div class="card-body">
+            <div class="card-head">
+              <h3 class="card-title">Lake Manyara</h3>
+              <span class="chip"><i class="bi bi-tree-fill"></i> Groundwater forest</span>
+            </div>
+            <p class="muted">A picturesque park known for tree-climbing lions, a flamingo-filled lake and lush forests.</p>
+            <div class="highlights">
+              <span class="chip"><i class="bi bi-binoculars"></i> Tree-climbing lions</span>
+              <span class="chip"><i class="bi bi-water"></i> Canoe (seasonal)</span>
+            </div>
+            <a class="read" href="#manyara">Read More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Ngorongoro Highlands -->
+        <article class="card reveal">
+          <div class="card-img">
+            <span class="badge">Hiking</span>
+            <img src="https://images.unsplash.com/photo-1544989164-31dc3c645987?q=80&w=1400&auto=format&fit=crop" alt="Ngorongoro Highlands rolling hills">
+          </div>
+          <div class="card-body">
+            <div class="card-head">
+              <h3 class="card-title">Ngorongoro Highlands</h3>
+              <span class="chip"><i class="bi bi-signpost-split"></i> Trails</span>
+            </div>
+            <p class="muted">Cooler climes, lush rolling hills and rich culture — a beautiful counterpoint to the savannah.</p>
+            <div class="highlights">
+              <span class="chip"><i class="bi bi-mountain"></i> Empakaai & Olmoti</span>
+              <span class="chip"><i class="bi bi-people"></i> Community visits</span>
+            </div>
+            <a class="read" href="#highlands">Read More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Zanzibar -->
+        <article class="card reveal">
+          <div class="card-img">
+            <span class="badge">Spice Isles</span>
+            <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=1400&auto=format&fit=crop" alt="Zanzibar turquoise beaches">
+          </div>
+          <div class="card-body">
+            <div class="card-head">
+              <h3 class="card-title">Zanzibar</h3>
+              <span class="chip"><i class="bi bi-umbrella-beach"></i> Beaches</span>
+            </div>
+            <p class="muted">A tropical paradise of white-sand beaches, Swahili culture and centuries of spice history.</p>
+            <div class="highlights">
+              <span class="chip"><i class="bi bi-building"></i> Stone Town</span>
+              <span class="chip"><i class="bi bi-boat"></i> Dhow cruises</span>
+            </div>
+            <a class="read" href="#zanzibar">Read More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed sections -->
+  <section class="dest-section" id="serengeti">
+    <div class="container dest-wrap">
+      <div class="dest-body reveal">
+        <h3>1. Serengeti National Park</h3>
+        <p>Known as one of the greatest wildlife sanctuaries on earth, the Serengeti is home to the annual Great Migration, where over two million wildebeest and zebras traverse the plains in search of fresh grazing.</p>
+        <ul class="list">
+          <li>Witness the Great Migration (June–October & December–March)</li>
+          <li>Big Five sightings: Lion, Leopard, Elephant, Buffalo, Rhino</li>
+          <li>Hot air balloon safaris at sunrise</li>
+        </ul>
+        <a class="btn btn-primary" href="itineraries-gold-magenta.html"><i class="bi bi-map"></i> Read More →</a>
+      </div>
+      <figure class="dest-media reveal">
+        <img src="https://images.unsplash.com/photo-1541873676-a18131494184?q=80&w=1600&auto=format&fit=crop" alt="Serengeti migration panorama">
+      </figure>
+    </div>
+  </section>
+
+  <section class="dest-section" id="ngorongoro">
+    <div class="container dest-wrap">
+      <div class="dest-body reveal">
+        <h3>2. Ngorongoro Crater</h3>
+        <p>A UNESCO World Heritage Site, the Ngorongoro Crater is the world’s largest intact volcanic caldera, offering one of the best chances to spot diverse wildlife in a concentrated area.</p>
+        <ul class="list">
+          <li>Dense population of predators and herbivores</li>
+          <li>Scenic views from the crater rim</li>
+          <li>Cultural visits to nearby Maasai villages</li>
+        </ul>
+        <a class="btn btn-primary" href="itineraries-gold-magenta.html#ngorongoro"><i class="bi bi-map"></i> Read More →</a>
+      </div>
+      <figure class="dest-media reveal">
+        <img src="https://images.unsplash.com/photo-1545569341-d0228f1a3a5b?q=80&w=1600&auto=format&fit=crop" alt="Ngorongoro crater floor">
+      </figure>
+    </div>
+  </section>
+
+  <section class="dest-section" id="tarangire">
+    <div class="container dest-wrap">
+      <div class="dest-body reveal">
+        <h3>3. Tarangire National Park</h3>
+        <p>Famous for its vast elephant herds and ancient baobab trees, Tarangire offers a more secluded safari experience.</p>
+        <ul class="list">
+          <li>Massive elephant gatherings (July–October)</li>
+          <li>Birdwatcher’s paradise with 500+ species</li>
+          <li>Scenic river landscapes and seasonal swamps</li>
+        </ul>
+        <a class="btn btn-primary" href="itineraries-gold-magenta.html#tarangire"><i class="bi bi-map"></i> Read More →</a>
+      </div>
+      <figure class="dest-media reveal">
+        <img src="https://images.unsplash.com/photo-1526715905480-5fd6f3b4f252?q=80&w=1600&auto=format&fit=crop" alt="Tarangire elephants near river">
+      </figure>
+    </div>
+  </section>
+
+  <section class="dest-section" id="manyara">
+    <div class="container dest-wrap">
+      <div class="dest-body reveal">
+        <h3>4. Lake Manyara</h3>
+        <p>A picturesque park known for its tree-climbing lions, flamingo-filled lake, and lush groundwater forests.</p>
+        <ul class="list">
+          <li>Tree-climbing lions (unique to this park)</li>
+          <li>Flamingo migrations</li>
+          <li>Canoeing safaris (seasonal)</li>
+        </ul>
+        <a class="btn btn-primary" href="itineraries-gold-magenta.html#manyara"><i class="bi bi-map"></i> Read More →</a>
+      </div>
+      <figure class="dest-media reveal">
+        <img src="https://images.unsplash.com/photo-1548078963-c5f9f2f0fd8a?q=80&w=1600&auto=format&fit=crop" alt="Lake Manyara flamingos at shore">
+      </figure>
+    </div>
+  </section>
+
+  <section class="dest-section" id="highlands">
+    <div class="container dest-wrap">
+      <div class="dest-body reveal">
+        <h3>5. Ngorongoro Highlands</h3>
+        <p>A hidden gem offering cooler climates, lush rolling hills, and deep cultural heritage.</p>
+        <ul class="list">
+          <li>Hiking and trekking through Empakaai and Olmoti craters</li>
+          <li>Cultural immersion with local communities</li>
+          <li>Spectacular views over the Rift Valley</li>
+        </ul>
+        <a class="btn btn-primary" href="itineraries-gold-magenta.html#highlands"><i class="bi bi-map"></i> Read More →</a>
+      </div>
+      <figure class="dest-media reveal">
+        <img src="https://images.unsplash.com/photo-1526481280698-8fcc08a743e1?q=80&w=1600&auto=format&fit=crop" alt="Ngorongoro Highlands walking trail">
+      </figure>
+    </div>
+  </section>
+
+  <section class="dest-section" id="zanzibar">
+    <div class="container dest-wrap">
+      <div class="dest-body reveal">
+        <h3>6. Zanzibar</h3>
+        <p>The “Spice Island” is a tropical paradise blending white sandy beaches, rich Swahili culture, and centuries of history.</p>
+        <ul class="list">
+          <li>Relax on world-class beaches in Nungwi, Kendwa, and Paje</li>
+          <li>Explore UNESCO-listed Stone Town</li>
+          <li>Spice farm tours and traditional dhow cruises</li>
+        </ul>
+        <a class="btn btn-primary" href="itineraries-gold-magenta.html#zanzibar"><i class="bi bi-map"></i> Read More →</a>
+      </div>
+      <figure class="dest-media reveal">
+        <img src="https://images.unsplash.com/photo-1600764819278-b68af861a09d?q=80&w=1600&auto=format&fit=crop" alt="Zanzibar white sand beach and dhow">
+      </figure>
+    </div>
+  </section>
+
+  <!-- CTA / Contact -->
+  <section id="contact" style="padding:72px 0 100px">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Tailored For You</span>
+        <h2>Plan your route — safari to sea</h2>
+        <p>Combine multiple destinations into one seamless itinerary. We’ll help you match seasons, pacing and budget.</p>
+      </div>
+      <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-primary" href="itineraries-gold-magenta.html"><i class="bi bi-compass"></i> Explore Itineraries</a>
+        <a class="btn btn-gold" href="mailto:info@safarichic.com"><i class="bi bi-envelope"></i> Request a Plan</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="ft-brand">
+          <div class="logo"></div>
+          <h4 style="margin:0">Safari Chic</h4>
+        </div>
+        <p class="ft-note">Offering highly personalized, bespoke safaris across Tanzania & Zanzibar.</p>
+      </div>
+      <div>
+        <div class="grid" style="grid-template-columns:repeat(3,1fr); gap:1rem">
+          <div class="card">
+            <h3><i class="bi bi-geo-alt"></i> Office</h3>
+            <p class="muted">Zanzibar • Tanzania</p>
+          </div>
+          <div class="card">
+            <h3><i class="bi bi-envelope-open"></i> Email</h3>
+            <p class="muted">info@safarichic.com</p>
+          </div>
+          <div class="card">
+            <h3><i class="bi bi-telephone"></i> Phone</h3>
+            <p class="muted">+255 742 930833</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="margin-top:1rem;border-top:1px solid var(--line);padding-top:1rem;color:#a7a7a7">
+      © 2025 Safari Chic. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav
+    const burger=document.querySelector('.hamburger');
+    const menu=document.getElementById('menu');
+    burger?.addEventListener('click',()=>{
+      const open=menu.classList.toggle('show');
+      burger.setAttribute('aria-expanded', String(open));
+    });
+
+    // Header scrolled state
+    const header=document.getElementById('site-header');
+    const onScroll=()=>{
+      if(window.scrollY>10){ header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); }
+    };
+    document.addEventListener('scroll', onScroll); onScroll();
+
+    // Reveal on view
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>

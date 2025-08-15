@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zulu Serenity — 3 Days | Safari Chic</title>
+  <meta name="description" content="A modern, premium 3-day Zulu Serenity safari from Zanzibar with a gold & magenta aesthetic — swift wildlife thrills without skipping island time." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    :root{
+      --magenta:#c4006a;
+      --magenta-700:#a10057;
+      --gold:#ffb800;
+      --gold-700:#e6a300;
+      --ink:#1a1a1a;
+      --muted:#6b6b6b;
+      --bg:#0c0b10;
+      --panel:#121118;
+      --line:rgba(255,255,255,.08);
+      --radius:18px;
+      --shadow:0 12px 40px rgba(0,0,0,.35);
+      --shadow-sm:0 8px 24px rgba(0,0,0,.25);
+      --glass:rgba(255,255,255,.06);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 700px at 10% -10%, rgba(196,0,106,.16), transparent 50%),
+                  radial-gradient(900px 600px at 110% 10%, rgba(255,184,0,.14), transparent 60%),
+                  var(--bg);
+      color:#eee;
+      font-family:Manrope, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      line-height:1.6;
+    }
+    .container{width:min(1200px,92vw);margin:0 auto}
+    .grid{display:grid;gap:1.5rem}
+    .cols-2{grid-template-columns:repeat(2,1fr)}
+    .cols-3{grid-template-columns:repeat(3,1fr)}
+    @media (max-width:900px){.cols-2,.cols-3{grid-template-columns:1fr}}
+
+    .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.3rem;border-radius:999px;font-weight:700;text-decoration:none;border:1px solid transparent;transition:.25s;cursor:pointer;box-shadow:var(--shadow-sm)}
+    .btn-primary{background:linear-gradient(135deg,var(--magenta),var(--magenta-700));color:#fff;border-color:#ffffff15}
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-700));color:#111;border-color:#00000010}
+    .chip{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .7rem;border-radius:999px;font-size:.85rem;font-weight:600;border:1px solid var(--line);background:var(--glass)}
+
+    /* Header */
+    .site-header{position:fixed;inset:0 0 auto 0;height:72px;z-index:50;display:flex;align-items:center;background:linear-gradient(to bottom,rgba(0,0,0,.55),transparent);transition:background .3s,backdrop-filter .3s,border-color .3s;border-bottom:1px solid transparent;backdrop-filter:saturate(120%) blur(6px)}
+    .site-header.scrolled{background:rgba(10,10,14,.75);border-bottom-color:var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.9rem}
+    .logo{width:40px;height:40px;border-radius:10px;background:conic-gradient(from 120deg,var(--gold),var(--magenta));box-shadow:0 0 0 2px #ffffff10 inset}
+    .brand h3{margin:0;font:800 1.1rem/1 Poppins, sans-serif;letter-spacing:.3px}
+    nav ul{display:flex;gap:1.2rem;list-style:none;padding:0;margin:0}
+    nav a{color:#ddd;text-decoration:none;font-weight:600;font-size:.95rem}
+    nav a:hover{color:#fff}
+    .hamburger{display:none;background:none;border:0;color:#fff}
+    @media (max-width:900px){
+      nav ul{display:none}
+      .hamburger{display:block;font-size:1.5rem}
+      nav ul.show{display:flex;position:absolute;top:72px;left:0;right:0;background:#0f0e14;padding:1rem 1.2rem;flex-direction:column;border-bottom:1px solid var(--line)}
+    }
+
+    /* Hero */
+    .hero{position:relative;padding:140px 0 100px;overflow:hidden;background:
+      radial-gradient(600px 240px at 15% 20%, rgba(255,184,0,.25), transparent 60%),
+      radial-gradient(500px 240px at 85% -10%, rgba(196,0,106,.35), transparent 60%);}
+    .hero-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center}
+    @media (max-width:1000px){.hero-wrap{grid-template-columns:1fr}}
+    .eyebrow{font-weight:800;color:#fff;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;opacity:.9}
+    .title{font-family:Poppins, sans-serif;font-weight:800;line-height:1.1;font-size:clamp(2rem,5vw,3rem);margin:.6rem 0 1rem;background:linear-gradient(135deg,#fff,#ffe7a6 30%,#ffd15a 40%,#fff 60%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .subtitle{font-size:1.05rem;color:#eaeaea;max-width:60ch}
+    .hero-badges{display:flex;gap:.8rem;flex-wrap:wrap;margin:1.1rem 0 2rem}
+    .hero-media{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);background:#000}
+    .hero-media img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3;opacity:.92;transform:scale(1.02)}
+    .corner-tag{position:absolute;top:14px;left:14px;background:linear-gradient(135deg,var(--magenta),var(--magenta-700));padding:.5rem .7rem;border-radius:999px;font:700 .85rem/1 Manrope;box-shadow:var(--shadow-sm)}
+
+    /* Sections */
+    section{padding:72px 0}
+    .section-head{text-align:center;margin-bottom:2rem}
+    .section-head h2{font:800 clamp(1.4rem,3.5vw,2.2rem)/1.15 Poppins;margin:.2rem 0 .6rem}
+    .section-head p{color:#d9d9d9;max-width:70ch;margin:0 auto}
+
+    /* Timeline Vertical */
+    .timeline{position:relative;margin:2.5rem 0 0;padding-left:1.25rem}
+    .timeline::before{content:"";position:absolute;left:12px;top:0;bottom:0;width:2px;background:linear-gradient(var(--magenta),var(--gold));opacity:.65}
+    .day{position:relative;margin:0 0 1.25rem 0;display:grid;grid-template-columns:220px 1fr;gap:1.25rem;align-items:stretch}
+    @media (max-width:900px){.day{grid-template-columns:1fr}}
+    .dot{position:absolute;left:-1px;top:1rem;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:conic-gradient(var(--magenta),var(--gold));box-shadow:0 0 0 4px rgba(255,255,255,.04)}
+    .day-aside{background:linear-gradient(135deg,#1a161d,#131118);border:1px solid var(--line);border-radius:16px;padding:1rem 1.1rem}
+    .day-tag{display:inline-flex;align-items:center;gap:.5rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem;color:#fff}
+    .day-tag .num{background:var(--glass);padding:.35rem .6rem;border-radius:999px;border:1px solid var(--line)}
+    .day-title{font:800 1.2rem/1.2 Poppins;margin:.6rem 0 .2rem}
+    .day-sub{color:#dcdcdc;font-size:.95rem}
+    .day-card{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem;align-items:stretch;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:linear-gradient(160deg,rgba(196,0,106,.08),rgba(255,184,0,.06));box-shadow:var(--shadow-sm)}
+    @media (max-width:900px){.day-card{grid-template-columns:1fr}}
+    .day-copy{padding:1.2rem}
+    .day-copy p{color:#eaeaea;margin:.6rem 0}
+    .features{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}
+    .features .chip{border-color:#ffffff20}
+    .day-media{position:relative;min-height:240px;background:#000}
+    .day-media img{width:100%;height:100%;object-fit:cover;display:block}
+    .img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.35),rgba(0,0,0,.05))}
+    .img-badge{position:absolute;bottom:12px;left:12px;background:linear-gradient(135deg,var(--gold),var(--gold-700));color:#111;padding:.45rem .7rem;border-radius:999px;font-weight:800;font-size:.82rem;box-shadow:var(--shadow-sm)}
+
+    /* Price */
+    .price-wrap{margin-top:1rem}
+    .price{padding:1.2rem;border:1px solid var(--line);border-radius:16px;background:var(--glass)}
+    .amount{font:800 1.6rem/1 Poppins;background:linear-gradient(135deg,#fff,#ffe9af);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+    /* Highlights */
+    .hl-icon{font-size:1.2rem;width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:linear-gradient(135deg,var(--gold),var(--gold-700));color:#111;font-weight:900}
+
+    /* CTA */
+    .cta{position:relative;overflow:hidden;border-radius:24px;background:
+      radial-gradient(900px 400px at 90% -10%, rgba(196,0,106,.35), transparent 60%),
+      radial-gradient(900px 400px at 10% 110%, rgba(255,184,0,.25), transparent 60%),
+      linear-gradient(135deg,#16131a,#100f15);border:1px solid var(--line);box-shadow:var(--shadow)}
+    .cta .inner{padding:2rem;text-align:center}
+    .cta h3{font:800 clamp(1.2rem,3.2vw,2rem)/1.15 Poppins;margin:.3rem 0 .7rem}
+    .cta p{color:#dcdcdc;margin:0 auto 1.2rem;max-width:70ch}
+
+    /* Footer */
+    footer{padding:36px 0 60px;color:#cfcfcf}
+    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
+    .ft-brand{display:flex;align-items:center;gap:.8rem}
+    .ft-brand .logo{width:32px;height:32px}
+    .ft-note{color:#9c9c9c;font-size:.95rem}
+
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(16px);transition:.6s ease}
+    .reveal.in{opacity:1;transform:none}
+
+    /* Back to top */
+    .backtop{position:fixed;right:18px;bottom:18px;z-index:60;opacity:0;pointer-events:none;transition:.3s}
+    .backtop.show{opacity:1;pointer-events:auto}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h3>Safari Chic</h3>
+      </div>
+      <nav aria-label="Main">
+        <button class="hamburger" aria-controls="menu" aria-expanded="false"><i class="bi bi-list"></i></button>
+        <ul id="menu">
+          <li><a href="#journey">Journey</a></li>
+          <li><a href="#price">Price</a></li>
+          <li><a href="#highlights">Highlights</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <a class="btn btn-gold" href="#contact"><i class="bi bi-geo"></i> Book Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-wrap">
+      <div>
+        <div class="eyebrow">From Zanzibar • 3 Days</div>
+        <h1 class="title">Zulu Serenity — Swift Safari, Big Moments</h1>
+        <p class="subtitle">Hop from island to inland for concentrated wildlife thrills in Mikumi or Nyerere, then float back to Zanzibar with stories to tell.</p>
+        <div class="hero-badges">
+          <span class="chip"><i class="bi bi-airplane"></i> ZNZ → DAR</span>
+          <span class="chip"><i class="bi bi-truck"></i> Private 4×4</span>
+          <span class="chip"><i class="bi bi-shield-check"></i> Insured</span>
+        </div>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#journey"><i class="bi bi-arrow-down-right-circle"></i> Explore Day-by-Day</a>
+          <a class="btn btn-gold" href="#price"><i class="bi bi-cash-coin"></i> View Price Guide</a>
+        </div>
+      </div>
+      <div class="hero-media reveal">
+        <span class="corner-tag"><i class="bi bi-stars"></i> Safari Chic</span>
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="Elephants crossing at sunset">
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey Timeline -->
+  <section id="journey">
+    <div class="container">
+      <div class="section-head">
+        <h2>Day-by-Day Journey</h2>
+        <p>Short, sharp, spectacular — all the essentials with a luxe finish.</p>
+      </div>
+
+      <div class="timeline">
+        <!-- Day 1 -->
+        <article class="day reveal" id="day-1">
+          <i class="dot" aria-hidden="true"></i>
+          <aside class="day-aside">
+            <div class="day-tag"><span class="num">Day 1</span> ZNZ → Mikumi/Nyerere</div>
+            <div class="day-sub">Flight, transfer & first game drive</div>
+          </aside>
+          <div class="day-card">
+            <div class="day-copy">
+              <h3 class="day-title">Zanzibar → Mikumi or Nyerere National Park</h3>
+              <p>Early ZNZ flight to DAR, then 4×4 transfer to Mikumi (≈5 hrs) or fly/drive into Nyerere (Selous). Settle into camp and head out for your first game drive.</p>
+              <div class="features">
+                <span class="chip"><i class="bi bi-binoculars"></i> Game drive</span>
+                <span class="chip"><i class="bi bi-house-heart"></i> Camp Bastian / Selous Safari Camp / Siwandu</span>
+              </div>
+            </div>
+            <figure class="day-media">
+              <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1400&auto=format&fit=crop" alt="Tarangire-like baobabs and elephants">
+              <div class="img-overlay"></div>
+              <span class="img-badge">Safari Start</span>
+            </figure>
+          </div>
+        </article>
+
+        <!-- Day 2 -->
+        <article class="day reveal" id="day-2">
+          <i class="dot" aria-hidden="true"></i>
+          <aside class="day-aside">
+            <div class="day-tag"><span class="num">Day 2</span> Full Safari Day</div>
+            <div class="day-sub">Predators, picnic & river (optional)</div>
+          </aside>
+          <div class="day-card">
+            <div class="day-copy">
+              <h3 class="day-title">Full-Day Safari Adventure</h3>
+              <p>Dawn patrol for prime predator activity, picnic lunch in the bush, and an optional boat safari on the Rufiji River if you’re in Nyerere.</p>
+              <div class="features">
+                <span class="chip"><i class="bi bi-sunrise"></i> Dawn game drive</span>
+                <span class="chip"><i class="bi bi-water"></i> Boat safari (Nyerere)</span>
+                <span class="chip"><i class="bi bi-camera"></i> Golden hour</span>
+              </div>
+            </div>
+            <figure class="day-media">
+              <img src="https://images.unsplash.com/photo-1599050751776-9e2ca61dc3db?q=80&w=1400&auto=format&fit=crop" alt="Morning game drive scene">
+              <div class="img-overlay"></div>
+              <span class="img-badge">All Day</span>
+            </figure>
+          </div>
+        </article>
+
+        <!-- Day 3 -->
+        <article class="day reveal" id="day-3">
+          <i class="dot" aria-hidden="true"></i>
+          <aside class="day-aside">
+            <div class="day-tag"><span class="num">Day 3</span> Sunrise & Return</div>
+            <div class="day-sub">Final safari & flight back</div>
+          </aside>
+          <div class="day-card">
+            <div class="day-copy">
+              <h3 class="day-title">Morning Safari & Return to Zanzibar</h3>
+              <p>Sunrise game drive for last sightings, transfer to DAR and flight back to Zanzibar — with sand and stories waiting for you.</p>
+              <div class="features">
+                <span class="chip"><i class="bi bi-taxi-front"></i> Private transfer</span>
+                <span class="chip"><i class="bi bi-airplane"></i> DAR → ZNZ</span>
+              </div>
+            </div>
+            <figure class="day-media">
+              <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=1400&auto=format&fit=crop" alt="Zanzibar coast">
+              <div class="img-overlay"></div>
+              <span class="img-badge">Zanzibar</span>
+            </figure>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Price Guide -->
+  <section id="price">
+    <div class="container">
+      <div class="section-head">
+        <h2>Price Guide</h2>
+        <p>Choose your stay style; we’ll tailor the details.</p>
+      </div>
+      <div class="grid cols-3 price-wrap">
+        <div class="price">
+          <h3 class="day-title">Budget</h3>
+          <div class="amount">$1,287</div>
+          <p class="muted">Per person</p>
+        </div>
+        <div class="price">
+          <h3 class="day-title">Mid-range</h3>
+          <div class="amount">$1,390</div>
+          <p class="muted">Per person</p>
+        </div>
+        <div class="price">
+          <h3 class="day-title">Luxury</h3>
+          <div class="amount">$1,894</div>
+          <p class="muted">Per person</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights -->
+  <section id="highlights">
+    <div class="container">
+      <div class="section-head">
+        <h2>Experience Highlights</h2>
+        <p>Three days, unforgettable contrasts.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card reveal">
+          <div class="hl-icon"><i class="bi bi-water"></i></div>
+          <h3>Nyerere’s River Life</h3>
+          <p class="muted">Hippos, crocs and waterbirds on Rufiji (optional boat safari).</p>
+        </div>
+        <div class="card reveal">
+          <div class="hl-icon"><i class="bi bi-tree"></i></div>
+          <h3>Mikumi’s Plains</h3>
+          <p class="muted">Open savannah and big herds — “mini Serengeti” vibes.</p>
+        </div>
+        <div class="card reveal">
+          <div class="hl-icon"><i class="bi bi-sunset-fill"></i></div>
+          <h3>Island + Safari</h3>
+          <p class="muted">Efficient hop from ZNZ to the wild and back to the beach.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact">
+    <div class="container">
+      <div class="inner reveal">
+        <h3>Ready for Your Zulu Serenity Adventure?</h3>
+        <p>Tell us your dates and preferred park — we’ll confirm flights and create a smooth, time-savvy plan.</p>
+        <div style="display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap">
+          <a class="btn btn-primary" href="mailto:info@safarichic.com"><i class="bi bi-envelope"></i> info@safarichic.com</a>
+          <a class="btn btn-gold" href="tel:+255742930833"><i class="bi bi-telephone"></i> +255 742 930833</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="ft-brand">
+          <div class="logo"></div>
+          <h4 style="margin:0">Safari Chic</h4>
+        </div>
+        <p class="ft-note">Offering highly personalized, bespoke safaris across Tanzania & Zanzibar.</p>
+      </div>
+      <div>
+        <div class="grid cols-3">
+          <div class="card">
+            <h3><i class="bi bi-geo-alt"></i> Office</h3>
+            <p class="muted">Zanzibar • Tanzania</p>
+          </div>
+          <div class="card">
+            <h3><i class="bi bi-envelope-open"></i> Email</h3>
+            <p class="muted">info@safarichic.com</p>
+          </div>
+          <div class="card">
+            <h3><i class="bi bi-telephone"></i> Phone</h3>
+            <p class="muted">+255 742 930833</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="margin-top:1rem; border-top:1px solid var(--line); padding-top:1rem; color:#a7a7a7">
+      © 2025 Safari Chic. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <a href="#top" class="btn btn-primary backtop" id="backtop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
+
+  <script>
+    // Mobile nav
+    const burger=document.querySelector('.hamburger');
+    const menu=document.getElementById('menu');
+    burger?.addEventListener('click',()=>{
+      const open=menu.classList.toggle('show');
+      burger.setAttribute('aria-expanded', String(open));
+    });
+
+    // Header scrolled state & back to top
+    const header=document.getElementById('site-header');
+    const backtop=document.getElementById('backtop');
+    const onScroll=()=>{
+      if(window.scrollY>10){ header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); }
+      if(window.scrollY>600){ backtop.classList.add('show'); } else { backtop.classList.remove('show'); }
+    };
+    document.addEventListener('scroll', onScroll); onScroll();
+
+    // Smooth in-page scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id=a.getAttribute('href');
+        if(id && id.length>1){
+          const el=document.querySelector(id);
+          if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+        }
+      });
+    });
+
+    // Reveal on view
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>

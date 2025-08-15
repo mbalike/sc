@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Safari Chic</title>
+  <meta name="description" content="Get in touch with Safari Chic — WhatsApp, phone, email, and a quick contact form to plan your Tanzania & Zanzibar journey." />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    :root{
+      --magenta:#c4006a; --magenta-700:#a10057;
+      --gold:#ffb800; --gold-700:#e6a300;
+      --bg:#0c0b10; --panel:#121118;
+      --line:rgba(255,255,255,.08); --glass:rgba(255,255,255,.06);
+      --shadow:0 12px 40px rgba(0,0,0,.35); --shadow-sm:0 8px 24px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;color:#eee;
+      background:
+        radial-gradient(1200px 700px at 10% -10%, rgba(196,0,106,.16), transparent 50%),
+        radial-gradient(900px 600px at 110% 10%, rgba(255,184,0,.14), transparent 60%),
+        var(--bg);
+      font-family:Manrope, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      line-height:1.6;
+      scroll-behavior:smooth;
+    }
+    .container{width:min(1200px,92vw);margin:0 auto}
+    .grid{display:grid;gap:1.1rem}
+    .kicker{font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;opacity:.9}
+
+    /* Header */
+    .site-header{
+      position:fixed; inset:0 0 auto 0; height:72px; z-index:60;
+      display:flex; align-items:center;
+      background:linear-gradient(to bottom, rgba(0,0,0,.55), transparent);
+      border-bottom:1px solid transparent;
+      backdrop-filter:saturate(120%) blur(6px);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .logo{width:40px;height:40px;border-radius:10px;background:conic-gradient(from 120deg,var(--gold),var(--magenta))}
+    .nav a{color:#ddd;text-decoration:none;font-weight:600}
+    .nav a:hover{color:#fff}
+
+    /* Buttons & chips */
+    .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.2rem;border-radius:999px;font-weight:700;text-decoration:none;border:1px solid #ffffff15;box-shadow:var(--shadow-sm);cursor:pointer}
+    .btn-primary{background:linear-gradient(135deg,var(--magenta),var(--magenta-700));color:#fff}
+    .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-700));color:#111;border-color:#00000010}
+    .chip{display:inline-flex;align-items:center;gap:.45rem;padding:.4rem .7rem;border-radius:999px;border:1px solid var(--line);background:var(--glass);font-weight:700}
+
+    /* Hero */
+    .hero{position:relative;min-height:68vh;display:grid;align-items:center;overflow:hidden;isolation:isolate}
+    .hero::before{
+      content:"";position:absolute;inset:0;
+      background:url('https://images.unsplash.com/photo-1534008897995-27a23e859048?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+      filter:brightness(.78) saturate(1.05);transform:scale(1.02);z-index:-2
+    }
+    .hero::after{
+      content:"";position:absolute;inset:0;
+      background:radial-gradient(800px 400px at 85% -10%, rgba(196,0,106,.35), transparent 60%),
+                 radial-gradient(700px 400px at 15% 110%, rgba(255,184,0,.22), transparent 60%);
+      z-index:-1
+    }
+    .hero h1{font-family:Poppins, sans-serif;font-weight:800;line-height:1.05;font-size:clamp(2.2rem,5.4vw,3.4rem);margin:.5rem 0 .6rem;color:#fff;text-shadow:0 6px 28px rgba(0,0,0,.45)}
+
+    /* Cards */
+    .card{border:1px solid var(--line);border-radius:18px;background:var(--glass);box-shadow:var(--shadow-sm);padding:1rem}
+    .card h3{font:800 1.05rem/1.2 Poppins;margin:.2rem 0 .4rem}
+
+    /* Contact blocks */
+    section{padding:100px 0}
+    .quick{grid-template-columns:repeat(3,1fr)}
+    @media (max-width:980px){.quick{grid-template-columns:1fr}}
+
+    /* Form & map */
+    .two{grid-template-columns:1.1fr .9fr}
+    @media (max-width:980px){.two{grid-template-columns:1fr}}
+    form{display:grid;gap:.8rem}
+    input, textarea, select{background:#0f0e14;color:#fff;border:1px solid var(--line);border-radius:10px;padding:.8rem}
+    textarea{min-height:130px;resize:vertical}
+    .map{border:1px solid var(--line);border-radius:18px;overflow:hidden;min-height:320px;background:#0f0e14;display:grid;place-items:center;color:#9c9c9c;position:relative}
+
+    /* FAQ */
+    details{border:1px solid var(--line);border-radius:12px;padding:.8rem;background:var(--glass)}
+    details + details{margin-top:.6rem}
+    summary{cursor:pointer;font-weight:700}
+
+    footer{padding:36px 0 60px;color:#cfcfcf}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav">
+      <div style="display:flex;align-items:center;gap:.9rem"><div class="logo"></div><strong>Safari Chic</strong></div>
+      <nav>
+        <a href="index-gold-magenta-full.html">Home</a> •
+        <a href="itineraries-gold-magenta.html">Itineraries</a> •
+        <a href="destinations-gold-magenta-fullheight.html">Destinations</a>
+      </nav>
+      <a class="btn btn-gold" href="https://wa.me/255742930833"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" style="padding:140px 0 110px">
+    <div class="container">
+      <span class="chip"><i class="bi bi-envelope-paper"></i> Contact</span>
+      <h1>Let’s plan your Tanzania & Zanzibar journey</h1>
+      <p style="max-width:70ch;color:#f0f0f0">Reach us by WhatsApp, phone, or email — or send a quick message below. We’ll respond with ideas tailored to your dates, style and budget.</p>
+      <div style="display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1rem">
+        <a class="btn btn-gold" href="https://wa.me/255742930833"><i class="bi bi-whatsapp"></i> Chat on WhatsApp</a>
+        <a class="btn btn-primary" href="#form"><i class="bi bi-send"></i> Send a Message</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick contacts -->
+  <section>
+    <div class="container">
+      <div class="grid quick">
+        <div class="card">
+          <h3><i class="bi bi-telephone"></i> Phone</h3>
+          <p class="muted">+255 742 930833</p>
+          <a class="btn btn-primary" href="tel:+255742930833"><i class="bi bi-telephone-outbound"></i> Call Now</a>
+        </div>
+        <div class="card">
+          <h3><i class="bi bi-envelope-open"></i> Email</h3>
+          <p class="muted">info@safarichic.com</p>
+          <a class="btn btn-primary" href="mailto:info@safarichic.com"><i class="bi bi-envelope"></i> Email Us</a>
+        </div>
+        <div class="card">
+          <h3><i class="bi bi-geo-alt"></i> Office</h3>
+          <p class="muted">Zanzibar • Tanzania</p>
+          <a class="btn btn-primary" href="#map"><i class="bi bi-map"></i> View Map</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form + Map -->
+  <section id="form">
+    <div class="container grid two">
+      <div class="card">
+        <h3 style="font:800 1.2rem/1.2 Poppins;margin:0 0 .4rem"><i class="bi bi-chat-dots"></i> Quick Message</h3>
+        <p class="muted" style="margin:.1rem 0 .8rem">Tell us a bit about your plans and we’ll get back with ideas.</p>
+        <form action="mailto:info@safarichic.com" method="post" enctype="text/plain" onsubmit="return validateForm(this)">
+          <input name="name" placeholder="Full Name" required />
+          <div class="grid" style="grid-template-columns:1fr 1fr;gap:.8rem">
+            <input name="email" type="email" placeholder="Email" required />
+            <input name="phone" type="tel" placeholder="WhatsApp / Phone (optional)" />
+          </div>
+          <div class="grid" style="grid-template-columns:1fr 1fr;gap:.8rem">
+            <input name="start" type="date" placeholder="Start Date" />
+            <input name="end" type="date" placeholder="End Date" />
+          </div>
+          <div class="grid" style="grid-template-columns:1fr 1fr;gap:.8rem">
+            <input name="group" type="number" min="1" placeholder="Group Size" />
+            <select name="budget">
+              <option value="">Budget Range</option>
+              <option>Budget</option>
+              <option>Mid-range</option>
+              <option>Luxury</option>
+            </select>
+          </div>
+          <div class="grid" style="grid-template-columns:1fr 1fr 1fr;gap:.6rem">
+            <label style="display:flex;gap:.4rem;align-items:center"><input type="checkbox" name="interests" value="Safari" /> Safari</label>
+            <label style="display:flex;gap:.4rem;align-items:center"><input type="checkbox" name="interests" value="Culture" /> Culture</label>
+            <label style="display:flex;gap:.4rem;align-items:center"><input type="checkbox" name="interests" value="Beach" /> Beach</label>
+          </div>
+          <textarea name="notes" placeholder="Tell us about your ideal trip — interests, must-sees, special dates…"></textarea>
+          <button class="btn btn-gold" type="submit"><i class="bi bi-send"></i> Send Message</button>
+          <p class="muted" style="margin:.4rem 0 0">Prefer WhatsApp? <a href="https://wa.me/255742930833" style="color:#ffd76a;text-decoration:none">Message us here</a>.</p>
+        </form>
+      </div>
+      <div class="map" id="map">
+        <div style="text-align:center;z-index:1">
+          <div style="font-size:2rem;margin-bottom:.4rem">🗺️</div>
+          <p>Map placeholder — embed Google Map or Mapbox here.</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Tanzania landscape" style="width:100%;height:100%;object-fit:cover;opacity:.35;position:absolute;inset:0;z-index:0">
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section>
+    <div class="container">
+      <h3 style="font:800 1.2rem/1.2 Poppins;margin:0 0 .8rem">FAQs</h3>
+      <details>
+        <summary>How quickly will you reply?</summary>
+        <p>We aim to respond within 24 hours (often sooner on WhatsApp).</p>
+      </details>
+      <details>
+        <summary>Can you customize any itinerary?</summary>
+        <p>Yes — every trip is tailored. Share your dates, group size and interests and we’ll craft a plan.</p>
+      </details>
+      <details>
+        <summary>Do you arrange flights?</summary>
+        <p>We can advise routes and help with local flights; for international tickets, we’ll happily coordinate with your preferred agent.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="display:grid;grid-template-columns:1.2fr .8fr;gap:1rem">
+      <div>
+        <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.4rem"><div class="logo" style="width:32px;height:32px"></div><strong>Safari Chic</strong></div>
+        <p style="color:#9c9c9c">Highly personalized, bespoke safaris across Tanzania & Zanzibar.</p>
+      </div>
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:1rem">
+        <div class="card"><h3><i class="bi bi-geo-alt"></i> Office</h3><p class="muted">Zanzibar • Tanzania</p></div>
+        <div class="card"><h3><i class="bi bi-envelope-open"></i> Email</h3><p class="muted">info@safarichic.com</p></div>
+        <div class="card"><h3><i class="bi bi-telephone"></i> Phone</h3><p class="muted">+255 742 930833</p></div>
+      </div>
+    </div>
+    <div class="container" style="margin-top:1rem;border-top:1px solid var(--line);padding-top:1rem;color:#a7a7a7">
+      © 2025 Safari Chic. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    function validateForm(f){
+      if(!f.email.value || !f.name.value){ alert("Please add your name and email so we can reach you."); return false; }
+      return true;
+    }
+  </script>
+</body>
+</html>

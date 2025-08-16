@@ -63,17 +63,54 @@
     .site-header.scrolled{ background:rgba(10,10,14,.75); border-bottom-color:var(--line); }
     .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
     .brand{display:flex;align-items:center;gap:.9rem}
-    .logo{width:40px;height:40px;border-radius:10px;background:conic-gradient(from 120deg,var(--gold),var(--magenta));box-shadow:0 0 0 2px #ffffff10 inset}
+    /* logo (supports both fallback div OR an <img class="logo">) */
+    .logo{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      display:inline-block;
+      overflow:hidden;
+      box-shadow:0 0 0 2px #ffffff10 inset;
+      background:conic-gradient(from 120deg,var(--gold),var(--magenta)); /* fallback if image missing */
+    }
+    .logo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
     .brand h3{margin:0;font:800 1.1rem/1 Poppins, sans-serif;letter-spacing:.3px}
     nav ul{display:flex;gap:1.2rem;list-style:none;padding:0;margin:0}
     nav a{color:#ddd;text-decoration:none;font-weight:600;font-size:.95rem}
     nav a:hover{color:#fff}
     .hamburger{display:none;background:none;border:0;color:#fff}
+    .actions{display:flex;align-items:center;gap:.6rem} /* container for "See Packages" CTA */
+
     @media (max-width: 900px){
       nav ul{display:none}
       .hamburger{display:block;font-size:1.5rem}
       nav ul.show{display:flex;position:absolute;top:72px;left:0;right:0;background:#0f0e14;padding:1rem 1.2rem;flex-direction:column;border-bottom:1px solid var(--line)}
+      /* Hide the "See Packages" button on mobile */
+      .actions{display:none}
+      /* Slightly smaller header on mobile */
+      .site-header{height:64px}
+      /* Tighter hero on mobile */
+      .hero{min-height:60vh;padding:90px 0 70px}
+      .hero h1{font-size:clamp(1.6rem,5.4vw,2.6rem)}
+      /* Compact buttons & chips */
+      .btn{padding:.7rem .95rem;font-weight:700}
+      .chip{font-size:.82rem;padding:.35rem .6rem}
     }
+
+    @media (max-width: 600px){
+      .hero{min-height:55vh;padding:72px 0 60px}
+      .hero h1{font-size:clamp(1.3rem,6.5vw,2rem)}
+      .card-img{height:160px}
+      .dest-media{min-height:220px}
+      .container{width:96vw}
+    }
+    /* keep the rest of your CSS unchanged */
 
     /* Sections */
     section{padding:100px 0}
@@ -155,7 +192,7 @@
   <header class="site-header" id="site-header">
     <div class="container nav">
       <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
+        <div class="logo" aria-hidden="true"><img src="assets/img/logo.png" alt="Safari Chic logo"></div>
         <h3>Safari Chic</h3>
       </div>
       <nav aria-label="Main">
@@ -463,7 +500,7 @@
     <div class="container footer-grid">
       <div>
         <div class="ft-brand">
-          <div class="logo"></div>
+          <div class="logo"><img src="assets/img/logo.png" alt="Safari Chic logo"></div>
           <h4 style="margin:0">Safari Chic</h4>
         </div>
         <p class="ft-note">Offering highly personalized, bespoke safaris across Tanzania & Zanzibar.</p>

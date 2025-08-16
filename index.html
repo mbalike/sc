@@ -65,7 +65,8 @@
     .site-header.scrolled{ background:rgba(10,10,14,.75); border-bottom-color:var(--line); }
     .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
     .brand{display:flex;align-items:center;gap:.9rem}
-    .logo{width:40px;height:40px;border-radius:10px;background:conic-gradient(from 120deg,var(--gold),var(--magenta));box-shadow:0 0 0 2px #ffffff10 inset}
+    .logo{width:40px;height:40px;border-radius:10px;background:conic-gradient(from 120deg,var(--gold),var(--magenta));box-shadow:0 0 0 2px #ffffff10 inset; overflow:hidden; display:inline-grid; place-items:center}
+    .logo img{width:100%;height:100%;object-fit:contain;display:block;border-radius:10px}
     .brand h3{margin:0;font:800 1.1rem/1 Poppins, sans-serif;letter-spacing:.3px}
     nav ul{display:flex;gap:1.2rem;list-style:none;padding:0;margin:0}
     nav a{color:#ddd;text-decoration:none;font-weight:600;font-size:.95rem}
@@ -191,11 +192,26 @@
     @media (max-width: 900px){.footer-grid{grid-template-columns:1fr}}
     .ft-brand{display:flex;align-items:center;gap:.8rem}
     .ft-brand .logo{width:32px;height:32px;border-radius:10px;background:conic-gradient(from 120deg,var(--gold),var(--magenta))}
+    .ft-brand .logo img{width:100%;height:100%;object-fit:contain;display:block;border-radius:10px}
     .ft-note{color:#9c9c9c;font-size:.95rem}
 
     /* Reveal */
     .reveal{opacity:0;transform:translateY(16px);transition:.6s ease}
     .reveal.in{opacity:1;transform:none}
+
+    /* --- Mobile tweaks --- */
+    @media (max-width: 900px){
+      .site-header{height:64px}
+      .container{width:94vw}
+      section.panel{padding:80px 0}
+      .hero h1{font-size:clamp(1.6rem,6.5vw,2.4rem)}
+      /* hide See Packages button in mobile view */
+      .actions{display:none}
+      /* reduce card paddings slightly */
+      .card, .itin-card, .exp-card{padding:1rem}
+      /* make timeline labels more compact */
+      .months div{font-size:.85rem;padding:.45rem}
+    }
   </style>
 </head>
 <body>
@@ -203,19 +219,19 @@
   <header class="site-header" id="site-header">
     <div class="container nav">
       <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
+        <!-- replaced placeholder with actual logo -->
+        <div class="logo" aria-hidden="true">
+          <img src="assets/img/logo.png" alt="Safari Chic logo">
+        </div>
         <h3>Safari Chic</h3>
       </div>
       <nav aria-label="Main">
         <button class="hamburger" aria-controls="menu" aria-expanded="false"><i class="bi bi-list"></i></button>
         <ul id="menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#why">Why Us</a></li>
-          <li><a href="#itineraries">Itineraries</a></li>
-          <li><a href="#besttime">Best Time</a></li>
-          <li><a href="#experiences">Experiences</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#plan">Plan</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="itineraries.html">Itineraries</a></li>
+          <li><a href="contact.html">Contacts</a></li>
         </ul>
       </nav>
       <div class="actions">
@@ -284,10 +300,10 @@
               <article class="itin-card">
                 <div class="itin-img">
                   <span class="badge">Quick Escape</span>
-                  <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop" alt="Elephants at golden hour">
+                  <img src="assets/img/pexels-twilightkenya-18000463.jpg" alt="Elephants at golden hour">
                 </div>
                 <div class="itin-body">
-                  <div class="itin-head"><h3 class="itin-title">Zulu Serenity</h3><span class="dur">3 Days</span></div>
+                  <div class="itin-head"><h3 class="itin-title">Wakanda Serenity</h3><span class="dur">3 Days</span></div>
                   <p class="muted">Safari from Zanzibar — fast, focused, unforgettable.</p>
                   <div class="highlights">
                     <span class="chip"><i class="bi bi-tree"></i> Mikumi/Nyerere</span>
@@ -303,10 +319,10 @@
               <article class="itin-card">
                 <div class="itin-img">
                   <span class="badge">Most Popular</span>
-                  <img src="https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1400&auto=format&fit=crop" alt="Savannah and ocean blend">
+                  <img src="assets/img/pexels-mikeknibbs-17849763.jpg" alt="Savannah and ocean blend">
                 </div>
                 <div class="itin-body">
-                  <div class="itin-head"><h3 class="itin-title">Serengeti & Zanzibar Explorer</h3><span class="dur">5 Days</span></div>
+                  <div class="itin-head"><h3 class="itin-title">Serengeti Explorer</h3><span class="dur">5 Days</span></div>
                   <p class="muted">Wildlife + Stone Town stories — the sweet spot.</p>
                   <div class="highlights">
                     <span class="chip"><i class="bi bi-binoculars"></i> Tarangire</span>
@@ -322,7 +338,7 @@
               <article class="itin-card">
                 <div class="itin-img">
                   <span class="badge">Ultimate Experience</span>
-                  <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=1400&auto=format&fit=crop" alt="Zanzibar coastline at sunset">
+                  <img src="assets/img/Screenshot 2025-08-16 033107.png" alt="Zanzibar coastline at sunset">
                 </div>
                 <div class="itin-body">
                   <div class="itin-head"><h3 class="itin-title">Ultimate Tanzania & Zanzibar Journey</h3><span class="dur">8 Days</span></div>
@@ -456,7 +472,7 @@
           <article class="itin-card">
             <div class="itin-img">
               <span class="badge">Serengeti</span>
-              <img src="assets/img/pexels-gsn-travel-28708345.jpg" alt="Serengeti plains at sunset">
+              <img src="assets/img/ChatGPT Image Aug 15, 2025, 11_19_05 PM.png" alt="Serengeti plains at sunset">
             </div>
             <div class="itin-body">
               <div class="itin-head">
@@ -520,7 +536,7 @@
           <article class="itin-card">
             <div class="itin-img">
               <span class="badge">Manyara</span>
-              <img src="https://images.unsplash.com/photo-1599050751776-9e2ca61dc3db?q=80&w=1400&auto=format&fit=crop" alt="Lake Manyara birds">
+              <img src="assets/img/ChatGPT Image Aug 16, 2025, 03_57_38 AM.png" alt="Lake Manyara birds">
             </div>
             <div class="itin-body">
               <div class="itin-head">
@@ -536,7 +552,7 @@
           <article class="itin-card">
             <div class="itin-img">
               <span class="badge">Highlands</span>
-              <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?q=80&w=1400&auto=format&fit=crop" alt="Highlands near Arusha">
+              <img src="assets/img/dining_scene_under_500kb.jpg" alt="Highlands near Arusha">
             </div>
             <div class="itin-body">
               <div class="itin-head">
@@ -638,7 +654,7 @@
         </div>
         <div class="side-image reveal">
           <span class="tag"><i class="bi bi-stars"></i> Safari Chic</span>
-          <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=1600&auto=format&fit=crop" alt="Zanzibar sunset shoreline" loading="lazy">
+          <img src="assets/img/pexels-limonovdigital-8765889.jpg" alt="Zanzibar sunset shoreline" loading="lazy">
         </div>
       </div>
     </div>
@@ -650,7 +666,10 @@
     <div class="container footer-grid">
       <div>
         <div class="ft-brand">
-          <div class="logo"></div>
+          <!-- replaced placeholder with actual logo -->
+          <div class="logo">
+            <img src="assets/img/logo.png" alt="Safari Chic logo">
+          </div>
           <h4 style="margin:0">Safari Chic</h4>
         </div>
         <p class="ft-note">Offering highly personalized, bespoke safaris across Tanzania & Zanzibar.</p>

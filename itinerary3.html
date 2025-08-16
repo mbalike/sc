@@ -83,6 +83,7 @@
     .nav{display:flex; align-items:center; justify-content:space-between; gap:1rem}
     .brand{display:flex; align-items:center; gap:.9rem}
     .logo{width:40px;height:40px;border-radius:10px;background:conic-gradient(from 120deg,var(--gold),var(--magenta));box-shadow:0 0 0 2px #ffffff10 inset}
+    .logo img{width:100%;height:100%;object-fit:contain;display:block;border-radius:10px}
     .brand h3{margin:0; font:800 1.1rem/1 Poppins, sans-serif; letter-spacing:.3px}
 
     nav ul{display:flex; gap:1.2rem; list-style:none; padding:0; margin:0}
@@ -92,6 +93,7 @@
     @media (max-width: 900px){
       nav ul{display:none}
       .hamburger{display:block; font-size:1.5rem}
+     .actions{display:none}
       nav ul.show{display:flex; position:absolute; top:72px; left:0; right:0; background:#0f0e14; padding:1rem 1.2rem; flex-direction:column; border-bottom:1px solid var(--line)}
     }
 
@@ -260,17 +262,18 @@
   <header class="site-header" id="site-header">
     <div class="container nav">
       <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
+        <div class="logo" aria-hidden="true">
+          <img src="assets/img/logo.png" alt="Safari Chic logo">
+        </div>
         <h3>Safari Chic</h3>
       </div>
       <nav aria-label="Main">
         <button class="hamburger" aria-controls="menu" aria-expanded="false"><i class="bi bi-list"></i></button>
         <ul id="menu">
-          <li><a href="#journey">Journey</a></li>
-          <li><a href="#beach">Beach</a></li>
-          <li><a href="#price">Price</a></li>
-          <li><a href="#highlights">Highlights</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="itineraries.html">Itineraries</a></li>
+          <li><a href="contact.html">Contacts</a></li>
         </ul>
       </nav>
       <div class="actions">
@@ -299,7 +302,7 @@
 
       <div class="hero-media reveal">
         <span class="corner-tag"><i class="bi bi-stars"></i> Safari Chic</span>
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="Elephants at sunset in Tanzania">
+        <img src="assets/img/pexels-frans-van-heerden-201846-4894482.jpg" alt="Elephants at sunset in Tanzania">
       </div>
     </div>
   </section>
@@ -317,7 +320,7 @@
         <article class="day reveal" id="day-1">
           <i class="dot" aria-hidden="true"></i>
           <aside class="day-aside">
-            <div class="day-tag"><span class="num">Day 1</span> Arrival in Arusha</div>
+            <div class="day-tag"><span class="num">Day 1</span> Arrival</div>
             <div class="day-sub">Welcome briefing & dinner</div>
           </aside>
           <div class="day-card">
@@ -331,7 +334,7 @@
               </div>
             </div>
             <figure class="day-media">
-              <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?q=80&w=1400&auto=format&fit=crop" alt="Arusha and Mount Meru">
+              <img src="assets/img/art-gallery-cultural.jpg" alt="Arusha and Mount Meru">
               <div class="img-overlay"></div>
               <span class="img-badge">Arusha</span>
             </figure>
@@ -356,7 +359,7 @@
               </div>
             </div>
             <figure class="day-media">
-              <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1400&auto=format&fit=crop" alt="Tarangire National Park baobab and wildlife">
+              <img src="assets/img/amazing-tarangire-day.jpg" alt="Tarangire National Park baobab and wildlife">
               <div class="img-overlay"></div>
               <span class="img-badge">Tarangire</span>
             </figure>
@@ -381,7 +384,7 @@
               </div>
             </div>
             <figure class="day-media">
-              <img src="https://images.unsplash.com/photo-1605650462856-0f6a0b89441f?q=80&w=1400&auto=format&fit=crop" alt="Ngorongoro crater view">
+              <img src="assets/img/ngorongoro-crater.jpg" alt="Ngorongoro crater view">
               <div class="img-overlay"></div>
               <span class="img-badge">Ngorongoro</span>
             </figure>
@@ -406,7 +409,7 @@
               </div>
             </div>
             <figure class="day-media">
-              <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=1400&auto=format&fit=crop" alt="Stone Town, Zanzibar">
+              <img src="assets/img/lake-manyara-national.jpg" alt="Stone Town, Zanzibar">
               <div class="img-overlay"></div>
               <span class="img-badge">Stone Town</span>
             </figure>
@@ -416,7 +419,7 @@
 
       <!-- Beach banner for days 5-7 -->
       <div class="banner reveal" id="beach">
-        <img src="https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1600&auto=format&fit=crop" alt="Nungwi beach turquoise water">
+        <img src="assets/img/nungwi3.jpg" alt="Nungwi beach turquoise water">
         <div class="content">
           <div>
             <span class="ribbon"><i class="bi bi-umbrella-beach"></i> Days 5–7</span>
@@ -425,15 +428,15 @@
             <div class="grid cols-3" style="margin-top:1rem">
               <div class="card">
                 <h3><i class="bi bi-water"></i> Mnemba Reef</h3>
-                <p class="muted">Snorkel or dive among bright corals and shoals of tropical fish.</p>
+                <p class="muted" style="font-weight: bold;">Snorkel or dive among bright corals and shoals of tropical fish.</p>
               </div>
               <div class="card">
                 <h3><i class="bi bi-boat"></i> Dhow Cruise</h3>
-                <p class="muted">Glide along the coast in a traditional wooden dhow at golden hour.</p>
+                <p class="muted" style="font-weight: bold;">Glide along the coast in a traditional wooden dhow at golden hour.</p>
               </div>
               <div class="card">
                 <h3><i class="bi bi-stars"></i> Beach Time</h3>
-                <p class="muted">Sunloungers, palm shade and that slow, island rhythm.</p>
+                <p class="muted" style="font-weight: bold;">Sunloungers, palm shade and that slow, island rhythm.</p>
               </div>
             </div>
           </div>
@@ -458,7 +461,7 @@
               </div>
             </div>
             <figure class="day-media">
-              <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1400&auto=format&fit=crop" alt="Zanzibar sunset farewell">
+              <img src="assets/img/spice.jpg" alt="Zanzibar sunset farewell">
               <div class="img-overlay"></div>
               <span class="img-badge">Zanzibar</span>
             </figure>

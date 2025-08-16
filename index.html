@@ -140,7 +140,7 @@
     @media (max-width: 700px){ .slide{flex-basis: 100%} }
     .slider-nav{display:flex; align-items:center; justify-content:center; gap:.6rem; margin-top:1rem}
     .dot{width:9px;height:9px;border-radius:50%;background:#ffffff3b;border:1px solid #ffffff66}
-    .dot.active{background:linear-gradient(135deg,var(--gold),var(--gold-700))}
+    .dot.active{background:linear-gradient(135deg,var(--gold),var,--gold-700))}
     .arrow{position:absolute; top:50%; transform:translateY(-50%); width:40px;height:40px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line); background:var(--glass); color:#fff; cursor:pointer}
     .arrow:hover{filter:brightness(1.1)}
     .arrow.prev{left:-10px} .arrow.next{right:-10px}
@@ -151,7 +151,7 @@
     .itin-card:hover{transform:translateY(-6px); box-shadow:var(--shadow)}
     .itin-img{height:220px;background:#000;position:relative;overflow:hidden}
     .itin-img img{width:100%;height:100%;object-fit:cover;display:block}
-    .badge{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,var(--magenta),var(--magenta-700));padding:.45rem .7rem;border-radius:999px;font-weight:800;font-size:.82rem;box-shadow:var(--shadow-sm)}
+    .badge{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,var(--magenta),var,--magenta-700));padding:.45rem .7rem;border-radius:999px;font-weight:800;font-size:.82rem;box-shadow:var(--shadow-sm)}
     .itin-body{padding:1.15rem}
     .itin-head{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin-bottom:.4rem}
     .itin-title{font:800 1.12rem/1.15 Poppins;margin:0}
@@ -189,7 +189,7 @@
     textarea{min-height:120px; resize:vertical}
     .side-image{position:relative; border-radius:16px; overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow-sm)}
     .side-image img{width:100%; height:100%; object-fit:cover; display:block}
-    .side-image .tag{position:absolute; top:12px; left:12px; background:linear-gradient(135deg,var(--magenta),var(--magenta-700)); padding:.45rem .7rem; border-radius:999px; font-weight:800; font-size:.82rem}
+    .side-image .tag{position:absolute; top:12px; left:12px; background:linear-gradient(135deg,var(--magenta),var,--magenta-700)); padding:.45rem .7rem; border-radius:999px; font-weight:800; font-size:.82rem}
 
     /* Section headers */
     .section-head{text-align:center; margin-bottom:1.4rem}
@@ -403,9 +403,9 @@
             <span style="background:#ffffff10"></span><span style="background:#ffffff10"></span><span style="background:#ffffff10"></span>
             <span style="background:#ffffff10"></span><span style="background:#ffffff10"></span>
             <span title="Dry season peak" style="background:linear-gradient(90deg,var(--gold),var(--gold-700))"></span>
-            <span title="Dry season peak" style="background:linear-gradient(90deg,var(--gold),var(--gold-700))"></span>
-            <span title="Dry season peak" style="background:linear-gradient(90deg,var(--gold),var(--gold-700))"></span>
-            <span title="Dry season peak" style="background:linear-gradient(90deg,var(--gold),var(--gold-700))"></span>
+            <span title="Dry season peak" style="background:linear-gradient(90deg,var(--gold),var,--gold-700))"></span>
+            <span title="Dry season peak" style="background:linear-gradient(90deg,var(--gold),var,--gold-700))"></span>
+            <span title="Dry season peak" style="background:linear-gradient(90deg,var(--gold),var,--gold-700))"></span>
             <span style="background:#ffffff10"></span><span style="background:#ffffff10"></span><span style="background:#ffffff10"></span>
           </div>
           <!-- Ngorongoro (Great year-round; clear skies Jun–Oct) -->
@@ -414,7 +414,7 @@
             <span style="background:#ffffff18"></span><span style="background:#ffffff18"></span><span style="background:#ffffff18"></span>
             <span style="background:#ffffff18"></span><span style="background:#ffffff18"></span>
             <span title="Clear skies" style="background:linear-gradient(90deg,var(--magenta),var(--magenta-700))"></span>
-            <span title="Clear skies" style="background:linear-gradient(90deg,var(--magenta),var(--magenta-700))"></span>
+            <span title="Clear skies" style="background:linear-gradient(90deg,var(--magenta),var,--magenta-700))"></span>
             <span title="Clear skies" style="background:linear-gradient(90deg,var(--magenta),var,--magenta-700))"></span>
             <span title="Clear skies" style="background:linear-gradient(90deg,var(--magenta),var,--magenta-700))"></span>
             <span style="background:#ffffff18"></span><span style="background:#ffffff18"></span><span style="background:#ffffff18"></span>
@@ -436,8 +436,8 @@
           </div>
         </div>
         <div class="legend">
-          <span class="pill"><span style="width:12px;height:12px;border-radius:3px;background:linear-gradient(90deg,var(--gold),var(--gold-700))"></span> Peak wildlife</span>
-          <span class="pill"><span style="width:12px;height:12px;border-radius:3px;background:linear-gradient(90deg,var(--magenta),var(--magenta-700))"></span> Clear skies</span>
+          <span class="pill"><span style="width:12px;height:12px;border-radius:3px;background:linear-gradient(90deg,var(--gold),var,--gold-700))"></span> Peak wildlife</span>
+          <span class="pill"><span style="width:12px;height:12px;border-radius:3px;background:linear-gradient(90deg,var(--magenta),var,--magenta-700))"></span> Clear skies</span>
           <span class="pill"><span style="width:12px;height:12px;border-radius:3px;background:linear-gradient(90deg,#ffd76a,#ffe39a)"></span> Top beach time</span>
         </div>
       </div>
@@ -491,12 +491,12 @@
         <p>Click a card to view itineraries, highlights and sample stays for each destination.</p>
       </div>
 
-      <div class="grid" style="grid-template-columns:repeat(3,1fr); gap:1rem">
+      <div class="grid cols-3">
         <a class="card-link reveal" href="serengeti-explorer-gold-magenta.html" aria-label="Serengeti National Park">
           <article class="itin-card">
             <div class="itin-img">
               <span class="badge">Serengeti</span>
-              <img src="assets/img/ChatGPT Image Aug 15, 2025, 11_19_05 PM.png" alt="Serengeti plains at sunset">
+              <img src="assets/img/serengeti.jpg" alt="Serengeti plains at sunset" loading="lazy" decoding="async">
             </div>
             <div class="itin-body">
               <div class="itin-head">
@@ -528,7 +528,7 @@
           <article class="itin-card">
             <div class="itin-img">
               <span class="badge">Zanzibar</span>
-              <img src="assets/img/pexels-taryn-elliott-5859217.jpg" alt="Zanzibar coastline">
+              <img src="assets/img/zanzibar.jpg" alt="Zanzibar coastline" loading="lazy" decoding="async">
             </div>
             <div class="itin-body">
               <div class="itin-head">
@@ -560,7 +560,7 @@
           <article class="itin-card">
             <div class="itin-img">
               <span class="badge">Manyara</span>
-              <img src="assets/img/ChatGPT Image Aug 16, 2025, 03_57_38 AM.png" alt="Lake Manyara birds">
+              <img src="assets/img/manyara.jpg" alt="Lake Manyara birds" loading="lazy" decoding="async">
             </div>
             <div class="itin-body">
               <div class="itin-head">
@@ -576,7 +576,7 @@
           <article class="itin-card">
             <div class="itin-img">
               <span class="badge">Highlands</span>
-              <img src="assets/img/dining_scene_under_500kb.jpg" alt="Highlands near Arusha">
+              <img src="assets/img/highlands.jpg" alt="Highlands near Arusha" loading="lazy" decoding="async">
             </div>
             <div class="itin-body">
               <div class="itin-head">
@@ -653,11 +653,11 @@
           <form action="mailto:info@safarichic.com" method="post" enctype="text/plain">
             <input name="name" placeholder="Full Name" required />
             <input name="contact" placeholder="Email or WhatsApp" required />
-            <div class="grid" style="grid-template-columns:1fr 1fr; gap:.8rem">
+            <div class="grid cols-2">
               <input name="start" type="date" placeholder="Start Date" />
               <input name="end" type="date" placeholder="End Date" />
             </div>
-            <div class="grid" style="grid-template-columns:1fr 1fr; gap:.8rem">
+            <div class="grid cols-2">
               <input name="group" type="number" min="1" placeholder="Group Size" />
               <select name="budget">
                 <option value="">Budget Range</option>
@@ -666,7 +666,7 @@
                 <option>Luxury</option>
               </select>
             </div>
-            <div class="grid" style="grid-template-columns:1fr 1fr 1fr; gap:.6rem">
+            <div class="grid cols-3">
               <label style="display:flex;gap:.4rem;align-items:center"><input type="checkbox" name="interests" value="Safari" /> Safari</label>
               <label style="display:flex;gap:.4rem;align-items:center"><input type="checkbox" name="interests" value="Culture" /> Culture</label>
               <label style="display:flex;gap:.4rem;align-items:center"><input type="checkbox" name="interests" value="Beach" /> Beach</label>
@@ -678,7 +678,7 @@
         </div>
         <div class="side-image reveal">
           <span class="tag"><i class="bi bi-stars"></i> Safari Chic</span>
-          <img src="assets/img/pexels-limonovdigital-8765889.jpg" alt="Zanzibar sunset shoreline" loading="lazy">
+          <img src="assets/img/pexels-limonovdigital-8765889.jpg" alt="Zanzibar sunset shoreline" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -699,7 +699,7 @@
         <p class="ft-note">Offering highly personalized, bespoke safaris across Tanzania & Zanzibar.</p>
       </div>
       <div>
-        <div class="grid" style="grid-template-columns:repeat(3,1fr); gap:1rem">
+        <div class="grid cols-3">
           <div class="card">
             <h3><i class="bi bi-geo-alt"></i> Office</h3>
             <p class="muted">Zanzibar • Tanzania</p>

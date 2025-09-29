@@ -257,7 +257,7 @@
 
   <!-- HERO -->
   <section class="panel hero" id="home" aria-label="Hero">
-    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/2151690191.jpg" aria-hidden="true">
+    <video id="heroVid" class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/img/2151690191.jpg" aria-hidden="true">
       <source src="assets3/video/hero-vid.mp4" type="video/mp4" />
     </video>
     <div class="section-inner reveal">
@@ -371,102 +371,7 @@
     </div>
   </section>
 
-  <!-- BEST TIME TO VISIT -->
-  <section class="panel" id="besttime">
-    <div class="section-inner">
-      <div class="section-head">
-        <span class="kicker">Seasonality</span>
-        <h2>Best Time to Visit</h2>
-        <p>Peak wildlife during the dry season; tranquil beaches year-round with short rainy windows.</p>
-      </div>
-      <div class="timeline-wrap reveal" role="region" aria-label="Best time bands">
-        <div class="timeline-filters" role="toolbar" aria-label="Timeline filters">
-          <button class="filter" data-filter="weather" aria-pressed="true"><i class="bi bi-sun"></i> Weather</button>
-          <button class="filter" data-filter="wildlife" aria-pressed="true"><i class="bi bi-bug"></i> Wildlife</button>
-          <button class="filter" data-filter="trekking" aria-pressed="true"><i class="bi bi-flag"></i> Trekking</button>
-          <button class="filter" data-filter="beach" aria-pressed="true"><i class="bi bi-umbrella-beach"></i> Beach</button>
-          <button class="filter" data-filter="budget" aria-pressed="false"><i class="bi bi-cash"></i> Budget</button>
-        </div>
-        <div class="months">
-          <div>J</div><div>F</div><div>M</div><div>A</div><div>M</div><div>J</div>
-          <div>J</div><div>A</div><div>S</div><div>O</div><div>N</div><div>D</div>
-        </div>
-        <div class="bands">
-          <!-- Serengeti -->
-          <div class="label"><span class="pill"><i class="bi bi-tree"></i> Serengeti</span></div>
-          <div class="band" aria-label="Serengeti">
-            <span style="background:#ffffff12" data-tags="rain" data-tip="Short rains likely"></span>
-            <span style="background:#ffffff12" data-tags="rain" data-tip="Short rains likely"></span>
-            <span style="background:#ffffff12" data-tags="rain" data-tip="Rains easing"></span>
-            <span style="background:#ffffff16"></span>
-            <span style="background:#ffffff16"></span>
-            <span class="overlap" data-tags="wildlife,weather" data-tip="Clear skies + peak wildlife"><span class="icon-duo"><i class="bi bi-bug"></i><i class="bi bi-sun"></i></span></span>
-            <span class="overlap" data-tags="wildlife,weather" data-tip="Clear skies + peak wildlife"><span class="icon-duo"><i class="bi bi-bug"></i><i class="bi bi-sun"></i></span></span>
-            <span class="overlap" data-tags="wildlife,weather" data-tip="Clear skies + peak wildlife"><span class="icon-duo"><i class="bi bi-bug"></i><i class="bi bi-sun"></i></span></span>
-            <span class="overlap" data-tags="wildlife,weather" data-tip="Clear skies + peak wildlife"><span class="icon-duo"><i class="bi bi-bug"></i><i class="bi bi-sun"></i></span></span>
-            <span style="background:#ffffff16"></span>
-            <span style="background:#ffffff16"></span>
-            <span style="background:#ffffff12" data-tags="rain" data-tip="Short rains return"></span>
-          </div>
-          <!-- Ngorongoro -->
-          <div class="label"><span class="pill"><i class="bi bi-geo-alt"></i> Ngorongoro</span></div>
-          <div class="band" aria-label="Ngorongoro">
-            <span style="background:#ffffff16"></span>
-            <span style="background:#ffffff16"></span>
-            <span style="background:#ffffff16"></span>
-            <span style="background:#ffffff16"></span>
-            <span style="background:#ffffff16"></span>
-            <span style="background:linear-gradient(90deg,var(--sky),var(--sky-700))" data-tags="weather" data-tip="Clear, cool and crisp"><i class="bi bi-sun"></i></span>
-            <span style="background:linear-gradient(90deg,var(--sky),var(--sky-700))" data-tags="weather" data-tip="Clear, cool and crisp"><i class="bi bi-sun"></i></span>
-            <span style="background:linear-gradient(90deg,var(--sky),var(--sky-700))" data-tags="weather" data-tip="Clear, cool and crisp"><i class="bi bi-sun"></i></span>
-            <span style="background:linear-gradient(90deg,var(--sky),var(--sky-700))" data-tags="weather" data-tip="Clear, cool and crisp"><i class="bi bi-sun"></i></span>
-            <span style="background:#ffffff16"></span>
-            <span style="background:#ffffff16"></span>
-            <span style="background:#ffffff16"></span>
-          </div>
-          <!-- Kilimanjaro -->
-          <div class="label"><span class="pill"><i class="bi bi-flag"></i> Kilimanjaro</span></div>
-          <div class="band" aria-label="Kilimanjaro">
-            <span style="background:linear-gradient(90deg,var(--sky),var(--sky-700))" data-tags="trekking,weather" data-tip="Short dry season — best for climbing"><i class="bi bi-sun"></i></span>
-            <span style="background:linear-gradient(90deg,var(--sky),var(--sky-700))" data-tags="trekking,weather" data-tip="Short dry season — best for climbing"><i class="bi bi-sun"></i></span>
-            <span style="background:linear-gradient(90deg,var(--sky),var(--sky-700))" data-tags="trekking,weather" data-tip="Short dry season — early March okay"><i class="bi bi-sun"></i></span>
-            <span style="background:#ffffff16" data-tags="rain" data-tip="Long rains build — avoid"><i class="bi bi-cloud-rain"></i></span>
-            <span style="background:#ffffff16" data-tags="rain" data-tip="Long rains — avoid"><i class="bi bi-cloud-rain"></i></span>
-            <span style="background:linear-gradient(90deg,var(--sky),var(--sky-700))" data-tags="trekking,weather" data-tip="Long dry season starts (late Jun)"><i class="bi bi-sun"></i></span>
-            <span style="background:linear-gradient(90deg,var(--sky),var(--sky-700))" data-tags="trekking,weather" data-tip="Prime climbing window"><i class="bi bi-sun"></i></span>
-            <span style="background:linear-gradient(90deg,var(--sky),var(--sky-700))" data-tags="trekking,weather" data-tip="Prime climbing window"><i class="bi bi-sun"></i></span>
-            <span style="background:linear-gradient(90deg,var(--sky),var(--sky-700))" data-tags="trekking,weather" data-tip="Prime climbing window"><i class="bi bi-sun"></i></span>
-            <span style="background:linear-gradient(90deg,var(--sky),var(--sky-700))" data-tags="trekking,weather" data-tip="Prime climbing window"><i class="bi bi-sun"></i></span>
-            <span style="background:#ffffff16" data-tags="rain" data-tip="Short rains build"><i class="bi bi-cloud-rain"></i></span>
-            <span style="background:linear-gradient(90deg,var(--sky),var(--sky-700))" data-tags="trekking,weather" data-tip="Short dry season returns (mid‑Dec)"><i class="bi bi-sun"></i></span>
-          </div>
-          <!-- Zanzibar -->
-          <div class="label"><span class="pill"><i class="bi bi-umbrella-beach"></i> Zanzibar</span></div>
-          <div class="band" aria-label="Zanzibar">
-            <span style="background:linear-gradient(90deg,var(--sand),var(--sand-700))" data-tags="beach" data-tip="Warm water, sunny"><i class="bi bi-umbrella-beach"></i></span>
-            <span style="background:linear-gradient(90deg,var(--sand),var(--sand-700))" data-tags="beach" data-tip="Warm water, sunny"><i class="bi bi-umbrella-beach"></i></span>
-            <span style="background:#ffffff10" data-tags="rain" data-tip="Heavier rain (long rains)"><i class="bi bi-cloud-rain"></i></span>
-            <span style="background:#ffffff10" data-tags="rain" data-tip="Heavier rain (long rains)"><i class="bi bi-cloud-rain"></i></span>
-            <span style="background:#ffffff10" data-tags="rain" data-tip="Heavier rain (long rains)"><i class="bi bi-cloud-rain"></i></span>
-            <span style="background:linear-gradient(90deg,var(--sand),var(--sand-700))" data-tags="beach,weather" data-tip="Cooler, clear, low humidity"><span class="icon-duo"><i class="bi bi-sun"></i><i class="bi bi-umbrella-beach"></i></span></span>
-            <span style="background:linear-gradient(90deg,var(--sand),var(--sand-700))" data-tags="beach,weather" data-tip="Cooler, clear, low humidity"><span class="icon-duo"><i class="bi bi-sun"></i><i class="bi bi-umbrella-beach"></i></span></span>
-            <span style="background:linear-gradient(90deg,var(--sand),var(--sand-700))" data-tags="beach,weather" data-tip="Cooler, clear, low humidity"><span class="icon-duo"><i class="bi bi-sun"></i><i class="bi bi-umbrella-beach"></i></span></span>
-            <span style="background:linear-gradient(90deg,var(--sand),var(--sand-700))" data-tags="beach,weather" data-tip="Cooler, clear, low humidity"><span class="icon-duo"><i class="bi bi-sun"></i><i class="bi bi-umbrella-beach"></i></span></span>
-            <span style="background:#ffffff10" data-tags="rain" data-tip="Short rains"><i class="bi bi-cloud-rain"></i></span>
-            <span style="background:#ffffff10" data-tags="rain" data-tip="Short rains"><i class="bi bi-cloud-rain"></i></span>
-            <span style="background:linear-gradient(90deg,var(--sand),var(--sand-700))" data-tags="beach" data-tip="Festive sunny season"><i class="bi bi-umbrella-beach"></i></span>
-          </div>
-        </div>
-        <div class="legend">
-          <span class="pill"><span style="width:12px;height:12px;border-radius:3px;background:linear-gradient(90deg,var(--green),var(--green-700))"></span> Peak wildlife</span>
-          <span class="pill"><span style="width:12px;height:12px;border-radius:3px;background:linear-gradient(90deg,var(--sky),var(--sky-700))"></span> Clear/dry skies</span>
-          <span class="pill"><span style="width:12px;height:12px;border-radius:3px;background:linear-gradient(90deg,var(--sand),var(--sand-700))"></span> Top beach time</span>
-          <span class="pill"><span style="width:12px;height:12px;border-radius:3px;background:#ffffff16"></span> Rainy/off‑peak</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  
   <!-- EXPERIENCES -->
   <section class="panel" id="experiences">
     <div class="section-inner">
@@ -706,6 +611,23 @@
       });
     });
     applyFilters();
+
+    // Ensure hero video autoplays inline on mobile (GitHub Pages/iOS quirks)
+    const hv = document.getElementById('heroVid');
+    if(hv){
+      hv.muted = true; // required for autoplay on mobile
+      hv.setAttribute('playsinline','');
+      hv.setAttribute('webkit-playsinline','');
+      const tryPlay = ()=> hv.play().catch(()=>{});
+      // Try immediate play and on visibility
+      tryPlay();
+      document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) tryPlay(); });
+      // As fallback, first user tap starts it
+      const kick = ()=>{ tryPlay(); window.removeEventListener('touchstart', kick); window.removeEventListener('click', kick); };
+      window.addEventListener('touchstart', kick, {once:true, passive:true});
+      window.addEventListener('click', kick, {once:true});
+      hv.addEventListener('playing', ()=>{ hv.removeAttribute('poster'); });
+    }
   </script>
 </body>
 </html>

@@ -90,9 +90,7 @@
     .hero{position:relative; overflow:hidden; isolation:isolate;}
     .hero::before{
       content:""; position:absolute; inset:0;
-      background-image:url(assets/img/2151690191.jpg);
-      background-size:cover; background-position:center;
-      transform:scale(1.02); filter:brightness(.78) saturate(1.05); z-index:-2;
+      background:none; z-index:-3;
     }
     .hero::after{
       content:""; position:absolute; inset:0;
@@ -101,6 +99,7 @@
         radial-gradient(700px 400px at 15% 110%, rgba(255,184,0,.22), transparent 60%);
       z-index:-1;
     }
+    .hero-video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; filter:brightness(.78) saturate(1.05); pointer-events:none}
     .kicker{font-weight:800; letter-spacing:.12em; text-transform:uppercase; font-size:.8rem}
     .hero h1{
       font-family:Poppins, sans-serif; font-weight:800; line-height:1.05;
@@ -258,6 +257,9 @@
 
   <!-- HERO -->
   <section class="panel hero" id="home" aria-label="Hero">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/2151690191.jpg" aria-hidden="true">
+      <source src="assets3/video/hero-vid.mp4" type="video/mp4" />
+    </video>
     <div class="section-inner reveal">
       <span class="kicker">Tailor-made • Local Guides • Responsible</span>
       <h1>Experience Tanzania — wild, warm, unforgettable.</h1>

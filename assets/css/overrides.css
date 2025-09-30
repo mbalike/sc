@@ -1,0 +1,21 @@
+/* Global button color override to brand magenta */
+/* Uses CSS vars with sensible fallbacks for pages missing definitions */
+
+.btn,
+.btn-primary,
+.btn-gold,
+button.btn,
+a.btn {
+  background: linear-gradient(135deg, var(--magenta, #c4006a), var(--magenta-700, #a10057)) !important;
+  color: #fff !important;
+  border-color: #ffffff15 !important;
+}
+
+/* Keep existing hover lift */
+.btn:hover,
+a.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Ensure anchor buttons don’t underline */
+a.btn { text-decoration: none; }

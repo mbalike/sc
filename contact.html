@@ -109,9 +109,13 @@
     summary{cursor:pointer;font-weight:700}
 
     footer{padding:36px 0 60px;color:#cfcfcf}
+    /* Back to top */
+    .backtop{position:fixed; right:18px; bottom:18px; z-index:60; opacity:0; pointer-events:none; transition:.3s}
+    .backtop.show{opacity:1; pointer-events:auto}
   </style>
 </head>
 <body>
+  <div id="top" aria-hidden="true"></div>
   <!-- Header -->
   <header class="site-header" id="site-header">
     <div class="container nav">
@@ -270,6 +274,9 @@
     </div>
   </footer>
 
+  <!-- Back to top -->
+  <a href="#top" class="btn btn-primary backtop" id="backtop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
+
   <script>
     // mobile nav toggle
     const burger = document.querySelector('.hamburger');
@@ -283,6 +290,13 @@
       if(!f.email.value || !f.name.value){ alert("Please add your name and email so we can reach you."); return false; }
       return true;
     }
+
+    // Back to top toggle
+    const backtop=document.getElementById('backtop');
+    const onScroll=()=>{
+      if(window.scrollY>600){ backtop?.classList.add('show'); } else { backtop?.classList.remove('show'); }
+    };
+    document.addEventListener('scroll', onScroll); onScroll();
   </script>
 </body>
 </html>

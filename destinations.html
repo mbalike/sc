@@ -87,8 +87,8 @@
       .site-header{height:64px}
       /* Match index mobile logo size */
       .brand .logo{width:44px;height:44px}
-      /* Tighter hero on mobile */
-      .hero{min-height:60vh;padding:90px 0 70px}
+      /* Full-height hero on mobile */
+      .hero{min-height:100vh;padding:90px 0 70px}
       .hero h1{font-size:clamp(1.6rem,5.4vw,2.6rem)}
       /* Compact buttons & chips */
       .btn{padding:.7rem .95rem;font-weight:700}
@@ -96,7 +96,7 @@
     }
 
     @media (max-width: 600px){
-      .hero{min-height:55vh;padding:72px 0 60px}
+      .hero{min-height:100vh;padding:72px 0 60px}
       .hero h1{font-size:clamp(1.3rem,6.5vw,2rem)}
       .card-img{height:160px}
       .dest-media{min-height:220px}
@@ -111,8 +111,8 @@
     .section-head h2{font:800 clamp(1.6rem,3.5vw,2.4rem)/1.15 Poppins;margin:.2rem 0 .6rem}
     .section-head p{color:#d9d9d9;max-width:70ch;margin:0 auto}
 
-    /* Hero with photo background */
-    .hero{position:relative; min-height:78vh; display:grid; align-items:center; isolation:isolate; overflow:hidden}
+  /* Hero with photo background */
+  .hero{position:relative; min-height:100vh; display:grid; align-items:center; isolation:isolate; overflow:hidden}
     .hero::before{
       content:""; position:absolute; inset:0;
       background-image:url(assets/img/pexels-leon-aschemann-734730704-31355917.jpg);

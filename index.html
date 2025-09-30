@@ -67,8 +67,9 @@
     }
     .site-header.scrolled{ background:rgba(10,10,14,.75); border-bottom-color:var(--line); }
     .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-    .brand{display:flex;align-items:center;gap:.9rem}
-    .logo{width:40px;height:40px;border-radius:10px;background:conic-gradient(from 120deg,var(--gold),var(--magenta));box-shadow:0 0 0 2px #ffffff10 inset; overflow:hidden; display:inline-grid; place-items:center}
+  .brand{display:flex;align-items:center;gap:.9rem}
+  /* Increased logo size for better brand presence */
+  .logo{width:130px;height:129px;border-radius:10px; overflow:hidden;  place-items:center}
     .logo img{width:100%;height:100%;object-fit:contain;display:block;border-radius:10px}
     .brand h3{margin:0;font:800 1.1rem/1 Poppins, sans-serif;letter-spacing:.3px}
     nav ul{display:flex;gap:1.2rem;list-style:none;padding:0;margin:0}
@@ -80,6 +81,8 @@
       nav ul{display:none}
       .hamburger{display:block;font-size:1.5rem}
       nav ul.show{display:flex;position:absolute;top:64px;left:0;right:0;background:#0f0e14;padding:1rem 1.2rem;flex-direction:column;border-bottom:1px solid var(--line)}
+      /* Keep logo comfortably sized within the 64px header on mobile */
+      .brand .logo{width:44px;height:44px}
     }
 
     /* Sections */
@@ -195,7 +198,7 @@
     .footer-grid{display:grid;grid-template-columns: 1.2fr .8fr; gap:1rem}
     @media (max-width: 900px){.footer-grid{grid-template-columns:1fr}}
     .ft-brand{display:flex;align-items:center;gap:.8rem}
-    .ft-brand .logo{width:32px;height:32px;border-radius:10px;background:conic-gradient(from 120deg,var(--gold),var(--magenta))}
+    .ft-brand .logo{width:32px;height:32px;border-radius:10px;}
     .ft-brand .logo img{width:100%;height:100%;object-fit:contain;display:block;border-radius:10px}
     .ft-note{color:#9c9c9c;font-size:.95rem}
 
@@ -238,9 +241,9 @@
     <div class="container nav">
       <div class="brand">
         <div class="logo" aria-hidden="true">
-          <img src="assets/img/logo.png" alt="Safari Chic logo">
+          <img src="assets3/img/logo1.png" alt="Safari Chic logo">
         </div>
-        <h3>Safari Chic</h3>
+        
       </div>
       <nav aria-label="Main">
         <button class="hamburger" aria-controls="menu" aria-expanded="false"><i class="bi bi-list"></i></button>
@@ -534,7 +537,7 @@
       <div>
         <div class="ft-brand">
           <div class="logo">
-            <img src="assets/img/logo.png" alt="Safari Chic logo">
+            <img src="assets3/img/logo1.png" alt="Safari Chic logo">
           </div>
           <h4 style="margin:0">Safari Chic</h4>
         </div>

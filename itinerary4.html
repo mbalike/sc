@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mount Kilimanjaro — Machame Route (7 Days) | Safari Chic</title>
   <meta name="description" content="Premium 7-day Machame Route itinerary for Mount Kilimanjaro — balanced acclimatization, scenic camps, and a luxe gold & magenta design." />
+  <link rel="shortcut icon" href="assets3/img/logo1.0.png" type="image/x-icon">
 
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +49,8 @@
     .site-header.scrolled{ background:rgba(10,10,14,.75); border-bottom-color:var(--line); }
     .nav{display:flex; align-items:center; justify-content:space-between; gap:1rem}
     .brand{display:flex; align-items:center; gap:.9rem}
-    .logo{width:40px;height:40px;border-radius:10px;background:conic-gradient(from 120deg,var(--gold),var(--magenta));box-shadow:0 0 0 2px #ffffff10 inset}
+  .logo{width:80px;height:80px;border-radius:10px;overflow:hidden;place-items:center}
+  .logo img{width:100%;height:100%;object-fit:contain;display:block;border-radius:10px}
     .brand h3{margin:0; font:800 1.1rem/1 Poppins, sans-serif; letter-spacing:.3px}
     nav ul{display:flex; gap:1.2rem; list-style:none; padding:0; margin:0}
     nav a{color:#ddd; text-decoration:none; font-weight:600; font-size:.95rem}
@@ -58,6 +60,7 @@
       nav ul{display:none}
       .hamburger{display:block; font-size:1.5rem}
       nav ul.show{display:flex; position:absolute; top:72px; left:0; right:0; background:#0f0e14; padding:1rem 1.2rem; flex-direction:column; border-bottom:1px solid var(--line)}
+      .brand .logo{width:44px;height:44px}
     }
 
     /* Hero with photo */
@@ -142,7 +145,8 @@
     .footer-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:1rem}
     @media (max-width: 900px){.footer-grid{grid-template-columns:1fr}}
     .ft-brand{display:flex; align-items:center; gap:.8rem}
-    .ft-brand .logo{width:32px;height:32px}
+  .ft-brand .logo{width:32px;height:32px}
+  .ft-brand .logo img{width:100%;height:100%;object-fit:contain;display:block;border-radius:10px}
     .ft-note{color:#9c9c9c; font-size:.95rem}
 
     /* Back to top */
@@ -155,20 +159,22 @@
   <header class="site-header" id="site-header">
     <div class="container nav">
       <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <h3>Safari Chic</h3>
+        <div class="logo" aria-hidden="true">
+          <img src="assets3/img/logo1.0.png" alt="Safari Chic logo">
+        </div>
+        
       </div>
       <nav aria-label="Main">
         <button class="hamburger" aria-controls="menu" aria-expanded="false"><i class="bi bi-list"></i></button>
         <ul id="menu">
-          <li><a href="index-gold-magenta-full.html">Home</a></li>
-          <li><a href="destinations-gold-magenta-fullheight.html">Destinations</a></li>
-          <li><a href="itineraries-gold-magenta.html">Itineraries</a></li>
-          <li><a href="contact-gold-magenta.html">Contacts</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="itineraries.html">Itineraries</a></li>
+          <li><a href="contact.html">Contacts</a></li>
         </ul>
       </nav>
       <div class="actions">
-        <a class="btn btn-gold" href="#contact"><i class="bi bi-geo"></i> Book Now</a>
+        <a class="btn btn-gold" href="itineraries.html"><i class="bi bi-geo"></i> Itineraries</a>
       </div>
     </div>
   </header>
@@ -562,16 +568,18 @@
     <div class="container footer-grid">
       <div>
         <div class="ft-brand">
-          <div class="logo"></div>
+          <div class="logo">
+            <img src="assets3/img/logo1.0.png" alt="Safari Chic logo">
+          </div>
           <h4 style="margin:0">Safari Chic</h4>
         </div>
-        <p class="ft-note">Offering highly personalized, bespoke safaris & treks across Tanzania & Zanzibar.</p>
+        <p class="ft-note">Luxury African Safaris, Exclusively Yours</p>
       </div>
       <div>
         <div class="grid cols-3">
           <div class="card">
             <h3><i class="bi bi-geo-alt"></i> Office</h3>
-            <p class="muted">Zanzibar • Tanzania</p>
+            <p class="muted">Zanzibar & Tanzania</p>
           </div>
           <div class="card">
             <h3><i class="bi bi-envelope-open"></i> Email</h3>
@@ -579,7 +587,7 @@
           </div>
           <div class="card">
             <h3><i class="bi bi-telephone"></i> Phone</h3>
-            <p class="muted">+255 742 930833</p>
+            <p class="muted">+255 123 456 789</p>
           </div>
         </div>
       </div>

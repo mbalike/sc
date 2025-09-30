@@ -195,6 +195,15 @@
     .side-image img{width:100%; height:100%; object-fit:cover; display:block}
     .side-image .tag{position:absolute; top:12px; left:12px; background:linear-gradient(135deg,var(--magenta),var(--magenta-700)); padding:.45rem .7rem; border-radius:999px; font-weight:800; font-size:.82rem}
 
+  /* About */
+  #about.panel{min-height:auto; padding:clamp(40px,8vw,80px) 0}
+  .about-wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:1rem; align-items:stretch}
+  @media (max-width: 980px){ .about-wrap{grid-template-columns:1fr} }
+  .about-card{border:1px solid var(--line); border-radius:16px; padding:1.2rem; background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)); box-shadow:var(--shadow-sm)}
+  .about-card .brand-mini{display:flex; align-items:center; gap:.6rem; margin-bottom:.6rem}
+  .brand-mini img{width:36px; height:36px; border-radius:8px; object-fit:contain}
+  .about-meta{display:flex; gap:.5rem; flex-wrap:wrap; margin:.8rem 0 1.1rem}
+
     /* Footer */
     footer{padding:36px 0 60px;color:#cfcfcf}
     .footer-grid{display:grid;grid-template-columns: 1.2fr .8fr; gap:1rem}
@@ -279,6 +288,33 @@
         <span class="chip"><i class="bi bi-star"></i> 5★ Guides</span>
         <span class="chip"><i class="bi bi-shield-check"></i> Fully Insured</span>
         <span class="chip"><i class="bi bi-geo-alt"></i> Local Expertise</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="panel" id="about">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="kicker">About Safari Chic</span>
+        <h2>Where wilderness meets thoughtful luxury</h2>
+        <p>More than travel, Safari Chic is your exclusive gateway to Tanzania and Zanzibar. We create journeys that weave wilderness, culture, and coast into one seamless narrative of luxury — leaving an imprint as timeless as Tanzania itself.</p>
+      </div>
+      <div class="about-wrap">
+        <div class="about-card reveal">
+          <div class="brand-mini"><img src="assets3/img/logo1.png" alt="Safari Chic logo"><strong>Safari Chic</strong></div>
+          <p class="muted">We’re locally rooted experts with a global eye for design and detail. From the Great Migration to Stone Town’s spice-scented alleys, we craft seamless, soulful, and stylish journeys — always privately tailored to you.</p>
+          <div class="about-meta">
+            <span class="chip"><i class="bi bi-award"></i> Bespoke & Private</span>
+            <span class="chip"><i class="bi bi-stars"></i> Handpicked Lodges</span>
+            <span class="chip"><i class="bi bi-binoculars"></i> Expert Guiding</span>
+          </div>
+          <a class="btn btn-primary" href="#plan"><i class="bi bi-send"></i> Plan My Chic Escape</a>
+        </div>
+        <div class="side-image reveal">
+          <span class="tag"><i class="bi bi-heart"></i> Curated with care</span>
+          <img src="assets/img/pexels-frans-van-heerden-201846-4894482.jpg" alt="Luxury camp in the wilderness" loading="lazy" decoding="async">
+        </div>
       </div>
     </div>
   </section>
@@ -538,16 +574,7 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="panel" id="about">
-    <div class="section-inner">
-      <div class="section-head">
-        <span class="kicker">About Safari Chic</span>
-        <h2>About Safari Chic</h2>
-        <p>More than travel, Safari Chic is your exclusive gateway to Tanzania and Zanzibar. We create journeys that weave wilderness, culture, and coast into one seamless narrative of luxury — leaving an imprint as timeless as Tanzania itself.</p>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- Footer -->
   <footer>

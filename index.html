@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Safari Chic — Tanzania Safaris & Zanzibar Escapes</title>
   <meta name="description" content="Tailor-made safaris across Serengeti, Ngorongoro and Zanzibar — modern, premium experiences crafted by local experts." />
+  <link rel="shortcut icon" href="assets3/img/logo1.png" type="image/x-icon">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -116,15 +117,16 @@
     .hero .cta{display:flex; gap:.8rem; flex-wrap:wrap; margin-top:1.2rem}
     .hero-badges{margin-top:1rem;display:flex;gap:.6rem;flex-wrap:wrap}
 
-    /* WHY US */
-    .why .cards{display:grid; gap:1rem; grid-template-columns:repeat(3,1fr)}
+  /* WHY US */
+  .why .cards{display:grid; gap:1rem; grid-template-columns:repeat(2,1fr)}
     .card{
       background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
       border:1px solid var(--line); border-radius:16px; padding:1.2rem; box-shadow:var(--shadow-sm);
     }
     .card h3{font:800 1.05rem/1.2 Poppins; margin:.2rem 0 .5rem}
-    .muted{color:#cdcdcd}
-    @media (max-width: 980px){ .why .cards{grid-template-columns:1fr} }
+  .muted{color:#cdcdcd}
+  @media (max-width: 980px){ .why .cards{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width: 680px){ .why .cards{grid-template-columns:1fr} }
 
     /* Cards (shared) */
     .card-link{display:block;text-decoration:none;color:inherit}
@@ -267,11 +269,11 @@
     </video>
     <div class="section-inner reveal">
       <span class="kicker">Tailor-made • Local Guides • Responsible</span>
-      <h1>Experience Tanzania — wild, warm, unforgettable.</h1>
-      <p class="subtitle">Serengeti’s great plains, Ngorongoro’s natural amphitheater and Zanzibar’s turquoise shores — we craft the plan so you can feel it all.</p>
+      <h1>Luxury African Safaris, Exclusively Yours</h1>
+      <p class="subtitle">For the traveler who craves bold experiences with a luxe edge, Safari Chic curates journeys that go beyond the ordinary.</p>
       <div class="cta">
-        <a class="btn btn-primary" href="#plan"><i class="bi bi-send"></i> Plan My Safari</a>
-        <a class="btn btn-gold" href="#itineraries"><i class="bi bi-compass"></i> Explore Itineraries</a>
+        <a class="btn btn-primary" href="#plan"><i class="bi bi-send"></i> Plan My Chic Escape</a>
+        <a class="btn btn-gold" href="#itineraries"><i class="bi bi-compass"></i> Discover Safari Chic Journeys</a>
       </div>
       <div class="hero-badges">
         <span class="chip"><i class="bi bi-star"></i> 5★ Guides</span>
@@ -285,22 +287,26 @@
   <section class="panel why" id="why">
     <div class="section-inner">
       <div class="section-head">
-        <span class="kicker">Why Travel With Us</span>
-        <h2>Travel beautifully, with everything handled.</h2>
-        <p>Smart routes, stylish stays and guides who know every track.</p>
+        <span class="kicker">Why Safari Chic</span>
+        <h2>Why settle for ordinary when extraordinary is possible?</h2>
+        <p>At Safari Chic, we merge Tanzania’s untamed beauty with thoughtful luxury, ensuring your journey is effortless, immersive, and unforgettable — so every moment feels intentional, elevated, and undeniably chic.</p>
       </div>
       <div class="cards">
         <article class="card reveal">
-          <h3><i class="bi bi-map"></i> Effortless Planning</h3>
-          <p class="muted">Great Migration timing, permits, flights & transfers — sorted. You wake up for sunrise; we handle the rest.</p>
+          <h3><i class="bi bi-map"></i> Flawless Journeys →</h3>
+          <p class="muted">Every permit, flight, and detail handled — so you simply arrive and immerse in the moment.</p>
         </article>
         <article class="card reveal">
-          <h3><i class="bi bi-people"></i> Authentic Encounters</h3>
-          <p class="muted">Respectful cultural visits, spice tours and Swahili flavors — crafted with local partners.</p>
+          <h3><i class="bi bi-people"></i> Meaningful Encounters →</h3>
+          <p class="muted">Guides with roots in the land and culture, crafting experiences that leave you with more than photos — with stories worth telling.</p>
         </article>
         <article class="card reveal">
-          <h3><i class="bi bi-house-heart"></i> Refined Comfort</h3>
-          <p class="muted">Boutique lodges and chic tented camps that pair location with warm Tanzanian hospitality.</p>
+          <h3><i class="bi bi-house-heart"></i> Elevated Stays →</h3>
+          <p class="muted">Boutique lodges and chic camps — wilderness outside, indulgence inside.</p>
+        </article>
+        <article class="card reveal">
+          <h3><i class="bi bi-stars"></i> Personalized Perfection →</h3>
+          <p class="muted">From big moments to the smallest touches, every detail is tailored to fit your unique travel story.</p>
         </article>
       </div>
     </div>
@@ -310,9 +316,10 @@
   <section class="panel" id="itineraries" aria-label="Featured Itineraries">
     <div class="section-inner">
       <div class="section-head">
-        <span class="kicker">Safari Itineraries</span>
-        <h2>Featured Itineraries</h2>
-        <p>Flexible, private and paced for you. Ask for a custom quote.</p>
+        <span class="kicker">Featured Journeys</span>
+        <h2>Featured Journeys</h2>
+        <p>Every journey is flexible, private, and distinctly designed for you.</p>
+        <p style="margin-top:.6rem"><a href="#plan" class="btn btn-gold"><i class="bi bi-chat-dots"></i> Request Your Safari Chic Quote</a></p>
       </div>
 
       <div class="itins-grid">
@@ -324,8 +331,8 @@
               <img src="assets/img/pexels-twilightkenya-18000463.jpg" alt="Elephants at golden hour">
             </div>
             <div class="itin-body">
-              <div class="itin-head"><h3 class="itin-title">Wakanda Serenity</h3><span class="dur">3 Days</span></div>
-              <p class="muted">Safari from Zanzibar — fast, focused, unforgettable.</p>
+              <div class="itin-head"><h3 class="itin-title">The Chic Escape</h3><span class="dur">3 Days</span></div>
+              <p class="muted">Your swift path to the wild. Fly from Zanzibar and dive straight into game drives — an intimate taste of Tanzania’s beauty in just three unforgettable days.</p>
               <div class="highlights">
                 <span class="chip"><i class="bi bi-tree"></i> Mikumi/Nyerere</span>
                 <span class="chip"><i class="bi bi-binoculars"></i> Big Five</span>
@@ -343,8 +350,8 @@
               <img src="assets/img/pexels-mikeknibbs-17849763.jpg" alt="Savannah and ocean blend">
             </div>
             <div class="itin-body">
-              <div class="itin-head"><h3 class="itin-title">Serengeti Explorer</h3><span class="dur">5 Days</span></div>
-              <p class="muted">Wildlife + Stone Town stories — the sweet spot.</p>
+              <div class="itin-head"><h3 class="itin-title">The Essence</h3><span class="dur">5 Days</span></div>
+              <p class="muted">Five days, perfectly balanced. Witness the majesty of the Serengeti by day, then wander the spice-scented alleys of Stone Town by night — the ultimate blend of adventure and culture.</p>
               <div class="highlights">
                 <span class="chip"><i class="bi bi-binoculars"></i> Tarangire</span>
                 <span class="chip"><i class="bi bi-geo-alt"></i> Ngorongoro</span>
@@ -362,8 +369,8 @@
               <img src="assets/img/Screenshot 2025-08-16 033107.png" alt="Zanzibar coastline at sunset">
             </div>
             <div class="itin-body">
-              <div class="itin-head"><h3 class="itin-title">Ultimate Tanzania & Zanzibar Journey</h3><span class="dur">8 Days</span></div>
-              <p class="muted">Safari, culture and beach — the complete arc.</p>
+              <div class="itin-head"><h3 class="itin-title">Zanzibar Luxe</h3><span class="dur">8 Days</span></div>
+              <p class="muted">The ultimate escape. Eight days spanning it all — sunrise safaris in the Serengeti, the natural wonder of Ngorongoro, and turquoise Zanzibar shores to close your journey in style.</p>
               <div class="highlights">
                 <span class="chip"><i class="bi bi-star"></i> Big Five</span>
                 <span class="chip"><i class="bi bi-minecart-loaded"></i> Ngorongoro Crater</span>
@@ -381,9 +388,9 @@
   <section class="panel" id="experiences">
     <div class="section-inner">
       <div class="section-head">
-        <span class="kicker">Signature Moments</span>
-        <h2>Experiences</h2>
-        <p>Curate the balance of safari, culture and coast.</p>
+        <span class="kicker">Signature Experiences</span>
+        <h2>Signature Experiences</h2>
+        <p><em>“The balance of safari, culture, and coast — elevated moments crafted in luxury.”</em></p>
       </div>
       <div class="exp-grid">
         <article class="exp-card reveal">
@@ -420,7 +427,7 @@
       <div class="section-head">
         <span class="kicker">Destinations</span>
         <h2>Explore Destinations</h2>
-        <p>Click a card to view itineraries, highlights and sample stays for each destination.</p>
+        <p>Unlock the highlights and signature stays of every destination. Tap to explore.</p>
       </div>
 
       <div class="grid cols-3">
@@ -429,7 +436,7 @@
             <div class="itin-img"><span class="badge">Serengeti</span><img src="assets/img/serengeti.jpg" alt="Serengeti plains at sunset" loading="lazy" decoding="async"></div>
             <div class="itin-body">
               <div class="itin-head"><h3 class="itin-title">Serengeti National Park</h3><span class="dur">Classic Safari</span></div>
-              <p class="muted">Home of the Great Migration — sweeping plains, big cat sightings and unforgettable game drives.</p>
+              <p class="muted">Home of the Great Migration, sweeping plains, big cat sightings, and unforgettable game drives.</p>
             </div>
           </article>
         </a>
@@ -439,7 +446,7 @@
             <div class="itin-img"><span class="badge">Ngorongoro</span><img src="assets/img/pexels-gsn-travel-28708345.jpg" alt="Ngorongoro Crater landscape"></div>
             <div class="itin-body">
               <div class="itin-head"><h3 class="itin-title">Ngorongoro Crater</h3><span class="dur">Unique Ecosystem</span></div>
-              <p class="muted">A natural amphitheatre with dense wildlife — rhino, lion, and year-round sightings in a dramatic setting.</p>
+              <p class="muted">A natural amphitheater with epic views, year-round sightings of rhino and lion, and dense wildlife in a dramatic setting.</p>
             </div>
           </article>
         </a>
@@ -449,7 +456,7 @@
             <div class="itin-img"><span class="badge">Zanzibar</span><img src="assets/img/znz.webp" alt="Zanzibar coastline" loading="lazy" decoding="async"></div>
             <div class="itin-body">
               <div class="itin-head"><h3 class="itin-title">Zanzibar</h3><span class="dur">Beaches & Culture</span></div>
-              <p class="muted">Stone Town history, spice tours and turquoise beaches — perfect for winding down after safari.</p>
+              <p class="muted">White-sand shores, turquoise waters, and Stone Town’s rich history. Spice-scented breezes and Swahili charm make it the perfect finale for unwinding after safari.</p>
             </div>
           </article>
         </a>
@@ -459,7 +466,7 @@
             <div class="itin-img"><span class="badge">Tarangire</span><img src="assets/img/tarangire_0.jpg" alt="Tarangire baobab and elephants"></div>
             <div class="itin-body">
               <div class="itin-head"><h3 class="itin-title">Tarangire National Park</h3><span class="dur">Baobabs & Elephants</span></div>
-              <p class="muted">Known for large elephant herds and dramatic baobab-studded landscapes — excellent game-viewing.</p>
+              <p class="muted">Known for its large elephant herds and dramatic, baobab-studded landscapes — excellent game viewing off the beaten path.</p>
             </div>
           </article>
         </a>
@@ -469,7 +476,7 @@
             <div class="itin-img"><span class="badge">Manyara</span><img src="assets/img/lake-manyara-national.jpg" alt="Lake Manyara birds" loading="lazy" decoding="async"></div>
             <div class="itin-body">
               <div class="itin-head"><h3 class="itin-title">Lake Manyara</h3><span class="dur">Birdlife</span></div>
-              <p class="muted">Shallow lake, tree-climbing lions and abundant birdlife — a rewarding half-day visit on many circuits.</p>
+              <p class="muted">Tree-climbing lions, abundant birdlife, and shimmering flocks of flamingos painting the lake in pink beauty.</p>
             </div>
           </article>
         </a>
@@ -479,7 +486,7 @@
             <div class="itin-img"><span class="badge">Highlands</span><img src="assets/img/dining_scene_under_500kb.jpg" alt="Highlands near Arusha" loading="lazy" decoding="async"></div>
             <div class="itin-body">
               <div class="itin-head"><h3 class="itin-title">Ngorongoro Highlands</h3><span class="dur">Scenic Drives</span></div>
-              <p class="muted">Rolling highlands, coffee farms and cooler air — often paired with crater visits and cultural stops.</p>
+              <p class="muted">Rolling highlands, coffee farms, cultural encounters, and cooler air — often paired with crater visits and village stops.</p>
             </div>
           </article>
         </a>
@@ -491,9 +498,9 @@
   <section class="panel" id="plan">
     <div class="section-inner">
       <div class="section-head">
-        <span class="kicker">Tailored For You</span>
+        <span class="kicker">Your Escape Awaits</span>
         <h2>Plan Your Trip</h2>
-        <p>Share a few details and we’ll design a beautiful plan around your dates and style.</p>
+        <p>Share your dates and desires — we’ll curate a safari-chic itinerary inspired by you.</p>
       </div>
       <div class="plan-wrap">
         <div class="form-card reveal">
@@ -518,15 +525,26 @@
               <label style="display:flex;gap:.4rem;align-items:center"><input type="checkbox" name="interests" value="Culture" /> Culture</label>
               <label style="display:flex;gap:.4rem;align-items:center"><input type="checkbox" name="interests" value="Beach" /> Beach</label>
             </div>
-            <textarea name="notes" placeholder="Interests / Notes"></textarea>
+            <textarea name="notes" placeholder="Your Wishlist (interests + notes)"></textarea>
             <button class="btn btn-gold" type="submit"><i class="bi bi-send"></i> Send</button>
-            <p class="muted" style="margin:.4rem 0 0">Prefer WhatsApp? Message us: +255 742 930833</p>
+            <p class="muted" style="margin:.4rem 0 0">Prefer WhatsApp? Message us: +255 123 456 789</p>
           </form>
         </div>
         <div class="side-image reveal">
           <span class="tag"><i class="bi bi-stars"></i> Safari Chic</span>
           <img src="assets/img/pexels-mikeknibbs-17849763.jpg" alt="Zanzibar sunset shoreline" loading="lazy" decoding="async">
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="panel" id="about">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="kicker">About Safari Chic</span>
+        <h2>About Safari Chic</h2>
+        <p>More than travel, Safari Chic is your exclusive gateway to Tanzania and Zanzibar. We create journeys that weave wilderness, culture, and coast into one seamless narrative of luxury — leaving an imprint as timeless as Tanzania itself.</p>
       </div>
     </div>
   </section>
@@ -547,7 +565,7 @@
         <div class="grid cols-3">
           <div class="card">
             <h3><i class="bi bi-geo-alt"></i> Office</h3>
-            <p class="muted">Zanzibar • Tanzania</p>
+            <p class="muted">Zanzibar & Tanzania</p>
           </div>
           <div class="card">
             <h3><i class="bi bi-envelope-open"></i> Email</h3>
@@ -555,7 +573,7 @@
           </div>
           <div class="card">
             <h3><i class="bi bi-telephone"></i> Phone</h3>
-            <p class="muted">+255 742 930833</p>
+            <p class="muted">+255 123 456 789</p>
           </div>
         </div>
       </div>

@@ -19,3 +19,9 @@ a.btn:hover {
 
 /* Ensure anchor buttons don’t underline */
 a.btn { text-decoration: none; }
+
+/* Intro bullet icon background: use magenta brand as well */
+.bullet i {
+  background: linear-gradient(135deg, var(--magenta), var(--magenta-700)) !important;
+  color: #fff !important; /* ensure good contrast on magenta */
+}

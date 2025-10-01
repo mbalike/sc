@@ -469,6 +469,60 @@ nav a{font:600 14px Manrope, sans-serif;color:var(--mute)}
 nav a:hover{color:var(--ink)}
 .hamburger{display:none}
 
+/* Active link highlight */
+nav a[aria-current="page"],
+nav a.active{
+  color: var(--ink);
+  position: relative;
+}
+@media (min-width:901px){
+  nav a[aria-current="page"]::after,
+  nav a.active::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--magenta));
+    border-radius: 999px;
+  }
+}
+
+/* Dropdown (Itineraries) */
+nav li{position:relative}
+.has-submenu > .submenu{
+  display:none;
+  position:absolute;
+  top: 140%;
+  left: 0;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow: var(--shadow-md);
+  min-width: 240px;
+  padding:8px;
+  z-index: 50;
+}
+.has-submenu > .submenu li{list-style:none}
+.has-submenu > .submenu a{display:block;padding:8px 10px;border-radius:8px;color:var(--ink);white-space:nowrap}
+.has-submenu > .submenu a:hover{background:#FAFAFC}
+
+/* show submenu on hover for desktop */
+@media (min-width:901px){
+  .has-submenu:hover > .submenu{display:block}
+}
+
+/* Mobile submenu toggle button (hidden on desktop) */
+.submenu-toggle{display:none}
+@media (max-width:900px){
+  .has-submenu{display:flex;align-items:center;gap:6px}
+  .submenu-toggle{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+  .submenu-toggle::before{content:"▾";font-size:12px;line-height:1}
+  .has-submenu > .submenu{position:static;display:none;border:0;box-shadow:none;padding:6px 0 0 10px}
+  .has-submenu.open > .submenu{display:block}
+}
+
 /* Hero (full-bleed background) */
 .hero{
   position:relative;

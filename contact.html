@@ -130,7 +130,17 @@
         <ul id="menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="destinations.html">Destinations</a></li>
-          <li><a href="itineraries.html">Itineraries</a></li>
+          <li class="has-submenu">
+            <a href="itineraries.html">Itineraries</a>
+            <button class="submenu-toggle" aria-label="Toggle Itineraries submenu" aria-expanded="false"></button>
+            <ul class="submenu" aria-label="Itineraries submenu">
+              <li><a href="itineraries.html">All Itineraries</a></li>
+              <li><a href="itinerary1.html">5-Day Essence</a></li>
+              <li><a href="itinerary2.html">3-Day Chic Escape</a></li>
+              <li><a href="itinerary3.html">8-Day Zanzibar Luxe</a></li>
+              <li><a href="itinerary4.html">7-Day Kilimanjaro</a></li>
+            </ul>
+          </li>
           <li><a href="contact.html">Contacts</a></li>
         </ul>
       </nav>
@@ -297,6 +307,27 @@
       if(window.scrollY>600){ backtop?.classList.add('show'); } else { backtop?.classList.remove('show'); }
     };
     document.addEventListener('scroll', onScroll); onScroll();
+
+    // Active link highlighting (auto-detect by URL)
+    (function(){
+      const path = location.pathname.split('/').pop() || 'index.html';
+      const links = document.querySelectorAll('nav a[href]');
+      links.forEach(a=>{
+        const href=a.getAttribute('href');
+        if(href===path){ a.setAttribute('aria-current','page'); }
+      });
+    })();
+
+    // Mobile submenu toggle for Itineraries
+    (function(){
+      const submenuParent = document.querySelector('nav li.has-submenu');
+      const toggle = submenuParent?.querySelector('.submenu-toggle');
+      toggle?.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const open = submenuParent.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+    })();
   </script>
 </body>
 </html>

@@ -631,7 +631,7 @@
     const backtop=document.getElementById('backtop');
     const onScroll=()=>{
       if(window.scrollY>10){ header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); }
-      if(window.scrollY>600){ backtop?.classList.add('show'); } else { backtop?.classList.remove('show'); }
+      if(window.scrollY>200){ backtop?.classList.add('show'); } else { backtop?.classList.remove('show'); }
     };
     document.addEventListener('scroll', onScroll); onScroll();
 

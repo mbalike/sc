@@ -143,7 +143,7 @@ nav li.has-submenu > .submenu a{
   display: block;
   padding: 8px 10px;
   border-radius: 8px;
-  color: var(--ink, #101114) !important;
+  color: var(--magenta, #101114) !important;
   white-space: nowrap;
 }
 nav li.has-submenu > .submenu a:hover{ background: #FAFAFC; }

@@ -130,7 +130,7 @@ nav li.has-submenu > .submenu{
   position: absolute;
   top: calc(100% + 8px);
   left: 0;
-  background: #fff;
+  background: --glass;
   border: 1px solid var(--line, #efeff3);
   border-radius: 12px;
   box-shadow: 0 16px 38px rgba(0,0,0,.16);

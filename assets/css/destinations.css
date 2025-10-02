@@ -61,6 +61,8 @@ nav a:hover{color:#fff}
   nav ul.show{display:flex;position:absolute;top:64px;left:0;right:0;background:#0f0e14;padding:1rem 1.2rem;flex-direction:column;border-bottom:1px solid var(--line)}
   /* Fit logo within compact header on mobile */
   .brand .logo{width:44px;height:44px}
+  /* Hide header actions (CTA button) on small screens */
+  .actions{display:none}
 }
 
 /* HERO */

@@ -107,7 +107,8 @@ footer .grid.cols-3{
 /* Active link highlight (works on light/dark headers) */
 nav a[aria-current="page"],
 nav a.active{
-  color: var(--ink, #fff) !important;
+  color: var(--magenta, #fff) !important;
+  font-weight: bolder;
   position: relative;
 }
 @media (min-width: 901px){

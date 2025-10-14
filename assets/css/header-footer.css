@@ -40,3 +40,22 @@
 
 /* Hide footer h4 at all breakpoints to avoid duplicate text (screen readers still read first occurrence) */
 .ft-brand h4{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+
+/* --- Shared Dropdown Menu (Itineraries) --- */
+nav li.has-submenu{position:relative}
+nav li.has-submenu > a{display:inline-flex;align-items:center;gap:.35rem}
+nav li.has-submenu .submenu{list-style:none;margin:0;padding:.55rem 0;position:absolute;top:100%;left:0;background:rgba(15,14,20,.95);border:1px solid rgba(255,255,255,.08);border-radius:14px;backdrop-filter:blur(10px) saturate(140%);box-shadow:0 8px 24px rgba(0,0,0,.35);display:none;min-width:220px;z-index:80}
+nav li.has-submenu.open .submenu,
+nav li.has-submenu:hover .submenu,
+nav li.has-submenu:focus-within .submenu{display:block}
+nav li.has-submenu .submenu li{margin:0;padding:0}
+nav li.has-submenu .submenu a{display:block;padding:.6rem 1rem;color:#fff;font-weight:600;font-size:.9rem;text-decoration:none;white-space:nowrap;transition:.25s background}
+nav li.has-submenu .submenu a:hover,
+nav li.has-submenu .submenu a:focus{background:#ffffff12;color:#fff}
+
+@media (max-width:900px){
+  nav li.has-submenu{position:static}
+  nav li.has-submenu .submenu{position:static;background:#0f0e14;border:0;box-shadow:none;padding:0;margin:.3rem 0 .4rem;border-left:3px solid var(--magenta);display:none}
+  nav li.has-submenu.open .submenu{display:block}
+  nav li.has-submenu .submenu a{padding:.55rem 1rem;font-size:.95rem}
+}

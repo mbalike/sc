@@ -153,7 +153,21 @@
         destLink?.setAttribute('aria-current','page');
       }
     })();
-    (function(){ const submenuParent = document.querySelector('nav li.has-submenu'); const toggle = submenuParent?.querySelector('.submenu-toggle'); toggle?.addEventListener('click', (e)=>{ e.preventDefault(); const open = submenuParent.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); }); })();
+    // Submenu (hover + delayed close + mobile toggle)
+    (function(){
+      const submenuParent = document.querySelector('nav li.has-submenu');
+      if(!submenuParent) return;
+      const toggle = submenuParent.querySelector('.submenu-toggle');
+      let hideTimer;
+      const open = () => { clearTimeout(hideTimer); submenuParent.classList.add('open'); toggle?.setAttribute('aria-expanded','true'); };
+      const close = () => { submenuParent.classList.remove('open'); toggle?.setAttribute('aria-expanded','false'); };
+      const scheduleClose = ()=>{ clearTimeout(hideTimer); hideTimer = setTimeout(close,550); };
+      submenuParent.addEventListener('mouseenter', open);
+      submenuParent.addEventListener('mouseleave', scheduleClose);
+      submenuParent.addEventListener('focusin', open);
+      submenuParent.addEventListener('focusout', e=>{ if(!submenuParent.contains(e.relatedTarget)) scheduleClose(); });
+      toggle?.addEventListener('click', e=>{ e.preventDefault(); const isOpen = submenuParent.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(isOpen)); });
+    })();
     const io=new IntersectionObserver((entries)=>{ entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); } }); },{threshold:.12}); document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   </script>
 </body>

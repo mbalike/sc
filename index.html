@@ -93,6 +93,31 @@
     nav a:hover{color:#fff}
     .hamburger{display:none;background:none;border:0;color:#fff}
 
+    /* Dropdown (Itineraries) */
+    nav li.has-submenu{position:relative}
+    nav li.has-submenu > a{display:inline-flex;align-items:center;gap:.35rem}
+    nav li.has-submenu .submenu{
+      list-style:none; margin:0; padding:.55rem 0; position:absolute; top:100%; left:0;
+      background:rgba(15,14,20,.95); border:1px solid var(--line); border-radius:14px;
+      backdrop-filter:blur(10px) saturate(140%); box-shadow:var(--shadow-sm);
+      display:none; min-width:220px; z-index:80;
+    }
+    nav li.has-submenu.open .submenu,
+    nav li.has-submenu:hover .submenu,
+    nav li.has-submenu:focus-within .submenu{display:block}
+    nav li.has-submenu .submenu li{margin:0;padding:0}
+    nav li.has-submenu .submenu a{display:block; padding:.6rem 1rem; color:#fff; font-weight:600; font-size:.9rem; text-decoration:none; white-space:nowrap;}
+    nav li.has-submenu .submenu a:hover,
+    nav li.has-submenu .submenu a:focus{background:#ffffff12; color:#fff}
+
+    /* Mobile adjustments for submenu */
+    @media (max-width:900px){
+      nav li.has-submenu{position:static}
+      nav li.has-submenu .submenu{position:static; background:#0f0e14; border:0; box-shadow:none; padding:0; margin:.3rem 0 .4rem; border-left:3px solid var(--magenta); display:none}
+      nav li.has-submenu.open .submenu{display:block}
+      nav li.has-submenu .submenu a{padding:.55rem 1rem; font-size:.95rem}
+    }
+
     @media (max-width: 900px){
       nav ul{display:none}
       .hamburger{display:block;font-size:1.5rem}
@@ -680,11 +705,37 @@
     // Mobile submenu toggle for Itineraries
     (function(){
       const submenuParent = document.querySelector('nav li.has-submenu');
-      const toggle = submenuParent?.querySelector('.submenu-toggle');
-      toggle?.addEventListener('click', (e)=>{
+      if(!submenuParent) return;
+      const toggle = submenuParent.querySelector('.submenu-toggle');
+      let hideTimer;
+
+      function open(){
+        clearTimeout(hideTimer);
+        submenuParent.classList.add('open');
+        toggle?.setAttribute('aria-expanded','true');
+      }
+      function close(){
+        submenuParent.classList.remove('open');
+        toggle?.setAttribute('aria-expanded','false');
+      }
+      function scheduleClose(){
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(close, 550); // delay so user can move pointer into menu
+      }
+
+      // Pointer (desktop) interactions
+      submenuParent.addEventListener('mouseenter', open);
+      submenuParent.addEventListener('mouseleave', scheduleClose);
+
+      // Focus (keyboard) interactions
+      submenuParent.addEventListener('focusin', open);
+      submenuParent.addEventListener('focusout', e=>{ if(!submenuParent.contains(e.relatedTarget)) scheduleClose(); });
+
+      // Mobile toggle (tap/click button)
+      toggle?.addEventListener('click', e=>{
         e.preventDefault();
-        const open = submenuParent.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', String(open));
+        const isOpen = submenuParent.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
       });
     })();
 

@@ -21,7 +21,7 @@
 /* Visibility rules */
 /* Header wordmark hidden on mobile; footer wordmark always visible */
 .brand-wordmark{ display:none; }
-.footer-wordmark{ display:inline-block; }
+.footer-wordmark{ display:inline-block; font-size:clamp(1.6rem, 7vw, 2.4rem); margin-left:.35rem; }
 
 /* Ensure horizontal alignment for logo + wordmark across pages (some pages redefine .brand/.ft-brand differently inline) */
 .brand, .ft-brand{
@@ -35,7 +35,7 @@
 @media (min-width: 901px){
   .brand-wordmark{ display:inline-block; font-size: clamp(1.2rem, 2.6vw, 2rem); margin-left:.2rem; }
   /* Footer wordmark already visible; just adjust sizing for desktop */
-  .footer-wordmark{ font-size: clamp(1.2rem, 2.2vw, 1.8rem); margin-left:.4rem; }
+  .footer-wordmark{ font-size: clamp(1.8rem, 2.3vw, 2.6rem); margin-left:.45rem; }
 }
 
 /* Hide footer h4 at all breakpoints to avoid duplicate text (screen readers still read first occurrence) */

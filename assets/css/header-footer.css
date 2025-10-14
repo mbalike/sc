@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
+:root{
+  --wordmark-color:#ff4fa3; /* brand pink */
+}
+
+/* Shared wordmark styles */
+.brand-wordmark,
+.footer-wordmark{
+  font-family: 'Allura', cursive;
+  font-weight: bolder;
+  color: var(--wordmark-color);
+  line-height: 1;
+  letter-spacing: .2px;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Desktop-only visibility */
+.brand-wordmark,
+.footer-wordmark{ display:none; }
+
+/* Ensure horizontal alignment for logo + wordmark across pages (some pages redefine .brand/.ft-brand differently inline) */
+.brand, .ft-brand{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+}
+/* Prevent accidental column layout if prior styles override */
+.brand > *, .ft-brand > *{flex-shrink:0}
+
+@media (min-width: 901px){
+  .brand-wordmark{ display:inline-block; font-size: clamp(1.2rem, 2.6vw, 2rem); margin-left:.2rem; }
+  .footer-wordmark{ display:inline-block; font-size: clamp(1.2rem, 2.2vw, 1.8rem); margin-left:.4rem; }
+  /* Avoid duplicate text: hide existing footer H4 on desktop */
+  .ft-brand h4{ display:none !important; }
+}

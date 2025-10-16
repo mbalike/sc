@@ -59,3 +59,16 @@ nav li.has-submenu .submenu a:focus{background:#ffffff12;color:#fff}
   nav li.has-submenu.open .submenu{display:block}
   nav li.has-submenu .submenu a{padding:.55rem 1rem;font-size:.95rem}
 }
+
+/* Hide header actions (CTA button) on mobile */
+@media (max-width:900px){
+  .actions{display:none !important;}
+}
+
+/* Spacing for hero CTA button groups (itinerary pages) */
+.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem}
+/* Fallback for environments without flex gap support */
+@supports not (gap: 1rem){
+  .hero-cta > .btn{margin-right:.8rem;margin-bottom:.8rem}
+  .hero-cta > .btn:last-child{margin-right:0}
+}

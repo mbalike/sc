@@ -42,6 +42,25 @@
               <li><a href="itinerary4.html">7-Day Kilimanjaro</a></li>
             </ul>
           </li>
+          <li class="has-submenu">
+            <a href="kili.html">Kili Climb</a>
+            <button class="submenu-toggle" aria-label="Toggle Kili Climb submenu" aria-expanded="false"></button>
+            <ul class="submenu" aria-label="Kili Climb submenu">
+              <li><a href="kili.html">All Routes</a></li>
+              <li><a href="kili-lemosho.html">Lemosho</a></li>
+              <li><a href="kili-lemosho-western-breach.html">Lemosho via Western Breach</a></li>
+              <li><a href="kili-machame.html">Machame</a></li>
+              <li><a href="kili-machame-western-breach.html">Machame via Western Breach</a></li>
+              <li><a href="kili-northern-circuit.html">Northern Circuit</a></li>
+              <li><a href="kili-grand-traverse-northern.html">Grand Traverse (Northern)</a></li>
+              <li><a href="kili-rongai-mawenzi-tarn.html">Rongai via Mawenzi Tarn</a></li>
+              <li><a href="kili-marangu.html">Marangu (Coca-Cola)</a></li>
+              <li><a href="kili-umbwe.html">Umbwe</a></li>
+              <li><a href="kili-shira-gate.html">Shira (Shira Gate)</a></li>
+              <li><a href="kili-kilema-bike.html">Kilema Bike Route</a></li>
+              <li><a href="kili-western-breach-arrow-glacier.html">Western Breach (Arrow Glacier)</a></li>
+            </ul>
+          </li>
           <li><a href="contact.html">Contacts</a></li>
         </ul>
       </nav>
@@ -187,20 +206,22 @@
         destLink?.setAttribute('aria-current','page');
       }
     })();
-    // Submenu (hover + delayed close + mobile toggle)
+    // Submenus (hover + delayed close + mobile toggle) for all dropdowns
     (function(){
-      const submenuParent = document.querySelector('nav li.has-submenu');
-      if(!submenuParent) return;
-      const toggle = submenuParent.querySelector('.submenu-toggle');
-      let hideTimer;
-      const open = () => { clearTimeout(hideTimer); submenuParent.classList.add('open'); toggle?.setAttribute('aria-expanded','true'); };
-      const close = () => { submenuParent.classList.remove('open'); toggle?.setAttribute('aria-expanded','false'); };
-      const scheduleClose = ()=>{ clearTimeout(hideTimer); hideTimer = setTimeout(close,550); };
-      submenuParent.addEventListener('mouseenter', open);
-      submenuParent.addEventListener('mouseleave', scheduleClose);
-      submenuParent.addEventListener('focusin', open);
-      submenuParent.addEventListener('focusout', e=>{ if(!submenuParent.contains(e.relatedTarget)) scheduleClose(); });
-      toggle?.addEventListener('click', e=>{ e.preventDefault(); const isOpen = submenuParent.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(isOpen)); });
+      const parents = Array.from(document.querySelectorAll('nav li.has-submenu'));
+      if(!parents.length) return;
+      parents.forEach((submenuParent)=>{
+        const toggle = submenuParent.querySelector('.submenu-toggle');
+        let hideTimer;
+        const open = () => { clearTimeout(hideTimer); submenuParent.classList.add('open'); toggle?.setAttribute('aria-expanded','true'); };
+        const close = () => { submenuParent.classList.remove('open'); toggle?.setAttribute('aria-expanded','false'); };
+        const scheduleClose = ()=>{ clearTimeout(hideTimer); hideTimer = setTimeout(close,550); };
+        submenuParent.addEventListener('mouseenter', open);
+        submenuParent.addEventListener('mouseleave', scheduleClose);
+        submenuParent.addEventListener('focusin', open);
+        submenuParent.addEventListener('focusout', e=>{ if(!submenuParent.contains(e.relatedTarget)) scheduleClose(); });
+        toggle?.addEventListener('click', e=>{ e.preventDefault(); const isOpen = submenuParent.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(isOpen)); });
+      });
     })();
     const io=new IntersectionObserver((entries)=>{ entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); } }); },{threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));

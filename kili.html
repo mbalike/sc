@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kilimanjaro Routes — Safari Chic</title>
+  <meta name="description" content="Overview of Mount Kilimanjaro climbing routes with highlights, typical durations, and difficulty to help you choose the perfect climb." />
+  <link rel="shortcut icon" href="assets3/img/logo1.0.png" type="image/x-icon">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Site-wide overrides -->
+  <link rel="stylesheet" href="assets/css/overrides.css">
+  <link rel="stylesheet" href="assets/css/header-footer.css">
+
+  <style>
+    :root{
+      --magenta:#c4006a; --magenta-700:#a10057; --gold:#ffb800; --gold-700:#e6a300;
+      --ink:#1a1a1a; --muted:#cfcfcf; --bg:#0c0b10; --panel:#121118; --line:rgba(255,255,255,.08);
+      --radius:18px; --shadow:0 12px 40px rgba(0,0,0,.35); --shadow-sm:0 8px 24px rgba(0,0,0,.25);
+      --glass:rgba(255,255,255,.06);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:
+      radial-gradient(1200px 700px at 10% -10%, rgba(196,0,106,.16), transparent 50%),
+      radial-gradient(900px 600px at 110% 10%, rgba(255,184,0,.14), transparent 60%),
+      var(--bg);
+      color:#eee; font-family:Manrope, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height:1.6;}
+    .container{width:min(1200px,92vw);margin:0 auto}
+    section{padding:72px 0}
+
+    /* Hero */
+    .hero{position:relative;padding:140px 0 60px;overflow:hidden;background:
+      radial-gradient(600px 240px at 15% 20%, rgba(255,184,0,.25), transparent 60%),
+      radial-gradient(500px 240px at 85% -10%, rgba(196,0,106,.35), transparent 60%);}    
+    .eyebrow{font-weight:800;color:#fff;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;opacity:.9}
+    .title{font-family:Poppins, sans-serif;font-weight:800;line-height:1.1;font-size:clamp(2rem, 5vw, 3rem);margin:.6rem 0 1rem;
+      background:linear-gradient(135deg, #fff, #ffe7a6 30%, #ffd15a 40%, #fff 60%);
+      -webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{color:#eaeaea;max-width:72ch}
+
+    /* Grid */
+    .grid{display:grid;gap:1.3rem}
+    .cols-3{grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 1020px){.cols-3{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width: 720px){.cols-3{grid-template-columns:1fr}}
+
+    /* Card */
+    .card-link{display:block;text-decoration:none;color:inherit}
+    .card{position:relative;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:linear-gradient(160deg, rgba(196,0,106,.08), rgba(255,184,0,.06));box-shadow:var(--shadow-sm);transition:.3s transform, .3s box-shadow}
+    .card:hover{transform:translateY(-6px); box-shadow:var(--shadow)}
+    .card-img{height:190px;background:#000;position:relative;overflow:hidden}
+    .card-img img{width:100%;height:100%;object-fit:cover;display:block;opacity:.9;transform:scale(1.02)}
+    .badge{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,var(--magenta),var(--magenta-700));padding:.45rem .7rem;border-radius:999px;font-weight:800;font-size:.82rem;box-shadow:var(--shadow-sm)}
+    .card-body{padding:1rem 1.1rem 1.2rem}
+    .card-head{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin-bottom:.35rem}
+    .card-title{font:800 1.05rem/1.15 Poppins;margin:0}
+    .dur{background:var(--glass);border:1px solid var(--line);border-radius:999px;padding:.3rem .6rem;font-weight:800;font-size:.78rem}
+    .muted{color:#cdcdcd}
+    .highlights{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.6rem}
+    .chip{display:inline-flex;align-items:center;gap:.35rem;padding:.35rem .6rem;border-radius:999px;font-size:.82rem;font-weight:700;border:1px solid var(--line);background:var(--glass)}
+
+    /* Info bar */
+    .infobar{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+    .info{display:flex;align-items:center;gap:.4rem;padding:.35rem .6rem;border-radius:999px;border:1px solid var(--line);background:var(--glass);font-weight:700;font-size:.85rem}
+
+    /* Footer */
+    footer{padding:36px 0 60px;color:#cfcfcf}
+    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div id="top" aria-hidden="true"></div>
+  <!-- Header (copied pattern) -->
+  <header class="site-header" id="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <img src="assets3/img/logo1.0.png" alt="Safari Chic logo">
+        </div>
+        <span class="brand-wordmark" aria-hidden="true">Safari Chic</span>
+      </div>
+      <nav aria-label="Main">
+        <button class="hamburger" aria-controls="menu" aria-expanded="false"><i class="bi bi-list"></i></button>
+        <ul id="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li class="has-submenu">
+            <a href="itineraries.html">Itineraries</a>
+            <button class="submenu-toggle" aria-label="Toggle Itineraries submenu" aria-expanded="false"></button>
+            <ul class="submenu" aria-label="Itineraries submenu">
+              <li><a href="itineraries.html">All Itineraries</a></li>
+              <li><a href="itinerary1.html">5-Day Essence</a></li>
+              <li><a href="itinerary2.html">3-Day Chic Escape</a></li>
+              <li><a href="itinerary3.html">8-Day Zanzibar Luxe</a></li>
+              <li><a href="itinerary4.html">7-Day Kilimanjaro</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu">
+            <a href="kili.html">Kili Climb</a>
+            <button class="submenu-toggle" aria-label="Toggle Kili Climb submenu" aria-expanded="false"></button>
+            <ul class="submenu" aria-label="Kili Climb submenu">
+              <li><a href="kili.html">All Routes</a></li>
+              <li><a href="kili-lemosho.html">Lemosho</a></li>
+              <li><a href="kili-lemosho-western-breach.html">Lemosho via Western Breach</a></li>
+              <li><a href="kili-machame.html">Machame</a></li>
+              <li><a href="kili-machame-western-breach.html">Machame via Western Breach</a></li>
+              <li><a href="kili-northern-circuit.html">Northern Circuit</a></li>
+              <li><a href="kili-grand-traverse-northern.html">Grand Traverse (Northern)</a></li>
+              <li><a href="kili-rongai-mawenzi-tarn.html">Rongai via Mawenzi Tarn</a></li>
+              <li><a href="kili-marangu.html">Marangu (Coca-Cola)</a></li>
+              <li><a href="kili-umbwe.html">Umbwe</a></li>
+              <li><a href="kili-shira-gate.html">Shira (Shira Gate)</a></li>
+              <li><a href="kili-kilema-bike.html">Kilema Bike Route</a></li>
+              <li><a href="kili-western-breach-arrow-glacier.html">Western Breach (Arrow Glacier)</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contacts</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <a class="btn btn-gold" href="itineraries.html"><i class="bi bi-geo"></i> Itineraries</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Kili Climb</li>
+          </ol>
+        </nav>
+      <div class="reveal">
+        <div class="eyebrow">Kilimanjaro</div>
+        <h1 class="title">Choose Your Kilimanjaro Route</h1>
+        <p>Compare routes by scenery, difficulty, acclimatization profiles, and typical durations. Each card links to a detailed page. Not sure? Start with Lemosho or Machame for a balanced climb.</p>
+        <div class="infobar">
+          <span class="info"><i class="bi bi-activity"></i> Difficulty: Easy → Challenging</span>
+          <span class="info"><i class="bi bi-heart-pulse"></i> Best acclimatization: Northern Circuit</span>
+          <span class="info"><i class="bi bi-cloud-sun"></i> Best seasons: Jan–Mar, Jun–Oct</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Routes Grid -->
+  <section>
+    <div class="container">
+      <div class="grid cols-3">
+        <!-- Lemosho -->
+        <a class="card-link" href="kili-lemosho.html">
+          <article class="card">
+            <div class="card-img">
+              <span class="badge">Most Recommended</span>
+              <img src="assets/img/kili1.jpg" alt="Lemosho forest to Shira plateau">
+            </div>
+            <div class="card-body">
+              <div class="card-head">
+                <h3 class="card-title">Lemosho</h3>
+                <span class="dur">7–8 days</span>
+              </div>
+              <p class="muted">Scenic west-side approach with great acclimatization and lower crowds early on.</p>
+              <div class="highlights">
+                <span class="chip"><i class="bi bi-mountain"></i> Shira Plateau</span>
+                <span class="chip"><i class="bi bi-wind"></i> Good acclimatization</span>
+              </div>
+            </div>
+          </article>
+        </a>
+        
+        <!-- Machame -->
+        <a class="card-link" href="kili-machame.html">
+          <article class="card">
+            <div class="card-img">
+              <span class="badge">Popular</span>
+              <img src="assets/img/kili2.jpg" alt="Machame route Barranco wall">
+            </div>
+            <div class="card-body">
+              <div class="card-head">
+                <h3 class="card-title">Machame</h3>
+                <span class="dur">6–7 days</span>
+              </div>
+              <p class="muted">Dramatic scenery via the Southern Circuit with the iconic Barranco Wall.</p>
+              <div class="highlights">
+                <span class="chip"><i class="bi bi-map"></i> Southern Circuit</span>
+                <span class="chip"><i class="bi bi-brightness-high"></i> Great views</span>
+              </div>
+            </div>
+          </article>
+        </a>
+
+        <!-- Northern Circuit -->
+        <a class="card-link" href="kili-northern-circuit.html">
+          <article class="card">
+            <div class="card-img">
+              <span class="badge">Best Acclimatization</span>
+              <img src="assets/img/kili3.jpg" alt="Northern Circuit high desert ridge">
+            </div>
+            <div class="card-body">
+              <div class="card-head">
+                <h3 class="card-title">Northern Circuit</h3>
+                <span class="dur">8–9 days</span>
+              </div>
+              <p class="muted">Longest route circling the north flanks; highest summit success due to gradual ascent.</p>
+              <div class="highlights">
+                <span class="chip"><i class="bi bi-compass"></i> 360° panoramas</span>
+                <span class="chip"><i class="bi bi-thermometer-half"></i> Gentle profile</span>
+              </div>
+            </div>
+          </article>
+        </a>
+
+        <!-- Grand Traverse (Northern) -->
+        <a class="card-link" href="kili-grand-traverse-northern.html">
+          <article class="card">
+            <div class="card-img">
+              <span class="badge">Scenic Odyssey</span>
+              <img src="assets/img/kili4.jpg" alt="Grand Traverse northern slopes">
+            </div>
+            <div class="card-body">
+              <div class="card-head">
+                <h3 class="card-title">Grand Traverse (Northern)</h3>
+                <span class="dur">8–9 days</span>
+              </div>
+              <p class="muted">Remote feel across the mountain’s quiet northern expanse with wide vistas.</p>
+              <div class="highlights">
+                <span class="chip"><i class="bi bi-eye"></i> Fewer crowds</span>
+                <span class="chip"><i class="bi bi-geo"></i> Broad traverses</span>
+              </div>
+            </div>
+          </article>
+        </a>
+
+        <!-- Rongai via Mawenzi Tarn -->
+        <a class="card-link" href="kili-rongai-mawenzi-tarn.html">
+          <article class="card">
+            <div class="card-img">
+              <span class="badge">Dry Side</span>
+              <img src="assets/img/kili5.jpg" alt="Rongai route near Mawenzi">
+            </div>
+            <div class="card-body">
+              <div class="card-head">
+                <h3 class="card-title">Rongai via Mawenzi Tarn</h3>
+                <span class="dur">6–7 days</span>
+              </div>
+              <p class="muted">Northern approach with drier weather and unique views of Mawenzi’s spires.</p>
+              <div class="highlights">
+                <span class="chip"><i class="bi bi-sun"></i> Drier climate</span>
+                <span class="chip"><i class="bi bi-bezier"></i> Gentle gradients</span>
+              </div>
+            </div>
+          </article>
+        </a>
+
+        <!-- Marangu -->
+        <a class="card-link" href="kili-marangu.html">
+          <article class="card">
+            <div class="card-img">
+              <span class="badge">Huts</span>
+              <img src="assets/img/pexels-mikeknibbs-17849763.jpg" alt="Marangu huts and trail">
+            </div>
+            <div class="card-body">
+              <div class="card-head">
+                <h3 class="card-title">Marangu (Coca-Cola)</h3>
+                <span class="dur">5–6 days</span>
+              </div>
+              <p class="muted">Only route with hut accommodation; faster profile requires careful pacing.</p>
+              <div class="highlights">
+                <span class="chip"><i class="bi bi-house"></i> Hut overnights</span>
+                <span class="chip"><i class="bi bi-lightning"></i> Shorter duration</span>
+              </div>
+            </div>
+          </article>
+        </a>
+
+        <!-- Umbwe -->
+        <a class="card-link" href="kili-umbwe.html">
+          <article class="card">
+            <div class="card-img">
+              <span class="badge">Steepest</span>
+              <img src="assets/img/pexels-frans-van-heerden-201846-4894482.jpg" alt="Umbwe steep forest path">
+            </div>
+            <div class="card-body">
+              <div class="card-head">
+                <h3 class="card-title">Umbwe</h3>
+                <span class="dur">5–6 days</span>
+              </div>
+              <p class="muted">Shortest, steepest ascent; best for experienced trekkers with prior altitude exposure.</p>
+              <div class="highlights">
+                <span class="chip"><i class="bi bi-graph-up"></i> Very direct</span>
+                <span class="chip"><i class="bi bi-exclamation-triangle"></i> Demanding</span>
+              </div>
+            </div>
+          </article>
+        </a>
+
+        <!-- Shira Gate -->
+        <a class="card-link" href="kili-shira-gate.html">
+          <article class="card">
+            <div class="card-img">
+              <span class="badge">High Start</span>
+              <img src="assets/img/pexels-alex-ning-523843601-33414611.jpg" alt="Shira plateau start">
+            </div>
+            <div class="card-body">
+              <div class="card-head">
+                <h3 class="card-title">Shira (Shira Gate)</h3>
+                <span class="dur">6–7 days</span>
+              </div>
+              <p class="muted">Begins high on the Shira Plateau; similar to Lemosho after the first day.</p>
+              <div class="highlights">
+                <span class="chip"><i class="bi bi-alt"></i> High trailhead</span>
+                <span class="chip"><i class="bi bi-arrows-move"></i> Quick plateau access</span>
+              </div>
+            </div>
+          </article>
+        </a>
+
+        <!-- Kilema Bike -->
+        <a class="card-link" href="kili-kilema-bike.html">
+          <article class="card">
+            <div class="card-img">
+              <span class="badge">Unique</span>
+              <img src="assets/img/pexels-charmain-15289090.jpg" alt="Cyclists on Kilema route">
+            </div>
+            <div class="card-body">
+              <div class="card-head">
+                <h3 class="card-title">Kilema Bike Route</h3>
+                <span class="dur">5–6 days</span>
+              </div>
+              <p class="muted">Designated MTB route on Kilimanjaro’s slopes; special permits and support required.</p>
+              <div class="highlights">
+                <span class="chip"><i class="bi bi-bicycle"></i> MTB ascent</span>
+                <span class="chip"><i class="bi bi-tools"></i> Special logistics</span>
+              </div>
+            </div>
+          </article>
+        </a>
+
+        <!-- Lemosho via Western Breach -->
+        <a class="card-link" href="kili-lemosho-western-breach.html">
+          <article class="card">
+            <div class="card-img">
+              <span class="badge">Technical</span>
+              <img src="assets/img/baranco.jpg" alt="Western Breach ascent">
+            </div>
+            <div class="card-body">
+              <div class="card-head">
+                <h3 class="card-title">Lemosho via Western Breach</h3>
+                <span class="dur">7–9 days</span>
+              </div>
+              <p class="muted">Steep, exposed Western Breach to Crater Camp; advanced parties only.</p>
+              <div class="highlights">
+                <span class="chip"><i class="bi bi-shield-exclamation"></i> Objective hazards</span>
+                <span class="chip"><i class="bi bi-triangle"></i> Crater Camp option</span>
+              </div>
+            </div>
+          </article>
+        </a>
+
+        <!-- Machame via Western Breach -->
+        <a class="card-link" href="kili-machame-western-breach.html">
+          <article class="card">
+            <div class="card-img">
+              <span class="badge">Technical</span>
+              <img src="assets/img/lavatower.jpg" alt="Lava Tower near Western Breach">
+            </div>
+            <div class="card-body">
+              <div class="card-head">
+                <h3 class="card-title">Machame via Western Breach</h3>
+                <span class="dur">7–8 days</span>
+              </div>
+              <p class="muted">Southern approach combined with the Breach for a challenging finish.</p>
+              <div class="highlights">
+                <span class="chip"><i class="bi bi-bar-chart"></i> Strenuous</span>
+                <span class="chip"><i class="bi bi-flag"></i> Crater access</span>
+              </div>
+            </div>
+          </article>
+        </a>
+
+        <!-- Western Breach (Arrow Glacier) -->
+        <a class="card-link" href="kili-western-breach-arrow-glacier.html">
+          <article class="card">
+            <div class="card-img">
+              <span class="badge">Advanced</span>
+              <img src="assets/img/barafutosummit.jpg" alt="Arrow Glacier route">
+            </div>
+            <div class="card-body">
+              <div class="card-head">
+                <h3 class="card-title">Western Breach (Arrow Glacier)</h3>
+                <span class="dur">7–9 days</span>
+              </div>
+              <p class="muted">Direct Breach variant via Arrow Glacier; helmet and experience recommended.</p>
+              <div class="highlights">
+                <span class="chip"><i class="bi bi-lightning-charge"></i> Exposed ascent</span>
+                <span class="chip"><i class="bi bi-signpost-2"></i> For experts</span>
+              </div>
+            </div>
+          </article>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="reveal" style="text-align:center;border:1px solid var(--line);border-radius:24px;padding:2rem;background:var(--glass);box-shadow:var(--shadow)">
+        <h3 style="font:800 clamp(1.2rem,3.2vw,2rem)/1.15 Poppins;margin:.3rem 0 .7rem">Need help choosing a route?</h3>
+        <p class="muted" style="margin:0 auto 1.2rem;max-width:70ch">Tell us your preferred dates, group size, and experience — we’ll recommend the best route and acclimatization plan for you.</p>
+        <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap">
+          <a class="btn btn-primary" href="mailto:info@safarichic.com"><i class="bi bi-envelope"></i> info@safarichic.com</a>
+          <a class="btn btn-gold" href="tel:+255742930833"><i class="bi bi-telephone"></i> +255 742 930833</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="ft-brand">
+          <div class="logo">
+            <img src="assets3/img/logo1.0.png" alt="Safari Chic logo">
+          </div>
+          <h4 style="margin:0">Safari Chic</h4>
+          <span class="footer-wordmark" aria-hidden="true">Safari Chic</span>
+        </div>
+        <p class="ft-note">Luxury African Safaris, Exclusively Yours</p>
+      </div>
+      <div>
+        <div class="grid cols-3">
+          <div class="card">
+            <h3><i class="bi bi-geo-alt"></i> Office</h3>
+            <p class="muted">Zanzibar & Tanzania</p>
+          </div>
+          <div class="card">
+            <h3><i class="bi bi-envelope-open"></i> Email</h3>
+            <p class="muted">info@safarichic.com</p>
+          </div>
+          <div class="card">
+            <h3><i class="bi bi-telephone"></i> Phone</h3>
+            <p class="muted">+255 123 456 789</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="margin-top:1rem;border-top:1px solid var(--line);padding-top:1rem;color:#a7a7a7">
+      © 2025 Safari Chic. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <a href="#top" class="btn btn-primary backtop" id="backtop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
+
+  <script>
+    // Mobile nav
+    const burger=document.querySelector('.hamburger');
+    const menu=document.getElementById('menu');
+    burger?.addEventListener('click',()=>{
+      const open=menu.classList.toggle('show');
+      burger.setAttribute('aria-expanded', String(open));
+    });
+
+    // Header scrolled state
+    const header=document.getElementById('site-header');
+    const backtop=document.getElementById('backtop');
+    const onScroll=()=>{
+      if(window.scrollY>10){ header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); }
+      if(window.scrollY>600){ backtop?.classList.add('show'); } else { backtop?.classList.remove('show'); }
+    };
+    document.addEventListener('scroll', onScroll); onScroll();
+
+    // Active link highlighting
+    (function(){
+      const path = location.pathname.split('/').pop() || 'index.html';
+      const links = document.querySelectorAll('nav a[href]');
+      links.forEach(a=>{ const href=a.getAttribute('href'); if(href===path){ a.setAttribute('aria-current','page'); }});
+    })();
+
+    // Submenus (hover + delayed close + mobile toggle) for all dropdowns
+    (function(){
+      const parents = Array.from(document.querySelectorAll('nav li.has-submenu'));
+      if(!parents.length) return;
+      parents.forEach((submenuParent)=>{
+        const toggle = submenuParent.querySelector('.submenu-toggle');
+        let hideTimer;
+        const open = () => { clearTimeout(hideTimer); submenuParent.classList.add('open'); toggle?.setAttribute('aria-expanded','true'); };
+        const close = () => { submenuParent.classList.remove('open'); toggle?.setAttribute('aria-expanded','false'); };
+        const scheduleClose = ()=>{ clearTimeout(hideTimer); hideTimer = setTimeout(close,550); };
+        submenuParent.addEventListener('mouseenter', open);
+        submenuParent.addEventListener('mouseleave', scheduleClose);
+        submenuParent.addEventListener('focusin', open);
+        submenuParent.addEventListener('focusout', e=>{ if(!submenuParent.contains(e.relatedTarget)) scheduleClose(); });
+        toggle?.addEventListener('click', e=>{ e.preventDefault(); const isOpen = submenuParent.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(isOpen)); });
+      });
+    })();
+
+    // Reveal-on-view
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); } });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>

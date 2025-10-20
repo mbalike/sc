@@ -18,6 +18,7 @@
   </style>
 </head>
 <body>
+  <div id="top" aria-hidden="true"></div>
   <header class="site-header" id="site-header">
     <div class="container nav">
   <div class="brand"><div class="logo" aria-hidden="true"><img src="assets3/img/logo1.0.png" alt="Safari Chic logo"></div><span class="brand-wordmark" aria-hidden="true">Safari Chic</span></div>
@@ -159,9 +160,15 @@
     <div class="container" style="margin-top:1rem;border-top:1px solid var(--line);padding-top:1rem;color:#a7a7a7">© 2025 Safari Chic. All rights reserved.</div>
   </footer>
 
+  <!-- Back to top -->
+  <a href="#top" class="btn btn-primary backtop" id="backtop" aria-label="Back to top" style="position:fixed;right:18px;bottom:18px;z-index:60;opacity:0;pointer-events:none;transition:.3s"><i class="bi bi-arrow-up"></i></a>
+
   <script>
     const burger=document.querySelector('.hamburger'); const menu=document.getElementById('menu'); burger?.addEventListener('click',()=>{ const open=menu.classList.toggle('show'); burger.setAttribute('aria-expanded', String(open)); });
-    const header=document.getElementById('site-header'); const onScroll=()=>{ if(window.scrollY>10){ header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); } }; document.addEventListener('scroll', onScroll); onScroll();
+    const header=document.getElementById('site-header'); const back=document.getElementById('backtop');
+    const onScroll=()=>{ if(window.scrollY>10){ header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); }
+      if(window.scrollY>200){ back?.classList.add('show'); back.style.opacity=1; back.style.pointerEvents='auto'; } else { back?.classList.remove('show'); back.style.opacity=0; back.style.pointerEvents='none'; } };
+    document.addEventListener('scroll', onScroll); onScroll();
     (function(){
       const path = location.pathname.split('/').pop() || 'index.html';
       const links = document.querySelectorAll('nav a[href]');

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Manrope:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap');
+
 /* Breadcrumbs */
 .breadcrumbs{display:flex;align-items:center;gap:.5rem;color:#cfcfcf;padding:8px 0 4px}
 .breadcrumbs ol{display:flex;align-items:center;gap:.5rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
@@ -7,16 +9,25 @@
 .breadcrumbs a:hover{text-decoration:underline}
 .breadcrumbs [aria-current="page"]{color:#ffd15a}
 
-@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+/* Shared font imports are defined at the very top (required by CSS) */
 
 :root{
   --wordmark-color:#ff4fa3; /* brand pink */
+  /* Global font families */
+  --font-body: Manrope, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-heading: Poppins, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-wordmark: 'Allura', cursive;
 }
+
+/* --- Global typography (applies site-wide) --- */
+html, body{ font-family: var(--font-body); line-height: 1.6; }
+/* Use Poppins for headings by default (page styles can still override sizes/weights) */
+h1, h2, h3, h4, h5, h6{ font-family: var(--font-heading); }
 
 /* Shared wordmark styles */
 .brand-wordmark,
 .footer-wordmark{
-  font-family: 'Allura', cursive;
+  font-family: var(--font-wordmark);
   font-weight: bolder;
   color: var(--wordmark-color);
   line-height: 1;
@@ -40,6 +51,26 @@
 }
 /* Prevent accidental column layout if prior styles override */
 .brand > *, .ft-brand > *{flex-shrink:0}
+
+/* --- Baseline header/navigation (shared across pages) --- */
+.site-header{
+  position:fixed; inset:0 0 auto 0; height:72px; z-index:60;
+  display:flex; align-items:center;
+  background:linear-gradient(to bottom, rgba(0,0,0,.55), transparent);
+  transition: background .3s ease, border-color .3s ease, backdrop-filter .3s ease;
+  border-bottom:1px solid transparent;
+  backdrop-filter:saturate(120%) blur(6px);
+}
+.site-header.scrolled{ background:rgba(10,10,14,.75); border-bottom-color:var(--line, rgba(255,255,255,.08)); }
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{width:80px;height:80px;border-radius:10px; overflow:hidden}
+.logo img{width:100%;height:100%;object-fit:contain;display:block;border-radius:10px}
+nav ul{display:flex;gap:1.2rem;list-style:none;padding:0;margin:0}
+nav a{color:#ddd;text-decoration:none;font-weight:600;font-size:.95rem}
+nav a:hover{color:#fff}
+.hamburger{display:none;background:none;border:0;color:#fff}
+/* Slightly smaller header CTA button only (keep other .btn sizes unchanged) */
+.site-header .actions .btn{ padding:.7rem 1.05rem; font-size:.92rem; }
 
 @media (min-width: 901px){
   .brand-wordmark{ display:inline-block; font-size: clamp(1.2rem, 2.6vw, 2rem); margin-left:.2rem; }
@@ -66,6 +97,12 @@ nav li.has-submenu .submenu a:hover,
 nav li.has-submenu .submenu a:focus{background:#ffffff12;color:#fff}
 
 @media (max-width:900px){
+  /* Mobile baseline header/nav */
+  .site-header{height:64px}
+  nav ul{display:none}
+  .hamburger{display:block;font-size:1.5rem}
+  nav ul.show{display:flex;position:absolute;top:64px;left:0;right:0;background:#0f0e14;padding:1rem 1.2rem;flex-direction:column;border-bottom:1px solid var(--line, rgba(255,255,255,.08))}
+  .brand .logo{width:44px;height:44px}
   nav li.has-submenu{position:static}
   nav li.has-submenu .submenu{position:static;background:#0f0e14;border:0;box-shadow:none;padding:0;margin:.3rem 0 .4rem;border-left:3px solid var(--magenta);display:none}
   nav li.has-submenu.open .submenu{display:block}

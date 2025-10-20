@@ -70,7 +70,7 @@ nav a{color:#ddd;text-decoration:none;font-weight:600;font-size:.95rem}
 nav a:hover{color:#fff}
 .hamburger{display:none;background:none;border:0;color:#fff}
 /* Slightly smaller header CTA button only (keep other .btn sizes unchanged) */
-.site-header .actions .btn{ padding:.7rem 1.05rem; font-size:.92rem; }
+.site-header .actions .btn{ padding:.7rem 1.05rem; font-size:.92rem; border-radius:999px; }
 
 @media (min-width: 901px){
   .brand-wordmark{ display:inline-block; font-size: clamp(1.2rem, 2.6vw, 2rem); margin-left:.2rem; }

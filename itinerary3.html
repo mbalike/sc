@@ -186,7 +186,7 @@
     .day-copy p{color:#eaeaea; margin:.6rem 0}
     .features{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.8rem}
     .features .chip{border-color:#ffffff20}
-    .day-media{position:relative; min-height:240px; background:#000}
+    .day-media{position:relative; min-height:320px; background:#000}
     .day-media img{width:100%; height:100%; object-fit:cover; display:block}
     .img-overlay{position:absolute; inset:0; background: linear-gradient( to top, rgba(0,0,0,.35), rgba(0,0,0,.05))}
     .img-badge{
@@ -200,7 +200,7 @@
       border:1px solid var(--line); box-shadow:var(--shadow);
       background:#000;
     }
-    .banner img{width:100%; height:360px; object-fit:cover; display:block; opacity:.88}
+    .banner img{width:100%; height:420px; object-fit:cover; display:block; opacity:.88}
     .banner .content{position:absolute; inset:0; display:grid; place-items:center; text-align:center; padding:1.6rem}
     .banner h3{
       font:800 clamp(1.2rem,3vw,1.9rem)/1.15 Poppins; margin:.3rem 0 .4rem;
@@ -208,7 +208,7 @@
       text-shadow:0 4px 24px rgba(0,0,0,.55);
     }
     .banner p{color:#f1f1f1; max-width:70ch; margin:0 auto 1rem}
-    .banner .ribbon{
+    .banner .ribbon{margin-bottom:.8rem;
       position:absolute; top:16px; right:16px;
       background:linear-gradient(135deg,var(--magenta),var(--magenta-700));
       padding:.5rem .8rem; border-radius:999px; font-weight:800; font-size:.86rem; box-shadow:var(--shadow-sm)
@@ -226,9 +226,10 @@
     /* Price */
     .price-wrap{margin-top:1rem}
     .price{
-      padding:1.2rem; border:1px solid var(--line); border-radius:16px; background:var(--glass);
+      padding:1.2rem; border:2px solid transparent; background:linear-gradient(135deg, rgba(253,51,162,.08), rgba(255,184,0,.08)); border-radius:16px; position:relative;
     }
-    .amount{font:800 1.6rem/1 Poppins; background:linear-gradient(135deg,#fff,#ffe9af); -webkit-background-clip:text; background-clip:text; color:transparent;}
+    .price::before{content:""; position:absolute; inset:0; border-radius:16px; padding:2px; background:linear-gradient(135deg, #FD33A2, #ffb800); -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none;}
+    .amount{font:800 1.6rem/1 Poppins; background:linear-gradient(135deg,#FD33A2,#ffb800); -webkit-background-clip:text; background-clip:text; color:transparent;}
 
     /* Highlights */
   .hl-icon{font-size:1.2rem; width:34px; height:34px; display:grid; place-items:center; border-radius:10px; background:linear-gradient(135deg,var(--magenta),var(--magenta-700)); color:#fff; font-weight:900;}

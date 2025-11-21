@@ -159,8 +159,9 @@
 
     /* Price */
     .price-wrap{margin-top:1rem}
-    .price{ padding:1.2rem; border:1px solid var(--line); border-radius:16px; background:var(--glass); }
-    .amount{font:800 1.6rem/1 Poppins; background:linear-gradient(135deg,#fff,#ffe9af); -webkit-background-clip:text; background-clip:text; color:transparent;}
+    .price{ padding:1.2rem; border:2px solid transparent; background:linear-gradient(135deg, rgba(253,51,162,.08), rgba(255,184,0,.08)); border-radius:16px; position:relative; }
+    .price::before{content:""; position:absolute; inset:0; border-radius:16px; padding:2px; background:linear-gradient(135deg, #FD33A2, #ffb800); -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none;}
+    .amount{font:800 1.6rem/1 Poppins; background:linear-gradient(135deg,#FD33A2,#ffb800); -webkit-background-clip:text; background-clip:text; color:transparent;}
 
     /* CTA */
     .cta{ position:relative; overflow:hidden; border-radius:24px; background: radial-gradient(900px 400px at 90% -10%, rgba(196,0,106,.35), transparent 60%), radial-gradient(900px 400px at 10% 110%, rgba(255,184,0,.25), transparent 60%), linear-gradient(135deg, #16131a, #100f15); border:1px solid var(--line); box-shadow:var(--shadow); }

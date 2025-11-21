@@ -1,6 +1,6 @@
 /* Shared styles for destination detail pages */
 :root{
-  --magenta:#c4006a; --magenta-700:#a10057;
+  --magenta:#FD33A2; --magenta-700:#E91E8C;
   --gold:#ffb800; --gold-700:#e6a300;
   --ink:#1a1a1a; --muted:#cfcfcf;
   --bg:#0c0b10; --panel:#121118;
@@ -33,7 +33,7 @@ body{
 /* Buttons base (colors come from overrides.css) */
 .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.2rem;border-radius:999px;font-weight:800;text-decoration:none;border:1px solid #ffffff15;transition:.25s;cursor:pointer;box-shadow:var(--shadow-sm)}
 .chip{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .7rem;border-radius:999px;font-size:.85rem;font-weight:700;border:1px solid var(--line);background:var(--glass)}
-.badge{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem .7rem;border-radius:999px;font-weight:800;font-size:.82rem;background:linear-gradient(135deg,var(--magenta),var(--magenta-700)); box-shadow:var(--shadow-sm)}
+.badge{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem .7rem;border-radius:999px;font-weight:800;font-size:.82rem;background:linear-gradient(135deg,#FD33A2,#E91E8C); box-shadow:var(--shadow-sm)}
 .muted{color:#cdcdcd}
 
 /* Header */

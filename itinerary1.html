@@ -19,9 +19,9 @@
 
   <style>
     :root{
-      --magenta:#c4006a;
-      --magenta-700:#a10057;
-      --magenta-900:#6e003a;
+      --magenta:#FD33A2;
+      --magenta-700:#E91E8C;
+      --magenta-900:#D01A7A;
       --gold:#ffb800;
       --gold-700:#e6a300;
       --ink:#1a1a1a;
@@ -58,7 +58,7 @@
       box-shadow:var(--shadow-sm);
     }
     .btn-primary{
-      background:linear-gradient(135deg,var(--magenta),var(--magenta-700));
+      background:linear-gradient(135deg,#FD33A2,#E91E8C);
       color:#fff; border-color:#ffffff15;
     }
     .btn-primary:hover{transform:translateY(-2px)}
@@ -119,7 +119,7 @@
     .hero-badges{display:flex; gap:.8rem; flex-wrap:wrap; margin:1.1rem 0 2rem}
     .hero-media{ position:relative; border-radius:24px; overflow:hidden; box-shadow: var(--shadow); background:#000; }
     .hero-media img{width:100%; height:100%; object-fit:cover; display:block; aspect-ratio: 4/3; opacity:.92; transform:scale(1.02)}
-    .corner-tag{ position:absolute; top:14px; left:14px; background:linear-gradient(135deg,var(--magenta),var(--magenta-700)); padding:.5rem .7rem; border-radius:999px; font:700 .85rem/1 Manrope; box-shadow:var(--shadow-sm) }
+    .corner-tag{ position:absolute; top:14px; left:14px; background:linear-gradient(135deg,#FD33A2,#E91E8C); padding:.5rem .7rem; border-radius:999px; font:700 .85rem/1 Manrope; box-shadow:var(--shadow-sm) }
 
     /* Sections */
     section{padding:72px 0}
@@ -131,11 +131,11 @@
     .timeline{ position:relative; margin: 2.5rem 0 0; padding-left: 1.25rem; }
     .timeline::before{
       content:""; position:absolute; left:12px; top:0; bottom:0; width:2px;
-      background:linear-gradient(var(--magenta), var(--gold)); opacity:.65;
+      background:linear-gradient(#FD33A2, var(--gold)); opacity:.65;
     }
     .day{ position:relative; margin:0 0 1.25rem 0; display:grid; grid-template-columns: 220px 1fr; gap:1.25rem; align-items:stretch;}
     @media (max-width: 900px){ .day{grid-template-columns:1fr} }
-    .dot{ position:absolute; left:-1px; top:1rem; transform:translateX(-50%); width:16px;height:16px;border-radius:50%; background:conic-gradient(var(--magenta), var(--gold)); box-shadow:0 0 0 4px rgba(255,255,255,.04); }
+    .dot{ position:absolute; left:-1px; top:1rem; transform:translateX(-50%); width:16px;height:16px;border-radius:50%; background:conic-gradient(#FD33A2, var(--gold)); box-shadow:0 0 0 4px rgba(255,255,255,.04); }
     .day-aside{ background:linear-gradient(135deg, #1a161d, #131118); border:1px solid var(--line); border-radius:16px; padding:1rem 1.1rem; }
     .day-tag{display:inline-flex; align-items:center; gap:.5rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; font-size:.78rem; color:#fff}
     .day-tag .num{background:var(--glass); padding:.35rem .6rem; border-radius:999px; border:1px solid var(--line)}
@@ -150,7 +150,7 @@
     .day-media{position:relative; min-height:240px; background:#000}
     .day-media img{width:100%; height:100%; object-fit:cover; display:block}
     .img-overlay{position:absolute; inset:0; background: linear-gradient( to top, rgba(0,0,0,.35), rgba(0,0,0,.05))}
-  .img-badge{ position:absolute; bottom:12px; left:12px; background:linear-gradient(135deg,var(--magenta),var(--magenta-700)); color:#fff; padding:.45rem .7rem; border-radius:999px; font-weight:800; font-size:.82rem; box-shadow:var(--shadow-sm) }
+  .img-badge{ position:absolute; bottom:12px; left:12px; background:linear-gradient(135deg,#FD33A2,#E91E8C); color:#fff; padding:.45rem .7rem; border-radius:999px; font-weight:800; font-size:.82rem; box-shadow:var(--shadow-sm) }
 
     /* Cards */
     .card{ background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid var(--line); border-radius:16px; padding:1.1rem; box-shadow:var(--shadow-sm); }
@@ -247,7 +247,7 @@
       <div>
         <div class="eyebrow">Tanzania • Zanzibar</div>
         <h1 class="title">The Essence</h1>
-        <p class="subtitle">Arusha welcome, Tarangire’s baobabs, Ngorongoro’s crater floor, Lake Manyara’s birdlife and a fragrant finish in Stone Town.</p>
+        <p class="subtitle">An Arusha prelude, Tarangire's baobabs, Ngorongoro's crater floor, Lake Manyara's birdlife, and a fragrant finish in Stone Town.</p>
         <div class="hero-badges">
           <span class="chip"><i class="bi bi-calendar-event"></i> 5 Days</span>
           <span class="chip"><i class="bi bi-truck"></i> Private 4×4</span>
@@ -269,8 +269,8 @@
   <section id="journey">
     <div class="container">
       <div class="section-head">
-        <h2>Day-by-Day Journey</h2>
-        <p>Elegant timeline — tap any day to see key moments, lodging ideas and optional touches.</p>
+        <h2>The Journey Unfolds</h2>
+        <p>An elegant itinerary — explore each day's highlights, stays, and memories in the making.</p>
       </div>
 
       <div class="timeline">
@@ -403,7 +403,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Price Guide</h2>
-        <p>Indicative per-person pricing; final quotes vary by dates and lodges.</p>
+        <p>Choose your style of stay, we'll tailor the details.</p>
       </div>
       <div class="grid cols-3 price-wrap">
         <div class="price">
@@ -456,8 +456,8 @@
   <section class="cta" id="contact">
     <div class="container">
       <div class="inner reveal">
-        <h3>Ready for Your Serengeti & Zanzibar Adventure?</h3>
-        <p>Share your dates and preferences — we’ll tailor this 5-day explorer to match your style.</p>
+        <h3>Ready for Your Serengeti & Zanzibar Experience?</h3>
+        <p>Tell us your dates and travel style — we'll craft this 5-day escape around you.</p>
         <div style="display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap">
           <a class="btn btn-primary" href="mailto:info@safarichic.com"><i class="bi bi-envelope"></i> info@safarichic.com</a>
           <a class="btn btn-gold" href="tel:+255742930833"><i class="bi bi-telephone"></i> +255 742 930833</a>

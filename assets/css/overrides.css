@@ -1,14 +1,20 @@
-/* Global button color override to brand magenta */
+/* Global button color override to bubblegum Barbie pink */
 /* Uses CSS vars with sensible fallbacks for pages missing definitions */
 
 .btn,
 .btn-primary,
-.btn-gold,
 button.btn,
 a.btn {
-  background: linear-gradient(135deg, var(--magenta, #c4006a), var(--magenta-700, #a10057)) !important;
+  background: linear-gradient(135deg, #FD33A2, #E91E8C) !important;
   color: #fff !important;
   border-color: #ffffff15 !important;
+}
+
+/* Keep gold buttons as gold accent */
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold, #ffb800), var(--gold-700, #e6a300)) !important;
+  color: #111 !important;
+  border-color: #00000010 !important;
 }
 
 /* Keep existing hover lift */
@@ -20,10 +26,10 @@ a.btn:hover {
 /* Ensure anchor buttons don’t underline */
 a.btn { text-decoration: none; }
 
-/* Intro bullet icon background: use magenta brand as well */
+/* Intro bullet icon background: use bubblegum pink brand */
 .bullet i {
-  background: linear-gradient(135deg, var(--magenta), var(--magenta-700)) !important;
-  color: #fff !important; /* ensure good contrast on magenta */
+  background: linear-gradient(135deg, #FD33A2, #E91E8C) !important;
+  color: #fff !important; /* ensure good contrast on pink */
 }
 
 /* ---------------------------------------
@@ -72,7 +78,7 @@ footer .card h3 i {
   width: 28px; height: 28px;
   display: inline-grid; place-items: center;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--magenta, #c4006a), var(--magenta-700, #a10057));
+  background: linear-gradient(135deg, #FD33A2, #E91E8C);
   color: #fff;
 }
 footer .card p { 
@@ -107,7 +113,7 @@ footer .grid.cols-3{
 /* Active link highlight (works on light/dark headers) */
 nav a[aria-current="page"],
 nav a.active{
-  color: var(--magenta, #fff) !important;
+  color: #FD33A2 !important;
   font-weight: bolder;
   position: relative;
 }
@@ -118,7 +124,7 @@ nav a.active{
     position: absolute;
     left: 0; right: 0; bottom: -6px;
     height: 2px;
-    background: linear-gradient(90deg, var(--gold, #ffb800), var(--magenta, #c4006a));
+    background: linear-gradient(90deg, var(--gold, #ffb800), #FD33A2);
     border-radius: 999px;
   }
 }
@@ -143,7 +149,7 @@ nav li.has-submenu > .submenu a{
   display: block;
   padding: 8px 10px;
   border-radius: 8px;
-  color: var(--magenta, #101114) !important;
+  color: #FD33A2 !important;
   white-space: nowrap;
 }
 nav li.has-submenu > .submenu a:hover{ background: #FAFAFC; }

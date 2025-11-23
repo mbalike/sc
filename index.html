@@ -250,15 +250,6 @@
   .brand-mini img{width:36px; height:36px; border-radius:8px; object-fit:contain}
   .about-meta{display:flex; gap:.5rem; flex-wrap:wrap; margin:.8rem 0 1.1rem}
 
-    /* Footer */
-    footer{padding:36px 0 60px;color:#cfcfcf}
-    .footer-grid{display:grid;grid-template-columns: 1fr 2fr; gap:2rem}
-    @media (max-width: 900px){.footer-grid{grid-template-columns:1fr}}
-    .ft-brand{display:flex;align-items:center;gap:.8rem}
-    .ft-brand .logo{width:32px;height:32px;border-radius:10px;}
-    .ft-brand .logo img{width:100%;height:100%;object-fit:contain;display:block;border-radius:10px}
-    .ft-note{color:#9c9c9c;font-size:.95rem}
-
     /* Reveal */
     .reveal{opacity:0;transform:translateY(16px);transition:.6s ease}
     .reveal.in{opacity:1;transform:none}
@@ -267,7 +258,6 @@
     .cols-3{grid-template-columns:repeat(3,1fr); gap:1.5rem}
     .cols-2{grid-template-columns:repeat(2,1fr); gap:1rem}
     @media (max-width: 980px){ .cols-3, .cols-2{grid-template-columns:1fr} }
-    footer .grid.cols-3 .card{min-width:200px;padding:1.2rem}
     img, picture, video, svg { max-width:100%; height:auto; display:block; }
     html, body { max-width:100%; overflow-x:hidden; }
 
@@ -656,15 +646,15 @@
       </div>
       <div>
         <div class="grid cols-3">
-          <div class="card">
+          <div class="card" data-tooltip="Zanzibar • Arusha, Tanzania">
             <h3><i class="bi bi-geo-alt"></i> Our Locations</h3>
             <p class="muted">Zanzibar • Arusha, Tanzania</p>
           </div>
-          <div class="card">
+          <div class="card" data-tooltip="info@safarichic.com">
             <h3><i class="bi bi-envelope-open"></i> Guest Services</h3>
             <p class="muted">info@safarichic.com</p>
           </div>
-          <div class="card">
+          <div class="card" data-tooltip="+255 742 930833 • Available daily 8am–8pm EAT">
             <h3><i class="bi bi-whatsapp"></i> WhatsApp / Phone</h3>
             <p class="muted">+255 742 930833</p>
             <p class="muted" style="font-size:.85rem;margin-top:.3rem">Available daily • 8am–8pm EAT</p>

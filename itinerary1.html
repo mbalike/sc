@@ -90,6 +90,7 @@
     @media (max-width: 900px){
       nav ul{display:none}
       .hamburger{display:block; font-size:1.5rem}
+     .actions{display:none}
   nav ul.show{display:flex; position:absolute; top:64px; left:0; right:0; background:#0f0e14; padding:1rem 1.2rem; flex-direction:column; border-bottom:1px solid var(--line)}
       .brand .logo{width:44px;height:44px}
     }
@@ -162,6 +163,9 @@
     .price{ padding:1.2rem; border:2px solid transparent; background:linear-gradient(135deg, rgba(253,51,162,.08), rgba(255,184,0,.08)); border-radius:16px; position:relative; }
     .price::before{content:""; position:absolute; inset:0; border-radius:16px; padding:2px; background:linear-gradient(135deg, #FD33A2, #ffb800); -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none;}
     .amount{font:800 1.6rem/1 Poppins; background:linear-gradient(135deg,#FD33A2,#ffb800); -webkit-background-clip:text; background-clip:text; color:transparent;}
+
+    /* Highlights */
+  .hl-icon{font-size:1.2rem; width:34px; height:34px; display:grid; place-items:center; border-radius:10px; background:linear-gradient(135deg,#FD33A2,#E91E8C); color:#fff; font-weight:900}
 
     /* CTA */
     .cta{ position:relative; overflow:hidden; border-radius:24px; background: radial-gradient(900px 400px at 90% -10%, rgba(196,0,106,.35), transparent 60%), radial-gradient(900px 400px at 10% 110%, rgba(255,184,0,.25), transparent 60%), linear-gradient(135deg, #16131a, #100f15); border:1px solid var(--line); box-shadow:var(--shadow); }
@@ -435,17 +439,17 @@
       </div>
       <div class="grid cols-3">
         <div class="card reveal">
-          <div class="chip" style="background:linear-gradient(135deg,var(--magenta),var(--magenta-700)); color:#fff; font-weight:800"><i class="bi bi-star-fill"></i> Big Five</div>
+          <div class="hl-icon"><i class="bi bi-star-fill"></i></div>
           <h3>Wildlife Thrills</h3>
           <p class="muted">Packed game drives across Tarangire and Ngorongoro.</p>
         </div>
         <div class="card reveal">
-          <div class="chip" style="background:linear-gradient(135deg,var(--magenta),var(--magenta-700)); color:#fff; font-weight:800"><i class="bi bi-geo-alt-fill"></i> UNESCO</div>
+          <div class="hl-icon"><i class="bi bi-geo-alt-fill"></i></div>
           <h3>Ngorongoro Wonder</h3>
           <p class="muted">A natural amphitheater teeming with life.</p>
         </div>
         <div class="card reveal">
-          <div class="chip" style="background:linear-gradient(135deg,var(--magenta),var(--magenta-700)); color:#fff; font-weight:800"><i class="bi bi-buildings"></i> Culture</div>
+          <div class="hl-icon"><i class="bi bi-buildings"></i></div>
           <h3>Stone Town Stories</h3>
           <p class="muted">Carved doors, spice tales and sunset bites.</p>
         </div>

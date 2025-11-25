@@ -73,8 +73,11 @@
 
     .brand h3{margin:0;font:800 1.1rem/1 Poppins, sans-serif;letter-spacing:.3px}
     nav ul{display:flex;gap:1.2rem;list-style:none;padding:0;margin:0}
-    nav a{color:#ddd;text-decoration:none;font-weight:600;font-size:.95rem}
-    nav a:hover{color:#fff}
+    nav a{color:#ddd;text-decoration:none;font-weight:600;font-size:.95rem;transition:.25s ease;position:relative}
+    nav a:hover{color:#fff;text-shadow:0 0 8px rgba(255,105,180,.4)}
+    nav a[aria-current="page"]{color:#FF69B4;font-weight:700}
+    nav li.has-submenu .submenu a:hover{color:#FF69B4;transform:translateX(3px)}
+    nav li.has-submenu .submenu a[aria-current="page"]{color:#FF69B4;background:#ffffff08;font-weight:700}
     .hamburger{display:none;background:none;border:0;color:#fff}
     .actions{display:flex;align-items:center;gap:.6rem} /* container for "See Packages" CTA */
 
@@ -605,6 +608,27 @@
       if(window.scrollY>10){ header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); }
       if(window.scrollY>200){ backtop?.classList.add('show'); } else { backtop?.classList.remove('show'); }
     };
+    document.addEventListener('scroll', onScroll); onScroll();
+
+    // Active link highlighting (auto-detect by URL)
+    (function(){
+      const path = location.pathname.split('/').pop() || 'index.html';
+      const links = document.querySelectorAll('nav a[href]');
+      links.forEach(a=>{
+        const href=a.getAttribute('href');
+        if(href===path){ a.setAttribute('aria-current','page'); }
+      });
+      // Highlight parent menu item when child page is active
+      const activeSubmenuLink = document.querySelector('nav li.has-submenu .submenu a[aria-current="page"]');
+      if(activeSubmenuLink){
+        const parentMenuItem = activeSubmenuLink.closest('li.has-submenu');
+        if(parentMenuItem){
+          const parentLink = parentMenuItem.querySelector(':scope > a');
+          if(parentLink) parentLink.setAttribute('aria-current','page');
+        }
+      }
+    })();
+
     // Submenus (hover + delayed close + mobile toggle) for all dropdowns
     (function(){
       const parents = Array.from(document.querySelectorAll('nav li.has-submenu'));

@@ -92,10 +92,10 @@
             <button class="submenu-toggle" aria-label="Toggle Itineraries submenu" aria-expanded="false"></button>
             <ul class="submenu" aria-label="Itineraries submenu">
               <li><a href="itineraries.html">All Itineraries</a></li>
-              <li><a href="itinerary1.html">5-Day Essence</a></li>
               <li><a href="itinerary2.html">3-Day Chic Escape</a></li>
-              <li><a href="itinerary3.html">8-Day Zanzibar Luxe</a></li>
+              <li><a href="itinerary1.html">5-Day Essence</a></li>
               <li><a href="itinerary4.html">7-Day Kilimanjaro</a></li>
+              <li><a href="itinerary3.html">8-Day Zanzibar Luxe</a></li>
             </ul>
           </li>
           <li class="has-submenu">
@@ -342,7 +342,7 @@
     const backtop=document.getElementById('backtop');
     const onScroll=()=>{if(window.scrollY>10){header.classList.add('scrolled');}else{header.classList.remove('scrolled');}if(window.scrollY>200){backtop?.classList.add('show');backtop.style.opacity=1;backtop.style.pointerEvents='auto';}else{backtop?.classList.remove('show');backtop.style.opacity=0;backtop.style.pointerEvents='none';}};
     document.addEventListener('scroll',onScroll);onScroll();
-    (function(){const path=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('nav a[href]').forEach(a=>{const href=a.getAttribute('href');if(href===path){a.setAttribute('aria-current','page');}})})();
+    (function(){const path=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('nav a[href]').forEach(a=>{const href=a.getAttribute('href');if(href===path){a.setAttribute('aria-current','page');}})})();const activeSubmenuLink=document.querySelector('nav li.has-submenu .submenu a[aria-current="page"]');if(activeSubmenuLink){const parentMenuItem=activeSubmenuLink.closest('li.has-submenu');if(parentMenuItem){const parentLink=parentMenuItem.querySelector(':scope > a');if(parentLink)parentLink.setAttribute('aria-current','page');}}
     (function(){const parents=[...document.querySelectorAll('nav li.has-submenu')];if(!parents.length)return;parents.forEach(p=>{const t=p.querySelector('.submenu-toggle');let hide;const open=()=>{clearTimeout(hide);p.classList.add('open');t?.setAttribute('aria-expanded','true');};const close=()=>{p.classList.remove('open');t?.setAttribute('aria-expanded','false');};const schedule=()=>{clearTimeout(hide);hide=setTimeout(close,550);};p.addEventListener('mouseenter',open);p.addEventListener('mouseleave',schedule);p.addEventListener('focusin',open);p.addEventListener('focusout',e=>{if(!p.contains(e.relatedTarget))schedule();});t?.addEventListener('click',e=>{e.preventDefault();const isOpen=p.classList.toggle('open');t.setAttribute('aria-expanded',String(isOpen));});});})();
     const io=new IntersectionObserver((entries)=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}})},{threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));

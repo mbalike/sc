@@ -143,10 +143,10 @@
             <button class="submenu-toggle" aria-label="Toggle Itineraries submenu" aria-expanded="false"></button>
             <ul class="submenu" aria-label="Itineraries submenu">
               <li><a href="itineraries.html">All Itineraries</a></li>
-              <li><a href="itinerary1.html">5-Day Essence</a></li>
               <li><a href="itinerary2.html">3-Day Chic Escape</a></li>
-              <li><a href="itinerary3.html">8-Day Zanzibar Luxe</a></li>
+              <li><a href="itinerary1.html">5-Day Essence</a></li>
               <li><a href="itinerary4.html">7-Day Kilimanjaro</a></li>
+              <li><a href="itinerary3.html">8-Day Zanzibar Luxe</a></li>
             </ul>
           </li>
           <li class="has-submenu">
@@ -330,7 +330,7 @@
     };
     document.addEventListener('scroll', onScroll); onScroll();
 
-    // Active link highlighting (auto-detect by URL)
+        // Active link highlighting (auto-detect by URL)
     (function(){
       const path = location.pathname.split('/').pop() || 'index.html';
       const links = document.querySelectorAll('nav a[href]');
@@ -338,6 +338,15 @@
         const href=a.getAttribute('href');
         if(href===path){ a.setAttribute('aria-current','page'); }
       });
+      // Highlight parent menu item when child page is active
+      const activeSubmenuLink = document.querySelector('nav li.has-submenu .submenu a[aria-current="page"]');
+      if(activeSubmenuLink){
+        const parentMenuItem = activeSubmenuLink.closest('li.has-submenu');
+        if(parentMenuItem){
+          const parentLink = parentMenuItem.querySelector(':scope > a');
+          if(parentLink) parentLink.setAttribute('aria-current','page');
+        }
+      }
     })();
 
     // Submenus (hover + delayed close + mobile toggle) for all dropdowns

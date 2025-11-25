@@ -66,8 +66,10 @@ h1, h2, h3, h4, h5, h6{ font-family: var(--font-heading); }
 .logo{width:80px;height:80px;border-radius:10px; overflow:hidden}
 .logo img{width:100%;height:100%;object-fit:contain;display:block;border-radius:10px}
 nav ul{display:flex;gap:1.2rem;list-style:none;padding:0;margin:0}
-nav a{color:#ddd;text-decoration:none;font-weight:600;font-size:.95rem}
-nav a:hover{color:#fff}
+nav a{color:#ddd;text-decoration:none;font-weight:600;font-size:.95rem;transition:.25s ease;position:relative}
+nav a:hover{color:#fff;text-shadow:0 0 8px rgba(255,105,180,.4)}
+nav a[aria-current="page"]{color:#FF69B4;font-weight:700}
+nav li.has-submenu a[aria-current="page"]{color:#FF69B4}
 .hamburger{display:none;background:none;border:0;color:#fff}
 /* Slightly smaller header CTA button only (keep other .btn sizes unchanged) */
 .site-header .actions .btn{ padding:.7rem 1.05rem; font-size:.92rem; border-radius:999px; }
@@ -92,9 +94,10 @@ nav li.has-submenu.open .submenu,
 nav li.has-submenu:hover .submenu,
 nav li.has-submenu:focus-within .submenu{display:block}
 nav li.has-submenu .submenu li{margin:0;padding:0}
-nav li.has-submenu .submenu a{display:block;padding:.6rem 1rem;color:#fff;font-weight:600;font-size:.9rem;text-decoration:none;white-space:nowrap;transition:.25s background}
+nav li.has-submenu .submenu a{display:block;padding:.6rem 1rem;color:#ddd;font-weight:600;font-size:.9rem;text-decoration:none;white-space:nowrap;transition:.25s ease}
 nav li.has-submenu .submenu a:hover,
-nav li.has-submenu .submenu a:focus{background:#ffffff12;color:#fff}
+nav li.has-submenu .submenu a:focus{background:#ffffff12;color:#FF69B4;transform:translateX(3px)}
+nav li.has-submenu .submenu a[aria-current="page"]{color:#FF69B4;background:#ffffff08;font-weight:700}
 
 @media (max-width:900px){
   /* Mobile baseline header/nav */

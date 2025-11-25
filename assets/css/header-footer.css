@@ -12,7 +12,7 @@
 /* Shared font imports are defined at the very top (required by CSS) */
 
 :root{
-  --wordmark-color:#ff4fa3; /* brand pink */
+  --wordmark-color:#FF69B4; /* brand pink */
   /* Global font families */
   --font-body: Manrope, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   --font-heading: Poppins, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;

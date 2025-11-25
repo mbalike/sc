@@ -19,9 +19,9 @@
 
   <style>
     :root{
-      --magenta:#FD33A2;
-      --magenta-700:#E91E8C;
-      --magenta-900:#D01A7A;
+      --magenta:#FF69B4;
+      --magenta-700:#FF69B4;
+      --magenta-900:#FF69B4;
       --gold:#ffb800;
       --gold-700:#e6a300;
       --ink:#1a1a1a;
@@ -58,7 +58,7 @@
       box-shadow:var(--shadow-sm);
     }
     .btn-primary{
-      background:linear-gradient(135deg,#FD33A2,#E91E8C);
+      background:linear-gradient(135deg,#FF69B4,#FF69B4);
       color:#fff; border-color:#ffffff15;
     }
     .btn-primary:hover{transform:translateY(-2px)}
@@ -120,7 +120,7 @@
     .hero-badges{display:flex; gap:.8rem; flex-wrap:wrap; margin:1.1rem 0 2rem}
     .hero-media{ position:relative; border-radius:24px; overflow:hidden; box-shadow: var(--shadow); background:#000; }
     .hero-media img{width:100%; height:100%; object-fit:cover; display:block; aspect-ratio: 4/3; opacity:.92; transform:scale(1.02)}
-    .corner-tag{ position:absolute; top:14px; left:14px; background:linear-gradient(135deg,#FD33A2,#E91E8C); padding:.5rem .7rem; border-radius:999px; font:700 .85rem/1 Manrope; box-shadow:var(--shadow-sm) }
+    .corner-tag{ position:absolute; top:14px; left:14px; background:linear-gradient(135deg,#FF69B4,#FF69B4); padding:.5rem .7rem; border-radius:999px; font:700 .85rem/1 Manrope; box-shadow:var(--shadow-sm) }
 
     /* Sections */
     section{padding:72px 0}
@@ -151,7 +151,7 @@
     .day-media{position:relative; min-height:240px; background:#000}
     .day-media img{width:100%; height:100%; object-fit:cover; display:block}
     .img-overlay{position:absolute; inset:0; background: linear-gradient( to top, rgba(0,0,0,.35), rgba(0,0,0,.05))}
-  .img-badge{ position:absolute; bottom:12px; left:12px; background:linear-gradient(135deg,#FD33A2,#E91E8C); color:#fff; padding:.45rem .7rem; border-radius:999px; font-weight:800; font-size:.82rem; box-shadow:var(--shadow-sm) }
+  .img-badge{ position:absolute; bottom:12px; left:12px; background:linear-gradient(135deg,#FF69B4,#FF69B4); color:#fff; padding:.45rem .7rem; border-radius:999px; font-weight:800; font-size:.82rem; box-shadow:var(--shadow-sm) }
 
     /* Cards */
     .card{ background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid var(--line); border-radius:16px; padding:1.1rem; box-shadow:var(--shadow-sm); }
@@ -161,11 +161,11 @@
     /* Price */
     .price-wrap{margin-top:1rem}
     .price{ padding:1.2rem; border:2px solid transparent; background:linear-gradient(135deg, rgba(253,51,162,.08), rgba(255,184,0,.08)); border-radius:16px; position:relative; }
-    .price::before{content:""; position:absolute; inset:0; border-radius:16px; padding:2px; background:linear-gradient(135deg, #FD33A2, #ffb800); -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none;}
-    .amount{font:800 1.6rem/1 Poppins; background:linear-gradient(135deg,#FD33A2,#ffb800); -webkit-background-clip:text; background-clip:text; color:transparent;}
+    .price::before{content:""; position:absolute; inset:0; border-radius:16px; padding:2px; background:linear-gradient(135deg, #FF69B4, #ffb800); -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none;}
+    .amount{font:800 1.6rem/1 Poppins; background:linear-gradient(135deg,#FF69B4,#ffb800); -webkit-background-clip:text; background-clip:text; color:transparent;}
 
     /* Highlights */
-  .hl-icon{font-size:1.2rem; width:34px; height:34px; display:grid; place-items:center; border-radius:10px; background:linear-gradient(135deg,#FD33A2,#E91E8C); color:#fff; font-weight:900}
+  .hl-icon{font-size:1.2rem; width:34px; height:34px; display:grid; place-items:center; border-radius:10px; background:linear-gradient(135deg,#FF69B4,#FF69B4); color:#fff; font-weight:900}
 
     /* CTA */
     .cta{ position:relative; overflow:hidden; border-radius:24px; background: radial-gradient(900px 400px at 90% -10%, rgba(196,0,106,.35), transparent 60%), radial-gradient(900px 400px at 10% 110%, rgba(255,184,0,.25), transparent 60%), linear-gradient(135deg, #16131a, #100f15); border:1px solid var(--line); box-shadow:var(--shadow); }

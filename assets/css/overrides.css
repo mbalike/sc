@@ -5,7 +5,7 @@
 .btn-primary,
 button.btn,
 a.btn {
-  background: linear-gradient(135deg, #FD33A2, #E91E8C) !important;
+  background: linear-gradient(135deg, #FF69B4, #FF69B4) !important;
   color: #fff !important;
   border-color: #ffffff15 !important;
 }
@@ -28,7 +28,7 @@ a.btn { text-decoration: none; }
 
 /* Intro bullet icon background: use bubblegum pink brand */
 .bullet i {
-  background: linear-gradient(135deg, #FD33A2, #E91E8C) !important;
+  background: linear-gradient(135deg, #FF69B4, #FF69B4) !important;
   color: #fff !important; /* ensure good contrast on pink */
 }
 
@@ -78,7 +78,7 @@ footer .card h3 i {
   width: 28px; height: 28px;
   display: inline-grid; place-items: center;
   border-radius: 999px;
-  background: linear-gradient(135deg, #FD33A2, #E91E8C);
+  background: linear-gradient(135deg, #FF69B4, #FF69B4);
   color: #fff;
 }
 footer .card p { 
@@ -113,7 +113,7 @@ footer .grid.cols-3{
 /* Active link highlight (works on light/dark headers) */
 nav a[aria-current="page"],
 nav a.active{
-  color: #FD33A2 !important;
+  color: #FF69B4 !important;
   font-weight: bolder;
   position: relative;
 }
@@ -124,7 +124,7 @@ nav a.active{
     position: absolute;
     left: 0; right: 0; bottom: -6px;
     height: 2px;
-    background: linear-gradient(90deg, var(--gold, #ffb800), #FD33A2);
+    background: linear-gradient(90deg, var(--gold, #ffb800), #FF69B4);
     border-radius: 999px;
   }
 }
@@ -149,7 +149,7 @@ nav li.has-submenu > .submenu a{
   display: block;
   padding: 8px 10px;
   border-radius: 8px;
-  color: #FD33A2 !important;
+  color: #FF69B4 !important;
   white-space: nowrap;
 }
 nav li.has-submenu > .submenu a:hover{ background: #FAFAFC; }

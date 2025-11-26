@@ -66,9 +66,11 @@ h1, h2, h3, h4, h5, h6{ font-family: var(--font-heading); }
 .logo{width:80px;height:80px;border-radius:10px; overflow:hidden}
 .logo img{width:100%;height:100%;object-fit:contain;display:block;border-radius:10px}
 nav ul{display:flex;gap:1.2rem;list-style:none;padding:0;margin:0}
-nav a{color:#ddd;text-decoration:none;font-weight:600;font-size:.95rem;transition:.25s ease;position:relative}
-nav a:hover{color:#fff;text-shadow:0 0 8px rgba(255,105,180,.4)}
-nav a[aria-current="page"]{color:#FF69B4;font-weight:700}
+nav a{color:#ddd;text-decoration:none;font-weight:600;font-size:.95rem;transition:all .3s ease;position:relative;padding:.5rem .8rem;border-radius:8px}
+nav a::before{content:'';position:absolute;bottom:0;left:50%;right:50%;height:2px;background:linear-gradient(90deg,#FF69B4,#FFD24A);transition:all .3s ease;opacity:0}
+nav a:hover{color:#fff;text-shadow:0 0 12px rgba(255,105,180,.6);background:rgba(255,105,180,.08);transform:translateY(-2px)}
+nav a:hover::before{left:0;right:0;opacity:1}
+nav a[aria-current="page"]{color:#FF69B4;font-weight:700;background:rgba(255,105,180,.1)}
 nav li.has-submenu a[aria-current="page"]{color:#FF69B4}
 .hamburger{display:none;background:none;border:0;color:#fff}
 /* Slightly smaller header CTA button only (keep other .btn sizes unchanged) */
@@ -94,10 +96,13 @@ nav li.has-submenu.open .submenu,
 nav li.has-submenu:hover .submenu,
 nav li.has-submenu:focus-within .submenu{display:block}
 nav li.has-submenu .submenu li{margin:0;padding:0}
-nav li.has-submenu .submenu a{display:block;padding:.6rem 1rem;color:#ddd;font-weight:600;font-size:.9rem;text-decoration:none;white-space:nowrap;transition:.25s ease}
+nav li.has-submenu .submenu a{display:block;padding:.6rem 1rem;color:#ddd;font-weight:600;font-size:.9rem;text-decoration:none;white-space:nowrap;transition:all .3s ease;border-radius:8px;position:relative}
+nav li.has-submenu .submenu a::after{content:'→';position:absolute;right:1rem;opacity:0;transform:translateX(-8px);transition:all .3s ease}
 nav li.has-submenu .submenu a:hover,
-nav li.has-submenu .submenu a:focus{background:#ffffff12;color:#FF69B4;transform:translateX(3px)}
-nav li.has-submenu .submenu a[aria-current="page"]{color:#FF69B4;background:#ffffff08;font-weight:700}
+nav li.has-submenu .submenu a:focus{background:linear-gradient(90deg,rgba(255,105,180,.15),rgba(255,210,74,.08));color:#FF69B4;transform:translateX(4px);padding-right:2rem}
+nav li.has-submenu .submenu a:hover::after,
+nav li.has-submenu .submenu a:focus::after{opacity:1;transform:translateX(0)}
+nav li.has-submenu .submenu a[aria-current="page"]{color:#FF69B4;background:linear-gradient(90deg,rgba(255,105,180,.12),rgba(255,210,74,.06));font-weight:700}
 
 @media (max-width:900px){
   /* Mobile baseline header/nav */

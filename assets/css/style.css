@@ -465,8 +465,10 @@ img{max-width:100%;display:block}
 .logo{width:44px;height:44px;border-radius:12px;background:conic-gradient(from 210deg, var(--magenta), var(--gold));box-shadow:var(--shadow-sm)}
 .brand h3{font:800 18px Poppins, sans-serif;letter-spacing:.3px}
 nav ul{display:flex;gap:1.2rem;list-style:none;margin:0;padding:0}
-nav a{font:600 14px Manrope, sans-serif;color:var(--mute)}
-nav a:hover{color:var(--ink)}
+nav a{font:600 14px Manrope, sans-serif;color:var(--mute);transition:all .3s ease;position:relative;padding:.5rem .8rem;border-radius:8px}
+nav a::before{content:'';position:absolute;bottom:2px;left:50%;right:50%;height:2px;background:linear-gradient(90deg,var(--magenta),var(--gold));transition:all .3s ease;opacity:0}
+nav a:hover{color:var(--ink);background:rgba(230,0,126,.06);transform:translateY(-2px);box-shadow:0 4px 12px rgba(230,0,126,.1)}
+nav a:hover::before{left:0;right:0;opacity:1}
 .hamburger{display:none}
 
 /* Hero (full-bleed background) */

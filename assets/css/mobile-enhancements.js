@@ -9,18 +9,20 @@
   // ========== MOBILE NAVIGATION TOGGLE ==========
   function initMobileNav() {
     const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('nav ul');
+    // Prefer #menu if present, else first nav ul
+    const navMenu = document.querySelector('#menu') || document.querySelector('nav ul');
     const body = document.body;
 
     if (!hamburger || !navMenu) return;
 
     hamburger.addEventListener('click', function(e) {
       e.stopPropagation();
-      navMenu.classList.toggle('show');
-      hamburger.classList.toggle('active');
+      const isOpen = navMenu.classList.toggle('show');
+      hamburger.classList.toggle('active', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
       
       // Prevent body scroll when menu is open
-      if (navMenu.classList.contains('show')) {
+      if (isOpen) {
         body.style.overflow = 'hidden';
       } else {
         body.style.overflow = '';
@@ -34,6 +36,7 @@
           !hamburger.contains(e.target)) {
         navMenu.classList.remove('show');
         hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
         body.style.overflow = '';
       }
     });
@@ -44,6 +47,7 @@
       link.addEventListener('click', function() {
         navMenu.classList.remove('show');
         hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
         body.style.overflow = '';
       });
     });
@@ -56,9 +60,28 @@
         if (window.innerWidth > 900 && navMenu.classList.contains('show')) {
           navMenu.classList.remove('show');
           hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
           body.style.overflow = '';
         }
       }, 250);
+    });
+  }
+
+  // ========== BACK TO TOP (show/hide + smooth scroll) ==========
+  function initBackToTop(){
+    const btn = document.querySelector('.backtop');
+    if(!btn) return;
+    const toggle = ()=>{
+      const show = (window.pageYOffset || document.documentElement.scrollTop) > 200;
+      if(show){ btn.classList.add('show'); }
+      else { btn.classList.remove('show'); }
+    };
+    window.addEventListener('scroll', toggle, { passive: true });
+    toggle();
+    btn.addEventListener('click', (e)=>{
+      const href = btn.getAttribute('href') || '';
+      if(href.startsWith('#')){ e.preventDefault(); }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
@@ -418,6 +441,7 @@
     optimizeImagesForMobile();
     handleOrientationChange();
     initFooterTooltips();
+    initBackToTop();
 
     // Log success
     console.log('✓ Safari Chic: Mobile optimizations loaded');

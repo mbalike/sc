@@ -93,6 +93,7 @@ footer .card p {
 @media (max-width: 900px){
   footer .card { padding: .9rem !important; min-height: unset; }
   footer .ft-brand .logo { width: 40px !important; height: 40px !important; }
+  footer .card h3 { justify-content: center !important; text-align: center !important; }
 }
 
 /* Allow footer grid to adapt column widths before wrapping text */

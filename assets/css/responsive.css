@@ -304,13 +304,30 @@ html {
 }
 
 @media (max-width: 480px) {
+  /* Limit full-width buttons to CTA contexts only */
+  .hero .btn,
+  .hero-cta .btn,
+  .cta .btn,
+  .actions .btn { width: 100%; max-width: 280px; }
   .btn {
     padding: 0.75rem 1rem;
     font-size: 13px;
-    width: 100%;
   }
 }
 
+  .backtop{
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    display: inline-grid !important;
+    place-items: center;
+    box-shadow: 0 10px 24px rgba(0,0,0,.25);
+    border: 2px solid rgba(255,255,255,.6);
+  }
+  .backtop i{ font-size: 18px; line-height: 1; }
+  .backtop.show{ opacity: 1 !important; pointer-events: auto !important; }
 /* ========== GRID & LAYOUT MOBILE ========== */
 
 /* Cards grid responsive */
@@ -351,15 +368,7 @@ html {
     gap: 24px;
   }
   
-  .footer-main {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
+  .footer-main { grid-template-columns: 1fr; gap: 32px; }
 }
 
 /* ========== CARDS MOBILE OPTIMIZATION ========== */
@@ -769,6 +778,13 @@ html {
   footer {
     padding: 40px 0 30px;
   }
+  /* Center align footer content on mobile/tablet */
+  footer, .footer-main, .footer-grid { text-align: center; }
+  .ft-brand, .logo-section { justify-content: center; }
+  .legal-links { justify-content: center; }
+  footer .container:last-child { display:flex; align-items:center; justify-content:center; text-align:center; }
+  /* Center align card headings */
+  footer .card h3 { justify-content: center; text-align: center; }
   
   .footer-main {
     grid-template-columns: 1fr;

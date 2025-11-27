@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="assets/css/overrides.css">
   <link rel="stylesheet" href="assets/css/destinations.css">
   <link rel="stylesheet" href="assets/css/header-footer.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
   <style>
     .hero{ --hero-bg:url('assets/img/pexels-gsn-travel-28708345.jpg') center/cover no-repeat; }
   </style>
@@ -217,5 +218,6 @@
     })();
     const io=new IntersectionObserver((entries)=>{ entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); } }); },{threshold:.12}); document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   </script>
+  <script src="assets/css/mobile-enhancements.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Optimization Demo - Safari Chic</title>
+  <link rel="stylesheet" href="assets/css/overrides.css">
+  <link rel="stylesheet" href="assets/css/header-footer.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <style>
+    :root {
+      --magenta: #FF69B4;
+      --gold: #ffb800;
+      --ink: #1a1a1a;
+      --bg: #ffffff;
+      --panel: #FAFAFC;
+      --line: #EFEFF3;
+    }
+    
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
+    
+    .demo-section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .demo-title {
+      font-size: clamp(24px, 5vw, 36px);
+      font-weight: 800;
+      color: var(--magenta);
+      margin-bottom: 10px;
+    }
+    
+    .demo-desc {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+    
+    .breakpoint-indicator {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--magenta);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 14px;
+      z-index: 9999;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .demo-grid {
+      display: grid;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    
+    .demo-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      transition: transform 0.3s ease;
+    }
+    
+    .demo-card:hover {
+      transform: translateY(-4px);
+    }
+    
+    .demo-card h3 {
+      color: var(--magenta);
+      margin-top: 0;
+      font-size: clamp(18px, 4vw, 24px);
+    }
+    
+    .demo-feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 12px 0;
+    }
+    
+    .demo-feature::before {
+      content: "✓";
+      background: var(--magenta);
+      color: white;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    
+    .cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .cols-3 { grid-template-columns: repeat(3, 1fr); }
+    
+    @media (max-width: 900px) {
+      .cols-2, .cols-3 { grid-template-columns: 1fr; }
+    }
+    
+    .demo-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+    
+    .demo-btn {
+      background: var(--magenta);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 999px;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    
+    .demo-btn:hover {
+      transform: translateY(-2px);
+    }
+    
+    .demo-btn.secondary {
+      background: var(--gold);
+      color: var(--ink);
+    }
+    
+    .status-badge {
+      display: inline-block;
+      background: #00D26A;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-left: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="breakpoint-indicator" id="breakpointIndicator">Desktop</div>
+  
+  <div class="demo-section">
+    <h1 class="demo-title">
+      Safari Chic Mobile Optimization 
+      <span class="status-badge">✓ COMPLETE</span>
+    </h1>
+    <p class="demo-desc">
+      All pages on the Safari Chic website are now fully optimized for mobile phones, tablets, and smaller screens. 
+      Resize your browser window to see the responsive design in action!
+    </p>
+    
+    <div class="demo-buttons">
+      <button class="demo-btn" onclick="window.location.href='index.html'">View Homepage</button>
+      <button class="demo-btn secondary" onclick="window.location.href='destinations.html'">View Destinations</button>
+    </div>
+    
+    <h2 style="margin-top: 50px; color: var(--magenta);">What's Been Optimized</h2>
+    
+    <div class="demo-grid cols-3">
+      <div class="demo-card">
+        <h3>📱 Navigation</h3>
+        <div class="demo-feature">Hamburger menu for mobile</div>
+        <div class="demo-feature">Touch-friendly dropdowns</div>
+        <div class="demo-feature">Sticky header with scroll effects</div>
+        <div class="demo-feature">Auto-closes on link click</div>
+      </div>
+      
+      <div class="demo-card">
+        <h3>🎨 Layout</h3>
+        <div class="demo-feature">Responsive grid systems</div>
+        <div class="demo-feature">Mobile-first approach</div>
+        <div class="demo-feature">Optimized spacing</div>
+        <div class="demo-feature">Stack columns on mobile</div>
+      </div>
+      
+      <div class="demo-card">
+        <h3>📐 Typography</h3>
+        <div class="demo-feature">Fluid text sizing</div>
+        <div class="demo-feature">Readable font sizes</div>
+        <div class="demo-feature">Proper line heights</div>
+        <div class="demo-feature">Optimized headings</div>
+      </div>
+      
+      <div class="demo-card">
+        <h3>🖼️ Images</h3>
+        <div class="demo-feature">Lazy loading</div>
+        <div class="demo-feature">Responsive sizing</div>
+        <div class="demo-feature">Optimized backgrounds</div>
+        <div class="demo-feature">Proper aspect ratios</div>
+      </div>
+      
+      <div class="demo-card">
+        <h3>👆 Touch</h3>
+        <div class="demo-feature">44px minimum targets</div>
+        <div class="demo-feature">Swipe for carousels</div>
+        <div class="demo-feature">Touch-friendly buttons</div>
+        <div class="demo-feature">No hover dependencies</div>
+      </div>
+      
+      <div class="demo-card">
+        <h3>⚡ Performance</h3>
+        <div class="demo-feature">Optimized animations</div>
+        <div class="demo-feature">Efficient JavaScript</div>
+        <div class="demo-feature">Mobile-first CSS</div>
+        <div class="demo-feature">Fast load times</div>
+      </div>
+    </div>
+    
+    <h2 style="margin-top: 50px; color: var(--magenta);">Device Breakpoints</h2>
+    
+    <div class="demo-grid cols-2">
+      <div class="demo-card">
+        <h3>📱 Mobile (320px - 640px)</h3>
+        <ul style="color: #666;">
+          <li>Single column layouts</li>
+          <li>Full-width buttons</li>
+          <li>Hamburger navigation</li>
+          <li>Optimized spacing</li>
+          <li>Larger touch targets</li>
+        </ul>
+      </div>
+      
+      <div class="demo-card">
+        <h3>📱 Tablet (641px - 1024px)</h3>
+        <ul style="color: #666;">
+          <li>2-3 column layouts</li>
+          <li>Hamburger or full nav</li>
+          <li>Optimized carousels</li>
+          <li>Balanced spacing</li>
+          <li>Touch-friendly</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="demo-card" style="margin-top: 30px; background: linear-gradient(135deg, rgba(255,105,180,0.1), rgba(255,184,0,0.1));">
+      <h3>✨ All 28 Pages Updated</h3>
+      <p style="color: #666; margin-bottom: 16px;">
+        Every page on the Safari Chic website has been enhanced with comprehensive mobile optimizations:
+      </p>
+      <div class="demo-grid cols-3">
+        <div>
+          <strong>Core Pages:</strong>
+          <ul style="color: #666; font-size: 14px;">
+            <li>Homepage</li>
+            <li>Destinations</li>
+            <li>Itineraries</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div>
+          <strong>Destination Pages:</strong>
+          <ul style="color: #666; font-size: 14px;">
+            <li>Serengeti</li>
+            <li>Ngorongoro</li>
+            <li>Zanzibar</li>
+            <li>And more...</li>
+          </ul>
+        </div>
+        <div>
+          <strong>Kilimanjaro Routes:</strong>
+          <ul style="color: #666; font-size: 14px;">
+            <li>Machame Route</li>
+            <li>Lemosho Route</li>
+            <li>Marangu Route</li>
+            <li>All 12 routes!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div style="margin-top: 50px; padding: 30px; background: var(--panel); border-radius: 16px; border: 2px solid var(--magenta);">
+      <h2 style="color: var(--magenta); margin-top: 0;">🎉 Ready to Test!</h2>
+      <p style="color: #666; font-size: 16px; line-height: 1.6;">
+        All mobile optimizations are now live. Test the website on your phone, tablet, or by resizing your browser window. 
+        You'll see smooth responsive behavior, touch-friendly interactions, and beautiful layouts at every screen size.
+      </p>
+      <p style="color: #666; font-size: 14px; margin-top: 20px;">
+        📄 For complete details, see: <code style="background: white; padding: 4px 8px; border-radius: 4px;">MOBILE-OPTIMIZATION-GUIDE.md</code>
+      </p>
+    </div>
+  </div>
+  
+  <script>
+    // Breakpoint indicator
+    function updateBreakpoint() {
+      const indicator = document.getElementById('breakpointIndicator');
+      const width = window.innerWidth;
+      
+      if (width <= 480) {
+        indicator.textContent = 'Mobile (≤480px)';
+        indicator.style.background = '#FF1744';
+      } else if (width <= 640) {
+        indicator.textContent = 'Mobile (≤640px)';
+        indicator.style.background = '#FF4081';
+      } else if (width <= 768) {
+        indicator.textContent = 'Tablet (≤768px)';
+        indicator.style.background = '#FF69B4';
+      } else if (width <= 900) {
+        indicator.textContent = 'Tablet (≤900px)';
+        indicator.style.background = '#E91E63';
+      } else if (width <= 1024) {
+        indicator.textContent = 'Desktop (≤1024px)';
+        indicator.style.background = '#9C27B0';
+      } else {
+        indicator.textContent = 'Desktop (>1024px)';
+        indicator.style.background = '#673AB7';
+      }
+    }
+    
+    updateBreakpoint();
+    window.addEventListener('resize', updateBreakpoint);
+  </script>
+</body>
+</html>

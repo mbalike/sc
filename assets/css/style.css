@@ -1742,3 +1742,149 @@ footer .africa-corner-bottom-right {
     display: none;
   }
 }
+
+/* ========== ADDITIONAL MOBILE ENHANCEMENTS ========== */
+
+/* Improve touch interactions */
+@media (max-width: 900px) {
+  /* Better spacing for touch targets */
+  .btn, a.btn {
+    min-height: 48px;
+    padding: 0.85rem 1.2rem;
+  }
+  
+  /* Optimize section spacing */
+  .section {
+    padding: clamp(36px, 6vw, 60px) 0;
+  }
+  
+  /* Better mobile container */
+  .container {
+    padding-inline: clamp(14px, 3.5vw, 20px);
+  }
+  
+  /* Mobile-optimized cards */
+  .card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+  
+  /* Improve mobile navigation */
+  nav a {
+    padding: 0.6rem 1rem;
+    font-size: 16px;
+  }
+  
+  /* Better mobile hero */
+  .hero {
+    min-height: 80vh;
+  }
+  
+  .hero-text h1 {
+    font-size: clamp(32px, 9vw, 48px);
+    line-height: 1.1;
+  }
+  
+  .hero-text p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* Optimize tiles for mobile */
+  .tiles .tile {
+    min-height: 220px;
+  }
+  
+  /* Better mobile typography */
+  body {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  
+  h2 {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+  
+  h3 {
+    font-size: clamp(18px, 5vw, 24px);
+  }
+  
+  /* Mobile-friendly footer */
+  footer {
+    padding: 48px 0 32px;
+  }
+  
+  .footer-nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Better mobile carousels */
+  .carousel-container,
+  .slider-container {
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .carousel-container > *,
+  .slider-container > * {
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Extra small mobile optimization */
+  .btn, a.btn {
+    padding: 0.75rem 1rem;
+    font-size: 14px;
+  }
+  
+  .section {
+    padding: clamp(28px, 5vw, 40px) 0;
+  }
+  
+  .container {
+    padding-inline: 12px;
+  }
+  
+  .card {
+    padding: 14px;
+  }
+  
+  .hero {
+    min-height: 70vh;
+  }
+  
+  .hero-text h1 {
+    font-size: clamp(28px, 9vw, 40px);
+  }
+  
+  .hero-text p {
+    font-size: 15px;
+  }
+  
+  body {
+    font-size: 15px;
+  }
+  
+  .footer-nav {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Stack everything on small mobile */
+  .grid.cols-3,
+  .grid.cols-4,
+  .plan-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 900px) and (orientation: landscape) {
+  .hero {
+    min-height: 100vh;
+  }
+  
+  .section {
+    padding: 32px 0;
+  }
+}

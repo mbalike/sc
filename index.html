@@ -685,13 +685,16 @@
   </footer>
 
   <script>
-    // Mobile nav
+    // Mobile nav - DISABLED (now handled by mobile-enhancements.js)
+    // Keeping this comment for reference - the external script handles all mobile nav functionality
+    /*
     const burger=document.querySelector('.hamburger');
     const menu=document.getElementById('menu');
     burger?.addEventListener('click',()=>{
       const open=menu.classList.toggle('show');
       burger.setAttribute('aria-expanded', String(open));
     });
+    */
 
     const header=document.getElementById('site-header');
     const backtop=document.querySelector('.backtop');
@@ -784,6 +787,6 @@
       hv.addEventListener('playing', ()=>{ hv.removeAttribute('poster'); });
     }
   </script>
-  <script src="assets/css/mobile-enhancements.js" defer></script>
+  <script src="assets/css/mobile-enhancements.js"></script>
 </body>
 </html>

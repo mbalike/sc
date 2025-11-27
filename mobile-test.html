@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Menu Test - Safari Chic</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #333;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      padding: 40px;
+    }
+    h1 {
+      color: #667eea;
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 0.95rem;
+    }
+    .status {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    .status.success {
+      background: #10b981;
+      color: white;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: #764ba2;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 10px;
+    }
+    .test-item {
+      background: #f9fafb;
+      border: 2px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      transition: all 0.3s ease;
+    }
+    .test-item:hover {
+      border-color: #667eea;
+      transform: translateX(4px);
+    }
+    .checkbox {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      margin-top: 2px;
+      cursor: pointer;
+      accent-color: #667eea;
+    }
+    .test-content {
+      flex: 1;
+    }
+    .test-title {
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 4px;
+    }
+    .test-desc {
+      font-size: 0.9rem;
+      color: #666;
+    }
+    .device-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+    .device-badge.mobile {
+      background: #fbbf24;
+      color: #78350f;
+    }
+    .device-badge.desktop {
+      background: #60a5fa;
+      color: #1e3a8a;
+    }
+    .device-badge.both {
+      background: #a78bfa;
+      color: #4c1d95;
+    }
+    .info-box {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 16px;
+      margin-top: 30px;
+      border-radius: 8px;
+    }
+    .info-box h3 {
+      color: #1e40af;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+    .info-box p {
+      color: #1e3a8a;
+      font-size: 0.9rem;
+    }
+    .info-box code {
+      background: #dbeafe;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+    .button-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary {
+      background: #667eea;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #5568d3;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+    .btn-secondary {
+      background: #f3f4f6;
+      color: #374151;
+    }
+    .btn-secondary:hover {
+      background: #e5e7eb;
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding: 24px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎉 Mobile Menu Fix - Test Checklist</h1>
+    <p class="subtitle">Safari Chic Website | November 27, 2025</p>
+    <div class="status success">✓ All fixes applied successfully</div>
+
+    <div class="section">
+      <h2>Desktop Testing<span class="device-badge desktop">Desktop Only</span></h2>
+      
+      <div class="test-item">
+        <input type="checkbox" class="checkbox" id="test1">
+        <label class="test-content" for="test1">
+          <div class="test-title">Hamburger button is hidden</div>
+          <div class="test-desc">On screens wider than 900px, the hamburger menu should not be visible.</div>
+        </label>
+      </div>
+
+      <div class="test-item">
+        <input type="checkbox" class="checkbox" id="test2">
+        <label class="test-content" for="test2">
+          <div class="test-title">Full navigation menu is visible</div>
+          <div class="test-desc">All menu items should be displayed horizontally in the header.</div>
+        </label>
+      </div>
+
+      <div class="test-item">
+        <input type="checkbox" class="checkbox" id="test3">
+        <label class="test-content" for="test3">
+          <div class="test-title">Dropdown menus work on hover</div>
+          <div class="test-desc">Hovering over "Itineraries" or "Kili Climb" should show dropdown menus.</div>
+        </label>
+      </div>
+
+      <div class="test-item">
+        <input type="checkbox" class="checkbox" id="test4">
+        <label class="test-content" for="test4">
+          <div class="test-title">Submenu toggle buttons are hidden</div>
+          <div class="test-desc">The small arrow/toggle buttons should not appear on desktop.</div>
+        </label>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Mobile Testing<span class="device-badge mobile">Mobile Only</span></h2>
+      
+      <div class="test-item">
+        <input type="checkbox" class="checkbox" id="test5">
+        <label class="test-content" for="test5">
+          <div class="test-title">Hamburger button is visible and properly sized</div>
+          <div class="test-desc">Button should be at least 48x48px for easy tapping.</div>
+        </label>
+      </div>
+
+      <div class="test-item">
+        <input type="checkbox" class="checkbox" id="test6">
+        <label class="test-content" for="test6">
+          <div class="test-title">Menu toggles open and closed on tap</div>
+          <div class="test-desc">Single tap should reliably open/close the menu.</div>
+        </label>
+      </div>
+
+      <div class="test-item">
+        <input type="checkbox" class="checkbox" id="test7">
+        <label class="test-content" for="test7">
+          <div class="test-title">Hamburger icon rotates when menu opens</div>
+          <div class="test-desc">The menu icon should rotate 90 degrees with smooth animation.</div>
+        </label>
+      </div>
+
+      <div class="test-item">
+        <input type="checkbox" class="checkbox" id="test8">
+        <label class="test-content" for="test8">
+          <div class="test-title">Menu has smooth animation</div>
+          <div class="test-desc">Menu should slide down smoothly, not just pop into view.</div>
+        </label>
+      </div>
+
+      <div class="test-item">
+        <input type="checkbox" class="checkbox" id="test9">
+        <label class="test-content" for="test9">
+          <div class="test-title">Body scroll locks when menu is open</div>
+          <div class="test-desc">Page content should not scroll when mobile menu is visible.</div>
+        </label>
+      </div>
+
+      <div class="test-item">
+        <input type="checkbox" class="checkbox" id="test10">
+        <label class="test-content" for="test10">
+          <div class="test-title">Clicking outside closes the menu</div>
+          <div class="test-desc">Tapping anywhere outside the menu should close it.</div>
+        </label>
+      </div>
+
+      <div class="test-item">
+        <input type="checkbox" class="checkbox" id="test11">
+        <label class="test-content" for="test11">
+          <div class="test-title">Submenu toggles are visible and functional</div>
+          <div class="test-desc">Small arrow buttons next to "Itineraries" and "Kili Climb" should toggle submenus.</div>
+        </label>
+      </div>
+
+      <div class="test-item">
+        <input type="checkbox" class="checkbox" id="test12">
+        <label class="test-content" for="test12">
+          <div class="test-title">Only one submenu open at a time</div>
+          <div class="test-desc">Opening one submenu should close others automatically.</div>
+        </label>
+      </div>
+
+      <div class="test-item">
+        <input type="checkbox" class="checkbox" id="test13">
+        <label class="test-content" for="test13">
+          <div class="test-title">Toggle indicator rotates when submenu opens</div>
+          <div class="test-desc">The arrow icon should rotate 180 degrees smoothly.</div>
+        </label>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Touch Device Specific<span class="device-badge mobile">Touch Devices</span></h2>
+      
+      <div class="test-item">
+        <input type="checkbox" class="checkbox" id="test14">
+        <label class="test-content" for="test14">
+          <div class="test-title">Visual feedback on tap</div>
+          <div class="test-desc">Buttons should show highlight color when pressed.</div>
+        </label>
+      </div>
+
+      <div class="test-item">
+        <input type="checkbox" class="checkbox" id="test15">
+        <label class="test-content" for="test15">
+          <div class="test-title">No double-tap required</div>
+          <div class="test-desc">Single tap should work immediately without delay.</div>
+        </label>
+      </div>
+
+      <div class="test-item">
+        <input type="checkbox" class="checkbox" id="test16">
+        <label class="test-content" for="test16">
+          <div class="test-title">Smooth touch interactions</div>
+          <div class="test-desc">No lag or janky animations during interaction.</div>
+        </label>
+      </div>
+
+      <div class="test-item">
+        <input type="checkbox" class="checkbox" id="test17">
+        <label class="test-content" for="test17">
+          <div class="test-title">Buttons provide clear pressed state</div>
+          <div class="test-desc">Scale or color change visible when tapping buttons.</div>
+        </label>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h3>📱 Testing Instructions</h3>
+      <p>To test mobile functionality on desktop:</p>
+      <p style="margin-top: 8px;">
+        1. Open Chrome DevTools (<code>F12</code> or <code>Ctrl+Shift+I</code>)<br>
+        2. Click the device toolbar icon (<code>Ctrl+Shift+M</code>)<br>
+        3. Select a mobile device (e.g., iPhone 12 Pro)<br>
+        4. Reload the page and test the menu
+      </p>
+    </div>
+
+    <div class="button-group">
+      <a href="index.html" class="btn btn-primary">← Back to Home Page</a>
+      <button class="btn btn-secondary" onclick="resetChecklist()">Reset Checklist</button>
+    </div>
+  </div>
+
+  <script>
+    // Save checkbox state to localStorage
+    const checkboxes = document.querySelectorAll('.checkbox');
+    
+    // Load saved state
+    checkboxes.forEach(checkbox => {
+      const saved = localStorage.getItem(checkbox.id);
+      if (saved === 'true') {
+        checkbox.checked = true;
+      }
+      
+      checkbox.addEventListener('change', () => {
+        localStorage.setItem(checkbox.id, checkbox.checked);
+      });
+    });
+
+    function resetChecklist() {
+      if (confirm('Are you sure you want to reset all checkboxes?')) {
+        checkboxes.forEach(checkbox => {
+          checkbox.checked = false;
+          localStorage.removeItem(checkbox.id);
+        });
+      }
+    }
+  </script>
+</body>
+</html>

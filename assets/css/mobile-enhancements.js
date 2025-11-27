@@ -15,8 +15,11 @@
 
     if (!hamburger || !navMenu) return;
 
-    hamburger.addEventListener('click', function(e) {
+    // Use mousedown/touchstart for more reliable mobile interaction
+    const toggleMenu = function(e) {
+      e.preventDefault();
       e.stopPropagation();
+      
       const isOpen = navMenu.classList.toggle('show');
       hamburger.classList.toggle('active', isOpen);
       hamburger.setAttribute('aria-expanded', String(isOpen));
@@ -27,10 +30,18 @@
       } else {
         body.style.overflow = '';
       }
-    });
+    };
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
+    // Listen on both click and touchstart for better mobile support
+    hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('touchstart', function(e) {
+      // Prevent double-firing on mobile
+      e.preventDefault();
+      toggleMenu(e);
+    }, { passive: false });
+
+    // Close menu when clicking outside (with better event handling)
+    const closeMenu = function(e) {
       if (navMenu.classList.contains('show') && 
           !navMenu.contains(e.target) && 
           !hamburger.contains(e.target)) {
@@ -39,7 +50,10 @@
         hamburger.setAttribute('aria-expanded', 'false');
         body.style.overflow = '';
       }
-    });
+    };
+    
+    document.addEventListener('click', closeMenu);
+    document.addEventListener('touchstart', closeMenu, { passive: true });
 
     // Close menu when clicking a link
     const navLinks = navMenu.querySelectorAll('a');
@@ -87,18 +101,49 @@
 
   // ========== MOBILE DROPDOWN SUBMENU ==========
   function initDropdownMenu() {
-    const submenuToggles = document.querySelectorAll('.has-submenu > a');
+    // Handle both the submenu-toggle buttons and parent links
+    const submenuParents = document.querySelectorAll('.has-submenu');
     
-    submenuToggles.forEach(toggle => {
-      // Only handle on mobile
-      if (window.innerWidth <= 900) {
-        toggle.addEventListener('click', function(e) {
-          const parent = this.parentElement;
+    submenuParents.forEach(parent => {
+      const toggleBtn = parent.querySelector('.submenu-toggle');
+      const parentLink = parent.querySelector('a');
+      const submenu = parent.querySelector('.submenu');
+      
+      if (!submenu) return;
+      
+      // Handle submenu-toggle button clicks (if it exists)
+      if (toggleBtn) {
+        const handleToggle = function(e) {
+          e.preventDefault();
+          e.stopPropagation();
           
-          // If clicking the main link on mobile, toggle submenu instead
-          if (parent.querySelector('.submenu')) {
+          // Close other open submenus
+          if (window.innerWidth <= 900) {
+            document.querySelectorAll('.has-submenu.open').forEach(other => {
+              if (other !== parent) {
+                other.classList.remove('open');
+                const otherToggle = other.querySelector('.submenu-toggle');
+                if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+              }
+            });
+          }
+          
+          const isOpen = parent.classList.toggle('open');
+          toggleBtn.setAttribute('aria-expanded', String(isOpen));
+        };
+        
+        toggleBtn.addEventListener('click', handleToggle);
+        toggleBtn.addEventListener('touchstart', handleToggle, { passive: false });
+      }
+      
+      // On mobile, also handle parent link clicks to toggle submenu
+      if (parentLink && window.innerWidth <= 900) {
+        parentLink.addEventListener('click', function(e) {
+          // Only prevent default and toggle if we're on mobile
+          if (window.innerWidth <= 900) {
             e.preventDefault();
-            parent.classList.toggle('open');
+            const isOpen = parent.classList.toggle('open');
+            if (toggleBtn) toggleBtn.setAttribute('aria-expanded', String(isOpen));
           }
         });
       }

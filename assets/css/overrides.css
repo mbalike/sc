@@ -166,12 +166,32 @@ nav li.has-submenu > .submenu a:hover{ background: #FAFAFC; }
   nav li.has-submenu{ display: flex; align-items: center; gap: 6px; }
   .submenu-toggle{
     display: inline-flex; align-items: center; justify-content: center;
-    width: 26px; height: 26px;
-    border: 1px solid var(--line, #efeff3);
-    border-radius: 8px;
-    background: #fff; color: var(--ink, #101114);
+    width: 32px; height: 32px;
+    min-width: 32px; min-height: 32px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    background: rgba(255, 105, 180, 0.15); 
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: rgba(255, 105, 180, 0.2);
   }
-  .submenu-toggle::before{ content: "▾"; font-size: 12px; line-height: 1; }
+  .submenu-toggle::before{ 
+    content: "▾"; 
+    font-size: 14px; 
+    line-height: 1; 
+    transition: transform 0.3s ease;
+    pointer-events: none;
+  }
+  .submenu-toggle:hover,
+  .submenu-toggle:focus{
+    background: rgba(255, 105, 180, 0.25);
+    border-color: rgba(255, 105, 180, 0.4);
+  }
+  nav li.has-submenu.open .submenu-toggle::before{
+    transform: rotate(180deg);
+  }
   nav li.has-submenu > .submenu{
     position: static;
     display: none;

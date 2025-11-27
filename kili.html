@@ -469,12 +469,13 @@
 
   <script>
     // Mobile nav
-    const burger=document.querySelector('.hamburger');
-    const menu=document.getElementById('menu');
-    burger?.addEventListener('click',()=>{
-      const open=menu.classList.toggle('show');
-      burger.setAttribute('aria-expanded', String(open));
-    });
+    /* Mobile menu handled by mobile-enhancements.js */
+    // const burger=document.querySelector('.hamburger');
+    // const menu=document.getElementById('menu');
+    // burger?.addEventListener('click',()=>{
+    //   const open=menu.classList.toggle('show');
+    //   burger.setAttribute('aria-expanded', String(open));
+    // });
 
     // Header scrolled state
     const header=document.getElementById('site-header');
@@ -528,6 +529,6 @@
     },{threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   </script>
-  <script src="assets/css/mobile-enhancements.js" defer></script>
+  <script src="assets/css/mobile-enhancements.js"></script>
 </body>
 </html>

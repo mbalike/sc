@@ -171,25 +171,86 @@ html {
   /* Hamburger menu */
   .hamburger {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    min-height: 48px;
+    padding: 12px;
     cursor: pointer;
     background: transparent;
     border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: rgba(255, 105, 180, 0.2);
   }
   
+  .hamburger:hover,
+  .hamburger:focus {
+    background: rgba(255, 105, 180, 0.1);
+  }
+  
+  .hamburger:active {
+    transform: scale(0.95);
+  }
+  
+  .hamburger i {
+    font-size: 28px;
+    color: #fff;
+    pointer-events: none; /* Prevent icon from being click target */
+    transition: transform 0.3s ease;
+  }
+  
+  .hamburger.active i {
+    transform: rotate(90deg);
+  }
+  
+  /* Legacy hamburger span styling (if spans are used instead of icons) */
   .hamburger span {
     width: 28px;
     height: 3px;
     background: #fff;
     border-radius: 2px;
     transition: 0.3s;
+    pointer-events: none;
   }
   
   /* Dropdown in mobile */
   nav li.has-submenu {
     position: relative;
+  }
+  
+  /* Submenu toggle button (mobile only) */
+  nav li.has-submenu .submenu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-left: 8px;
+    padding: 0;
+    background: rgba(255, 105, 180, 0.15);
+    border: 1px solid rgba(255, 105, 180, 0.3);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: rgba(255, 105, 180, 0.2);
+  }
+  
+  nav li.has-submenu .submenu-toggle::after {
+    content: '▼';
+    font-size: 12px;
+    color: #fff;
+    transition: transform 0.3s ease;
+  }
+  
+  nav li.has-submenu.open .submenu-toggle::after {
+    transform: rotate(180deg);
+  }
+  
+  nav li.has-submenu .submenu-toggle:hover,
+  nav li.has-submenu .submenu-toggle:focus {
+    background: rgba(255, 105, 180, 0.25);
+    border-color: rgba(255, 105, 180, 0.5);
   }
   
   nav li.has-submenu .submenu {
@@ -200,6 +261,18 @@ html {
     border-radius: 10px;
     margin-top: 8px;
     padding: 8px;
+    animation: slideDown 0.3s ease;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   nav li.has-submenu.open .submenu {

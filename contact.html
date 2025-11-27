@@ -311,13 +311,15 @@
   <a href="#top" class="btn btn-primary backtop" id="backtop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
 
   <script>
-    // mobile nav toggle
+    // mobile nav toggle - DISABLED (now handled by mobile-enhancements.js)
+    /*
     const burger = document.querySelector('.hamburger');
     const menu = document.getElementById('menu');
     burger?.addEventListener('click', () => {
       const open = menu.classList.toggle('show');
       burger.setAttribute('aria-expanded', String(open));
     });
+    */
 
     function validateForm(f){
       if(!f.email.value || !f.name.value){ alert("Please add your name and email so we can reach you."); return false; }
@@ -368,6 +370,6 @@
       });
     })();
   </script>
-  <script src="assets/css/mobile-enhancements.js" defer></script>
+  <script src="assets/css/mobile-enhancements.js"></script>
 </body>
 </html>

@@ -255,6 +255,51 @@
     .reveal{opacity:0;transform:translateY(16px);transition:.6s ease}
     .reveal.in{opacity:1;transform:none}
 
+    /* Destination Slideshow */
+    .destination-slideshow{position:relative;width:100%;max-width:1000px;margin:0 auto}
+    .slideshow-container{position:relative;width:100%;height:clamp(500px,70vh,700px);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+    .dest-slide{position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease-in-out;pointer-events:none}
+    .dest-slide.active{opacity:1;pointer-events:auto}
+    .slide-content{position:relative;width:100%;height:100%}
+    .slide-bg{position:absolute;inset:0;z-index:1}
+    .slide-bg img{width:100%;height:100%;object-fit:cover;display:block}
+    .slide-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(to bottom,rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.7) 100%);display:flex;align-items:flex-end;padding:clamp(2rem,5vw,3rem)}
+    .slide-text-container{color:#fff;max-width:600px}
+    .slide-title{font:800 clamp(2rem,4vw,3rem)/1.1 Poppins;margin:0 0 1rem;text-shadow:0 2px 12px rgba(0,0,0,0.5)}
+    .slide-description{font-size:clamp(1rem,1.8vw,1.2rem);line-height:1.6;margin:0 0 1.5rem;text-shadow:0 1px 6px rgba(0,0,0,0.4)}
+    .slide-info{display:flex;gap:2rem;margin-bottom:1.5rem;flex-wrap:wrap}
+    .info-item{display:flex;align-items:center;gap:0.6rem}
+    .info-item i{font-size:1.8rem;color:var(--gold)}
+    .info-item div{display:flex;flex-direction:column;gap:0.2rem}
+    .info-item strong{font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#ddd}
+    .info-item span{font-size:1.1rem;font-weight:600}
+    .slide-btn{margin-top:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.3)}
+    .slide-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,0.3);width:45px;height:45px;border-radius:8px;cursor:pointer;display:grid;place-items:center;transition:0.3s;opacity:0.7}
+    .slide-nav:hover{background:rgba(0,0,0,0.8);border-color:var(--gold);opacity:1;transform:translateY(-50%) scale(1.05)}
+    .slide-nav.prev{left:0.8rem}
+    .slide-nav.next{right:0.8rem}
+    .slide-nav i{font-size:1.3rem;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.5)}
+    .slideshow-container:hover .slide-nav{opacity:1}
+    .slide-indicators{display:flex;justify-content:center;gap:0.8rem;margin-top:1.5rem}
+    .indicator{width:12px;height:12px;border-radius:50%;border:2px solid var(--line);background:transparent;cursor:pointer;transition:0.3s;padding:0}
+    .indicator.active{background:var(--gold);border-color:var(--gold)}
+    .indicator:hover{border-color:var(--gold)}
+
+    @media (max-width:768px){
+      .slideshow-container{height:clamp(450px,80vh,600px)}
+      .slide-overlay{padding:1.5rem}
+      .slide-title{font-size:clamp(1.6rem,5vw,2.2rem)}
+      .slide-description{font-size:0.95rem}
+      .slide-info{gap:1rem}
+      .info-item i{font-size:1.4rem}
+      .info-item strong{font-size:0.75rem}
+      .info-item span{font-size:0.95rem}
+      .slide-nav{width:38px;height:38px;opacity:0.85}
+      .slide-nav i{font-size:1.1rem}
+      .slide-nav.prev{left:0.5rem}
+      .slide-nav.next{right:0.5rem}
+    }
+
     /* Utilities */
     .cols-3{grid-template-columns:repeat(3,1fr); gap:1.5rem}
     .cols-2{grid-template-columns:repeat(2,1fr); gap:1rem}
@@ -538,66 +583,120 @@
         <p>Unlock the highlights and signature stays of every destination. Tap to explore.</p>
       </div>
 
-      <div class="grid cols-3">
-        <a class="card-link reveal" href="serengeti.html" aria-label="Serengeti National Park">
-          <article class="itin-card">
-            <div class="itin-img"><span class="badge">Serengeti</span><img src="assets/img/serengeti.jpg" alt="Serengeti plains at sunset" loading="lazy" decoding="async"></div>
-            <div class="itin-body">
-              <div class="itin-head"><h3 class="itin-title">Serengeti National Park</h3><span class="dur">Classic Safari</span></div>
-              <p class="muted">Home of the Great Migration, sweeping plains, big cat sightings, and unforgettable game drives.</p>
+      <div class="destination-slideshow">
+        <div class="slideshow-container">
+          <div class="dest-slide active">
+            <div class="slide-content">
+              <div class="slide-bg"><img src="assets/img/serengeti.jpg" alt="Serengeti plains at sunset" loading="lazy"></div>
+              <div class="slide-overlay">
+                <div class="slide-text-container">
+                  <h2 class="slide-title">Serengeti National Park</h2>
+                  <p class="slide-description">Home of the Great Migration, sweeping plains, big cat sightings, and unforgettable game drives.</p>
+                  <div class="slide-info">
+                    <div class="info-item"><i class="bi bi-geo-alt-fill"></i><div><strong>Where:</strong><span>Tanzania</span></div></div>
+                    <div class="info-item"><i class="bi bi-calendar-check"></i><div><strong>Best time to go:</strong><span>Year round</span></div></div>
+                  </div>
+                  <a href="serengeti.html" class="btn btn-gold slide-btn">Explore Serengeti</a>
+                </div>
+              </div>
             </div>
-          </article>
-        </a>
+          </div>
 
-  <a class="card-link reveal" href="ngorongoro.html" aria-label="Ngorongoro Crater">
-          <article class="itin-card">
-            <div class="itin-img"><span class="badge">Ngorongoro</span><img src="assets/img/pexels-gsn-travel-28708345.jpg" alt="Ngorongoro Crater landscape"></div>
-            <div class="itin-body">
-              <div class="itin-head"><h3 class="itin-title">Ngorongoro Crater</h3><span class="dur">Unique Ecosystem</span></div>
-              <p class="muted">A natural amphitheater with epic views, year-round sightings of rhino and lion, and dense wildlife in a dramatic setting.</p>
+          <div class="dest-slide">
+            <div class="slide-content">
+              <div class="slide-bg"><img src="assets/img/pexels-gsn-travel-28708345.jpg" alt="Ngorongoro Crater landscape" loading="lazy"></div>
+              <div class="slide-overlay">
+                <div class="slide-text-container">
+                  <h2 class="slide-title">Ngorongoro Crater</h2>
+                  <p class="slide-description">A natural amphitheater with epic views, year-round sightings of rhino and lion, and dense wildlife in a dramatic setting.</p>
+                  <div class="slide-info">
+                    <div class="info-item"><i class="bi bi-geo-alt-fill"></i><div><strong>Where:</strong><span>Tanzania</span></div></div>
+                    <div class="info-item"><i class="bi bi-calendar-check"></i><div><strong>Best time to go:</strong><span>Year round</span></div></div>
+                  </div>
+                  <a href="ngorongoro.html" class="btn btn-gold slide-btn">Explore Ngorongoro</a>
+                </div>
+              </div>
             </div>
-          </article>
-        </a>
+          </div>
 
-  <a class="card-link reveal" href="zanzibar.html" aria-label="Zanzibar">
-          <article class="itin-card">
-            <div class="itin-img"><span class="badge">Zanzibar</span><img src="assets/img/znz.webp" alt="Zanzibar coastline" loading="lazy" decoding="async"></div>
-            <div class="itin-body">
-              <div class="itin-head"><h3 class="itin-title">Zanzibar</h3><span class="dur">Beaches & Culture</span></div>
-              <p class="muted">White-sand shores, turquoise waters, and Stone Town’s rich history. Spice-scented breezes and Swahili charm make it the perfect finale for unwinding after safari.</p>
+          <div class="dest-slide">
+            <div class="slide-content">
+              <div class="slide-bg"><img src="assets/img/znz.webp" alt="Zanzibar coastline" loading="lazy"></div>
+              <div class="slide-overlay">
+                <div class="slide-text-container">
+                  <h2 class="slide-title">Zanzibar</h2>
+                  <p class="slide-description">White-sand shores, turquoise waters, and Stone Town's rich history. Spice-scented breezes and Swahili charm make it the perfect finale for unwinding after safari.</p>
+                  <div class="slide-info">
+                    <div class="info-item"><i class="bi bi-geo-alt-fill"></i><div><strong>Where:</strong><span>Tanzania</span></div></div>
+                    <div class="info-item"><i class="bi bi-calendar-check"></i><div><strong>Best time to go:</strong><span>June - October</span></div></div>
+                  </div>
+                  <a href="zanzibar.html" class="btn btn-gold slide-btn">Explore Zanzibar</a>
+                </div>
+              </div>
             </div>
-          </article>
-        </a>
+          </div>
 
-  <a class="card-link reveal" href="tarangire.html" aria-label="Tarangire National Park">
-          <article class="itin-card">
-            <div class="itin-img"><span class="badge">Tarangire</span><img src="assets/img/tarangire_0.jpg" alt="Tarangire baobab and elephants"></div>
-            <div class="itin-body">
-              <div class="itin-head"><h3 class="itin-title">Tarangire National Park</h3><span class="dur">Baobabs & Elephants</span></div>
-              <p class="muted">Known for its large elephant herds and dramatic, baobab-studded landscapes — excellent game viewing off the beaten path.</p>
+          <div class="dest-slide">
+            <div class="slide-content">
+              <div class="slide-bg"><img src="assets/img/tarangire_0.jpg" alt="Tarangire baobab and elephants" loading="lazy"></div>
+              <div class="slide-overlay">
+                <div class="slide-text-container">
+                  <h2 class="slide-title">Tarangire National Park</h2>
+                  <p class="slide-description">Known for its large elephant herds and dramatic, baobab-studded landscapes — excellent game viewing off the beaten path.</p>
+                  <div class="slide-info">
+                    <div class="info-item"><i class="bi bi-geo-alt-fill"></i><div><strong>Where:</strong><span>Tanzania</span></div></div>
+                    <div class="info-item"><i class="bi bi-calendar-check"></i><div><strong>Best time to go:</strong><span>June - October</span></div></div>
+                  </div>
+                  <a href="tarangire.html" class="btn btn-gold slide-btn">Explore Tarangire</a>
+                </div>
+              </div>
             </div>
-          </article>
-        </a>
+          </div>
 
-  <a class="card-link reveal" href="manyara.html" aria-label="Lake Manyara">
-          <article class="itin-card">
-            <div class="itin-img"><span class="badge">Manyara</span><img src="assets/img/lake-manyara-national.jpg" alt="Lake Manyara birds" loading="lazy" decoding="async"></div>
-            <div class="itin-body">
-              <div class="itin-head"><h3 class="itin-title">Lake Manyara</h3><span class="dur">Birdlife</span></div>
-              <p class="muted">Tree-climbing lions, abundant birdlife, and shimmering flocks of flamingos painting the lake in pink beauty.</p>
+          <div class="dest-slide">
+            <div class="slide-content">
+              <div class="slide-bg"><img src="assets/img/flamingoos.jpg" alt="Lake Manyara birds" loading="lazy"></div>
+              <div class="slide-overlay">
+                <div class="slide-text-container">
+                  <h2 class="slide-title">Lake Manyara</h2>
+                  <p class="slide-description">Tree-climbing lions, abundant birdlife, and shimmering flocks of flamingos painting the lake in pink beauty.</p>
+                  <div class="slide-info">
+                    <div class="info-item"><i class="bi bi-geo-alt-fill"></i><div><strong>Where:</strong><span>Tanzania</span></div></div>
+                    <div class="info-item"><i class="bi bi-calendar-check"></i><div><strong>Best time to go:</strong><span>Year round</span></div></div>
+                  </div>
+                  <a href="manyara.html" class="btn btn-gold slide-btn">Explore Manyara</a>
+                </div>
+              </div>
             </div>
-          </article>
-        </a>
+          </div>
 
-  <a class="card-link reveal" href="highlands.html" aria-label="Ngorongoro Highlands">
-          <article class="itin-card">
-            <div class="itin-img"><span class="badge">Highlands</span><img src="assets/img/dining_scene_under_500kb.jpg" alt="Highlands near Arusha" loading="lazy" decoding="async"></div>
-            <div class="itin-body">
-              <div class="itin-head"><h3 class="itin-title">Ngorongoro Highlands</h3><span class="dur">Scenic Drives</span></div>
-              <p class="muted">Rolling highlands, coffee farms, cultural encounters, and cooler air — often paired with crater visits and village stops.</p>
+          <div class="dest-slide">
+            <div class="slide-content">
+              <div class="slide-bg"><img src="assets/img/dining_scene_under_500kb.jpg" alt="Highlands near Arusha" loading="lazy"></div>
+              <div class="slide-overlay">
+                <div class="slide-text-container">
+                  <h2 class="slide-title">Ngorongoro Highlands</h2>
+                  <p class="slide-description">Rolling highlands, coffee farms, cultural encounters, and cooler air — often paired with crater visits and village stops.</p>
+                  <div class="slide-info">
+                    <div class="info-item"><i class="bi bi-geo-alt-fill"></i><div><strong>Where:</strong><span>Tanzania</span></div></div>
+                    <div class="info-item"><i class="bi bi-calendar-check"></i><div><strong>Best time to go:</strong><span>Year round</span></div></div>
+                  </div>
+                  <a href="highlands.html" class="btn btn-gold slide-btn">Explore Highlands</a>
+                </div>
+              </div>
             </div>
-          </article>
-        </a>
+          </div>
+          <button class="slide-nav prev" onclick="changeSlide(-1)" aria-label="Previous destination"><i class="bi bi-chevron-left"></i></button>
+          <button class="slide-nav next" onclick="changeSlide(1)" aria-label="Next destination"><i class="bi bi-chevron-right"></i></button>
+        </div>
+        <div class="slide-indicators">
+          <button class="indicator active" onclick="goToSlide(0)" aria-label="Serengeti"></button>
+          <button class="indicator" onclick="goToSlide(1)" aria-label="Ngorongoro"></button>
+          <button class="indicator" onclick="goToSlide(2)" aria-label="Zanzibar"></button>
+          <button class="indicator" onclick="goToSlide(3)" aria-label="Tarangire"></button>
+          <button class="indicator" onclick="goToSlide(4)" aria-label="Lake Manyara"></button>
+          <button class="indicator" onclick="goToSlide(5)" aria-label="Highlands"></button>
+        </div>
       </div>
     </div>
   </section>
@@ -723,6 +822,46 @@
         }
       });
     })();
+
+    // Destination Slideshow
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.dest-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      slides.forEach(s => s.classList.remove('active'));
+      indicators.forEach(i => i.classList.remove('active'));
+      
+      if (index >= totalSlides) currentSlide = 0;
+      else if (index < 0) currentSlide = totalSlides - 1;
+      else currentSlide = index;
+      
+      slides[currentSlide].classList.add('active');
+      indicators[currentSlide].classList.add('active');
+    }
+
+    function changeSlide(direction) {
+      showSlide(currentSlide + direction);
+    }
+
+    function goToSlide(index) {
+      showSlide(index);
+    }
+
+    // Auto-advance slideshow every 6 seconds
+    let autoSlideInterval = setInterval(() => changeSlide(1), 6000);
+
+    // Pause auto-advance on hover
+    const slideshowContainer = document.querySelector('.slideshow-container');
+    if (slideshowContainer) {
+      slideshowContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoSlideInterval);
+      });
+      slideshowContainer.addEventListener('mouseleave', () => {
+        autoSlideInterval = setInterval(() => changeSlide(1), 6000);
+      });
+    }
 
     // Submenus (hover + delayed close + mobile toggle) for all dropdowns
     (function(){

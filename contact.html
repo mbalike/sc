@@ -55,8 +55,11 @@
     .hamburger{display:none;background:none;border:0;color:#fff;font-size:1.25rem}
   .logo{width:80px;height:80px;border-radius:10px;overflow:hidden;place-items:center}
   .logo img{width:100%;height:100%;object-fit:contain;display:block;border-radius:10px}
-    .nav a{color:#ddd;text-decoration:none;font-weight:600}
-    .nav a:hover{color:#fff}
+    .nav a{color:#ddd;text-decoration:none;font-weight:600;font-size:.95rem;transition:.25s ease;position:relative}
+    .nav a:hover{color:#fff;text-shadow:0 0 8px rgba(255,105,180,.4)}
+    nav a[aria-current="page"]{color:#FF69B4;font-weight:700}
+    nav li.has-submenu .submenu a:hover{color:#FF69B4;transform:translateX(3px)}
+    nav li.has-submenu .submenu a[aria-current="page"]{color:#FF69B4;background:#ffffff08;font-weight:700}
     @media (max-width:900px){
   nav ul{display:none;position:absolute;top:64px;left:0;right:0;background:#0f0e14;padding:1rem 1.2rem;flex-direction:column;border-bottom:1px solid var(--line)}
       .hamburger{display:block}
@@ -144,10 +147,10 @@
             <button class="submenu-toggle" aria-label="Toggle Itineraries submenu" aria-expanded="false"></button>
             <ul class="submenu" aria-label="Itineraries submenu">
               <li><a href="itineraries.html">All Itineraries</a></li>
-              <li><a href="itinerary2.html">3-Day Chic Escape</a></li>
-              <li><a href="itinerary1.html">5-Day Essence</a></li>
-              <li><a href="itinerary4.html">7-Day Kilimanjaro</a></li>
-              <li><a href="itinerary3.html">8-Day Zanzibar Luxe</a></li>
+              <li><a href="itinerary2.html">Chic Escape</a></li>
+              <li><a href="itinerary1.html">The Essence</a></li>
+              <li><a href="itinerary4.html">Kilimanjaro Aura</a></li>
+              <li><a href="itinerary3.html">Zanzibar Luxe</a></li>
             </ul>
           </li>
           <li class="has-submenu">

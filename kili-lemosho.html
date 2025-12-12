@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -18,6 +18,7 @@
   <style>
     :root{--magenta:#FF69B4;--magenta-700:#FF69B4;--gold:#ffb800;--gold-700:#e6a300;--bg:#0c0b10;--line:rgba(255,255,255,.08);--glass:rgba(255,255,255,.06);--shadow:0 12px 40px rgba(0,0,0,.35);--shadow-sm:0 8px 24px rgba(0,0,0,.25)}
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{margin:0;background:radial-gradient(1200px 700px at 10% -10%, rgba(196,0,106,.16), transparent 50%),radial-gradient(900px 600px at 110% 10%, rgba(255,184,0,.14), transparent 60%),var(--bg);color:#eee;font-family:Manrope,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6}
     .container{width:min(1200px,92vw);margin:0 auto}
     .grid{display:grid;gap:1.5rem}
@@ -42,15 +43,20 @@
     .hamburger{display:none;background:none;border:0;color:#fff}
     @media (max-width:900px){nav ul{display:none}.hamburger{display:block;font-size:1.5rem}nav ul.show{display:flex;position:absolute;top:64px;left:0;right:0;background:#0f0e14;padding:1rem 1.2rem;flex-direction:column;border-bottom:1px solid var(--line)}.brand .logo{width:44px;height:44px}}
 
-    .hero{position:relative;padding:140px 0 60px;background:radial-gradient(600px 240px at 15% 20%, rgba(255,184,0,.25), transparent 60%),radial-gradient(500px 240px at 85% -10%, rgba(196,0,106,.35), transparent 60%)}
-    .hero-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:1.6rem;align-items:center}
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.6)),url('assets/img/kili1.jpg') center/cover no-repeat;background-attachment:fixed}
+    .hero-wrap{display:grid;grid-template-columns:1fr;gap:1.6rem;align-items:center;max-width:900px;padding:140px 0 60px}
     @media (max-width:1000px){.hero-wrap{grid-template-columns:1fr}}
-    .title{font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;font-weight:800;line-height:1.1;font-size:clamp(2rem,5vw,3.1rem);margin:.6rem 0 1rem;background:linear-gradient(135deg,#fff,#ffe7a6 30%,#ffd15a 40%,#fff 60%);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .subtitle{color:#eaeaea;max-width:70ch}
-    .hero-media{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);background:#000}
-    .hero-media img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3;opacity:.92;transform:scale(1.02)}
-    .corner-tag{position:absolute;top:14px;left:14px;background:linear-gradient(135deg,var(--magenta),var(--magenta-700));padding:.5rem .7rem;border-radius:999px;font:700 .85rem/1 Manrope;box-shadow:var(--shadow-sm)}
+    .title{font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;font-weight:800;line-height:1.1;font-size:clamp(2rem,5vw,3.1rem);margin:.6rem 0 1rem;background:linear-gradient(135deg,#fff,#ffe7a6 30%,#ffd15a 40%,#fff 60%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+    .subtitle{color:#eaeaea;max-width:70ch;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+    .hero-media{display:none}
+    .hero-media img{display:none}
+    .corner-tag{position:absolute;top:90px;right:20px;background:linear-gradient(135deg,var(--magenta),var(--magenta-700));padding:.5rem .7rem;border-radius:999px;font:700 .85rem/1 Manrope;box-shadow:var(--shadow-sm)}
+    .scroll-indicator{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:#fff;text-decoration:none;opacity:.8;transition:opacity .3s,transform .3s;animation:bounce 2s infinite}
+    .scroll-indicator:hover{opacity:1;transform:translateX(-50%) translateY(5px)}
+    .scroll-indicator i{font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))}
+    @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
 
+    section{padding:4rem 0}
     .section-head{text-align:center;margin:1.6rem 0 1.2rem}
     .section-head h2{font:800 clamp(1.4rem,3.5vw,2.2rem)/1.15 Poppins;margin:.2rem 0 .6rem}
     .muted{color:#cdcdcd}
@@ -139,6 +145,7 @@
           <li aria-current="page">Lemosho Route</li>
         </ol>
       </nav>
+      <span class="corner-tag">Lemosho</span>
       <div class="hero-wrap">
         <div>
           <div class="chip"><i class="bi bi-mountain"></i> Kilimanjaro</div>
@@ -151,15 +158,14 @@
             <span class="chip"><i class="bi bi-sun"></i> Jan–Mar • Jun–Oct</span>
           </div>
         </div>
-        <div class="hero-media">
-          <img src="assets/img/kili1.jpg" alt="Lemosho forest and Shira Plateau">
-          <span class="corner-tag">Lemosho</span>
-        </div>
       </div>
+      <a href="#content" class="scroll-indicator" aria-label="Scroll to content">
+        <i class="bi bi-chevron-down"></i>
+      </a>
     </div>
   </section>
 
-  <section>
+  <section id="content">
     <div class="container grid cols-2">
       <div class="card">
         <h2 style="margin:.2rem 0 .6rem">Why Choose Lemosho</h2>
@@ -203,7 +209,7 @@
                 <span class="chip"><i class="bi bi-cloud-drizzle"></i> Misty forest</span>
               </div>
             </div>
-            <div class="day-media"><img src="assets/img/machame-gate-kilimanjaro.jpg" alt="Forest trail"><span class="img-badge">Mti Mkubwa</span></div>
+            <div class="day-media"><img src="assets/img/mtimkubwa.jpg" alt="Forest trail"><span class="img-badge">Mti Mkubwa</span></div>
           </div>
         </div>
         <div class="day">
@@ -217,7 +223,7 @@
             <div class="day-copy">
               <p>Trail climbs steadily to the rim of the Shira Plateau with sweeping views. Camp near Shira 1 under wide skies.</p>
             </div>
-            <div class="day-media"><img src="assets/img/kili3.jpg" alt="Shira plateau"><span class="img-badge">Shira</span></div>
+            <div class="day-media"><img src="assets/img/shira-plateau.jpg" alt="Shira plateau"><span class="img-badge">Shira</span></div>
           </div>
         </div>
         <div class="day">
@@ -229,7 +235,7 @@
           </aside>
           <div class="day-card">
             <div class="day-copy"><p>Traverse to Shira 2 Camp. Afternoon hike higher and descend to sleep low.</p></div>
-            <div class="day-media"><img src="assets/img/pexels-francesco-ungaro-1238248.jpg" alt="Highland moor"><span class="img-badge">Shira 2</span></div>
+            <div class="day-media"><img src="assets/img/shiraII.jpg" alt="Highland moor"><span class="img-badge">Shira 2</span></div>
           </div>
         </div>
         <div class="day">
@@ -263,7 +269,7 @@
             <div class="day-title">High camp</div>
             <div class="day-sub">Reach Barafu (~4,673 m); early dinner and rest.</div>
           </aside>
-          <div class="day-card"><div class="day-copy"><p>Prepare gear, brief for summit push.</p></div><div class="day-media"><img src="assets/img/pexels-bogdan-groshev-722715367-29345086.jpg" alt="High camp"><span class="img-badge">Barafu</span></div></div>
+          <div class="day-card"><div class="day-copy"><p>Prepare gear, brief for summit push.</p></div><div class="day-media"><img src="assets/img/barafucamp.jpg" alt="High camp"><span class="img-badge">Barafu</span></div></div>
         </div>
         <div class="day">
           <div class="dot"></div>
@@ -272,7 +278,7 @@
             <div class="day-title">Summit night</div>
             <div class="day-sub">Midnight start to Stella Point/ Uhuru Peak, descend to Mweka Camp.</div>
           </aside>
-          <div class="day-card"><div class="day-copy"><p>Celebrate at the Roof of Africa (5,895 m) before a long descent to lower elevations.</p></div><div class="day-media"><img src="assets/img/barafutosummit.jpg" alt="Summit ridge"><span class="img-badge">Uhuru Peak</span></div></div>
+          <div class="day-card"><div class="day-copy"><p>Celebrate at the Roof of Africa (5,895 m) before a long descent to lower elevations.</p></div><div class="day-media"><img src="assets/img/uhurupeak.webp" alt="Summit ridge"><span class="img-badge">Uhuru Peak</span></div></div>
         </div>
         <div class="day">
           <div class="dot"></div>

@@ -107,41 +107,18 @@
     }
 
     /* Hero */
-    .hero{
-      position:relative; padding:140px 0 100px; overflow:hidden;
-      background:
-        radial-gradient(600px 240px at 15% 20%, rgba(255,184,0,.25), transparent 60%),
-        radial-gradient(500px 240px at 85% -10%, rgba(196,0,106,.35), transparent 60%);
-    }
-    .hero::after{
-      content:""; position:absolute; inset:auto -20% -1px -20%; height:140px;
-      background:linear-gradient(to right, transparent, rgba(255,184,0,.15), transparent);
-      filter: blur(24px);
-    }
-    .hero-wrap{display:grid; grid-template-columns: 1.2fr .8fr; gap:2rem; align-items:center}
-    @media (max-width: 1000px){.hero-wrap{grid-template-columns:1fr}}
-    .eyebrow{font-weight:800; color:#fff; letter-spacing:.12em; text-transform:uppercase; font-size:.78rem; opacity:.9}
-    .title{
-      font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-weight:800; line-height:1.1;
-      font-size:clamp(2rem, 5vw, 3.1rem); margin:.6rem 0 1rem;
-      background:linear-gradient(135deg, #fff, #ffe7a6 30%, #ffd15a 40%, #fff 60%);
-      -webkit-background-clip:text; background-clip:text; color:transparent;
-    }
-    .subtitle{font-size:1.05rem; color:#eaeaea; max-width:60ch}
-    .hero-badges{display:flex; gap:.8rem; flex-wrap:wrap; margin:1.1rem 0 2rem}
-    .hero-card{
-      border:1px solid var(--line); background:var(--glass); border-radius:var(--radius); padding:1rem; box-shadow:var(--shadow-sm)
-    }
-    .hero-media{
-      position:relative; border-radius:24px; overflow:hidden;
-      box-shadow: var(--shadow);
-      background:#000;
-    }
-    .hero-media img{width:100%; height:100%; object-fit:cover; display:block; aspect-ratio: 4/3; opacity:.92; transform:scale(1.02)}
-    .corner-tag{
-      position:absolute; top:14px; left:14px; background:linear-gradient(135deg,var(--magenta),var(--magenta-700));
-      padding:.5rem .7rem; border-radius:999px; font:700 .85rem/1 Manrope; box-shadow:var(--shadow-sm)
-    }
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.6)),url('assets/img/pexels-frans-van-heerden-201846-4894482.jpg') center/cover no-repeat;background-attachment:fixed}
+    .hero-wrap{display:grid;grid-template-columns:1fr;gap:1.6rem;align-items:center;max-width:900px;padding:140px 0 60px}
+    @media (max-width:1000px){.hero-wrap{grid-template-columns:1fr}}
+    .title{font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;font-weight:800;line-height:1.1;font-size:clamp(2rem,5vw,3.1rem);margin:.6rem 0 1rem;background:linear-gradient(135deg,#fff,#ffe7a6 30%,#ffd15a 40%,#fff 60%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+    .subtitle{color:#eaeaea;max-width:70ch;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+    .hero-media{display:none}
+    .hero-media img{display:none}
+    .corner-tag{position:absolute;top:90px;right:20px;background:linear-gradient(135deg,var(--magenta),var(--magenta-700));padding:.5rem .7rem;border-radius:999px;font:700 .85rem/1 Manrope;box-shadow:var(--shadow-sm)}
+    .scroll-indicator{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:#fff;text-decoration:none;opacity:.8;transition:opacity .3s,transform .3s;animation:bounce 2s infinite}
+    .scroll-indicator:hover{opacity:1;transform:translateX(-50%) translateY(5px)}
+    .scroll-indicator i{font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))}
+    @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
 
     /* Section shells */
     section{padding:72px 0}
@@ -193,7 +170,6 @@
     .features .chip{border-color:#ffffff20}
     .day-media{position:relative; min-height:320px; background:#000}
     .day-media img{width:100%; height:100%; object-fit:cover; display:block}
-    .img-overlay{position:absolute; inset:0; background: linear-gradient( to top, rgba(0,0,0,.35), rgba(0,0,0,.05))}
     .img-badge{
       position:absolute; bottom:12px; left:12px; background:linear-gradient(135deg,var(--magenta),var(--magenta-700));
       color:#fff; padding:.45rem .7rem; border-radius:999px; font-weight:800; font-size:.82rem; box-shadow:var(--shadow-sm)
@@ -327,32 +303,13 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-wrap">
-      <div>
-        <div class="eyebrow">Tanzania • Zanzibar</div>
-        <h1 class="title">Zanzibar Luxe</h1>
-        <p class="subtitle">From the baobab-dotted plains of Tarangire to the UNESCO-listed Ngorongoro Crater, and the sugar-white sands of Nungwi — crafted for travelers who want it all.</p>
-        <div class="hero-badges">
-          <span class="chip"><i class="bi bi-calendar-event"></i> 8 Days</span>
-          <span class="chip"><i class="bi bi-truck"></i> Private 4×4</span>
-          <span class="chip"><i class="bi bi-shield-check"></i> Insured</span>
-        </div>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#journey"><i class="bi bi-arrow-down-right-circle"></i> Explore Day-by-Day</a>
-          <a class="btn btn-gold" href="#price"><i class="bi bi-cash-coin"></i> View Price Guide</a>
-        </div>
-      </div>
-
-      <div class="hero-media reveal">
-        <span class="corner-tag"><i class="bi bi-stars"></i> Safari Chic</span>
-        <img src="assets/img/pexels-frans-van-heerden-201846-4894482.jpg" alt="Elephants at sunset in Tanzania">
-      </div>
-    </div>
-  </section>
+  <section class="hero"><div class="container"><span class='corner-tag'>Zanzibar Luxe</span>
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="itineraries.html">Itineraries</a></li><li aria-current="page">Zanzibar Luxe</li></ol></nav>
+      <div class="hero-wrap"><div><div class="chip"><i class="bi bi-geo"></i> Tanzania • Zanzibar</div><h1 class="title">Zanzibar Luxe</h1><p class="subtitle">From the baobab-dotted plains of Tarangire to the UNESCO-listed Ngorongoro Crater, and the sugar-white sands of Nungwi — crafted for travelers who want it all.</p><div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem"><span class="chip"><i class="bi bi-clock"></i> 8 Days</span><span class="chip"><i class="bi bi-truck"></i> Private 4×4</span><span class="chip"><i class="bi bi-shield-check"></i> Insured</span></div></div>
+      <a href='#content' class='scroll-indicator' aria-label='Scroll to content'><i class='bi bi-chevron-down'></i></a></div></div></section>
 
   <!-- Journey Timeline -->
-  <section id="journey">
+  <section id="content">
     <div class="container">
       <div class="section-head">
         <h2>Moments Along the Way</h2>
@@ -377,11 +334,10 @@
                 <span class="chip"><i class="bi bi-egg-fried"></i> Dinner</span>
               </div>
             </div>
-            <figure class="day-media">
+            <div class="day-media">
               <img src="assets/img/art-gallery-cultural.jpg" alt="Arusha and Mount Meru">
-              <div class="img-overlay"></div>
               <span class="img-badge">Arusha</span>
-            </figure>
+            </div>
           </div>
         </article>
 
@@ -402,11 +358,10 @@
                 <span class="chip"><i class="bi bi-cup-straw"></i> Picnic lunch</span>
               </div>
             </div>
-            <figure class="day-media">
+            <div class="day-media">
               <img src="assets/img/amazing-tarangire-day.jpg" alt="Tarangire National Park baobab and wildlife">
-              <div class="img-overlay"></div>
               <span class="img-badge">Tarangire</span>
-            </figure>
+            </div>
           </div>
         </article>
 
@@ -427,11 +382,10 @@
                 <span class="chip"><i class="bi bi-egg-fried"></i> Breakfast & lunch</span>
               </div>
             </div>
-            <figure class="day-media">
+            <div class="day-media">
               <img src="assets/img/ngorongoro-crater.jpg" alt="Ngorongoro crater view">
-              <div class="img-overlay"></div>
               <span class="img-badge">Ngorongoro</span>
-            </figure>
+            </div>
           </div>
         </article>
 
@@ -452,11 +406,10 @@
                 <span class="chip"><i class="bi bi-buildings"></i> Stone Town walk</span>
               </div>
             </div>
-            <figure class="day-media">
+            <div class="day-media">
               <img src="assets/img/lake-manyara-national.jpg" alt="Stone Town, Zanzibar">
-              <div class="img-overlay"></div>
               <span class="img-badge">Lake Manyara</span>
-            </figure>
+            </div>
           </div>
         </article>
       </div>
@@ -504,11 +457,10 @@
                 <span class="chip"><i class="bi bi-taxi-front"></i> Private transfer</span>
               </div>
             </div>
-            <figure class="day-media">
+            <div class="day-media">
               <img src="assets/img/spice.jpg" alt="Zanzibar sunset farewell">
-              <div class="img-overlay"></div>
               <span class="img-badge">Zanzibar</span>
-            </figure>
+            </div>
           </div>
         </article>
       </div>

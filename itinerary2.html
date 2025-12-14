@@ -80,18 +80,18 @@
     }
 
     /* Hero */
-    .hero{position:relative;padding:140px 0 100px;overflow:hidden;background:
-      radial-gradient(600px 240px at 15% 20%, rgba(255,184,0,.25), transparent 60%),
-      radial-gradient(500px 240px at 85% -10%, rgba(196,0,106,.35), transparent 60%);}
-    .hero-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center}
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.6)),url('assets/img/maasaijump.jpg') center/cover no-repeat;background-attachment:fixed}
+    .hero-wrap{display:grid;grid-template-columns:1fr;gap:1.6rem;align-items:center;max-width:900px;padding:140px 0 60px}
     @media (max-width:1000px){.hero-wrap{grid-template-columns:1fr}}
-    .eyebrow{font-weight:800;color:#fff;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;opacity:.9}
-    .title{font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;font-weight:800;line-height:1.1;font-size:clamp(2rem,5vw,3rem);margin:.6rem 0 1rem;background:linear-gradient(135deg,#fff,#ffe7a6 30%,#ffd15a 40%,#fff 60%);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .subtitle{font-size:1.05rem;color:#eaeaea;max-width:60ch}
-    .hero-badges{display:flex;gap:.8rem;flex-wrap:wrap;margin:1.1rem 0 2rem}
-    .hero-media{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);background:#000}
-    .hero-media img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3;opacity:.92;transform:scale(1.02)}
-    .corner-tag{position:absolute;top:14px;left:14px;background:linear-gradient(135deg,#FF69B4,#FF69B4);padding:.5rem .7rem;border-radius:999px;font:700 .85rem/1 Manrope;box-shadow:var(--shadow-sm)}
+    .title{font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;font-weight:800;line-height:1.1;font-size:clamp(2rem,5vw,3.1rem);margin:.6rem 0 1rem;background:linear-gradient(135deg,#fff,#ffe7a6 30%,#ffd15a 40%,#fff 60%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+    .subtitle{color:#eaeaea;max-width:70ch;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+    .hero-media{display:none}
+    .hero-media img{display:none}
+    .corner-tag{position:absolute;top:90px;right:20px;background:linear-gradient(135deg,var(--magenta),var(--magenta-700));padding:.5rem .7rem;border-radius:999px;font:700 .85rem/1 Manrope;box-shadow:var(--shadow-sm)}
+    .scroll-indicator{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:#fff;text-decoration:none;opacity:.8;transition:opacity .3s,transform .3s;animation:bounce 2s infinite}
+    .scroll-indicator:hover{opacity:1;transform:translateX(-50%) translateY(5px)}
+    .scroll-indicator i{font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))}
+    @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
 
     /* Sections */
     section{padding:72px 0}
@@ -119,8 +119,7 @@
     .features .chip{border-color:#ffffff20}
     .day-media{position:relative;min-height:240px;background:#000}
     .day-media img{width:100%;height:100%;object-fit:cover;display:block}
-    .img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.35),rgba(0,0,0,.05))}
-  .img-badge{position:absolute;bottom:12px;left:12px;background:linear-gradient(135deg,#FF69B4,#FF69B4);color:#fff;padding:.45rem .7rem;border-radius:999px;font-weight:800;font-size:.82rem;box-shadow:var(--shadow-sm)}
+    .img-badge{position:absolute;bottom:12px;left:12px;background:linear-gradient(135deg,var(--magenta),var(--magenta-700));color:#fff;padding:.45rem .7rem;border-radius:999px;font-weight:800;font-size:.82rem;box-shadow:var(--shadow-sm)}
 
     /* Price */
     .price-wrap{margin-top:1rem}
@@ -212,31 +211,13 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-wrap">
-      <div>
-        <div class="eyebrow">From Zanzibar · 3 Days</div>
-        <h1 class="title">The Chic Escape</h1>
-        <p class="subtitle">Hop from turquoise shores to golden plains for a three-day fusion of island serenity and untamed adventure — the perfect Safari Chic getaway.</p>
-        <div class="hero-badges">
-          <span class="chip"><i class="bi bi-airplane"></i> ZNZ → DAR</span>
-          <span class="chip"><i class="bi bi-truck"></i> Private 4×4</span>
-          <span class="chip"><i class="bi bi-shield-check"></i> Insured</span>
-        </div>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#journey"><i class="bi bi-arrow-down-right-circle"></i> Explore Day-by-Day</a>
-          <a class="btn btn-gold" href="#price"><i class="bi bi-cash-coin"></i> View Price Guide</a>
-        </div>
-      </div>
-      <div class="hero-media reveal">
-        <span class="corner-tag"><i class="bi bi-stars"></i> Safari Chic</span>
-        <img src="assets/img/pexels-droneafrica-12937516.jpg" alt="Elephants crossing at sunset">
-      </div>
-    </div>
-  </section>
+  <section class="hero"><div class="container"><span class='corner-tag'>Chic Escape</span>
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="itineraries.html">Itineraries</a></li><li aria-current="page">Chic Escape</li></ol></nav>
+      <div class="hero-wrap"><div><div class="chip"><i class="bi bi-geo"></i> From Zanzibar</div><h1 class="title">The Chic Escape</h1><p class="subtitle">Hop from turquoise shores to golden plains for a three-day fusion of island serenity and untamed adventure — the perfect Safari Chic getaway.</p><div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem"><span class="chip"><i class="bi bi-airplane"></i> ZNZ → DAR</span><span class="chip"><i class="bi bi-truck"></i> Private 4×4</span><span class="chip"><i class="bi bi-shield-check"></i> Insured</span></div></div>
+      <a href='#content' class='scroll-indicator' aria-label='Scroll to content'><i class='bi bi-chevron-down'></i></a></div></div></section>
 
   <!-- Journey Timeline -->
-  <section id="journey">
+  <section id="content">
     <div class="container">
       <div class="section-head">
         <h2>Day-by-Day Journey</h2>
@@ -259,11 +240,10 @@
                 <span class="chip"><i class="bi bi-house-heart"></i> Camp Bastian / Selous Safari Camp / Siwandu</span>
               </div>
             </div>
-            <figure class="day-media">
+            <div class="day-media">
               <img src="assets/img/pexels-timon-cornelissen-241844481-13927691.jpg" alt="Tarangire-like baobabs and elephants">
-              <div class="img-overlay"></div>
               <span class="img-badge">Safari Start</span>
-            </figure>
+            </div>
           </div>
         </article>
 
@@ -283,11 +263,10 @@
                 <span class="chip"><i class="bi bi-camera"></i> Golden hour</span>
               </div>
             </div>
-            <figure class="day-media">
+            <div class="day-media">
               <img src="assets/img/pexels-david-foster-229758093-12083667.jpg" alt="Morning game drive scene">
-              <div class="img-overlay"></div>
               <span class="img-badge">All Day</span>
-            </figure>
+            </div>
           </div>
         </article>
 
@@ -306,11 +285,10 @@
                 <span class="chip"><i class="bi bi-airplane"></i> DAR → ZNZ</span>
               </div>
             </div>
-            <figure class="day-media">
+            <div class="day-media">
              <img src="assets/img/nungwi2.jpg" alt="Morning game drive scene">
-              <div class="img-overlay"></div>
               <span class="img-badge">Zanzibar</span>
-            </figure>
+            </div>
           </div>
         </article>
       </div>

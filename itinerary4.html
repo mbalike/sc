@@ -69,37 +69,19 @@
       .brand .logo{width:44px;height:44px}
     }
 
-    /* Hero with photo */
-    .hero{
-      position:relative; padding:140px 0 110px; overflow:hidden; isolation:isolate; min-height:100vh;
-    }
-    .hero::before{
-      content:""; position:absolute; inset:0;
-      background-image:url('https://images.unsplash.com/photo-1549887534-1541e9323d17?q=80&w=2000&auto=format&fit=crop');
-      background-size:cover; background-position:center;
-      filter:brightness(.78) saturate(1.05); transform:scale(1.02); z-index:-2;
-    }
-    .hero::after{
-      content:""; position:absolute; inset:0;
-      background:radial-gradient(900px 400px at 90% -10%, rgba(196,0,106,.35), transparent 60%),
-                 radial-gradient(900px 400px at 10% 110%, rgba(255,184,0,.25), transparent 60%);
-      z-index:-1;
-    }
-    .hero-wrap{display:grid; grid-template-columns: 1.2fr .8fr; gap:2rem; align-items:center}
-    @media (max-width: 1000px){.hero-wrap{grid-template-columns:1fr}}
-    .eyebrow{font-weight:800; color:#fff; letter-spacing:.12em; text-transform:uppercase; font-size:.78rem; opacity:.9}
-    .title{
-      font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-weight:800; line-height:1.1;
-      font-size:clamp(2rem, 5vw, 3.1rem); margin:.6rem 0 1rem;
-      background:linear-gradient(135deg, #fff, #ffe7a6 30%, #ffd15a 40%, #fff 60%);
-      -webkit-background-clip:text; background-clip:text; color:transparent;
-      text-shadow:0 6px 28px rgba(0,0,0,.2);
-    }
-    .subtitle{font-size:1.05rem; color:#f0f0f0; max-width:60ch}
-    .hero-badges{display:flex; gap:.8rem; flex-wrap:wrap; margin:1.1rem 0 2rem}
-    .hero-media{ position:relative; border-radius:24px; overflow:hidden; box-shadow: var(--shadow); background:#000; }
-    .hero-media img{width:100%; height:100%; object-fit:cover; display:block; aspect-ratio: 4/3; opacity:.92; transform:scale(1.02)}
-    .corner-tag{ position:absolute; top:14px; left:14px; background:linear-gradient(135deg,var(--magenta),var(--magenta-700)); padding:.5rem .7rem; border-radius:999px; font:700 .85rem/1 Manrope; box-shadow:var(--shadow-sm) }
+    /* Hero */
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.6)),url('assets/img/kili10.jpg') center 12%/cover no-repeat;background-attachment:fixed}
+    .hero-wrap{display:grid;grid-template-columns:1fr;gap:1.6rem;align-items:center;max-width:900px;padding:140px 0 60px}
+    @media (max-width:1000px){.hero-wrap{grid-template-columns:1fr}}
+    .title{font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;font-weight:800;line-height:1.1;font-size:clamp(2rem,5vw,3.1rem);margin:.6rem 0 1rem;background:linear-gradient(135deg,#fff,#ffe7a6 30%,#ffd15a 40%,#fff 60%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+    .subtitle{color:#eaeaea;max-width:70ch;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+    .hero-media{display:none}
+    .hero-media img{display:none}
+    .corner-tag{position:absolute;top:90px;right:20px;background:linear-gradient(135deg,var(--magenta),var(--magenta-700));padding:.5rem .7rem;border-radius:999px;font:700 .85rem/1 Manrope;box-shadow:var(--shadow-sm)}
+    .scroll-indicator{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:#fff;text-decoration:none;opacity:.8;transition:opacity .3s,transform .3s;animation:bounce 2s infinite}
+    .scroll-indicator:hover{opacity:1;transform:translateX(-50%) translateY(5px)}
+    .scroll-indicator i{font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))}
+    @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
 
     /* Sections */
     section{padding:72px 0}

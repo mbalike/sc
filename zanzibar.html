@@ -185,7 +185,7 @@
       const path = location.pathname.split('/').pop() || 'index.html';
       const links = document.querySelectorAll('nav a[href]');
       links.forEach(a=>{ const href=a.getAttribute('href'); if(href===path){ a.setAttribute('aria-current','page'); } });
-      const destPages = new Set(['serengeti.html','ngorongoro.html','tarangire.html','manyara.html','highlands.html','zanzibar.html']);
+      const destPages = new Set(['serengeti.html','ngorongoro.html','tarangire.html','manyara.html','ruaha.html','zanzibar.html']);
       if(destPages.has(path)){
         const destLink = Array.from(links).find(a=>a.getAttribute('href')==='destinations.html');
         destLink?.setAttribute('aria-current','page');

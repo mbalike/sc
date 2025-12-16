@@ -132,7 +132,7 @@
       <div class="gallery">
         <a class="card-link" href="serengeti.html"><figure class="reveal"><img src="assets/img/pexels-sawibythepixels-1642068.jpg" alt="Serengeti"></figure></a>
         <a class="card-link" href="manyara.html"><figure class="reveal"><img src="assets/img/lake-manyara-national.jpg" alt="Lake Manyara"></figure></a>
-        <a class="card-link" href="highlands.html"><figure class="reveal"><img src="assets/img/ngorohigh.jpg" alt="Highlands"></figure></a>
+        <a class="card-link" href="ruaha.html"><figure class="reveal"><img src="assets/img/baobab-trees-ruaha-1536x864.jpg" alt="Ruaha"></figure></a>
       </div>
     </div>
   </section>
@@ -186,7 +186,7 @@
       const path = location.pathname.split('/').pop() || 'index.html';
       const links = document.querySelectorAll('nav a[href]');
       links.forEach(a=>{ const href=a.getAttribute('href'); if(href===path){ a.setAttribute('aria-current','page'); } });
-      const destPages = new Set(['serengeti.html','ngorongoro.html','tarangire.html','manyara.html','highlands.html','zanzibar.html']);
+      const destPages = new Set(['serengeti.html','ngorongoro.html','tarangire.html','manyara.html','ruaha.html','zanzibar.html']);
       if(destPages.has(path)){
         const destLink = Array.from(links).find(a=>a.getAttribute('href')==='destinations.html');
         destLink?.setAttribute('aria-current','page');

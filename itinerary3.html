@@ -99,6 +99,7 @@
     nav li.has-submenu .submenu a[aria-current="page"]{color:#FF69B4; background:#ffffff08; font-weight:700}
     .hamburger{display:none; background:none; border:0; color:#fff}
     @media (max-width: 900px){
+      body{background:var(--bg)}
       nav ul{display:none}
       .hamburger{display:block; font-size:1.5rem}
      .actions{display:none}
@@ -197,6 +198,13 @@
       position:absolute; top:16px; right:16px;
       background:linear-gradient(135deg,var(--magenta),var(--magenta-700));
       padding:.5rem .8rem; border-radius:999px; font-weight:800; font-size:.86rem; box-shadow:var(--shadow-sm)
+    }
+    @media (max-width: 900px){
+      .banner{min-height:auto}
+      .banner img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+      .banner::before{inset:0}
+      .banner .content{position:relative; inset:auto; padding:1.5rem 1rem}
+      .banner .ribbon{position:static; display:inline-block; margin-bottom:1rem}
     }
 
     /* Cards */
@@ -304,7 +312,7 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero"><div class="container"><span class='corner-tag'>Zanzibar Luxe</span>
+  <section class="hero"><div class="container">
       <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="itineraries.html">Itineraries</a></li><li aria-current="page">Zanzibar Luxe</li></ol></nav>
       <div class="hero-wrap"><div><div class="chip"><i class="bi bi-geo"></i> Tanzania • Zanzibar</div><h1 class="title">Zanzibar Luxe</h1><p class="subtitle">From the baobab-dotted plains of Tarangire to the UNESCO-listed Ngorongoro Crater, and the sugar-white sands of Nungwi — crafted for travelers who want it all.</p><div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem"><span class="chip"><i class="bi bi-clock"></i> 8 Days</span><span class="chip"><i class="bi bi-truck"></i> Private 4×4</span><span class="chip"><i class="bi bi-shield-check"></i> Insured</span></div></div>
       <a href='#content' class='scroll-indicator' aria-label='Scroll to content'><i class='bi bi-chevron-down'></i></a></div></div></section>

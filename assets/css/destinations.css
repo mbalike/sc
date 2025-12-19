@@ -78,7 +78,7 @@ nav li.has-submenu .submenu a[aria-current="page"]{color:#FF69B4;background:#fff
 .hero::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.55) 65%, rgba(0,0,0,.8)); z-index:-1}
 .hero .inner{padding:clamp(80px,12vw,120px) clamp(20px,6vw,40px) 36px; display:grid; justify-items:start; text-align:left; max-width:min(840px, 100%); margin-inline:auto}
 .hero .kicker{font-weight:800; letter-spacing:.14em; text-transform:uppercase; font-size:.78rem}
-.hero h1{font-family:'Dancing Script', cursive; font-weight:700; font-size:clamp(2rem,5vw,3.2rem); line-height:1.05; margin:.4rem 0 .6rem}
+.hero h1{font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;font-weight:800;line-height:1.05;font-size:clamp(2.2rem,5.4vw,3.6rem);margin:.5rem 0 .8rem;background:linear-gradient(135deg, #fff, #ffe7a6 30%, #ffd15a 40%, #fff 60%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 6px 28px rgba(0,0,0,.45)}
 .hero .subtitle{max-width:70ch; color:#f0f0f0}
 .hero .cta{display:flex; gap:.7rem; flex-wrap:wrap; margin-top:1rem; justify-content:flex-start}
 

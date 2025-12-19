@@ -81,18 +81,18 @@
   .hero{position:relative;min-height:100vh;display:grid;align-items:center;overflow:hidden;isolation:isolate}
     .hero::before{
       content:"";position:absolute;inset:0;
-      background:url(assets/img/pexels-saleh-bakhshiyev-387368045-28773143.jpg) center/cover no-repeat;
+      background-image:url(assets/img/elephant-eye.jpg);
+      background-position:75% center;
+      background-size:cover;
+      background-repeat:no-repeat;
       filter:brightness(.68) saturate(1.05);transform:scale(1.02);z-index:-2
     }
     .hero::after{
       content:"";position:absolute;inset:0;
-      background:
-        radial-gradient(1000px 600px at 50% 30%, rgba(253,51,162,.25), transparent 70%),
-        radial-gradient(800px 400px at 85% -10%, rgba(253,51,162,.35), transparent 60%),
-        radial-gradient(700px 400px at 15% 110%, rgba(255,184,0,.22), transparent 60%);
+      background:linear-gradient(to bottom, rgba(0,0,0,.3), rgba(0,0,0,.5));
       z-index:-1
     }
-    .hero h1{font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;font-weight:800;line-height:1.05;font-size:clamp(2.8rem,6.5vw,4.5rem);margin:.5rem 0 .6rem;background:linear-gradient(135deg, #fff, #ffe7a6 30%, #ffd15a 40%, #fff 60%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 8px 32px rgba(255,105,180,.6), 0 4px 16px rgba(0,0,0,.45)}
+    .hero h1{font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;font-weight:800;line-height:1.05;font-size:clamp(2.8rem,6.5vw,4.5rem);margin:.5rem 0 .6rem;background:linear-gradient(135deg, #fff, #ffe7a6 30%, #ffd15a 40%, #fff 60%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 4px 16px rgba(0,0,0,.6)}
 
     /* Cards */
     .card{border:1px solid var(--line);border-radius:18px;background:linear-gradient(160deg, rgba(253,51,162,.08), rgba(255,184,0,.06));box-shadow:0 12px 32px rgba(0,0,0,.3);padding:1.2rem;transition:.3s}

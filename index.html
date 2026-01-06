@@ -223,7 +223,7 @@
     .card-link{display:block;text-decoration:none;color:inherit}
     .itin-card{position:relative;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:linear-gradient(160deg, rgba(196,0,106,.08), rgba(255,184,0,.06));box-shadow:var(--shadow-sm);transition:.3s transform,.3s box-shadow}
     .itin-card:hover{transform:translateY(-6px); box-shadow:var(--shadow)}
-    .itin-img{height:220px;background:#000;position:relative;overflow:hidden}
+    .itin-img{height:300px;background:#000;position:relative;overflow:hidden}
     .itin-img img{width:100%;height:100%;object-fit:cover;display:block}
     .badge{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,#FF69B4,#FF69B4);padding:.45rem .7rem;border-radius:999px;font-weight:800;font-size:.82rem;box-shadow:var(--shadow-sm)}
     .itin-body{padding:1.15rem}
@@ -233,10 +233,26 @@
     .highlights{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.7rem}
     .highlights .chip{border-color:#ffffff22;white-space:nowrap;padding:.3rem .55rem;font-size:.78rem;font-weight:600}
 
-    /* --- NEW: Itineraries Grid (no slider) --- */
-    .itins-grid{display:grid; gap:1rem; grid-template-columns:repeat(3,minmax(0,1fr))}
-    @media (max-width:1100px){ .itins-grid{grid-template-columns:repeat(2,1fr)} }
-    @media (max-width:680px){ .itins-grid{grid-template-columns:1fr} }
+    /* --- Itineraries: slider layout --- */
+    .itins-slider{position:relative;max-width:720px;margin:0 auto}
+    .itins-slides{position:relative;min-height:420px}
+    .itin-slide{position:absolute;inset:0;opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease;pointer-events:none}
+    .itin-slide.active{opacity:1;transform:none;pointer-events:auto}
+    .itin-card{height:100%}
+    .itins-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.18);width:40px;height:40px;border-radius:999px;display:grid;place-items:center;cursor:pointer;transition:.25s;backdrop-filter:blur(10px)}
+    .itins-nav i{color:#fff;font-size:1.1rem}
+    .itins-nav:hover{background:rgba(0,0,0,.85);border-color:var(--gold)}
+    .itins-nav.prev{left:-.4rem}
+    .itins-nav.next{right:-.4rem}
+    .itins-dots{display:flex;justify-content:center;gap:.5rem;margin-top:1rem}
+    .itin-dot{width:10px;height:10px;border-radius:999px;border:2px solid var(--line);background:transparent;cursor:pointer;padding:0;transition:.25s}
+    .itin-dot.active{background:var(--gold);border-color:var(--gold)}
+    .itin-dot:hover{border-color:var(--gold)}
+    @media (max-width:980px){
+      .itins-slides{min-height:0}
+      .itin-slide{position:relative}
+      .itins-nav{display:none}
+    }
 
     /* Best Time timeline */
   .timeline-wrap{border:1px solid var(--line); border-radius:20px; overflow:hidden; background:var(--glass); box-shadow:var(--shadow-sm); padding:.6rem .8rem .8rem}
@@ -362,14 +378,14 @@
       nav ul{display:none}
       nav ul.show{display:flex;position:absolute;top:64px;left:0;right:0;background:#0f0e14;padding:1rem 1.2rem;flex-direction:column;border-bottom:1px solid var(--line)}
       .brand .logo{width:44px;height:44px}
-      .itin-img{height:180px}
+      .itin-img{height:230px}
   /* Timeline mobile comfort */
   .timeline-wrap{overflow-x:auto}
   .band span{height:30px}
   .band span i{font-size:.85rem; text-shadow:0 1px 2px rgba(0,0,0,.3)}
     }
     @media (max-width: 480px){
-      .itin-img{height:160px}
+      .itin-img{height:200px}
       .section-head h2{font-size:clamp(1.25rem,6vw,1.6rem)}
       .section-head p{font-size:.95rem; line-height:1.6}
     }
@@ -523,63 +539,91 @@
         <p style="margin-top:.6rem"><a href="#plan" class="btn btn-gold"><i class="bi bi-chat-dots"></i> Request Your Safari Chic Quote</a></p>
       </div>
 
-      <div class="itins-grid">
-        <!-- Card 1 -->
-        <a class="card-link reveal" href="itinerary2.html">
-          <article class="itin-card">
-            <div class="itin-img">
-              <span class="badge">Quick Escape</span>
-              <img src="assets/img/cheetah1.jpg" alt="Elephants at golden hour">
-            </div>
-            <div class="itin-body">
-              <div class="itin-head"><h3 class="itin-title">The Chic Escape</h3><span class="dur">3 Days</span></div>
-              <p class="muted">Your swift path to the wild. Fly from Zanzibar and dive straight into game drives — an intimate taste of Tanzania’s beauty in just three unforgettable days.</p>
-              <div class="highlights">
-                <span class="chip"><i class="bi bi-tree"></i> Mikumi/Nyerere</span>
-                <span class="chip"><i class="bi bi-binoculars"></i> Big Five</span>
-                <span class="chip"><i class="bi bi-airplane"></i> ZNZ ⇄ DAR</span>
-              </div>
-            </div>
-          </article>
-        </a>
+      <div class="itins-slider">
+        <button class="itins-nav prev" type="button" aria-label="Previous itinerary"><i class="bi bi-chevron-left"></i></button>
+        <div class="itins-slides">
+          <div class="itin-slide active">
+            <a class="card-link reveal" href="itinerary2.html">
+              <article class="itin-card">
+                <div class="itin-img">
+                  <img src="assets/img/cheetah1.jpg" alt="Elephants at golden hour">
+                </div>
+                <div class="itin-body">
+                  <div class="itin-head"><h3 class="itin-title">The Chic Escape</h3><span class="dur">3 Days</span></div>
+                  <p class="muted">Your swift path to the wild. Fly from Zanzibar and dive straight into game drives — an intimate taste of Tanzania’s beauty in just three unforgettable days.</p>
+                  <div class="highlights">
+                    <span class="chip"><i class="bi bi-tree"></i> Mikumi/Nyerere</span>
+                    <span class="chip"><i class="bi bi-binoculars"></i> Big Five</span>
+                    <span class="chip"><i class="bi bi-airplane"></i> ZNZ ⇄ DAR</span>
+                  </div>
+                </div>
+              </article>
+            </a>
+          </div>
 
-        <!-- Card 2 -->
-        <a class="card-link reveal" href="itinerary1.html">
-          <article class="itin-card">
-            <div class="itin-img">
-              <span class="badge">Most Popular</span>
-              <img src="assets/img/pexels-mikeknibbs-17849763.jpg" alt="Savannah and ocean blend">
-            </div>
-            <div class="itin-body">
-              <div class="itin-head"><h3 class="itin-title">The Essence</h3><span class="dur">5 Days</span></div>
-              <p class="muted">Five days, perfectly balanced. Witness the majesty of the Serengeti by day, then wander the spice-scented alleys of Stone Town by night — the ultimate blend of adventure and culture.</p>
-              <div class="highlights">
-                <span class="chip"><i class="bi bi-binoculars"></i> Tarangire</span>
-                <span class="chip"><i class="bi bi-geo-alt"></i> Ngorongoro</span>
-                <span class="chip"><i class="bi bi-buildings"></i> Stone Town</span>
-              </div>
-            </div>
-          </article>
-        </a>
+          <div class="itin-slide">
+            <a class="card-link reveal" href="itinerary1.html">
+              <article class="itin-card">
+                <div class="itin-img">
+                  <img src="assets/img/pexels-mikeknibbs-17849763.jpg" alt="Savannah and ocean blend">
+                </div>
+                <div class="itin-body">
+                  <div class="itin-head"><h3 class="itin-title">The Essence</h3><span class="dur">5 Days</span></div>
+                  <p class="muted">Five days, perfectly balanced. Witness the majesty of the Serengeti by day, then wander the spice-scented alleys of Stone Town by night — the ultimate blend of adventure and culture.</p>
+                  <div class="highlights">
+                    <span class="chip"><i class="bi bi-binoculars"></i> Tarangire</span>
+                    <span class="chip"><i class="bi bi-geo-alt"></i> Ngorongoro</span>
+                    <span class="chip"><i class="bi bi-buildings"></i> Stone Town</span>
+                  </div>
+                </div>
+              </article>
+            </a>
+          </div>
 
-        <!-- Card 3 -->
-        <a class="card-link reveal" href="itinerary3.html">
-          <article class="itin-card">
-            <div class="itin-img">
-              <span class="badge">Ultimate Experience</span>
-              <img src="assets/img/zanznew2.jpg" alt="Zanzibar coastline at sunset">
-            </div>
-            <div class="itin-body">
-              <div class="itin-head"><h3 class="itin-title">Zanzibar Luxe</h3><span class="dur">8 Days</span></div>
-              <p class="muted">The ultimate escape. Eight days spanning it all — sunrise safaris in the Serengeti, the natural wonder of Ngorongoro, and turquoise Zanzibar shores to close your journey in style.</p>
-              <div class="highlights">
-                <span class="chip"><i class="bi bi-star"></i> Big Five</span>
-                <span class="chip"><i class="bi bi-minecart-loaded"></i> Ngorongoro Crater</span>
-                <span class="chip"><i class="bi bi-umbrella-beach"></i> Nungwi</span>
-              </div>
-            </div>
-          </article>
-        </a>
+          <div class="itin-slide">
+            <a class="card-link reveal" href="itinerary3.html">
+              <article class="itin-card">
+                <div class="itin-img">
+                  <img src="assets/img/zanznew2.jpg" alt="Zanzibar coastline at sunset">
+                </div>
+                <div class="itin-body">
+                  <div class="itin-head"><h3 class="itin-title">Zanzibar Luxe</h3><span class="dur">8 Days</span></div>
+                  <p class="muted">The ultimate escape. Eight days spanning it all — sunrise safaris in the Serengeti, the natural wonder of Ngorongoro, and turquoise Zanzibar shores to close your journey in style.</p>
+                  <div class="highlights">
+                    <span class="chip"><i class="bi bi-star"></i> Big Five</span>
+                    <span class="chip"><i class="bi bi-minecart-loaded"></i> Ngorongoro Crater</span>
+                    <span class="chip"><i class="bi bi-umbrella-beach"></i> Nungwi</span>
+                  </div>
+                </div>
+              </article>
+            </a>
+          </div>
+
+          <div class="itin-slide">
+            <a class="card-link reveal" href="itinerary4.html">
+              <article class="itin-card">
+                <div class="itin-img">
+                  <img src="assets/img/Mount-Kilimanjaro.jpg" alt="Mount Kilimanjaro above the plains">
+                </div>
+                <div class="itin-body">
+                  <div class="itin-head"><h3 class="itin-title">Kilimanjaro Aura</h3><span class="dur">7 Days</span></div>
+                  <p class="muted">Journey from Kilimanjaro's gateway to the crown of Africa via the legendary Machame Route — rainforest, alpine moorlands, and glaciers on the way to Uhuru Peak.</p>
+                  <div class="highlights">
+                    <span class="chip"><i class="bi bi-signpost-2"></i> Scenic &amp; varied terrain</span>
+                    <span class="chip"><i class="bi bi-cloud-rain"></i> Rainforest/Glaciers</span>
+                  </div>
+                </div>
+              </article>
+            </a>
+          </div>
+        </div>
+        <button class="itins-nav next" type="button" aria-label="Next itinerary"><i class="bi bi-chevron-right"></i></button>
+        <div class="itins-dots" aria-hidden="true">
+          <button class="itin-dot active" data-itin="0"></button>
+          <button class="itin-dot" data-itin="1"></button>
+          <button class="itin-dot" data-itin="2"></button>
+          <button class="itin-dot" data-itin="3"></button>
+        </div>
       </div>
     </div>
   </section>
@@ -910,6 +954,73 @@
         autoSlideInterval = setInterval(() => changeSlide(1), 6000);
       });
     }
+
+    // Itineraries slider (Featured Journeys)
+    (function(){
+      const slides = Array.from(document.querySelectorAll('.itin-slide'));
+      if(!slides.length) return;
+      const dots = Array.from(document.querySelectorAll('.itin-dot'));
+      const prev = document.querySelector('.itins-nav.prev');
+      const next = document.querySelector('.itins-nav.next');
+      let current = 0;
+
+      function showItin(index){
+        const total = slides.length;
+        if(index < 0) index = total - 1;
+        if(index >= total) index = 0;
+        current = index;
+        slides.forEach((s,i)=>s.classList.toggle('active', i===current));
+        dots.forEach((d,i)=>d.classList.toggle('active', i===current));
+      }
+
+      function changeItin(delta){
+        showItin(current + delta);
+      }
+
+      prev?.addEventListener('click', ()=>changeItin(-1));
+      next?.addEventListener('click', ()=>changeItin(1));
+
+      dots.forEach((dot)=>{
+        dot.addEventListener('click', ()=>{
+          const idx = parseInt(dot.getAttribute('data-itin') || '0', 10) || 0;
+          showItin(idx);
+        });
+      });
+
+      // Auto-rotate itineraries
+      let itinTimer = setInterval(()=>changeItin(1), 8000);
+      const slider = document.querySelector('.itins-slider');
+      if(slider){
+        // Pause on hover (desktop)
+        slider.addEventListener('mouseenter', ()=>{ clearInterval(itinTimer); });
+        slider.addEventListener('mouseleave', ()=>{
+          clearInterval(itinTimer);
+          itinTimer = setInterval(()=>changeItin(1), 8000);
+        });
+
+        // Basic swipe support for touch devices
+        let touchStartX = 0;
+        let touchActive = false;
+
+        slider.addEventListener('touchstart', (e)=>{
+          if(!e.touches || !e.touches.length) return;
+          touchActive = true;
+          touchStartX = e.touches[0].clientX;
+          clearInterval(itinTimer);
+        }, { passive:true });
+
+        slider.addEventListener('touchend', (e)=>{
+          if(!touchActive || !e.changedTouches || !e.changedTouches.length) return;
+          const deltaX = e.changedTouches[0].clientX - touchStartX;
+          if(Math.abs(deltaX) > 40){
+            changeItin(deltaX < 0 ? 1 : -1);
+          }
+          touchActive = false;
+          clearInterval(itinTimer);
+          itinTimer = setInterval(()=>changeItin(1), 8000);
+        });
+      }
+    })();
 
     // Submenus (hover + delayed close + mobile toggle) for all dropdowns
     (function(){

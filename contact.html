@@ -152,7 +152,7 @@
       background-position:10% center;
       background-size:cover;
       background-repeat:no-repeat;
-      filter:brightness(.68) saturate(1.05);transform:scale(1.02);z-index:-2
+      transform:scale(1.02);z-index:-2
     }
     .hero::after{
       content:"";position:absolute;inset:0;
@@ -160,6 +160,15 @@
       z-index:-1
     }
     .hero h1{font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;font-weight:800;line-height:1.05;font-size:clamp(2.8rem,6.5vw,4.5rem);margin:.5rem 0 .6rem;background:linear-gradient(135deg, #fff, #ffe7a6 30%, #ffd15a 40%, #fff 60%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 4px 16px rgba(0,0,0,.6)}
+
+    /* Contact hero buttons */
+    .hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem}
+    .hero-actions .btn{padding:.7rem 1.1rem;font-size:.9rem;min-width:140px;width:auto}
+    @media (max-width:900px){
+      .hero{padding:210px 0 90px !important}
+      .hero .hero-actions{justify-content:flex-start;margin-top:2.4rem}
+      .hero .hero-actions .btn{width:auto !important;max-width:none !important}
+    }
 
     /* Cards */
     .card{border:1px solid var(--line);border-radius:18px;background:linear-gradient(160deg, rgba(253,51,162,.08), rgba(255,184,0,.06));box-shadow:0 12px 32px rgba(0,0,0,.3);padding:1.2rem;transition:.3s}
@@ -252,12 +261,11 @@
   <!-- Hero -->
   <section class="hero" style="padding:140px 0 110px">
     <div class="container">
-      <span class="chip" style="background:linear-gradient(135deg,#FF69B4,#FF69B4);color:#fff;border:none;font-weight:800"><i class="bi bi-envelope-paper"></i> Contact</span>
+      <!-- <span class="chip" style="background:linear-gradient(135deg,#FF69B4,#FF69B4);color:#fff;border:none;font-weight:800"><i class="bi bi-envelope-paper"></i> Contact</span> -->
       <h1>Get in Touch</h1>
-      
-      <div style="display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem">
-        <a class="btn btn-primary" href="https://wa.me/255742930833" style="font-size:.95rem;padding:.8rem 1.2rem"><i class="bi bi-whatsapp"></i> Chat on WhatsApp</a>
-        <a class="btn btn-secondary" href="#form" style="font-size:.95rem;padding:.8rem 1.2rem"><i class="bi bi-send"></i> Send a Message</a>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://wa.me/255742930833"><i class="bi bi-whatsapp"></i>WhatsApp</a>
+        <a class="btn btn-secondary" href="#form"><i class="bi bi-send"></i>Message</a>
       </div>
     </div>
   </section>

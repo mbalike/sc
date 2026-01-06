@@ -529,7 +529,7 @@
         <span class="kicker">Featured Journeys</span>
         <h2>Experience Tanzania, The Safari Chic Way</h2>
         <p>Every journey is flexible, private, and distinctly designed for you.</p>
-        <p style="margin-top:.6rem"><a href="#plan" class="btn btn-gold"><i class="bi bi-chat-dots"></i> Request Your Safari Chic Quote</a></p>
+        <p style="margin-top:.6rem"><a id="quote-scroll" href="#plan-form" class="btn btn-gold"><i class="bi bi-chat-dots"></i> Request Your Safari Chic Quote</a></p>
       </div>
 
       <div class="itins-slider">
@@ -780,7 +780,7 @@
       </div>
       <div class="plan-wrap">
         <div class="form-card reveal">
-          <form action="mailto:info@safarichic.com" method="post" enctype="text/plain">
+          <form id="plan-form" action="mailto:info@safarichic.com" method="post" enctype="text/plain">
             <input name="name" placeholder="Full Name" required />
             <input name="contact" placeholder="Email or WhatsApp" required />
             <div class="grid cols-2">
@@ -977,6 +977,20 @@
       });
     });
     applyFilters();
+
+    // Explicit smooth scroll for Featured Journeys quote button → form
+    (function(){
+      const btn = document.getElementById('quote-scroll');
+      const form = document.getElementById('plan-form');
+      if(!btn || !form) return;
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        const headerHeight = document.querySelector('.site-header')?.offsetHeight || 72;
+        const targetTop = form.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+        window.scrollTo({ top: targetTop, behavior: 'smooth' });
+      });
+    })();
 
     // Ensure hero video autoplays inline on mobile (GitHub Pages/iOS quirks)
     const hv = document.getElementById('heroVid');

@@ -127,17 +127,12 @@
       .site-header{height:64px}
       /* Match index mobile logo size */
       .brand .logo{width:44px;height:44px}
-      /* Full-height hero on mobile */
-      .hero{min-height:100vh;padding:90px 0 70px}
-      .hero h1{font-size:clamp(1.6rem,5.4vw,2.6rem)}
       /* Compact buttons & chips */
       .btn{padding:.7rem .95rem;font-weight:700}
       .chip{font-size:.82rem;padding:.35rem .6rem}
     }
 
     @media (max-width: 600px){
-      .hero{min-height:100vh;padding:72px 0 60px}
-      .hero h1{font-size:clamp(1.3rem,6.5vw,2rem)}
       .card-img{height:160px}
       .dest-media{min-height:220px}
       .container{width:96vw}
@@ -171,6 +166,21 @@
     .hero h1{font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;font-weight:800;line-height:1.05;font-size:clamp(2.2rem,5.4vw,3.6rem);margin:.5rem 0 .8rem;background:linear-gradient(135deg, #fff, #ffe7a6 30%, #ffd15a 40%, #fff 60%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 6px 28px rgba(0,0,0,.45)}
     .hero p.subtitle{color:#f0f0f0;max-width:70ch}
     .hero .cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.2rem}
+
+    /* Mobile hero tweaks: background image + CTA sizing/alignment */
+    @media (max-width: 900px){
+      .hero{min-height:100vh;padding:90px 0 70px}
+      .hero::before{background-image:url("assets/img/zebra and beasts river crossing.jpeg");background-position:center;background-size:cover;filter:brightness(1.12) saturate(1.05)}
+      .hero h1{font-size:clamp(1.6rem,5.4vw,2.6rem)}
+      .hero p.subtitle{max-width:32ch}
+      .hero .cta{justify-content:flex-start;margin-top:1.4rem}
+      .hero .cta .btn{padding:.45rem .75rem;font-size:.82rem}
+    }
+
+    @media (max-width: 600px){
+      .hero{min-height:100vh;padding:72px 0 60px}
+      .hero h1{font-size:clamp(1.3rem,6.5vw,2rem)}
+    }
 
     /* Intro bullets */
     .intro{display:grid;grid-template-columns:1fr;gap:1rem}

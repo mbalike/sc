@@ -159,22 +159,30 @@
     .hero::after{
       content:""; position:absolute; inset:0;
       background:
+        linear-gradient(180deg,
+          rgba(0,0,0,.62) 0%,
+          rgba(0,0,0,.32) 44%,
+          rgba(0,0,0,.66) 100%
+        ),
         radial-gradient(800px 400px at 85% -10%, rgba(196,0,106,.35), transparent 60%),
         radial-gradient(700px 400px at 15% 110%, rgba(255,184,0,.22), transparent 60%);
       z-index:-1;
+      pointer-events:none;
     }
     .hero h1{font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;font-weight:800;line-height:1.05;font-size:clamp(2.2rem,5.4vw,3.6rem);margin:.5rem 0 .8rem;background:linear-gradient(135deg, #fff, #ffe7a6 30%, #ffd15a 40%, #fff 60%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 6px 28px rgba(0,0,0,.45)}
-    .hero p.subtitle{color:#f0f0f0;max-width:70ch}
+    .hero p.subtitle{color:rgba(255,255,255,.92);max-width:70ch;text-shadow:0 3px 14px rgba(0,0,0,.75);font-weight:700}
     .hero .cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.2rem}
+    /* Ensure hero CTA buttons size to text (override global responsive full-width rules) */
+    .hero .cta .btn{width:auto !important;max-width:none !important;min-width:unset !important}
 
     /* Mobile hero tweaks: background image + CTA sizing/alignment */
     @media (max-width: 900px){
       .hero{min-height:100vh;padding:90px 0 70px}
-      .hero::before{background-image:url("assets/img/zebra and beasts river crossing.jpeg");background-position:center;background-size:cover;filter:brightness(1.12) saturate(1.05)}
+      .hero::before{background-image:url("assets/img/zebra and beasts river crossing.jpeg");background-position:center;background-size:cover;filter:brightness(.90) contrast(1.05) saturate(1.05)}
       .hero h1{font-size:clamp(1.6rem,5.4vw,2.6rem)}
       .hero p.subtitle{max-width:32ch}
       .hero .cta{justify-content:flex-start;margin-top:1.4rem}
-      .hero .cta .btn{padding:.45rem .75rem;font-size:.82rem}
+      .hero .cta .btn{padding:.45rem .75rem;font-size:.82rem;width:auto !important;max-width:none !important;min-width:unset !important}
     }
 
     @media (max-width: 600px){

@@ -316,7 +316,7 @@
     .slide-content{position:relative;width:100%;height:100%}
     .slide-bg{position:absolute;inset:0;z-index:1}
     .slide-bg picture{width:100%;height:100%;display:block}
-    .slide-bg img{width:100%;height:100%;object-fit:cover;display:block}
+    .slide-bg img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
     .slide-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(to bottom,rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.7) 100%);display:flex;align-items:flex-end;padding:clamp(2rem,5vw,3rem)}
     .slide-text-container{color:#fff;max-width:600px}
     .slide-title{font:800 clamp(2rem,4vw,3rem)/1.1 Poppins;margin:0 0 1rem;text-shadow:0 2px 12px rgba(0,0,0,0.5)}
@@ -372,6 +372,9 @@
       .months div{font-size:.85rem;padding:.45rem}
       nav ul{display:none}
       nav ul.show{display:flex;position:absolute;top:64px;left:0;right:0;background:#0f0e14;padding:1rem 1.2rem;flex-direction:column;border-bottom:1px solid var(--line)}
+      /* Mobile-only image positioning tweak (per slide via --mobile-object-x) */
+      .dest-slide{--mobile-object-x:50%}
+      .dest-slide .slide-bg img{object-position:var(--mobile-object-x) center}
       .brand .logo{width:44px;height:44px}
       .itin-img{height:230px}
   /* Timeline mobile comfort */
@@ -684,9 +687,9 @@
             </div>
           </div>
 
-          <div class="dest-slide">
+          <div class="dest-slide" style="--mobile-object-x:79%">
             <div class="slide-content">
-              <div class="slide-bg"><img src="assets/img/crater.jpg" alt="Ngorongoro Crater landscape" loading="lazy"></div>
+              <div class="slide-bg"><img src="assets/img/zeebraas.jpeg" alt="Ngorongoro Crater landscape" loading="lazy"></div>
               <div class="slide-overlay">
                 <div class="slide-text-container">
                   <h2 class="slide-title">Ngorongoro Crater</h2>

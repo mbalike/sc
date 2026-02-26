@@ -24,6 +24,15 @@
       --radius-xl: 24px;
     }
 
+    /* Site-wide rule: never auto-hyphenate or split words */
+    html,
+    body {
+      -webkit-hyphens: none;
+      hyphens: none;
+      word-break: normal;
+      overflow-wrap: normal;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;

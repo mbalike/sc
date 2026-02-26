@@ -109,6 +109,52 @@ footer .grid.cols-3{
 }
 
 /* ------------------------------
+   No Hyphenation / No Word Splits
+   ------------------------------ */
+/* Prevent browsers from auto-hyphenating words or breaking inside words.
+   This applies site-wide (all pages, all components). */
+*,
+*::before,
+*::after{
+  -webkit-hyphens: none !important;
+  -ms-hyphens: none !important;
+  hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+/* ------------------------------
+   Chips Must Stay One Line
+   ------------------------------ */
+/* Chips/badges/pills/duration labels should never wrap onto multiple lines.
+   (Containers may wrap between chips; the chip itself stays single-line.) */
+.chip,
+.badge,
+.pill,
+.dur,
+.plan-chip,
+.info{
+  white-space: nowrap !important;
+  flex-wrap: nowrap !important;
+}
+
+/* Ensure icons inside chips don't shrink and force wrapping */
+.chip i,
+.badge i,
+.pill i,
+.dur i,
+.plan-chip i,
+.info i,
+.chip svg,
+.badge svg,
+.pill svg,
+.dur svg,
+.plan-chip svg,
+.info svg{
+  flex: 0 0 auto !important;
+}
+
+/* ------------------------------
    Global navbar enhancements
    ------------------------------ */
 /* Active link highlight (works on light/dark headers) */

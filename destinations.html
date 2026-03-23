@@ -196,6 +196,13 @@
     .bullet i,
     .bullet .bullet-icon{font-size:1.2rem;background:linear-gradient(135deg,#FF69B4,#FF69B4);color:#fff;border-radius:10px;width:34px;height:34px;display:grid;place-items:center;flex:0 0 34px}
     .bullet .bullet-icon img{width:70%;height:70%;object-fit:contain;display:block}
+    .bullet > div{display:flex;flex-direction:column;gap:.3rem}
+    .bullet strong{display:block}
+    .bullet > div > div{font-size:.95rem;color:#d9d9d9}
+    @media (max-width:900px){
+      .bullet > div{gap:.4rem}
+      .bullet strong{display:block;font-weight:700}
+    }
 
     .muted{color:#cdcdcd}
 
@@ -212,7 +219,7 @@
     .dest-body{padding:2rem;background:linear-gradient(160deg, rgba(196,0,106,.06), rgba(255,184,0,.04));border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow-sm)}
     .dest-body h3{font:800 1.8rem/1.15 Poppins;margin:0 0 .4rem;background:linear-gradient(135deg, #fff, #ffe7a6 40%, #ffd15a 60%, #fff);-webkit-background-clip:text;background-clip:text;color:transparent}
     .dest-body .badge{background:linear-gradient(135deg,#FF69B4,#FF69B4);padding:.5rem .9rem;border-radius:999px;font-weight:800;font-size:.85rem;box-shadow:var(--shadow-sm);display:inline-block;margin-bottom:.8rem}
-    .list{margin:.8rem 0 1.2rem;padding-left:1.3rem;font-size:1.05rem}
+    .list{margin:.8rem 0 1.2rem;padding-left:1.3rem;font-size:.9rem}
     .list li{margin:.4rem 0}
     @media (max-width:600px){.dest-media{height:320px}.dest-body{padding:1.3rem}.dest-body h3{font-size:1.4rem}}
 
@@ -331,11 +338,11 @@
         <p>Whether you’re a wildlife enthusiast, a culture seeker, or a beach lover, Tanzania’s diverse destinations ensure your journey will be as unforgettable as the memories you take home.</p>
       </div>
       <div class="intro">
-        <div class="bullet reveal"><i class="bi bi-binoculars"></i><div><strong>World-Famous Safari Experiences</strong>: Witness the Great Migration in the Serengeti, track the Big Five, and explore legendary game reserves.</div></div>
-        <div class="bullet reveal"><i class="bi bi-image-alt"></i><div><strong>Breathtaking Landscapes</strong>  From volcanic craters and lush highlands to shimmering lakes and endless plains.</div></div>
-        <div class="bullet reveal"><i class="bi bi-people"></i><div><strong>Cultural Richness</strong> – Meet the Maasai, Hadzabe, and other vibrant communities who have preserved their traditions for centuries.</div></div>
-        <div class="bullet reveal"><span class="bullet-icon"><img src="assets/vectors/coconut-tree-on-an-island-svgrepo-com.svg" alt="Tropical palm tree icon"></span><div><strong>Tropical Paradise</strong> – White sandy beaches, turquoise waters, and a rich spice heritage in Zanzibar.</div></div>
-        <div class="bullet reveal"><i class="bi bi-backpack2"></i><div><strong>Adventure & Nature</strong> – Hiking trails, birdwatching, hot air balloon rides, and eco-tourism experiences.</div></div>
+        <div class="bullet reveal"><i class="bi bi-binoculars"></i><div><strong>World-Famous Safari Experiences</strong> Witness the Great Migration in the Serengeti, track the Big Five, and explore legendary game reserves.</div></div>
+        <div class="bullet reveal"><i class="bi bi-image-alt"></i><div><strong>Breathtaking Landscapes</strong>From volcanic craters and lush highlands to shimmering lakes and endless plains.</div></div>
+        <div class="bullet reveal"><i class="bi bi-people"></i><div><strong>Cultural Richness</strong> Meet the Maasai, Hadzabe, and other vibrant communities who have preserved their traditions for centuries.</div></div>
+        <div class="bullet reveal"><span class="bullet-icon"><img src="assets/vectors/coconut-tree-on-an-island-svgrepo-com.svg" alt="Tropical palm tree icon"></span><div><strong>Tropical Paradise</strong> White sandy beaches, turquoise waters, and a rich spice heritage in Zanzibar.</div></div>
+        <div class="bullet reveal"><i class="bi bi-backpack2"></i><div><strong>Adventure & Nature</strong> Hiking trails, birdwatching, hot air balloon rides, and eco-tourism experiences.</div></div>
       </div>
     </div>
   </section>

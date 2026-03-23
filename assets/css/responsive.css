@@ -755,7 +755,7 @@ html {
 @media (max-width: 900px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 1.8rem;
   }
   
   .gallery figure {
@@ -767,7 +767,7 @@ html {
 @media (max-width: 560px) {
   .gallery {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 1.8rem;
   }
   
   .gallery figure {

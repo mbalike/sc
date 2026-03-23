@@ -1,0 +1,941 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Safari Chic — Tanzania Safaris & Zanzibar Escapes</title>
+  <meta name="description" content="Tailor-made safaris across Serengeti, Ngorongoro and Zanzibar — modern, premium experiences crafted by local experts." />
+  <link rel="shortcut icon" href="assets3/img/logo1.0.png" type="image/x-icon">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Poppins:wght@600;700;800&family=Dancing+Script:wght@400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+  <!-- Script wordmark font -->
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Site-wide overrides -->
+  <link rel="stylesheet" href="assets/css/overrides.css">
+  <link rel="stylesheet" href="assets/css/header-footer.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <style>
+    :root{
+      --magenta:#FF69B4; --magenta-700:#FF69B4;
+      --gold:#ffb800; --gold-700:#e6a300;
+  /* Intuitive timeline palette (muted) */
+  --sky:#6bb7e6; --sky-700:#4a9fd3;       /* clear/dry skies */
+  --green:#5dbb86; --green-700:#3ea171;   /* peak wildlife */
+  --sand:#f2c35e; --sand-700:#f7dfa0;     /* beach */
+      --ink:#1a1a1a; --muted:#cfcfcf;
+      --bg:#0c0b10; --panel:#121118;
+      --line:rgba(255,255,255,.08);
+      --radius:18px;
+      --shadow:0 12px 40px rgba(0,0,0,.35);
+      --shadow-sm:0 8px 24px rgba(0,0,0,.25);
+      --glass:rgba(255,255,255,.06);
+    }
+
+    *{box-sizing:border-box}
+    html, body{height:100%}
+    body{
+      margin:0; color:#eee;
+      background:
+        radial-gradient(1200px 700px at 10% -10%, rgba(196,0,106,.16), transparent 50%),
+        radial-gradient(900px 600px at 110% 10%, rgba(255,184,0,.14), transparent 60%),
+        var(--bg);
+      font-family:Manrope, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      line-height:1.6;
+      /* removed scroll-snap to avoid any mobile oddities */
+    }
+
+    /* Layout */
+    .container,.section-inner{max-width:1200px; width:100%; margin:0 auto; padding-inline:clamp(16px,4vw,24px)}
+    .grid{display:grid; gap:1.5rem}
+
+    /* Buttons & chips */
+    .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.3rem;border-radius:999px;font-weight:700;text-decoration:none;border:1px solid transparent;transition:.25s;cursor:pointer;box-shadow:var(--shadow-sm)}
+    .btn-primary{background:linear-gradient(135deg,#FF69B4,#FF69B4);color:#fff;border-color:#ffffff15}
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-700));color:#111;border-color:#00000010}
+    .chip{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .7rem;border-radius:999px;font-size:.85rem;font-weight:600;border:1px solid var(--line);background:var(--glass)}
+
+    /* Header */
+    .site-header{
+      position:fixed; inset:0 0 auto 0; height:72px; z-index:60;
+      display:flex; align-items:center;
+      background:linear-gradient(to bottom, rgba(0,0,0,.55), transparent);
+      transition: background .3s ease, border-color .3s ease, backdrop-filter .3s ease;
+      border-bottom:1px solid transparent;
+      backdrop-filter:saturate(120%) blur(6px);
+    }
+    .site-header.scrolled{ background:rgba(10,10,14,.85); border-bottom-color:var(--line); }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.9rem}
+  /* Logo size for better brand presence */
+  .logo{width:80px;height:80px;border-radius:10px; overflow:hidden;  place-items:center}
+    .logo img{width:100%;height:100%;object-fit:contain;display:block;border-radius:10px}
+    .brand h3{margin:0;font:800 1.1rem/1 Poppins, sans-serif;letter-spacing:.3px}
+    /* Wordmark next to logo */
+    .brand-wordmark{
+      font-family: 'Allura', cursive;
+      font-size: clamp(1.4rem, 3vw, 2.4rem);
+      font-weight: bolder;
+      line-height: 1;
+      color: #FF69B4;
+      white-space: nowrap;
+      letter-spacing: .2px;
+      margin-left: .2rem;
+      user-select: none;
+    }
+    nav ul{display:flex;gap:1.2rem;list-style:none;padding:0;margin:0;align-items:center}
+    nav a{color:#ddd;text-decoration:none;font-weight:600;font-size:.95rem;transition:.25s ease;position:relative}
+    nav a:hover{color:#fff;text-shadow:0 0 8px rgba(255,105,180,.4)}
+    nav a[aria-current="page"]{color:#FF69B4;font-weight:700}
+    nav li.has-submenu .submenu a:hover{color:#FF69B4;transform:translateX(3px)}
+    nav li.has-submenu .submenu a[aria-current="page"]{color:#FF69B4;background:#ffffff08;font-weight:700}
+    .hamburger{display:none;background:none;border:0;color:#fff}
+
+    /* Dropdown (Itineraries) */
+    nav li.has-submenu{position:relative}
+    nav li.has-submenu > a{display:inline-flex;align-items:center;gap:.35rem}
+    nav li.has-submenu .submenu{
+      list-style:none; margin:0; padding:.55rem 0; position:absolute; top:100%; left:0;
+      background:rgba(15,14,20,.95); border:1px solid var(--line); border-radius:14px;
+      backdrop-filter:blur(10px) saturate(140%); box-shadow:var(--shadow-sm);
+      display:none; min-width:220px; z-index:80;
+    }
+    nav li.has-submenu.open .submenu,
+    nav li.has-submenu:hover .submenu,
+    nav li.has-submenu:focus-within .submenu{display:block}
+    nav li.has-submenu .submenu li{margin:0;padding:0}
+    nav li.has-submenu .submenu a{display:block; padding:.6rem 1rem; color:#fff; font-weight:600; font-size:.9rem; text-decoration:none; white-space:nowrap;}
+    nav li.has-submenu .submenu a:hover,
+    nav li.has-submenu .submenu a:focus{background:#ffffff12; color:#fff}
+
+    /* Mobile adjustments for submenu */
+    @media (max-width:900px){
+      nav li.has-submenu{position:static}
+      nav li.has-submenu .submenu{position:static; background:#0f0e14; border:0; box-shadow:none; padding:0; margin:.3rem 0 .4rem; border-left:3px solid var(--magenta); display:none}
+      nav li.has-submenu.open .submenu{display:block}
+      nav li.has-submenu .submenu a{padding:.55rem 1rem; font-size:.95rem}
+    }
+
+    @media (max-width: 900px){
+      nav ul{display:none}
+      .hamburger{display:block;font-size:1.5rem}
+      nav ul.show{display:flex;position:absolute;top:64px;left:0;right:0;background:#0f0e14;padding:1rem 1.2rem;flex-direction:column;border-bottom:1px solid var(--line)}
+      /* Keep logo comfortably sized within the 64px header on mobile */
+      .brand .logo{width:56px;height:56px}
+      .brand-wordmark{font-size:1.25rem}
+    }
+
+    /* Extra-narrow screens: hide wordmark to keep header clean */
+    @media (max-width: 380px){
+      .brand-wordmark{display:none}
+    }
+
+    /* Sections */
+    section.panel{min-height:100vh; display:grid; place-items:center; padding:clamp(60px,9vw,100px) 0}
+    .section-head{text-align:center; margin-bottom:1.4rem}
+    .section-head h2{font:800 clamp(1.4rem,3.5vw,2.2rem)/1.15 Poppins; margin:.2rem 0 .6rem; word-break:break-word; hyphens:auto}
+    .section-head p{color:#d9d9d9; max-width:70ch; margin:0 auto; word-break:break-word; hyphens:auto}
+
+    /* HERO */
+    .hero{position:relative; overflow:hidden; isolation:isolate;}
+    .hero::before{
+      content:""; position:absolute; inset:0;
+      background:none; z-index:-3;
+    }
+    .hero::after{
+      content:""; position:absolute; inset:0;
+      background:
+        radial-gradient(800px 400px at 85% -10%, rgba(196,0,106,.35), transparent 60%),
+        radial-gradient(700px 400px at 15% 110%, rgba(255,184,0,.22), transparent 60%);
+      z-index:-1;
+    }
+    .hero-video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; filter:brightness(.78) saturate(1.05); pointer-events:none}
+    .kicker{font-weight:800; letter-spacing:.12em; text-transform:uppercase; font-size:.8rem}
+    .hero h1{
+      font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-weight:800; line-height:1.05;
+      font-size:clamp(2.2rem,5.4vw,3.8rem);
+      margin:.5rem 0 .8rem;
+      background:linear-gradient(135deg, #fff, #ffe7a6 30%, #ffd15a 40%, #fff 60%);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+      text-shadow:0 6px 28px rgba(0,0,0,.45);
+    }
+    .subtitle{color:#f0f0f0; max-width:70ch}
+    .hero .cta{display:flex; gap:.8rem; flex-wrap:wrap; margin-top:1.2rem}
+    .hero-badges{margin-top:1rem;display:flex;gap:.6rem;flex-wrap:wrap}
+
+  /* WHY US */
+  .why .cards{display:grid; gap:1rem; grid-template-columns:repeat(2,1fr)}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line); border-radius:16px; padding:1.2rem; box-shadow:var(--shadow-sm);
+    }
+    .card h3{font:800 1.05rem/1.2 Poppins; margin:.2rem 0 .5rem}
+  .muted{color:#cdcdcd}
+  @media (max-width: 980px){ .why .cards{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width: 680px){ .why .cards{grid-template-columns:1fr} }
+
+    /* Cards (shared) */
+    .card-link{display:block;text-decoration:none;color:inherit}
+    .itin-card{position:relative;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:linear-gradient(160deg, rgba(196,0,106,.08), rgba(255,184,0,.06));box-shadow:var(--shadow-sm);transition:.3s transform,.3s box-shadow}
+    .itin-card:hover{transform:translateY(-6px); box-shadow:var(--shadow)}
+    .itin-img{height:220px;background:#000;position:relative;overflow:hidden}
+    .itin-img img{width:100%;height:100%;object-fit:cover;display:block}
+    .badge{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,#FF69B4,#FF69B4);padding:.45rem .7rem;border-radius:999px;font-weight:800;font-size:.82rem;box-shadow:var(--shadow-sm)}
+    .itin-body{padding:1.15rem}
+    .itin-head{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin-bottom:.4rem}
+    .itin-title{font:800 1.12rem/1.15 Poppins;margin:0}
+    .dur{background:var(--glass);border:1px solid var(--line);border-radius:999px;padding:.35rem .65rem;font-weight:800;font-size:.82rem;color:#fff;white-space:nowrap}
+    .highlights{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.7rem}
+    .highlights .chip{border-color:#ffffff22;white-space:nowrap;padding:.3rem .55rem;font-size:.78rem;font-weight:600}
+
+    /* --- NEW: Itineraries Grid (no slider) --- */
+    .itins-grid{display:grid; gap:1rem; grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media (max-width:1100px){ .itins-grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:680px){ .itins-grid{grid-template-columns:1fr} }
+
+    /* Best Time timeline */
+  .timeline-wrap{border:1px solid var(--line); border-radius:20px; overflow:hidden; background:var(--glass); box-shadow:var(--shadow-sm); padding:.6rem .8rem .8rem}
+    .months{display:grid; grid-template-columns:repeat(12,1fr); border-bottom:1px solid var(--line)}
+    .months div{padding:.6rem; text-align:center; font-weight:700; font-size:.9rem; color:#ececec}
+    .bands{display:grid; grid-template-columns:1fr; gap:0}
+    .band{display:grid; grid-template-columns:repeat(12,1fr)}
+  .band span{height:36px; position:relative; display:grid; place-items:center; border-radius:6px}
+    .label{display:flex; align-items:center; gap:.6rem; padding:.6rem 0}
+    .legend{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1rem}
+    .pill{display:inline-flex; align-items:center; gap:.45rem; padding:.35rem .6rem; border-radius:999px; border:1px solid var(--line); background:var(--glass)}
+
+  /* Timeline filters */
+  .timeline-filters{display:flex; gap:.5rem; flex-wrap:wrap; margin:.6rem 0 1rem}
+  .timeline-filters .filter{background:var(--glass); color:#fff; border:1px solid var(--line); border-radius:999px; padding:.4rem .7rem; font-weight:700; cursor:pointer}
+  .timeline-filters .filter[aria-pressed="true"], .timeline-filters .filter.active{background:#ffffff12}
+
+  /* Icons inside cells */
+  .band span i{font-size:1rem; color:#fff; text-shadow:0 2px 4px rgba(0,0,0,.36)}
+  .band span .icon-duo{display:flex; align-items:center; gap:.2rem}
+  .band span.overlap{box-shadow:inset 0 0 0 1px #ffffff20}
+
+  /* Tooltip */
+  .band span[data-tip]:hover::after{content:attr(data-tip); position:absolute; bottom:100%; left:50%; transform:translate(-50%,-6px); background:#111; color:#fff; padding:.3rem .5rem; border-radius:6px; font-size:.75rem; white-space:nowrap; box-shadow:0 6px 18px rgba(0,0,0,.35); border:1px solid #ffffff20}
+  .band span[data-tip]:hover::before{content:""; position:absolute; bottom:100%; left:50%; transform:translate(-50%,2px); border:6px solid transparent; border-top-color:#111}
+
+  /* Overlap (e.g., wildlife + clear) */
+  .band span.overlap{background:linear-gradient(90deg, var(--green), var(--sky)) !important}
+
+  /* Filtering */
+  .timeline-wrap.filtering .band span.dim{opacity:.25; filter:grayscale(.5)}
+
+    /* Experiences */
+    .exp-grid{display:grid; gap:1rem; grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 980px){ .exp-grid{grid-template-columns:1fr} }
+    .exp-card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid var(--line); border-radius:16px; padding:1.2rem; box-shadow:var(--shadow-sm);}
+    .exp-card h3{font:800 1.05rem/1.2 Poppins; margin:.2rem 0 .5rem}
+
+    /* Plan form */
+    .plan-wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:1rem}
+    @media (max-width: 980px){ .plan-wrap{grid-template-columns:1fr} }
+    .form-card{border:1px solid var(--line); border-radius:16px; padding:1.2rem; background:rgba(255,255,255,.12); box-shadow:var(--shadow-sm)}
+    form{display:grid; gap:.8rem}
+    input, select, textarea{background:#0f0e14; color:#fff; border:1px solid var(--line); border-radius:10px; padding:.8rem}
+    textarea{min-height:120px; resize:vertical}
+    .side-image{position:relative; border-radius:16px; overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow-sm)}
+    .side-image img{width:100%; height:100%; object-fit:cover; display:block}
+    .side-image .tag{position:absolute; top:12px; left:12px; background:linear-gradient(135deg,var(--magenta),var(--magenta-700)); padding:.45rem .7rem; border-radius:999px; font-weight:800; font-size:.82rem}
+
+  /* About */
+  #about.panel{min-height:auto; padding:clamp(40px,8vw,80px) 0}
+  .about-wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:1rem; align-items:stretch}
+  @media (max-width: 980px){ .about-wrap{grid-template-columns:1fr} }
+  .about-card{border:1px solid var(--line); border-radius:16px; padding:1.2rem; background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)); box-shadow:var(--shadow-sm)}
+  .about-card .brand-mini{display:flex; align-items:center; gap:.6rem; margin-bottom:.6rem}
+  .brand-mini img{width:36px; height:36px; border-radius:8px; object-fit:contain}
+  .about-meta{display:flex; gap:.5rem; flex-wrap:wrap; margin:.8rem 0 1.1rem}
+
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(16px);transition:.6s ease}
+    .reveal.in{opacity:1;transform:none}
+
+    /* Destination Slideshow */
+    .destination-slideshow{position:relative;width:100%;max-width:1000px;margin:0 auto}
+    .slideshow-container{position:relative;width:100%;height:clamp(500px,70vh,700px);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+    .dest-slide{position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease-in-out;pointer-events:none}
+    .dest-slide.active{opacity:1;pointer-events:auto}
+    .slide-content{position:relative;width:100%;height:100%}
+    .slide-bg{position:absolute;inset:0;z-index:1}
+    .slide-bg img{width:100%;height:100%;object-fit:cover;display:block}
+    .slide-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(to bottom,rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.7) 100%);display:flex;align-items:flex-end;padding:clamp(2rem,5vw,3rem)}
+    .slide-text-container{color:#fff;max-width:600px}
+    .slide-title{font:800 clamp(2rem,4vw,3rem)/1.1 Poppins;margin:0 0 1rem;text-shadow:0 2px 12px rgba(0,0,0,0.5)}
+    .slide-description{font-size:clamp(1rem,1.8vw,1.2rem);line-height:1.6;margin:0 0 1.5rem;text-shadow:0 1px 6px rgba(0,0,0,0.4)}
+    .slide-info{display:flex;gap:2rem;margin-bottom:1.5rem;flex-wrap:wrap}
+    .info-item{display:flex;align-items:center;gap:0.6rem}
+    .info-item i{font-size:1.8rem;color:var(--gold)}
+    .info-item div{display:flex;flex-direction:column;gap:0.2rem}
+    .info-item strong{font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#ddd}
+    .info-item span{font-size:1.1rem;font-weight:600}
+    .slide-btn{margin-top:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.3)}
+    .slide-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,0.3);width:45px;height:45px;border-radius:8px;cursor:pointer;display:grid;place-items:center;transition:0.3s;opacity:0.7}
+    .slide-nav:hover{background:rgba(0,0,0,0.8);border-color:var(--gold);opacity:1;transform:translateY(-50%) scale(1.05)}
+    .slide-nav.prev{left:0.8rem}
+    .slide-nav.next{right:0.8rem}
+    .slide-nav i{font-size:1.3rem;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.5)}
+    .slideshow-container:hover .slide-nav{opacity:1}
+    .slide-indicators{display:flex;justify-content:center;gap:0.8rem;margin-top:1.5rem}
+    .indicator{width:12px;height:12px;border-radius:50%;border:2px solid var(--line);background:transparent;cursor:pointer;transition:0.3s;padding:0}
+    .indicator.active{background:var(--gold);border-color:var(--gold)}
+    .indicator:hover{border-color:var(--gold)}
+
+    @media (max-width:768px){
+      .slideshow-container{height:clamp(450px,80vh,600px)}
+      .slide-overlay{padding:1.5rem}
+      .slide-title{font-size:clamp(1.6rem,5vw,2.2rem)}
+      .slide-description{font-size:0.95rem}
+      .slide-info{gap:1rem}
+      .info-item i{font-size:1.4rem}
+      .info-item strong{font-size:0.75rem}
+      .info-item span{font-size:0.95rem}
+      .slide-nav{width:38px;height:38px;opacity:0.85}
+      .slide-nav i{font-size:1.1rem}
+      .slide-nav.prev{left:0.5rem}
+      .slide-nav.next{right:0.5rem}
+    }
+
+    /* Utilities */
+    .cols-3{grid-template-columns:repeat(3,1fr); gap:1.5rem}
+    .cols-2{grid-template-columns:repeat(2,1fr); gap:1rem}
+    @media (max-width: 980px){ .cols-3, .cols-2{grid-template-columns:1fr} }
+    img, picture, video, svg { max-width:100%; height:auto; display:block; }
+    html, body { max-width:100%; overflow-x:hidden; }
+
+    /* Mobile tweaks */
+    @media (max-width: 900px){
+      .site-header{height:64px}
+      section.panel{padding:80px 0}
+      .hero h1{font-size:clamp(1.6rem,6.5vw,2.4rem)}
+      .actions{display:none}
+      .card, .itin-card, .exp-card{padding:1rem}
+      .months div{font-size:.85rem;padding:.45rem}
+      nav ul{display:none}
+      nav ul.show{display:flex;position:absolute;top:64px;left:0;right:0;background:#0f0e14;padding:1rem 1.2rem;flex-direction:column;border-bottom:1px solid var(--line)}
+      .brand .logo{width:44px;height:44px}
+      .itin-img{height:180px}
+  /* Timeline mobile comfort */
+  .timeline-wrap{overflow-x:auto}
+  .band span{height:30px}
+  .band span i{font-size:.85rem; text-shadow:0 1px 2px rgba(0,0,0,.3)}
+    }
+    @media (max-width: 480px){
+      .itin-img{height:160px}
+      .section-head h2{font-size:clamp(1.25rem,6vw,1.6rem)}
+      .section-head p{font-size:.95rem; line-height:1.6}
+    }
+    /* Back to top */
+    .backtop{position:fixed; right:18px; bottom:18px; z-index:60; opacity:0; pointer-events:none; transition:.3s}
+    .backtop.show{opacity:1; pointer-events:auto}
+  </style>
+</head>
+<body>
+  <div id="top" aria-hidden="true"></div>
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <img src="assets3/img/logo1.0.png" alt="Safari Chic logo">
+        </div>
+        <span class="brand-wordmark" aria-hidden="true">Safari Chic</span>
+        
+      </div>
+      <nav aria-label="Main">
+        <button class="hamburger" aria-controls="menu" aria-expanded="false"><i class="bi bi-list"></i></button>
+        <ul id="menu">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li class="has-submenu">
+            <a href="itineraries.html">Itineraries</a>
+            <button class="submenu-toggle" aria-label="Toggle Itineraries submenu" aria-expanded="false"></button>
+            <ul class="submenu" aria-label="Itineraries submenu">
+              <li><a href="itineraries.html">All Itineraries</a></li>
+              <li><a href="itinerary2.html">Chic Escape</a></li>
+              <li><a href="itinerary1.html">The Essence</a></li>
+              <li><a href="itinerary4.html">Kilimanjaro Aura</a></li>
+              <li><a href="itinerary3.html">Zanzibar Luxe</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu">
+            <a href="kili.html">Kili Climb</a>
+            <button class="submenu-toggle" aria-label="Toggle Kili Climb submenu" aria-expanded="false"></button>
+            <ul class="submenu" aria-label="Kili Climb submenu">
+              <li><a href="kili.html">All Routes</a></li>
+              <li><a href="kili-lemosho.html">Lemosho</a></li>
+              <li><a href="kili-lemosho-western-breach.html">Lemosho via Western Breach</a></li>
+              <li><a href="kili-machame.html">Machame</a></li>
+              <li><a href="kili-machame-western-breach.html">Machame via Western Breach</a></li>
+              <li><a href="kili-northern-circuit.html">Northern Circuit</a></li>
+              <li><a href="kili-grand-traverse-northern.html">Grand Traverse (Northern)</a></li>
+              <li><a href="kili-rongai-mawenzi-tarn.html">Rongai via Mawenzi Tarn</a></li>
+              <li><a href="kili-marangu.html">Marangu (Coca-Cola)</a></li>
+              <li><a href="kili-umbwe.html">Umbwe</a></li>
+              <li><a href="kili-shira-gate.html">Shira (Shira Gate)</a></li>
+              <li><a href="kili-kilema-bike.html">Kilema Bike Route</a></li>
+              <li><a href="kili-western-breach-arrow-glacier.html">Western Breach (Arrow Glacier)</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contacts</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <a class="btn btn-gold" href="itineraries.html"><i class="bi bi-geo"></i> Itineraries</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="panel hero" id="home" aria-label="Hero">
+    <video id="heroVid" class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" aria-hidden="true">
+      <source src="assets3/video/hero-vid.mp4" type="video/mp4" />
+    </video>
+    <div class="section-inner reveal">
+      
+      <h1 style="font-size:clamp(2.8rem,6.5vw,4.8rem);font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-weight:800;font-style:normal;letter-spacing:.02em;max-width:900px">Luxury African Safaris, Exclusively Yours</h1>
+      <p class="subtitle">For the traveler who craves bold experiences with a luxe edge, Safari Chic curates journeys that go beyond the ordinary.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#plan"><i class="bi bi-send"></i> Plan My Chic Escape</a>
+        <a class="btn btn-primary" href="#itineraries"><i class="bi bi-compass"></i> Discover Safari Chic Journeys</a>
+      </div>
+      <div class="hero-badges">
+        <span class="chip"><i class="bi bi-star"></i> 5★ Guides</span>
+        <span class="chip"><i class="bi bi-shield-check"></i> Fully Insured</span>
+        <span class="chip"><i class="bi bi-geo-alt"></i> Local Expertise</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to top -->
+  <a href="#top" class="btn btn-primary backtop" id="backtop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
+
+  <!-- ABOUT -->
+  <section class="panel" id="about">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="kicker">About Safari Chic</span>
+        <h2>Where Wilderness Meets Thoughtful Luxury</h2>
+        <p style="margin-top:2.8rem">More than travel, Safari Chic is your exclusive gateway to Tanzania and Zanzibar. We create journeys that weave wilderness, culture, and coast into one seamless, timeless narrative of luxury—leaving an imprint as enduring as Tanzania itself.</p>
+      </div>
+      <div class="about-wrap">
+        <div class="about-card reveal">
+          <div class="brand-mini"><img src="assets3/img/logo1.png" alt="Safari Chic logo"><strong>Safari Chic</strong></div>
+          <p class="muted">We’re locally rooted experts with a global eye for design and detail. From the Great Migration to Stone Town’s spice-scented alleys, we craft seamless, soulful, and stylish journeys — always privately tailored to you.</p>
+          <div class="about-meta">
+            <span class="chip"><i class="bi bi-award"></i> Bespoke & Private</span>
+            <span class="chip"><i class="bi bi-stars"></i> Handpicked Lodges</span>
+            <span class="chip"><i class="bi bi-binoculars"></i> Expert Guiding</span>
+          </div>
+          <a class="btn btn-primary" href="#plan"><i class="bi bi-send"></i> Plan My Chic Escape</a>
+        </div>
+        <div class="side-image reveal">
+          <span class="tag"><i class="bi bi-heart"></i> Curated with care</span>
+          <img src="assets/img/pexels-frans-van-heerden-201846-4894482.jpg" alt="Luxury camp in the wilderness" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="panel why" id="why">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="kicker">Why Safari Chic</span>
+        <h2>Why Settle for Ordinary When Extraordinary Is Possible?</h2>
+        <p>At Safari Chic, we merge Tanzania’s untamed beauty with thoughtful luxury, ensuring your journey is effortless, immersive, and unforgettable — so every moment feels intentional, elevated, and undeniably chic.</p>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <h3><i class="bi bi-map"></i> Flawless Journeys →</h3>
+          <p class="muted">Every permit, flight, and detail handled — so you simply arrive and immerse in the moment.</p>
+        </article>
+        <article class="card reveal">
+          <h3><i class="bi bi-people"></i> Meaningful Encounters →</h3>
+          <p class="muted">Guides with roots in the land and culture, crafting experiences that leave you with more than photos — with stories worth telling.</p>
+        </article>
+        <article class="card reveal">
+          <h3><i class="bi bi-house-heart"></i> Elevated Stays →</h3>
+          <p class="muted">Boutique lodges and chic camps — wilderness outside, indulgence inside.</p>
+        </article>
+        <article class="card reveal">
+          <h3><i class="bi bi-stars"></i> Personalized Perfection →</h3>
+          <p class="muted">From big moments to the smallest touches, every detail is tailored to fit your unique travel story.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED ITINERARIES (GRID, no slider) -->
+  <section class="panel" id="itineraries" aria-label="Featured Itineraries">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="kicker">Featured Journeys</span>
+        <h2>Experience Tanzania, The Safari Chic Way</h2>
+        <p>Every journey is flexible, private, and distinctly designed for you.</p>
+        <p style="margin-top:.6rem"><a href="#plan" class="btn btn-gold"><i class="bi bi-chat-dots"></i> Request Your Safari Chic Quote</a></p>
+      </div>
+
+      <div class="itins-grid">
+        <!-- Card 1 -->
+        <a class="card-link reveal" href="itinerary2.html">
+          <article class="itin-card">
+            <div class="itin-img">
+              <span class="badge">Quick Escape</span>
+              <img src="assets/img/cheetah1.jpg" alt="Elephants at golden hour">
+            </div>
+            <div class="itin-body">
+              <div class="itin-head"><h3 class="itin-title">The Chic Escape</h3><span class="dur">3 Days</span></div>
+              <p class="muted">Your swift path to the wild. Fly from Zanzibar and dive straight into game drives — an intimate taste of Tanzania’s beauty in just three unforgettable days.</p>
+              <div class="highlights">
+                <span class="chip"><i class="bi bi-tree"></i> Mikumi/Nyerere</span>
+                <span class="chip"><i class="bi bi-binoculars"></i> Big Five</span>
+                <span class="chip"><i class="bi bi-airplane"></i> ZNZ ⇄ DAR</span>
+              </div>
+            </div>
+          </article>
+        </a>
+
+        <!-- Card 2 -->
+        <a class="card-link reveal" href="itinerary1.html">
+          <article class="itin-card">
+            <div class="itin-img">
+              <span class="badge">Most Popular</span>
+              <img src="assets/img/pexels-mikeknibbs-17849763.jpg" alt="Savannah and ocean blend">
+            </div>
+            <div class="itin-body">
+              <div class="itin-head"><h3 class="itin-title">The Essence</h3><span class="dur">5 Days</span></div>
+              <p class="muted">Five days, perfectly balanced. Witness the majesty of the Serengeti by day, then wander the spice-scented alleys of Stone Town by night — the ultimate blend of adventure and culture.</p>
+              <div class="highlights">
+                <span class="chip"><i class="bi bi-binoculars"></i> Tarangire</span>
+                <span class="chip"><i class="bi bi-geo-alt"></i> Ngorongoro</span>
+                <span class="chip"><i class="bi bi-buildings"></i> Stone Town</span>
+              </div>
+            </div>
+          </article>
+        </a>
+
+        <!-- Card 3 -->
+        <a class="card-link reveal" href="itinerary3.html">
+          <article class="itin-card">
+            <div class="itin-img">
+              <span class="badge">Ultimate Experience</span>
+              <img src="assets/img/zanznew2.jpg" alt="Zanzibar coastline at sunset">
+            </div>
+            <div class="itin-body">
+              <div class="itin-head"><h3 class="itin-title">Zanzibar Luxe</h3><span class="dur">8 Days</span></div>
+              <p class="muted">The ultimate escape. Eight days spanning it all — sunrise safaris in the Serengeti, the natural wonder of Ngorongoro, and turquoise Zanzibar shores to close your journey in style.</p>
+              <div class="highlights">
+                <span class="chip"><i class="bi bi-star"></i> Big Five</span>
+                <span class="chip"><i class="bi bi-minecart-loaded"></i> Ngorongoro Crater</span>
+                <span class="chip"><i class="bi bi-umbrella-beach"></i> Nungwi</span>
+              </div>
+            </div>
+          </article>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- EXPERIENCES -->
+  <section class="panel" id="experiences">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="kicker">Signature Experiences</span>
+        <h2>What Makes Safari Chic Unforgettable</h2>
+        <p><em>“The balance of safari, culture, and coast — elevated moments crafted in luxury.”</em></p>
+      </div>
+      <div class="exp-grid">
+        <article class="exp-card reveal">
+          <h3><i class="bi bi-alt"></i> Great Migration</h3>
+          <p class="muted">Time your trip for river crossings and sweeping herds on the Serengeti plains.</p>
+        </article>
+        <article class="exp-card reveal">
+          <h3><i class="bi bi-circle-square"></i> Ngorongoro Crater</h3>
+          <p class="muted">Descend into a wildlife amphitheater with near-guaranteed sightings.</p>
+        </article>
+        <article class="exp-card reveal">
+          <h3><i class="bi bi-brightness-alt-high"></i> Spice & Stone Town</h3>
+          <p class="muted">Spice markets, carved doors, and Swahili stories in UNESCO-listed lanes.</p>
+        </article>
+        <article class="exp-card reveal">
+          <h3><i class="bi bi-water"></i> Dhow & Reef</h3>
+          <p class="muted">Sail at golden hour; snorkel Mnemba’s vibrant coral gardens.</p>
+        </article>
+        <article class="exp-card reveal">
+          <h3><i class="bi bi-house-door"></i> Boutique Stays</h3>
+          <p class="muted">From tented camps to villas by the sea — comfort with character.</p>
+        </article>
+        <article class="exp-card reveal">
+          <h3><i class="bi bi-compass"></i> Private Guiding</h3>
+          <p class="muted">Go off the beaten track with friendly experts who know every trail.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTINATIONS -->
+  <section class="panel" id="destinations">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="kicker">Destinations</span>
+        <h2>Explore Destinations</h2>
+        <p>Unlock the highlights and signature stays of every destination. Tap to explore.</p>
+      </div>
+
+      <div class="destination-slideshow">
+        <div class="slideshow-container">
+          <div class="dest-slide active">
+            <div class="slide-content">
+              <div class="slide-bg"><img src="assets/img/girraffee.jpg" alt="Serengeti plains at sunset" loading="lazy"></div>
+              <div class="slide-overlay">
+                <div class="slide-text-container">
+                  <h2 class="slide-title">Serengeti National Park</h2>
+                  <p class="slide-description">Home of the Great Migration, sweeping plains, big cat sightings, and unforgettable game drives.</p>
+                  <div class="slide-info">
+                    <div class="info-item"><i class="bi bi-geo-alt-fill"></i><div><strong>Where:</strong><span>Tanzania</span></div></div>
+                    <div class="info-item"><i class="bi bi-calendar-check"></i><div><strong>Best time to go:</strong><span>Year round</span></div></div>
+                  </div>
+                  <a href="serengeti.html" class="btn btn-gold slide-btn">Explore Serengeti</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dest-slide">
+            <div class="slide-content">
+              <div class="slide-bg"><img src="assets/img/crater.jpg" alt="Ngorongoro Crater landscape" loading="lazy"></div>
+              <div class="slide-overlay">
+                <div class="slide-text-container">
+                  <h2 class="slide-title">Ngorongoro Crater</h2>
+                  <p class="slide-description">A natural amphitheater with epic views, year-round sightings of rhino and lion, and dense wildlife in a dramatic setting.</p>
+                  <div class="slide-info">
+                    <div class="info-item"><i class="bi bi-geo-alt-fill"></i><div><strong>Where:</strong><span>Tanzania</span></div></div>
+                    <div class="info-item"><i class="bi bi-calendar-check"></i><div><strong>Best time to go:</strong><span>Year round</span></div></div>
+                  </div>
+                  <a href="ngorongoro.html" class="btn btn-gold slide-btn">Explore Ngorongoro</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dest-slide">
+            <div class="slide-content">
+              <div class="slide-bg"><img src="assets/img/znzaerial.jpg" alt="Zanzibar coastline" loading="lazy"></div>
+              <div class="slide-overlay">
+                <div class="slide-text-container">
+                  <h2 class="slide-title">Zanzibar</h2>
+                  <p class="slide-description">White-sand shores, turquoise waters, and Stone Town's rich history. Spice-scented breezes and Swahili charm make it the perfect finale for unwinding after safari.</p>
+                  <div class="slide-info">
+                    <div class="info-item"><i class="bi bi-geo-alt-fill"></i><div><strong>Where:</strong><span>Tanzania</span></div></div>
+                    <div class="info-item"><i class="bi bi-calendar-check"></i><div><strong>Best time to go:</strong><span>June - October</span></div></div>
+                  </div>
+                  <a href="zanzibar.html" class="btn btn-gold slide-btn">Explore Zanzibar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dest-slide">
+            <div class="slide-content">
+              <div class="slide-bg"><img src="assets/img/tarangire-nat.webp" alt="Tarangire baobab and elephants" loading="lazy"></div>
+              <div class="slide-overlay">
+                <div class="slide-text-container">
+                  <h2 class="slide-title">Tarangire National Park</h2>
+                  <p class="slide-description">Known for its large elephant herds and dramatic, baobab-studded landscapes — excellent game viewing off the beaten path.</p>
+                  <div class="slide-info">
+                    <div class="info-item"><i class="bi bi-geo-alt-fill"></i><div><strong>Where:</strong><span>Tanzania</span></div></div>
+                    <div class="info-item"><i class="bi bi-calendar-check"></i><div><strong>Best time to go:</strong><span>June - October</span></div></div>
+                  </div>
+                  <a href="tarangire.html" class="btn btn-gold slide-btn">Explore Tarangire</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dest-slide">
+            <div class="slide-content">
+              <div class="slide-bg"><img src="assets/img/flamingoos.jpg" alt="Lake Manyara birds" loading="lazy"></div>
+              <div class="slide-overlay">
+                <div class="slide-text-container">
+                  <h2 class="slide-title">Lake Manyara</h2>
+                  <p class="slide-description">Tree-climbing lions, abundant birdlife, and shimmering flocks of flamingos painting the lake in pink beauty.</p>
+                  <div class="slide-info">
+                    <div class="info-item"><i class="bi bi-geo-alt-fill"></i><div><strong>Where:</strong><span>Tanzania</span></div></div>
+                    <div class="info-item"><i class="bi bi-calendar-check"></i><div><strong>Best time to go:</strong><span>Year round</span></div></div>
+                  </div>
+                  <a href="manyara.html" class="btn btn-gold slide-btn">Explore Manyara</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dest-slide">
+            <div class="slide-content">
+              <div class="slide-bg"><img src="assets/img/dining_scene_under_500kb.jpg" alt="Highlands near Arusha" loading="lazy"></div>
+              <div class="slide-overlay">
+                <div class="slide-text-container">
+                  <h2 class="slide-title">Ngorongoro Highlands</h2>
+                  <p class="slide-description">Rolling highlands, coffee farms, cultural encounters, and cooler air — often paired with crater visits and village stops.</p>
+                  <div class="slide-info">
+                    <div class="info-item"><i class="bi bi-geo-alt-fill"></i><div><strong>Where:</strong><span>Tanzania</span></div></div>
+                    <div class="info-item"><i class="bi bi-calendar-check"></i><div><strong>Best time to go:</strong><span>Year round</span></div></div>
+                  </div>
+                  <a href="highlands.html" class="btn btn-gold slide-btn">Explore Highlands</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="slide-nav prev" onclick="changeSlide(-1)" aria-label="Previous destination"><i class="bi bi-chevron-left"></i></button>
+          <button class="slide-nav next" onclick="changeSlide(1)" aria-label="Next destination"><i class="bi bi-chevron-right"></i></button>
+        </div>
+        <div class="slide-indicators">
+          <button class="indicator active" onclick="goToSlide(0)" aria-label="Serengeti"></button>
+          <button class="indicator" onclick="goToSlide(1)" aria-label="Ngorongoro"></button>
+          <button class="indicator" onclick="goToSlide(2)" aria-label="Zanzibar"></button>
+          <button class="indicator" onclick="goToSlide(3)" aria-label="Tarangire"></button>
+          <button class="indicator" onclick="goToSlide(4)" aria-label="Lake Manyara"></button>
+          <button class="indicator" onclick="goToSlide(5)" aria-label="Highlands"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAN YOUR TRIP -->
+  <section class="panel" id="plan">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="kicker">Your Escape Awaits</span>
+        <h2>Plan Your Trip</h2>
+        <p>Share your dates and desires — we’ll curate a safari-chic itinerary inspired by you.</p>
+      </div>
+      <div class="plan-wrap">
+        <div class="form-card reveal">
+          <form action="mailto:info@safarichic.com" method="post" enctype="text/plain">
+            <input name="name" placeholder="Full Name" required />
+            <input name="contact" placeholder="Email or WhatsApp" required />
+            <div class="grid cols-2">
+              <input name="start" type="date" placeholder="Start Date" />
+              <input name="end" type="date" placeholder="End Date" />
+            </div>
+            <div class="grid cols-2">
+              <input name="group" type="number" min="1" placeholder="Group Size" />
+              <select name="budget">
+                <option value="">Budget Range</option>
+                <option>Budget</option>
+                <option>Mid-range</option>
+                <option>Luxury</option>
+              </select>
+            </div>
+            <div class="grid cols-3">
+              <label style="display:flex;gap:.4rem;align-items:center"><input type="checkbox" name="interests" value="Safari" /> Safari</label>
+              <label style="display:flex;gap:.4rem;align-items:center"><input type="checkbox" name="interests" value="Culture" /> Culture</label>
+              <label style="display:flex;gap:.4rem;align-items:center"><input type="checkbox" name="interests" value="Beach" /> Beach</label>
+            </div>
+            <textarea name="notes" placeholder="Your Wishlist (interests + notes)"></textarea>
+            <button class="btn btn-gold" type="submit"><i class="bi bi-send"></i> Send</button>
+            <p class="muted" style="margin:.4rem 0 0">Prefer WhatsApp? Message us: +255 123 456 789</p>
+          </form>
+        </div>
+        <div class="side-image reveal">
+          <span class="tag"><i class="bi bi-stars"></i> Safari Chic</span>
+          <img src="assets/img/giraffebirds.avif" alt="Zanzibar sunset shoreline" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="ft-brand">
+          <div class="logo">
+            <img src="assets3/img/logo1.0.png" alt="Safari Chic logo">
+          </div>
+          <h4 style="margin:0">Safari Chic</h4>
+          <span class="footer-wordmark" aria-hidden="true">Safari Chic</span>
+        </div>
+        <p class="ft-note">Luxury African Safaris, Exclusively Yours</p>
+      </div>
+      <div>
+        <div class="grid cols-3">
+          <div class="card" data-tooltip="Zanzibar • Arusha, Tanzania">
+            <h3><i class="bi bi-geo-alt"></i> Our Locations</h3>
+            <p class="muted">Zanzibar • Arusha, Tanzania</p>
+          </div>
+          <div class="card" data-tooltip="info@safarichic.com">
+            <h3><i class="bi bi-envelope-open"></i> Guest Services</h3>
+            <p class="muted">info@safarichic.com</p>
+          </div>
+          <div class="card" data-tooltip="+255 742 930833 • Available daily 8am–8pm EAT">
+            <h3><i class="bi bi-whatsapp"></i> WhatsApp / Phone</h3>
+            <p class="muted">+255 742 930833</p>
+            <p class="muted" style="font-size:.85rem;margin-top:.3rem">Available daily • 8am–8pm EAT</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="margin-top:1rem;border-top:1px solid var(--line);padding-top:1rem;color:#a7a7a7">
+      © 2025 Safari Chic. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav - DISABLED (now handled by mobile-enhancements.js)
+    // Keeping this comment for reference - the external script handles all mobile nav functionality
+    /*
+    const burger=document.querySelector('.hamburger');
+    const menu=document.getElementById('menu');
+    burger?.addEventListener('click',()=>{
+      const open=menu.classList.toggle('show');
+      burger.setAttribute('aria-expanded', String(open));
+    });
+    */
+
+    const header=document.getElementById('site-header');
+    const backtop=document.querySelector('.backtop');
+    const onScroll=()=>{
+      if(window.scrollY>10){ header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); }
+      if(window.scrollY>200){ backtop?.classList.add('show'); } else { backtop?.classList.remove('show'); }
+    };
+    document.addEventListener('scroll', onScroll); onScroll();
+
+    // Reveal on view
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // Active link highlighting (auto-detect by URL)
+    (function(){
+      const path = location.pathname.split('/').pop() || 'index.html';
+      const links = document.querySelectorAll('nav a[href]');
+      links.forEach(a=>{
+        const href=a.getAttribute('href');
+        if(href===path){
+          a.setAttribute('aria-current','page');
+        }
+      });
+    })();
+
+    // Destination Slideshow
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.dest-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      slides.forEach(s => s.classList.remove('active'));
+      indicators.forEach(i => i.classList.remove('active'));
+      
+      if (index >= totalSlides) currentSlide = 0;
+      else if (index < 0) currentSlide = totalSlides - 1;
+      else currentSlide = index;
+      
+      slides[currentSlide].classList.add('active');
+      indicators[currentSlide].classList.add('active');
+    }
+
+    function changeSlide(direction) {
+      showSlide(currentSlide + direction);
+    }
+
+    function goToSlide(index) {
+      showSlide(index);
+    }
+
+    // Auto-advance slideshow every 6 seconds
+    let autoSlideInterval = setInterval(() => changeSlide(1), 6000);
+
+    // Pause auto-advance on hover
+    const slideshowContainer = document.querySelector('.slideshow-container');
+    if (slideshowContainer) {
+      slideshowContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoSlideInterval);
+      });
+      slideshowContainer.addEventListener('mouseleave', () => {
+        autoSlideInterval = setInterval(() => changeSlide(1), 6000);
+      });
+    }
+
+    // Submenus (hover + delayed close + mobile toggle) for all dropdowns
+    (function(){
+      const parents = Array.from(document.querySelectorAll('nav li.has-submenu'));
+      if(!parents.length) return;
+      parents.forEach((submenuParent)=>{
+        const toggle = submenuParent.querySelector('.submenu-toggle');
+        let hideTimer;
+        const open = () => { clearTimeout(hideTimer); submenuParent.classList.add('open'); toggle?.setAttribute('aria-expanded','true'); };
+        const close = () => { submenuParent.classList.remove('open'); toggle?.setAttribute('aria-expanded','false'); };
+        const scheduleClose = ()=>{ clearTimeout(hideTimer); hideTimer = setTimeout(close,550); };
+        submenuParent.addEventListener('mouseenter', open);
+        submenuParent.addEventListener('mouseleave', scheduleClose);
+        submenuParent.addEventListener('focusin', open);
+        submenuParent.addEventListener('focusout', e=>{ if(!submenuParent.contains(e.relatedTarget)) scheduleClose(); });
+        toggle?.addEventListener('click', e=>{ e.preventDefault(); const isOpen = submenuParent.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(isOpen)); });
+      });
+    })();
+
+    // Timeline filters
+    const tlWrap=document.querySelector('.timeline-wrap');
+    const filters=Array.from(document.querySelectorAll('.timeline-filters .filter'));
+    const cells=Array.from(document.querySelectorAll('.bands .band span'));
+    const active=new Set(['weather','wildlife','trekking','beach']); // default on
+    function applyFilters(){
+      if(!tlWrap) return;
+      const filtering = active.size>0;
+      tlWrap.classList.toggle('filtering', filtering);
+      cells.forEach(c=>{
+        const tags=(c.getAttribute('data-tags')||'').split(',').map(s=>s.trim()).filter(Boolean);
+        const match = tags.some(t=>active.has(t));
+        if(filtering){ c.classList.toggle('dim', !match); } else { c.classList.remove('dim'); }
+      });
+    }
+    filters.forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const key=btn.getAttribute('data-filter');
+        const pressed = btn.getAttribute('aria-pressed')==='true';
+        const next=!pressed;
+        btn.setAttribute('aria-pressed', String(next));
+        btn.classList.toggle('active', next);
+        if(next){ active.add(key); } else { active.delete(key); }
+        applyFilters();
+      });
+    });
+    applyFilters();
+
+    // Ensure hero video autoplays inline on mobile (GitHub Pages/iOS quirks)
+    const hv = document.getElementById('heroVid');
+    if(hv){
+      hv.muted = true; // required for autoplay on mobile
+      hv.setAttribute('playsinline','');
+      hv.setAttribute('webkit-playsinline','');
+      const tryPlay = ()=> hv.play().catch(()=>{});
+      // Try immediate play and on visibility
+      tryPlay();
+      document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) tryPlay(); });
+      // As fallback, first user tap starts it
+      const kick = ()=>{ tryPlay(); window.removeEventListener('touchstart', kick); window.removeEventListener('click', kick); };
+      window.addEventListener('touchstart', kick, {once:true, passive:true});
+      window.addEventListener('click', kick, {once:true});
+      hv.addEventListener('playing', ()=>{ hv.removeAttribute('poster'); });
+    }
+  </script>
+  <script src="assets/css/mobile-enhancements.js"></script>
+</body>
+</html>

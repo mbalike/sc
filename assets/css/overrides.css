@@ -246,3 +246,38 @@ nav li.has-submenu > .submenu a:hover{ background: #FAFAFC; }
   }
   nav li.has-submenu.open > .submenu{ display: block; }
 }
+
+/* ------------------------------
+   Form polish (mobile + accents)
+   ------------------------------ */
+
+/* Match native checkbox/radio ticks to Safari Chic pink */
+input[type="checkbox"],
+input[type="radio"]{
+  accent-color: var(--magenta, #FF69B4);
+}
+
+/* Slightly larger tap target for checkboxes */
+input[type="checkbox"],
+input[type="radio"]{
+  width: 18px;
+  height: 18px;
+}
+
+/* Mobile: stack form grids + avoid iOS zoom-on-focus */
+@media (max-width: 560px){
+  /* Contact page form uses inline grid-template-columns; override safely */
+  #form form .grid{ grid-template-columns: 1fr !important; }
+  #form form input,
+  #form form select,
+  #form form textarea{ font-size: 16px; }
+  #form form button{ width: 100%; justify-content: center; }
+
+  /* Index "Plan Your Trip" form */
+  #plan-form .grid.cols-2,
+  #plan-form .grid.cols-3{ grid-template-columns: 1fr !important; }
+  #plan-form input,
+  #plan-form select,
+  #plan-form textarea{ font-size: 16px; }
+  #plan-form button{ width: 100%; justify-content: center; }
+}

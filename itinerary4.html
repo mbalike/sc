@@ -46,6 +46,22 @@
     .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-700)); color:#111; border-color:#00000010}
     .chip{display:inline-flex; align-items:center; gap:.4rem; padding:.4rem .7rem; border-radius:999px; font-size:.85rem; font-weight:700; border:1px solid var(--line); background:var(--glass)}
 
+    /* Price pills (solid theme magenta) */
+    .price-pill{
+      background: var(--magenta) !important;
+      background-image: none !important;
+      color: #fff !important;
+      font-weight: 800;
+      border-color: #ffffff15;
+      box-shadow: var(--shadow-sm);
+      padding: .55rem .9rem;
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 900px){
+      #best-time h5{ text-align:center; }
+    }
+
     /* Header */
     .site-header{position:fixed; inset:0 0 auto 0; height:72px; z-index:50; display:flex; align-items:center; background:linear-gradient(to bottom, rgba(0,0,0,.55), transparent); transition: .3s; border-bottom:1px solid transparent; backdrop-filter:saturate(120%) blur(6px)}
     .site-header.scrolled{ background:rgba(10,10,14,.75); border-bottom-color:var(--line); }
@@ -206,7 +222,7 @@
   <!-- Hero -->
   <section class="hero"><div class="container">
       <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="itineraries.html">Itineraries</a></li><li aria-current="page">Kilimanjaro Aura</li></ol></nav>
-      <div class="hero-wrap"><div><div class="chip"><i class="bi bi-mountain"></i> Kilimanjaro</div><h1 class="title">Machame Route — 7-Day Summit to the Roof of Africa</h1><p class="subtitle">Our most popular Kili climb: balanced acclimatization, cinematic scenery from rainforest to glaciers, and a thrilling sunrise summit.</p><div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem"><span class="chip"><i class="bi bi-clock"></i> 7 Days</span><span class="chip"><i class="bi bi-graph-up"></i> 5,895 m</span><span class="chip"><i class="bi bi-activity"></i> Success: High</span><span class="chip"><i class="bi bi-lightning"></i> Mod–Challenging</span></div></div>
+      <div class="hero-wrap"><div><div class="chip"><i class="bi bi-mountain"></i> Kilimanjaro</div><h1 class="title">Kilimanjaro Aura</h1><p class="subtitle">Our most popular Kili climb: balanced acclimatization, cinematic scenery from rainforest to glaciers, and a thrilling sunrise summit.</p><div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem"><span class="chip"><i class="bi bi-clock"></i> 7 Days</span><span class="chip"><i class="bi bi-graph-up"></i> 5,895 m</span><span class="chip"><i class="bi bi-activity"></i> Success: High</span><span class="chip"><i class="bi bi-lightning"></i> Mod–Challenging</span></div></div>
       <a href='#content' class='scroll-indicator' aria-label='Scroll to content'><i class='bi bi-chevron-down'></i></a></div></div></section>
 
   <!-- Quick Facts -->
@@ -449,9 +465,7 @@
         <h2> Essential Gear Guide</h2>
         <p>Pack Light. Layer Smart. Climb Chic.</p>
       </div>
-      <div class="card" style="margin-bottom:1.5rem">
-        <p class="muted" style="font-size:1.05rem; line-height:1.8">We provide the premium essentials — mountain tents, dining setup, chef prepared meals — you bring comfort, warmth, and your personal edge of style.</p>
-      </div>
+      <p class="muted" style="font-size:1.05rem; line-height:1.8; margin:0 auto 1.5rem; max-width:80ch">We provide the premium essentials — mountain tents, dining setup, chef prepared meals — you bring comfort, warmth, and your personal edge of style.</p>
       <div class="grid cols-3">
         <div class="card">
           <h3>Layer Like a Pro</h3>
@@ -492,24 +506,22 @@
         <h2> Price Guide</h2>
         <p>Your Climb. Your Pace. Your Comfort.</p>
       </div>
-      <div class="card" style="margin-bottom:1.5rem">
-        <p class="muted" style="font-size:1.05rem; line-height:1.8">Journeys tailored to your rhythm, from private guides to elevated camp dining. Rates include park fees, certified crew, and full-service mountain comfort.</p>
-      </div>
+      <p class="muted" style="font-size:1.05rem; line-height:1.8; margin:0 auto 1.5rem; max-width:80ch">Journeys tailored to your rhythm, from private guides to elevated camp dining. Rates include park fees, certified crew, and full-service mountain comfort.</p>
       <div class="grid cols-3">
         <div class="card">
           <h3>Per Climbing Day</h3>
           <p class="muted">Includes park fees, crew, meals, tents</p>
-          <div class="chip" style="background:linear-gradient(135deg,#FF69B4,#ffb800);color:#fff;font-weight:800"><i class="bi bi-cash-coin"></i> $250–$450</div>
+          <div class="chip price-pill"><i class="bi bi-cash-coin"></i> $250–$450</div>
         </div>
         <div class="card">
           <h3>Total (7 Days)</h3>
           <p class="muted">Common range for 2–6 trekkers</p>
-          <div class="chip" style="background:linear-gradient(135deg,#FF69B4,#ffb800);color:#fff;font-weight:800"><i class="bi bi-graph-up"></i> $1,800–$3,200+</div>
+          <div class="chip price-pill"><i class="bi bi-graph-up"></i> $1,800–$3,200+</div>
         </div>
         <div class="card">
           <h3>Add‑Ons</h3>
           <p class="muted">Safari & Zanzibar extensions</p>
-          <div class="chip" style="background:linear-gradient(135deg,#FF69B4,#ffb800);color:#fff;font-weight:800"><i class="bi bi-airplane"></i> Domestic flights extra</div>
+          <div class="chip price-pill"><i class="bi bi-airplane"></i> Domestic flights extra</div>
         </div>
       </div>
     </div>

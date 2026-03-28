@@ -1,20 +1,16 @@
-/* Global button color override to bubblegum Barbie pink */
+/* Global button override: solid Safari Chic pink (no gradients) */
 /* Uses CSS vars with sensible fallbacks for pages missing definitions */
 
-.btn,
 .btn-primary,
-button.btn,
-a.btn {
-  background: linear-gradient(135deg, #FF69B4, #FF69B4) !important;
+.btn-gold,
+button.btn.btn-primary,
+button.btn.btn-gold,
+a.btn.btn-primary,
+a.btn.btn-gold {
+  background: var(--magenta, #FF69B4) !important;
+  background-image: none !important;
   color: #fff !important;
   border-color: #ffffff15 !important;
-}
-
-/* Keep gold buttons as gold accent */
-.btn-gold {
-  background: linear-gradient(135deg, var(--gold, #ffb800), var(--gold-700, #e6a300)) !important;
-  color: #111 !important;
-  border-color: #00000010 !important;
 }
 
 /* Keep existing hover lift */

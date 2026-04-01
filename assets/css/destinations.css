@@ -113,12 +113,13 @@ nav li.has-submenu .submenu a[aria-current="page"]{color:#FF69B4;background:#fff
   width:44px; height:44px;
   display:grid; place-items:center;
   border-radius:14px;
-  border:1px solid var(--line);
-  background:linear-gradient(135deg, rgba(255,105,180,.18), rgba(255,184,0,.14));
+  border:1px solid rgba(255,255,255,.12);
+  background: var(--magenta);
+  background-image: none;
   box-shadow:var(--shadow-sm);
   margin-bottom:.6rem;
 }
-.icon-badge i{font-size:1.1rem; color:var(--gold)}
+.icon-badge i{font-size:1.1rem; color:#fff}
 
 .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem}
 .gallery .card-link{display:block; width:100%}

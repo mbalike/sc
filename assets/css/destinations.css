@@ -26,6 +26,8 @@ body{
 /* Layout */
 .container{max-width:1200px; width:100%; margin:0 auto; padding-inline:clamp(16px,4vw,24px)}
 .grid{display:grid; gap:1.1rem}
+.grid.cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}
+.grid.cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}
 .section-head{text-align:center; margin:0 0 1.2rem}
 .section-head h2{font:800 clamp(1.4rem,3.2vw,2.1rem)/1.15 Poppins, sans-serif; margin:.2rem 0 .5rem}
 .section-head p{color:#d9d9d9; max-width:70ch; margin:0 auto}
@@ -106,6 +108,17 @@ nav li.has-submenu .submenu a[aria-current="page"]{color:#FF69B4;background:#fff
 .card h3{font:800 1.05rem/1.2 Poppins; margin:.2rem 0 .6rem}
 .card .list{margin:.4rem 0 .2rem; padding-left:1.1rem}
 .list li{margin:.25rem 0}
+
+.icon-badge{
+  width:44px; height:44px;
+  display:grid; place-items:center;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background:linear-gradient(135deg, rgba(255,105,180,.18), rgba(255,184,0,.14));
+  box-shadow:var(--shadow-sm);
+  margin-bottom:.6rem;
+}
+.icon-badge i{font-size:1.1rem; color:var(--gold)}
 
 .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem}
 .gallery .card-link{display:block; width:100%}

@@ -197,6 +197,26 @@ nav li.has-submenu > .submenu a{
 }
 nav li.has-submenu > .submenu a:hover{ background: #FAFAFC; }
 
+/* ------------------------------
+   Itinerary Price Guide (mobile)
+   ------------------------------ */
+/* Only affects itinerary1–itinerary4 (they're the only pages using section#price). */
+@media (max-width: 640px){
+  /* itinerary1–3: .price cards */
+  #price .price > p.muted{
+    font-size: .88rem !important;
+    line-height: 1.25 !important;
+    margin: .25rem 0 0 !important;
+  }
+
+  /* itinerary4: .card blocks in the price section */
+  #price .card > p.muted{
+    font-size: .88rem !important;
+    line-height: 1.25 !important;
+    margin: .35rem 0 0 !important;
+  }
+}
+
 /* Show submenu on hover (desktop) */
 @media (min-width: 901px){
   nav li.has-submenu:hover > .submenu{ display: block; }

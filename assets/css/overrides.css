@@ -280,6 +280,12 @@ input[type="radio"]{
   height: 18px;
 }
 
+/* Index "Plan Your Trip" form: keep submit button fit-to-text */
+#plan-form button{
+  width: fit-content;
+  justify-self: start;
+}
+
 /* Mobile: stack form grids + avoid iOS zoom-on-focus */
 @media (max-width: 560px){
   /* Contact page form uses inline grid-template-columns; override safely */
@@ -295,5 +301,5 @@ input[type="radio"]{
   #plan-form input,
   #plan-form select,
   #plan-form textarea{ font-size: 16px; }
-  #plan-form button{ width: 100%; justify-content: center; }
+  #plan-form button{ width: fit-content; justify-self: start; }
 }

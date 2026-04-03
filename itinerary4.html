@@ -46,16 +46,11 @@
     .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-700)); color:#111; border-color:#00000010}
     .chip{display:inline-flex; align-items:center; gap:.4rem; padding:.4rem .7rem; border-radius:999px; font-size:.85rem; font-weight:700; border:1px solid var(--line); background:var(--glass)}
 
-    /* Price pills (solid theme magenta) */
-    .price-pill{
-      background: var(--magenta) !important;
-      background-image: none !important;
-      color: #fff !important;
-      font-weight: 800;
-      border-color: #ffffff15;
-      box-shadow: var(--shadow-sm);
-      padding: .55rem .9rem;
-    }
+    /* Price (match itinerary1 design) */
+    .price-wrap{margin-top:1rem}
+    .price{ padding:1.2rem; border:2px solid transparent; background:linear-gradient(135deg, rgba(253,51,162,.08), rgba(255,184,0,.08)); border-radius:16px; position:relative; }
+    .price::before{content:""; position:absolute; inset:0; border-radius:16px; padding:2px; background:linear-gradient(135deg, #FF69B4, #ffb800); -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none;}
+    .amount{font:800 1.6rem/1 Poppins; background:linear-gradient(135deg,#FF69B4,#ffb800); -webkit-background-clip:text; background-clip:text; color:transparent;}
 
     /* Mobile tweaks */
     @media (max-width: 900px){
@@ -225,15 +220,7 @@
       <div class="hero-wrap"><div><div class="chip"><i class="bi bi-mountain"></i> Kilimanjaro</div><h1 class="title">Kilimanjaro Aura</h1><p class="subtitle">Our most popular Kili climb: balanced acclimatization, cinematic scenery from rainforest to glaciers, and a thrilling sunrise summit.</p><div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem"><span class="chip"><i class="bi bi-clock"></i> 7 Days</span><span class="chip"><i class="bi bi-graph-up"></i> 5,895 m</span><span class="chip"><i class="bi bi-activity"></i> Success: High</span><span class="chip"><i class="bi bi-lightning"></i> Mod–Challenging</span></div></div>
       <a href='#content' class='scroll-indicator' aria-label='Scroll to content'><i class='bi bi-chevron-down'></i></a></div></div></section>
 
-  <!-- Quick Facts -->
-  <section id="content">
-    <div class="container facts">
-      <div class="fact"><div class="chip"><i class="bi bi-map"></i> Route</div><h4>Machame (Whiskey)</h4><p class="muted">Scenic & varied terrain</p></div>
-      <div class="fact"><div class="chip"><i class="bi bi-hourglass-split"></i> Duration</div><h4>7 Days</h4><p class="muted">+ Arrival & Descent Day</p></div>
-      <div class="fact"><div class="chip"><i class="bi bi-thermometer-high"></i> Zones</div><h4>5</h4><p class="muted">Rainforest → Glaciers</p></div>
-      <div class="fact"><div class="chip"><i class="bi bi-check2-circle"></i> Best For</div><h4>Fit Adventurers</h4><p class="muted">Good acclimatization</p></div>
-    </div>
-  </section>
+ 
 
   <!-- Journey Timeline -->
   <section id="journey">
@@ -506,22 +493,21 @@
         <h2> Price Guide</h2>
         <p>Your Climb. Your Pace. Your Comfort.</p>
       </div>
-      <p class="muted" style="font-size:1.05rem; line-height:1.8; margin:0 auto 1.5rem; max-width:80ch; text-align:center">Journeys tailored to your rhythm, from private guides to elevated camp dining. Rates include park fees, certified crew, and full-service mountain comfort.</p>
-      <div class="grid cols-3">
-        <div class="card">
-          <h3>Per Climbing Day</h3>
-          <p class="muted">Includes park fees, crew, meals, tents</p>
-          <div class="chip price-pill"><i class="bi bi-cash-coin"></i> $250–$450</div>
+      <div class="grid cols-3 price-wrap">
+        <div class="price">
+          <h3 class="day-title">Per Climbing Day</h3>
+          <div class="amount">$250–$450</div>
+          <p class="muted">Per day</p>
         </div>
-        <div class="card">
-          <h3>Total (7 Days)</h3>
-          <p class="muted">Common range for 2–6 trekkers</p>
-          <div class="chip price-pill"><i class="bi bi-graph-up"></i> $1,800–$3,200+</div>
+        <div class="price">
+          <h3 class="day-title">Total (7 Days)</h3>
+          <div class="amount">$1,800–$3,200+</div>
+          <p class="muted">Per person</p>
         </div>
-        <div class="card">
-          <h3>Add‑Ons</h3>
+        <div class="price">
+          <h3 class="day-title">Add‑Ons</h3>
+          <div class="amount">On request</div>
           <p class="muted">Safari & Zanzibar extensions</p>
-          <div class="chip price-pill"><i class="bi bi-airplane"></i> Domestic flights extra</div>
         </div>
       </div>
     </div>

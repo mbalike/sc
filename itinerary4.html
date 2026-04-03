@@ -146,6 +146,35 @@
     .card{ background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid var(--line); border-radius:16px; padding:1.1rem; box-shadow:var(--shadow-sm) }
     .card h3{font:800 1.05rem/1.2 Poppins; margin:.2rem 0 .5rem}
 
+    /* Reduce “stacked gray boxes” feel with subtle per-section card variation */
+    #best-time .card, #gear-guide .card, #faqs .card{
+      background:
+        linear-gradient(160deg, rgba(196,0,106,.09), rgba(255,184,0,.06)),
+        linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.02));
+      border-color: rgba(255,255,255,.10);
+    }
+    #best-time .card:nth-child(2),
+    #gear-guide .card:nth-child(2),
+    #faqs .card:nth-child(2){
+      background:
+        linear-gradient(160deg, rgba(255,184,0,.09), rgba(196,0,106,.06)),
+        linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.02));
+    }
+    #gear-guide .card:nth-child(3),
+    #faqs .card:nth-child(3){
+      background:
+        linear-gradient(160deg, rgba(255,255,255,.06), rgba(196,0,106,.07)),
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.018));
+    }
+
+    /* Section intro sizing (mobile-first polish) */
+    .section-intro{font-size:1rem}
+    @media (max-width:900px){
+      .section-intro{font-size:.95rem}
+      #best-time .card h3{display:flex;align-items:center;justify-content:center;gap:.5rem;text-align:center}
+      #best-time h5{text-align:center}
+    }
+
     /* Footer */
     footer{padding:36px 0 60px; color:#cfcfcf}
     .footer-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:1rem}
@@ -438,7 +467,7 @@
           <p class="muted">Tanzania’s seasons each paint Kilimanjaro in their own light.</p>
           <p class="muted"><strong>The dry months — June to September, and December to February — offer the clearest skies, firm trails, and breathtaking summit views.</strong> These are the best times for a smooth, scenic ascent.</p>
           <p class="muted">For those drawn to a wilder, moodier climb, <strong>March to May and November</strong> bring occasional tropical rains — lush, quieter, and ideal for travelers seeking solitude and drama in the clouds.</p>
-          <p class="muted"><em>Whichever season you choose, Safari Chic ensures your comfort, safety, and style stay as elevated as the climb itself.</em></p>
+          <p class="muted">Whichever season you choose, Safari Chic ensures your comfort, safety, and style stay as elevated as the climb itself.</p>
         </div>
       </div>
     </div>
@@ -452,7 +481,7 @@
         <h2> Essential Gear Guide</h2>
         <p>Pack Light. Layer Smart. Climb Chic.</p>
       </div>
-      <p class="muted" style="font-size:1.05rem; line-height:1.8; margin:0 auto 1.5rem; max-width:80ch; text-align:center">We provide the premium essentials like mountain tents, dining setup, chef prepared meals to bring you comfort, warmth, and your personal edge of style.</p>
+      <p class="muted section-intro" style="line-height:1.8; margin:0 auto 1.5rem; max-width:80ch; text-align:center">We provide the premium essentials like mountain tents, dining setup, chef prepared meals to bring you comfort, warmth, and your personal edge of style.</p>
       <div class="grid cols-3">
         <div class="card">
           <h3>Layer Like a Pro</h3>
@@ -493,6 +522,7 @@
         <h2> Price Guide</h2>
         <p>Your Climb. Your Pace. Your Comfort.</p>
       </div>
+      <p class="muted section-intro" style="line-height:1.8; margin:0 auto 1.2rem; max-width:80ch; text-align:center">Rates include certified crew, park fees, and full-service mountain comfort — we’ll tailor the final quote to your dates, group size, and preferred style.</p>
       <div class="grid cols-3 price-wrap">
         <div class="price">
           <h3 class="day-title">Per Climbing Day</h3>

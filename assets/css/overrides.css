@@ -1,6 +1,18 @@
 /* Global button override: solid Safari Chic pink (no gradients) */
 /* Uses CSS vars with sensible fallbacks for pages missing definitions */
 
+/* ------------------------------
+   Site background (global)
+   ------------------------------ */
+/* Matches homepage background so all pages share the same vibe. */
+body{
+  background-color: var(--bg, #0c0b10) !important;
+  background-image:
+    radial-gradient(1200px 700px at 10% -10%, rgba(196,0,106,.16), transparent 50%),
+    radial-gradient(900px 600px at 110% 10%, rgba(255,184,0,.14), transparent 60%) !important;
+  background-repeat: no-repeat !important;
+}
+
 .btn-primary,
 .btn-gold,
 button.btn.btn-primary,

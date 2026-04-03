@@ -144,6 +144,27 @@
     .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-700));color:#111;border-color:#00000010}
     .chip{display:inline-flex;align-items:center;gap:.45rem;padding:.4rem .7rem;border-radius:999px;border:1px solid var(--line);background:var(--glass);font-weight:700}
 
+    /* Contact form: tighten CTA sizing on mobile (keep width unchanged) */
+    @media (max-width:900px){
+      .contact-submit{
+        font-size:.78rem !important;
+        padding:.52rem .82rem !important;
+        line-height:1.1 !important;
+      }
+      .contact-submit i{font-size:.95rem}
+      .whatsapp-bubble{
+        font-size:.74rem !important;
+        padding:.2rem .52rem !important;
+        line-height:1.1 !important;
+      }
+    }
+
+    /* Even tighter for very small phones */
+    @media (max-width:420px){
+      .contact-submit{font-size:.74rem !important;padding:.48rem .76rem !important}
+      .whatsapp-bubble{font-size:.70rem !important;padding:.18rem .48rem !important}
+    }
+
   /* Hero */
   .hero{position:relative;min-height:100vh;display:grid;align-items:center;overflow:hidden;isolation:isolate}
     .hero::before{
@@ -348,7 +369,7 @@
             <label style="display:flex;gap:.4rem;align-items:center"><input type="checkbox" name="interests" value="Beach" /> Beach</label>
           </div>
           <textarea name="notes" placeholder="Share your vision — preferred dates, dream destinations, must-see moments, and anything that will make this journey unforgettable." style="min-height:140px"></textarea>
-          <button class="btn btn-primary" type="submit" style="font-size:.92rem;padding:.75rem 1.15rem;justify-self:start;width:fit-content"><i class="bi bi-send"></i> Chat With The Team</button>          <p class="muted" style="margin:.6rem 0 0">Prefer WhatsApp? <a href="https://wa.me/19175889778" style="background:#FF69B4;color:#fff;padding:.3rem .7rem;border-radius:999px;text-decoration:none;font-weight:700">Message us here</a></p>
+          <button class="btn btn-primary contact-submit" type="submit" style="font-size:.92rem;padding:.75rem 1.15rem;justify-self:start;width:fit-content"><i class="bi bi-send"></i> Chat With The Team</button>          <p class="muted" style="margin:.6rem 0 0">Prefer WhatsApp? <a class="whatsapp-bubble" href="https://wa.me/19175889778" style="background:#FF69B4;color:#fff;padding:.3rem .7rem;border-radius:999px;text-decoration:none;font-weight:700">Message us here</a></p>
         </form>
       </div>
       

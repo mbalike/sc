@@ -991,6 +991,16 @@ html {
   padding: 0 !important; /* override itinerary pages' section{padding:72px 0} */
 }
 
+/* Prevent .cta inner containers from overflowing the CTA card on desktop.
+   (Some pages nest a wider .container inside .cta; since .cta has overflow:hidden,
+   that can clip the right edge of the text/buttons.) */
+.cta > .container {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding-inline: 0 !important;
+}
+
 @media (max-width: 768px) {
   .cta {
     margin: 28px auto;

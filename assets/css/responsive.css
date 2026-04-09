@@ -959,6 +959,34 @@ html {
 
 /* ========== CTA SECTION MOBILE ========== */
 
+/* Itinerary CTA sections use <section class="cta"> as the card itself.
+   Constrain the section to a centered, compact box (matches desired screenshot style). */
+.cta {
+  width: min(920px, 92vw);
+  margin: 40px auto;
+  padding: 0 !important; /* override itinerary pages' section{padding:72px 0} */
+}
+
+@media (max-width: 768px) {
+  .cta {
+    margin: 28px auto;
+  }
+
+  .cta .inner {
+    padding: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta {
+    margin: 22px auto;
+  }
+
+  .cta .inner {
+    padding: 1.25rem !important;
+  }
+}
+
 @media (max-width: 900px) {
   .cta .wrap {
     flex-direction: column;

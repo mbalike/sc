@@ -301,6 +301,18 @@ html {
     min-height: 34px !important;
     min-width: 34px !important;
   }
+
+  /* Inline-styled buttons (fallback for pages/sections not using .btn classes) */
+  a[style*="padding"][style*="border-radius"][style*="background"],
+  a[style*="padding"][style*="border-radius"][style*="background-color"],
+  button[style*="padding"][style*="border-radius"],
+  input[type="button"][style*="padding"][style*="border-radius"],
+  input[type="submit"][style*="padding"][style*="border-radius"] {
+    padding: 0.55rem 0.85rem !important;
+    font-size: 13px !important;
+    min-height: 34px !important;
+    min-width: 34px !important;
+  }
   
   .btn-primary,
   .btn-gold {
@@ -316,6 +328,18 @@ html {
   .actions .btn { width: 100%; max-width: 280px; }
   .btn {
     padding: 0.45rem 0.75rem !important; /* matches smallest existing hero CTA paddings */
+    font-size: 12px !important;
+    min-height: 32px !important;
+    min-width: 32px !important;
+  }
+
+  /* Inline-styled buttons (fallback) */
+  a[style*="padding"][style*="border-radius"][style*="background"],
+  a[style*="padding"][style*="border-radius"][style*="background-color"],
+  button[style*="padding"][style*="border-radius"],
+  input[type="button"][style*="padding"][style*="border-radius"],
+  input[type="submit"][style*="padding"][style*="border-radius"] {
+    padding: 0.45rem 0.75rem !important;
     font-size: 12px !important;
     min-height: 32px !important;
     min-width: 32px !important;
@@ -1017,9 +1041,22 @@ html {
 
 @media (max-width: 640px) {
   .chip,
-  .badge {
+  .badge,
+  .img-badge {
     font-size: 11px;
     padding: 0.3rem 0.6rem;
+  }
+
+  /* Overlay badges on card images: slightly smaller + snug top-right */
+  .card-img > [class*="badge"]:not(.icon-badge):not(.device-badge):not(.status-badge),
+  .itin-img > [class*="badge"]:not(.icon-badge):not(.device-badge):not(.status-badge),
+  .day-media > [class*="badge"]:not(.icon-badge):not(.device-badge):not(.status-badge) {
+    font-size: 12px !important;
+    padding: 0.32rem 0.7rem !important;
+    top: 10px !important;
+    right: 10px !important;
+    left: auto !important;
+    bottom: auto !important;
   }
   
   .highlights {
@@ -1029,6 +1066,19 @@ html {
   .pill {
     font-size: 11px;
     padding: 0.3rem 0.55rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-img > [class*="badge"]:not(.icon-badge):not(.device-badge):not(.status-badge),
+  .itin-img > [class*="badge"]:not(.icon-badge):not(.device-badge):not(.status-badge),
+  .day-media > [class*="badge"]:not(.icon-badge):not(.device-badge):not(.status-badge) {
+    font-size: 11.5px !important;
+    padding: 0.3rem 0.66rem !important;
+    top: 8px !important;
+    right: 8px !important;
+    left: auto !important;
+    bottom: auto !important;
   }
 }
 

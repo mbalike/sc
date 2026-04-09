@@ -138,12 +138,27 @@ footer .grid.cols-3{
    (Containers may wrap between chips; the chip itself stays single-line.) */
 .chip,
 .badge,
+.img-badge,
 .pill,
 .dur,
 .plan-chip,
 .info{
   white-space: nowrap !important;
   flex-wrap: nowrap !important;
+}
+
+/* ------------------------------
+   Overlay Badges: Top-right
+   ------------------------------ */
+/* Only labels that sit on top of images (not inline badges in page copy). */
+.card-img > [class*="badge"]:not(.icon-badge):not(.device-badge):not(.status-badge),
+.itin-img > [class*="badge"]:not(.icon-badge):not(.device-badge):not(.status-badge),
+.day-media > [class*="badge"]:not(.icon-badge):not(.device-badge):not(.status-badge){
+  position: absolute !important;
+  top: 12px !important;
+  right: 12px !important;
+  left: auto !important;
+  bottom: auto !important;
 }
 
 /* Ensure icons inside chips don't shrink and force wrapping */

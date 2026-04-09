@@ -100,6 +100,9 @@
     .highlights{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.6rem}
     .chip{display:inline-flex;align-items:center;gap:.35rem;padding:.35rem .6rem;border-radius:999px;font-size:.82rem;font-weight:700;border:1px solid var(--line);background:var(--glass)}
 
+    /* Buttons (ensure consistent sizing with the rest of the site) */
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:800;transition:.3s;border:1px solid transparent;box-shadow:var(--shadow-sm)}
+
     /* Info bar */
     .infobar{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
     .info{display:flex;align-items:center;gap:.4rem;padding:.35rem .6rem;border-radius:999px;border:1px solid var(--line);background:var(--glass);font-weight:700;font-size:.85rem}
@@ -434,8 +437,8 @@
         <h3 style="font:800 clamp(1.2rem,3.2vw,2rem)/1.15 Poppins;margin:.3rem 0 .7rem">Ready to Start Your Adventure?</h3>
         <p class="muted" style="margin:0 auto 1.2rem;max-width:70ch">Tell us your dates, group size and style — we'll tailor the perfect itinerary.</p>
         <div style="display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center;margin-top:1.2rem">
-          <a href="https://wa.me/19175889778" style="background:#FF69B4;color:#fff;padding:.7rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:800;display:inline-flex;align-items:center;gap:.5rem;transition:.3s"><i class="bi bi-whatsapp"></i> Chat With the Team</a>
-          <a href="mailto:info@safarichic.co.tz" style="background:#FF69B4;color:#fff;padding:.7rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:800;display:inline-flex;align-items:center;gap:.5rem;transition:.3s"><i class="bi bi-envelope"></i> Design My Trip</a>
+          <a class="btn btn-primary" href="https://wa.me/19175889778"><i class="bi bi-whatsapp"></i> Chat With the Team</a>
+          <a class="btn btn-primary" href="mailto:info@safarichic.co.tz"><i class="bi bi-envelope"></i> Design My Trip</a>
         </div>
       </div>
     </div>

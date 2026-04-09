@@ -156,13 +156,25 @@
         font-size:.74rem !important;
         padding:.2rem .52rem !important;
         line-height:1.1 !important;
+        min-height: 0 !important;
+        min-width: 0 !important;
+        height: auto !important;
+        width: auto !important;
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
       }
     }
 
     /* Even tighter for very small phones */
     @media (max-width:420px){
       .contact-submit{font-size:.74rem !important;padding:.48rem .76rem !important}
-      .whatsapp-bubble{font-size:.70rem !important;padding:.18rem .48rem !important}
+      .whatsapp-bubble{
+        font-size:.73rem !important;
+        padding:.19rem .47rem !important;
+        min-height: 0 !important;
+        min-width: 0 !important;
+      }
     }
 
   /* Hero */

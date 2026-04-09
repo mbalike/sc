@@ -34,6 +34,11 @@ a.btn:hover {
 /* Ensure anchor buttons don’t underline */
 a.btn { text-decoration: none; }
 
+/* Kili route pages: Included / Not Included cards */
+.card.inc-exc-card{
+  background: linear-gradient(160deg, rgba(196,0,106,.08), rgba(255,184,0,.06)) !important;
+}
+
 /* Intro bullet icon background: use bubblegum pink brand */
 .bullet i {
   background: linear-gradient(135deg, #FF69B4, #FF69B4) !important;

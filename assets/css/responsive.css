@@ -1057,15 +1057,15 @@ html {
     padding: 0.3rem 0.6rem;
   }
 
-  /* Overlay badges on card images: slightly smaller + snug top-right */
+  /* Overlay badges on card images: slightly smaller + snug top-left */
   .card-img > [class*="badge"]:not(.icon-badge):not(.device-badge):not(.status-badge),
   .itin-img > [class*="badge"]:not(.icon-badge):not(.device-badge):not(.status-badge),
   .day-media > [class*="badge"]:not(.icon-badge):not(.device-badge):not(.status-badge) {
     font-size: 12px !important;
     padding: 0.32rem 0.7rem !important;
     top: 10px !important;
-    right: 10px !important;
-    left: auto !important;
+    left: 10px !important;
+    right: auto !important;
     bottom: auto !important;
   }
   
@@ -1086,8 +1086,8 @@ html {
     font-size: 11.5px !important;
     padding: 0.3rem 0.66rem !important;
     top: 8px !important;
-    right: 8px !important;
-    left: auto !important;
+    left: 8px !important;
+    right: auto !important;
     bottom: auto !important;
   }
 }

@@ -153,7 +153,7 @@ footer .grid.cols-3{
 }
 
 /* ------------------------------
-   Overlay Badges: Top-right
+   Overlay Badges: Top-left
    ------------------------------ */
 /* Only labels that sit on top of images (not inline badges in page copy). */
 .card-img > [class*="badge"]:not(.icon-badge):not(.device-badge):not(.status-badge),
@@ -161,8 +161,8 @@ footer .grid.cols-3{
 .day-media > [class*="badge"]:not(.icon-badge):not(.device-badge):not(.status-badge){
   position: absolute !important;
   top: 12px !important;
-  right: 12px !important;
-  left: auto !important;
+  left: 12px !important;
+  right: auto !important;
   bottom: auto !important;
 }
 
@@ -318,6 +318,54 @@ input[type="radio"]{
   justify-self: start;
 }
 
+/* Index "Plan Your Trip" form: keep action buttons same width */
+#plan-form .plan-actions,
+#form form .plan-actions{
+  display: inline-grid;
+  grid-template-columns: max-content;
+  gap: .55rem;
+  margin-top: .4rem;
+}
+
+#plan-form .plan-actions button,
+#plan-form .plan-actions a,
+#form form .plan-actions button,
+#form form .plan-actions a{
+  width: 100%;
+}
+
+/* Ensure the submit "Chat With The Team" button text matches requested size */
+#plan-form .plan-actions button,
+#form form .plan-actions button{
+  font-size: 13.33333px !important;
+}
+
+/* Scale down ONLY the WhatsApp button so it matches the submit button */
+#plan-form .plan-actions a.whatsapp-btn,
+#form form .plan-actions a.whatsapp-btn{
+  font-family: inherit;
+  font-size: 13.33333px !important;
+  line-height: 1.1;
+  padding: .82rem 1.3rem;
+}
+
+/* WhatsApp icon glyph is optically larger; normalize it */
+#plan-form .plan-actions a.whatsapp-btn i,
+#form form .plan-actions a.whatsapp-btn i{
+  width: 1.05em;
+  height: 1.05em;
+  display: inline-grid;
+  place-items: center;
+  line-height: 1;
+  flex: 0 0 auto;
+  font-size: .95em;
+}
+
+#plan-form .plan-actions > .btn,
+#form form .plan-actions > .btn{
+  justify-content: center;
+}
+
 /* Mobile: stack form grids + avoid iOS zoom-on-focus */
 @media (max-width: 560px){
   /* Contact page form uses inline grid-template-columns; override safely */
@@ -334,4 +382,12 @@ input[type="radio"]{
   #plan-form select,
   #plan-form textarea{ font-size: 16px; }
   #plan-form button{ width: fit-content; justify-self: start; }
+
+  /* Make contact actions comfortable on narrow screens */
+  #plan-form .plan-actions,
+  #form form .plan-actions{ display: grid; grid-template-columns: 1fr; width: 100%; }
+  #plan-form .plan-actions button,
+  #plan-form .plan-actions a,
+  #form form .plan-actions button,
+  #form form .plan-actions a{ width: 100%; justify-content: center; }
 }

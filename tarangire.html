@@ -14,7 +14,16 @@
   <link rel="stylesheet" href="assets/css/destinations.css">
   <link rel="stylesheet" href="assets/css/header-footer.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
-  <style>.hero{ --hero-bg:url('assets/img/baobab-trees-ruaha-1536x864.jpg') center/cover no-repeat; }</style>
+  <style>
+    .hero{ --hero-bg:url('assets/img/baobab-trees-ruaha-1536x864.jpg') center/cover no-repeat; }
+
+    /* Tarangire page: adjust cropping for THIS single image only (Manyara card) */
+    :root{ --tarangire-manyara-image-position: 50% 10%; }
+    .gallery a.card-link[href="manyara.html"] img[src$="assets/img/tar2.jpeg"]{
+      object-fit: cover;
+      object-position: var(--tarangire-manyara-image-position);
+    }
+  </style>
 </head>
 <body>
   <div id="top" aria-hidden="true"></div>

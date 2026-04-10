@@ -14,7 +14,23 @@
   <link rel="stylesheet" href="assets/css/destinations.css">
   <link rel="stylesheet" href="assets/css/header-footer.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
-  <style>.hero{ --hero-bg:url('assets/img/pexels-taryn-elliott-5993735.jpg') center/cover no-repeat; }</style>
+  <style>
+    .hero{ --hero-bg:url('assets/img/pexels-taryn-elliott-5993735.jpg') center/cover no-repeat; }
+
+    /* Zanzibar page: inline food SVG should match icon-badge size + color */
+    .icon-badge svg.food-icon{
+      width: 1.1rem;
+      height: 1.1rem;
+      display: block;
+      color: #fff;
+    }
+    .icon-badge svg.food-icon *{
+      stroke: currentColor !important;
+      fill: none !important;
+      stroke-miterlimit: 10;
+      stroke-width: 1.91px;
+    }
+  </style>
 </head>
 <body>
   <div id="top" aria-hidden="true"></div>
@@ -143,12 +159,22 @@
             <p>From snorkeling and diving in crystal-clear waters to kitesurfing in Paje, and calm, swimmable beaches in Nungwi and Kiwengwa — the Indian Ocean here is an experience, not just a view.</p>
           </div>
           <div class="card reveal">
-            <div class="icon-badge"><i class="bi bi-boat"></i></div>
+            <div class="icon-badge"><i class="bi bi-sunset"></i></div>
             <h3>Sunset Dhows &amp; Boat Day Energy</h3>
             <p>Traditional dhow cruises at sunset, private sandbank picnics, and full-on boat day vibes — Zanzibar knows how to turn the ocean into a moment.</p>
           </div>
           <div class="card reveal">
-            <div class="icon-badge"><i class="bi bi-cup-hot"></i></div>
+            <div class="icon-badge">
+              <svg class="food-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <line x1="0.55" y1="22.5" x2="23.45" y2="22.5"/>
+                <path d="M12,13.91h0a7.64,7.64,0,0,1,7.64,7.64v1a0,0,0,0,1,0,0H4.36a0,0,0,0,1,0,0v-1A7.64,7.64,0,0,1,12,13.91Z"/>
+                <line x1="12" y1="12" x2="12" y2="13.91"/>
+                <circle cx="12" cy="11.05" r="0.95"/>
+                <path d="M4.36,3.41C7.67,5.7,3,6.84,6.27,9.13"/>
+                <path d="M11.05,1.5c3.3,2.29-1.4,3.44,1.9,5.73"/>
+                <path d="M17.73,3.41c3.3,2.29-1.4,3.44,1.91,5.73"/>
+              </svg>
+            </div>
             <h3>A Food Scene That Surprises You</h3>
             <p>Fresh seafood, bold Swahili flavors, and elevated dining experiences — from local gems to stunning beachfront restaurants, the culinary scene is rich, vibrant, and unforgettable.</p>
           </div>

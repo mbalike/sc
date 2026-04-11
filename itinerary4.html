@@ -175,6 +175,54 @@
       #best-time h5{text-align:center}
     }
 
+    /* CTA (card with consistent side gutters) */
+    .cta-section{padding:72px 0}
+    .cta-card{
+      border:2px solid transparent;
+      border-radius:28px;
+      background:linear-gradient(135deg, rgba(253,51,162,.08), rgba(255,184,0,.08));
+      box-shadow:var(--shadow);
+      padding:clamp(1.4rem, 4.2vw, 2.2rem);
+      text-align:center;
+      width:100%;
+      max-width:min(920px, 100%);
+      margin:0 auto;
+      box-sizing:border-box;
+      position:relative;
+      overflow:hidden;
+    }
+    .cta-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:28px;
+      padding:2px;
+      background:linear-gradient(135deg, #FF69B4, #ffb800);
+      -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      pointer-events:none;
+    }
+    .cta-card > *{position:relative}
+    .cta-title{font:800 clamp(1.35rem,3.6vw,2rem)/1.15 Poppins;margin:.3rem 0 .7rem}
+    .cta-copy{color:#dcdcdc;margin:0 auto 1.35rem;max-width:60ch}
+    .cta-actions{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+    .cta-actions .btn{width:fit-content;max-width:100%}
+    .cta-section .cta-actions .btn{padding:.62rem 1.05rem !important}
+    @media (min-width: 560px){
+      .cta-actions .btn{width:auto}
+    }
+    @media (max-width: 640px){
+      /* Ensure the CTA card never overhangs the container gutters */
+      .cta-card{width:100%;max-width:min(520px, 88vw)}
+      .cta-actions{flex-direction:column;align-items:center}
+    }
+    @media (max-width: 480px){
+      .cta-actions{gap:.85rem}
+      .cta-section .cta-actions .btn{padding:.56rem .95rem !important}
+    }
+
     /* Footer */
     footer{padding:36px 0 60px; color:#cfcfcf}
     .footer-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:1rem}
@@ -572,14 +620,14 @@
   </section>
 
   <!-- CTA -->
-  <section class="cta" id="contact" style="border:1px solid var(--line); border-radius:24px; background: radial-gradient(900px 400px at 90% -10%, rgba(196,0,106,.35), transparent 60%), radial-gradient(900px 400px at 10% 110%, rgba(255,184,0,.25), transparent 60%), linear-gradient(135deg, #16131a, #100f15); box-shadow:var(--shadow);">
+  <section class="cta-section" id="contact">
     <div class="container">
-      <div class="inner" style="padding:2rem; text-align:center">
-        <h3 style="font:800 clamp(1.2rem,3.2vw,2rem)/1.15 Poppins; margin:.3rem 0 .7rem">Ready to climb Kilimanjaro?</h3>
-        <p style="color:#dcdcdc; margin:0 auto 1.2rem; max-width:70ch">Tell us your dates, group size and comfort level — we’ll tailor the Machame 7‑day climb to you.</p>
-        <div style="display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap">
-                    <a class="btn btn-gold" href="https://wa.me/19175889778"><i class="bi bi-whatsapp"></i>Chat With the Team</a>
-          <a class="btn btn-primary" href="mailto:info@safarichic.co.tz"><i class="bi bi-envelope"></i> Design My Trip</a>
+      <div class="cta-card reveal">
+        <h3 class="cta-title">Ready for Your Chic Escape?</h3>
+        <p class="cta-copy">Share your dates and preferences, and we’ll customize this Chic Escape just for you.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="https://wa.me/19175889778"><i class="bi bi-whatsapp"></i> Customize This Escape</a>
+          <a class="btn btn-primary" href="mailto:info@safarichic.co.tz"><i class="bi bi-envelope"></i> Request This Itinerary</a>
         </div>
       </div>
     </div>

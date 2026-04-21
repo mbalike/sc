@@ -153,6 +153,18 @@ footer .grid.cols-3{
 }
 
 /* ------------------------------
+   Form CTA button height
+   ------------------------------ */
+/* Applies only to the contact-form action row used on index.html + contact.html */
+.plan-actions .btn{
+  min-height: 56px !important;
+  padding: .95rem 1.35rem !important;
+}
+@media (max-width: 900px){
+  .plan-actions .btn{ min-height: 49px !important; }
+}
+
+/* ------------------------------
    Overlay Badges: Top-left
    ------------------------------ */
 /* Only labels that sit on top of images (not inline badges in page copy). */

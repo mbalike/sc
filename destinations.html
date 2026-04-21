@@ -145,6 +145,8 @@
     .section-head .kicker{font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;opacity:.9}
     .section-head h2{font:800 clamp(1.6rem,3.5vw,2.4rem)/1.15 Poppins;margin:.2rem 0 .6rem}
     .section-head p{color:#d9d9d9;max-width:70ch;margin:0 auto}
+    .section-head p.lede-balance{text-wrap:balance}
+    .section-head p.lede-balance .keep-together{white-space:nowrap}
 
   /* Hero with photo background */
   .hero{position:relative; min-height:100vh; display:grid; align-items:center; isolation:isolate; overflow:hidden}
@@ -335,7 +337,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Here's What Makes Tanzania Unforgettable</h2>
-        <p>Whether you’re a wildlife enthusiast, a culture seeker, or a beach lover, Tanzania’s diverse destinations ensure your journey will be as unforgettable as the memories you take home.</p>
+        <p class="lede-balance">Whether you’re a wildlife enthusiast, a culture seeker, or a beach lover, Tanzania’s diverse destinations ensure your journey will be as unforgettable as the memories <span class="keep-together">you take back home</span>.</p>
       </div>
       <div class="intro">
         <div class="bullet reveal"><i class="bi bi-binoculars"></i><div><strong>World-Famous Safari Experiences</strong> Witness the Great Migration in the Serengeti, track the Big Five, and explore legendary game reserves.</div></div>

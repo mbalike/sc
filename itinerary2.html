@@ -124,8 +124,8 @@
 
     /* Price */
     .price-wrap{margin-top:1rem}
-    .price{padding:1.2rem;border:2px solid transparent;background:linear-gradient(135deg,rgba(253,51,162,.08),rgba(255,184,0,.08));border-radius:16px;position:relative}
-    .price::before{content:"";position:absolute;inset:0;border-radius:16px;padding:2px;background:linear-gradient(135deg,#FF69B4,#ffb800);-webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+    .price{padding:1.2rem;border:2px solid transparent;background:linear-gradient(135deg,rgba(253,51,162,.08),rgba(81, 68, 34, 0.08));border-radius:16px;position:relative}
+    .price::before{content:"";position:absolute;inset:0;border-radius:16px;padding:2px;background:linear-gradient(135deg,#FF69B4,#ffb800);-webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
     .amount{font:800 1.6rem/1 Poppins;background:linear-gradient(135deg,#FF69B4,#ffb800);-webkit-background-clip:text;background-clip:text;color:transparent}
 
     /* Highlights */
@@ -149,6 +149,26 @@
     .cta h3{font:800 clamp(1.2rem,3.2vw,2rem)/1.15 Poppins;margin:.3rem 0 .7rem}
     .cta p{color:#dcdcdc;margin:0 auto 1.2rem;max-width:70ch}
 
+    /* Itinerary2: CTA should match Price cards (background + gradient border) */
+    .cta-section .cta-card{
+      background: linear-gradient(135deg, rgba(253,51,162,.08), rgba(81, 68, 34, 0.08)) !important;
+      border: 2px solid transparent !important;
+    }
+    .cta-section .cta-card::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 2px;
+      background: linear-gradient(135deg, #FF69B4, #ffb800);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      display: block;
+    }
+
     /* Footer */
     footer{padding:36px 0 60px;color:#cfcfcf}
     .footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem}
@@ -165,6 +185,27 @@
     /* Back to top */
     .backtop{position:fixed;right:18px;bottom:18px;z-index:60;opacity:0;pointer-events:none;transition:.3s}
     .backtop.show{opacity:1;pointer-events:auto}
+
+    /* Itinerary2: CTA proportions on mobile (tuned for 360×800) */
+    @media (max-width: 900px){
+      .cta-section .cta-card{ padding: 3.1rem clamp(1.35rem, 6vw, 1.8rem) !important; }
+    }
+    @media (max-width: 420px){
+      /* Undo shared overrides.css: it makes the CTA container too wide (98vw + no padding) */
+      .cta-section > .container{
+        width: 100% !important;
+        padding-inline: 20px !important;
+      }
+      .cta-section .cta-card{
+        max-width: 320px !important;
+        padding-top: 3.0rem !important;
+        padding-bottom: 3.0rem !important;
+        min-height: 450px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -363,14 +404,14 @@
   </section>
 
   <!-- CTA -->
-  <section class="cta" id="contact">
+  <section class="cta-section" id="contact">
     <div class="container">
-      <div class="inner reveal">
-        <h3>Ready for Your Chic Escape?</h3>
-        <p>Share your dates and preferences, and we'll personalize this Chic Escape just for you.</p>
-        <div style="display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap">
+      <div class="cta-card reveal">
+        <h3 class="cta-title">Ready for Your Chic Escape?</h3>
+        <p class="cta-copy">Share your dates and preferences, and we'll personalize this Chic Escape just for you.</p>
+        <div class="cta-actions">
           <a class="btn btn-primary" href="https://wa.me/19175889778"><i class="bi bi-whatsapp"></i> Customize This Escape</a>
-          <a class="btn btn-primary" href="mailto:info@safarichic.co.tz"><i class="bi bi-envelope"></i>Request This Itinerary</a>
+          <a class="btn btn-primary" href="mailto:info@safarichic.co.tz"><i class="bi bi-envelope"></i> Request This Itinerary</a>
         </div>
       </div>
     </div>

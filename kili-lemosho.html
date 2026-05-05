@@ -81,6 +81,85 @@
     .day-media img{width:100%;height:100%;object-fit:cover;display:block}
     .img-badge{position:absolute;bottom:12px;left:12px;background:linear-gradient(135deg,var(--magenta),var(--magenta-700));color:#fff;padding:.45rem .7rem;border-radius:999px;font-weight:800;font-size:.82rem;box-shadow:var(--shadow-sm)}
 
+    /* Lemosho page: CTA-style pricing card (match itinerary2 CTA dimensions + buttons) */
+    .kili-cta-card{
+      border: 2px solid transparent;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(253,51,162,.08), rgba(81, 68, 34, 0.08));
+      box-shadow: var(--shadow);
+      padding: clamp(1.6rem, 4.4vw, 2.4rem);
+      text-align: center;
+      width: 100%;
+      max-width: min(920px, 100%);
+      margin: 0 auto;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+    }
+    .kili-cta-card::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 2px;
+      background: linear-gradient(135deg, #FF69B4, #ffb800);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      display: block;
+    }
+    .kili-cta-card > *{ position: relative; }
+    .kili-cta-actions{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}
+    @media (max-width: 640px){
+      .kili-cta-actions{flex-direction:column;align-items:center;width:100%}
+      .kili-cta-actions .btn{
+        /* Override assets/css/responsive.css mobile .btn rules (uses !important) */
+        width: clamp(270px, 78vw, 340px) !important;
+        max-width: 100% !important;
+        min-width: unset !important;
+        min-height: 72px !important;
+        padding: 1.35rem 1.45rem !important;
+        justify-content: center;
+        white-space: nowrap;
+        font-size: 13px !important;
+        line-height: 1.05 !important;
+        gap: .6rem !important;
+      }
+      .kili-cta-actions .btn i{line-height:1}
+    }
+    @media (max-width: 420px){
+      /* Match itinerary2 CTA spacing on small phones */
+      .kili-cta-wrap{
+        margin-inline: -26px;
+        padding-inline: 20px;
+      }
+      .kili-cta-card{
+        max-width: 320px;
+        padding-top: 3.0rem;
+        padding-bottom: 3.0rem;
+        min-height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .kili-cta-actions .btn{
+        /* Match itinerary2: buttons aren't forced to full card width */
+        width: clamp(252px, 72vw, 320px) !important;
+        min-height: 55px !important;
+        padding: 1.35rem 1.45rem !important;
+      }
+    }
+    .kili-price{
+      font: 800 1.4rem/1 Poppins;
+      background: linear-gradient(135deg, #FF69B4, #ffb800);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      white-space: nowrap;
+    }
+
     footer{padding:36px 0 60px;color:#cfcfcf}
     .footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem}
     @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
@@ -317,10 +396,15 @@
           <p class="muted">International and regional flights, visas, travel insurance, personal hiking or biking gear, tips for the mountain crew, and optional upgrades.</p>
         </div>
       </div>
-      <div class="card" style="margin-top:1rem;text-align:center">
-        <h3>From <span style="font:800 1.4rem/1 Poppins;background:linear-gradient(135deg,#fff,#ffe7a6);-webkit-background-clip:text;background-clip:text;color:transparent">$1,980</span> per person</h3>
-        <p class="muted">Pricing varies by season and group size. Contact us for a tailored quote.</p>
-        <div style="display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center"><a class="btn btn-primary" href="https://wa.me/19175889778"><i class="bi bi-whatsapp"></i> Chat With the Team</a><a class="btn btn-primary" href="mailto:info@safarichic.co.tz"><i class="bi bi-envelope"></i> Design My Trip</a></div>
+      <div class="kili-cta-wrap" style="margin-top:1rem">
+        <div class="card kili-cta-card">
+          <h3>From <span class="kili-price">$1,980</span> per person</h3>
+          <p class="muted">Pricing varies by season and group size. Contact us for a tailored quote.</p>
+          <div class="kili-cta-actions">
+            <a class="btn btn-primary" href="https://wa.me/19175889778"><i class="bi bi-whatsapp"></i> Chat With the Team</a>
+            <a class="btn btn-primary" href="mailto:info@safarichic.co.tz"><i class="bi bi-envelope"></i> Design My Trip</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>

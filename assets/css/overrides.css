@@ -151,12 +151,10 @@ footer .grid.cols-3{
 }
 
 .cta-section .cta-card{
-  border: 1px solid var(--line, rgba(255,255,255,.08));
+  /* Match itinerary2 CTA (same look as Price cards): soft gradient fill + gradient border */
+  border: 2px solid transparent !important;
   border-radius: 24px;
-  background:
-    radial-gradient(900px 400px at 90% -10%, rgba(196,0,106,.35), transparent 60%),
-    radial-gradient(900px 400px at 10% 110%, rgba(255,184,0,.25), transparent 60%),
-    linear-gradient(135deg, #16131a, #100f15);
+  background: linear-gradient(135deg, rgba(253,51,162,.08), rgba(81, 68, 34, 0.08)) !important;
   box-shadow: var(--shadow, 0 12px 40px rgba(0,0,0,.35));
   padding: clamp(1.6rem, 4.4vw, 2.4rem);
   text-align: center;
@@ -167,8 +165,20 @@ footer .grid.cols-3{
   position: relative;
   overflow: hidden;
 }
-
-.cta-section .cta-card::before{display:none}
+.cta-section .cta-card::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, #FF69B4, #ffb800);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  display: block;
+}
 .cta-section .cta-card > *{position:relative}
 .cta-section .cta-title{font:800 clamp(1.35rem,3.6vw,2rem)/1.15 Poppins;margin:.3rem 0 .7rem}
 .cta-section .cta-copy{color:#dcdcdc;margin:0 auto 1.35rem;max-width:60ch}
@@ -197,7 +207,26 @@ footer .grid.cols-3{
   }
 
   .cta-section .cta-card{
-    padding: 3.72rem clamp(1.35rem, 6vw, 1.8rem) !important;
+    padding: 3.1rem clamp(1.35rem, 6vw, 1.8rem) !important;
+  }
+}
+
+/* 420px breakpoint is critical for CTA sizing and padding */
+@media (max-width: 420px){
+  /* Undo the 98vw + zero padding container rule so the CTA doesn't feel edge-to-edge */
+  .cta-section > .container{
+    width: 100% !important;
+    padding-inline: 20px !important;
+  }
+
+  .cta-section .cta-card{
+    max-width: 320px !important;
+    padding-top: 3.0rem !important;
+    padding-bottom: 3.0rem !important;
+    min-height: 450px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 

@@ -8,6 +8,92 @@ a.btn { text-decoration: none; }
   background: linear-gradient(160deg, rgba(196,0,106,.08), rgba(255,184,0,.06)) !important;
 }
 
+/* Kili route pages: Pricing / "From $" card (same as kili-lemosho) */
+.kili-cta-wrap{ margin-top: 1.5rem; }
+
+.kili-cta-card{
+  border: 2px solid transparent;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(253,51,162,.08), rgba(81, 68, 34, 0.08));
+  box-shadow: var(--shadow, 0 12px 40px rgba(0,0,0,.35));
+  padding: clamp(1.6rem, 4.4vw, 2.4rem);
+  text-align: center;
+  width: 100%;
+  max-width: min(920px, 100%);
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+.kili-cta-card::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, #FF69B4, #ffb800);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  display: block;
+}
+.kili-cta-card > *{ position: relative; }
+
+.kili-price{
+  font: 800 1.4rem/1 Poppins, sans-serif;
+  background: linear-gradient(135deg, #FF69B4, #ffb800);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+}
+
+.kili-cta-actions{
+  display: flex;
+  gap: .9rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+@media (max-width: 640px){
+  .kili-cta-actions{ flex-direction: column; align-items: center; width: 100%; }
+  .kili-cta-actions .btn{
+    /* Override assets/css/responsive.css mobile .btn rules (uses !important) */
+    width: clamp(270px, 78vw, 340px) !important;
+    max-width: 100% !important;
+    min-width: unset !important;
+    min-height: 72px !important;
+    padding: 1.35rem 1.45rem !important;
+    justify-content: center;
+    white-space: nowrap;
+    font-size: 13px !important;
+    line-height: 1.05 !important;
+    gap: .6rem !important;
+  }
+  .kili-cta-actions .btn i{ line-height: 1; }
+}
+
+@media (max-width: 420px){
+  .kili-cta-wrap{ margin-top: 2rem; }
+  .kili-cta-card{
+    max-width: 100%;
+    padding-top: 3.0rem;
+    padding-bottom: 3.0rem;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .kili-cta-actions .btn{
+    width: clamp(252px, 72vw, 320px) !important;
+    min-height: 55px !important;
+    padding: 1.35rem 1.45rem !important;
+  }
+}
+
 /* Intro bullet icon background: use bubblegum pink brand */
 .bullet i {
   background: linear-gradient(135deg, #FF69B4, #FF69B4) !important;

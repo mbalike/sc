@@ -1,7 +1,59 @@
 /* Uses CSS vars with sensible fallbacks for pages missing definitions */
 
+/* Prevent any accidental horizontal overflow ("sideways scroll into black") */
+html, body{
+  overflow-x: hidden;
+}
+
 /* Ensure anchor buttons don’t underline (safe global) */
 a.btn { text-decoration: none; }
+
+/* Global primary button (some pages rely on this class but don't define it) */
+.btn.btn-primary,
+.btn-primary{
+  background: linear-gradient(135deg, var(--magenta, #FF69B4), var(--magenta-700, #FF69B4)) !important;
+  color: #fff !important;
+  border-color: #ffffff15 !important;
+}
+
+.btn.btn-primary:hover,
+.btn-primary:hover{
+  transform: translateY(-2px);
+  filter: brightness(.98);
+}
+
+.btn.btn-primary:focus-visible,
+.btn-primary:focus-visible{
+  outline: 3px solid rgba(255, 105, 180, .35);
+  outline-offset: 2px;
+}
+
+/* -------------------------------------------------
+   Brand consistency: remove yellow "gold" buttons
+   ------------------------------------------------- */
+/* Many pages define .btn-gold in per-page <style> blocks (loaded after this file).
+   Use !important + higher specificity to ensure the site theme stays pink. */
+.btn.btn-gold,
+.btn-gold,
+.btn.gold{
+  background: linear-gradient(135deg, var(--magenta, #FF69B4), var(--magenta-700, #FF69B4)) !important;
+  color: #fff !important;
+  border-color: #ffffff15 !important;
+}
+
+.btn.btn-gold:hover,
+.btn-gold:hover,
+.btn.gold:hover{
+  transform: translateY(-2px);
+  filter: brightness(.98);
+}
+
+.btn.btn-gold:focus-visible,
+.btn-gold:focus-visible,
+.btn.gold:focus-visible{
+  outline: 3px solid rgba(255, 105, 180, .35);
+  outline-offset: 2px;
+}
 
 /* Kili route pages: Included / Not Included cards */
 .card.inc-exc-card{
@@ -393,7 +445,7 @@ nav li.has-submenu > .submenu{
   position: absolute;
   top: calc(100% + 8px);
   left: 0;
-  background: --glass;
+  background: var(--panel, rgba(18,17,24,.98));
   border: 1px solid var(--line, #efeff3);
   border-radius: 12px;
   box-shadow: 0 16px 38px rgba(0,0,0,.16);

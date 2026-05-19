@@ -991,7 +991,7 @@ html {
 
 /* Itinerary CTA sections use <section class="cta"> as the card itself.
    Constrain the section to a centered, compact box (matches desired screenshot style). */
-.cta {
+section.cta {
   width: min(920px, 92vw);
   margin: 40px auto;
   padding: 0 !important; /* override itinerary pages' section{padding:72px 0} */
@@ -1000,7 +1000,7 @@ html {
 /* Prevent .cta inner containers from overflowing the CTA card on desktop.
    (Some pages nest a wider .container inside .cta; since .cta has overflow:hidden,
    that can clip the right edge of the text/buttons.) */
-.cta > .container {
+section.cta > .container {
   width: 100% !important;
   max-width: 100% !important;
   margin: 0 !important;
@@ -1008,27 +1008,27 @@ html {
 }
 
 @media (max-width: 768px) {
-  .cta {
+  section.cta {
     margin: 28px auto;
   }
 
-  .cta .inner {
+  section.cta .inner {
     padding: 1.5rem !important;
   }
 }
 
 @media (max-width: 480px) {
-  .cta {
+  section.cta {
     margin: 22px auto;
   }
 
-  .cta .inner {
+  section.cta .inner {
     padding: 1.25rem !important;
   }
 }
 
 @media (max-width: 900px) {
-  .cta .wrap {
+  section.cta .wrap {
     flex-direction: column;
     text-align: center;
     gap: 20px;

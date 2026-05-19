@@ -338,13 +338,15 @@ footer .grid.cols-3{
 @media (max-width: 900px){
   /* Mobile/tablet: make CTA card wider + taller without affecting other sections */
   .cta-section > .container{
-    width: min(1200px, 98vw) !important;
+    width: min(1200px, 92vw) !important;
     padding-inline: 0 !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
 
   .cta-section .cta-card{
+    width: 100% !important;
+    max-width: none !important;
     padding: 3.1rem clamp(1.35rem, 6vw, 1.8rem) !important;
   }
 }
@@ -624,4 +626,21 @@ input[type="radio"]{
   #plan-form .plan-actions a,
   #form form .plan-actions button,
   #form form .plan-actions a{ width: 100%; justify-content: center; }
+}
+
+/* Large screens: keep hero CTA buttons left-aligned (non-contact pages) */
+@media (min-width: 901px){
+  .panel.hero{
+    place-items: start;
+  }
+  .panel.hero .section-inner{
+    justify-self: start;
+    text-align: left;
+  }
+  .hero .cta,
+  .hero-cta{
+    justify-content: flex-start !important;
+    align-items: center !important;
+    text-align: left !important;
+  }
 }

@@ -133,7 +133,7 @@ nav li.has-submenu .submenu a[aria-current="page"]{color:#FF69B4;background:line
 }
 
 /* Spacing for hero CTA button groups (itinerary pages) */
-.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:flex-start;align-items:center}
 /* Fallback for environments without flex gap support */
 @supports not (gap: 1rem){
   .hero-cta > .btn{margin-right:.8rem;margin-bottom:.8rem}

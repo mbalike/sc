@@ -262,7 +262,13 @@ html {
   
   .hero .cta,
   .hero-cta,
-  .actions {
+  .hero-actions,
+  .hero .actions {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
     justify-content: center;
     gap: 12px;
   }

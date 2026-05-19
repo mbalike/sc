@@ -12,7 +12,7 @@
 }
 
 *{box-sizing:border-box}
-html, body{height:100%}
+html, body{min-height:100%; height:auto}
 body{
   margin:0; color:#eee;
   background:
@@ -110,6 +110,27 @@ nav li.has-submenu .submenu a[aria-current="page"]{color:#FF69B4;background:#fff
 .hero h1{font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;font-weight:800;line-height:1.05;font-size:clamp(2.2rem,5.4vw,3.6rem);margin:.5rem 0 .8rem;background:linear-gradient(135deg, #fff, #ffe7a6 30%, #ffd15a 40%, #fff 60%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 6px 28px rgba(0,0,0,.45)}
 .hero .subtitle{max-width:70ch; color:#f0f0f0}
 .hero .cta{display:flex; gap:.7rem; flex-wrap:wrap; margin-top:1rem; justify-content:flex-start}
+
+@media (min-width: 901px){
+  .hero .inner{
+    max-width:none;
+    margin-inline:0;
+  }
+}
+
+@media (max-width: 900px){
+  .hero .cta{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero .cta .btn{
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+}
 
 /* Respect reduced motion preferences: hide video, rely on image */
 @media (prefers-reduced-motion: reduce){

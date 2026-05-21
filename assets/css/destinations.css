@@ -111,6 +111,9 @@ nav li.has-submenu .submenu a[aria-current="page"]{color:#FF69B4;background:#fff
 .hero .subtitle{max-width:70ch; color:#f0f0f0}
 .hero .cta{display:flex; gap:.7rem; flex-wrap:wrap; margin-top:1rem; justify-content:flex-start}
 
+/* Match contact page hero CTA sizing: make CTA buttons at least 140px wide on larger screens */
+.hero .cta .btn{min-width:140px;width:auto !important}
+
 @media (min-width: 901px){
   .hero .inner{
     max-width:none;
@@ -122,19 +125,24 @@ nav li.has-submenu .submenu a[aria-current="page"]{color:#FF69B4;background:#fff
     justify-self: start !important;
     text-align: left !important;
   }
+  .hero .cta .btn{
+    min-width:140px;
+    width:auto;
+  }
 }
 
 @media (max-width: 900px){
   .hero .cta{
-    flex-direction: column;
+    flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
     justify-self: center !important;
+    width: 100% !important;
   }
   .hero .cta .btn{
-    width: 100%;
-    max-width: 320px;
+    width: 100% !important;
+    max-width: 320px !important;
     justify-content: center;
   }
 }

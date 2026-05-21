@@ -373,8 +373,8 @@ footer .grid.cols-3{
   }
 }
 
-/* 420px breakpoint is critical for CTA sizing and padding */
-@media (max-width: 420px){
+/* Small-phone breakpoint (covers 390/412/414/428 widths) */
+@media (max-width: 430px){
   /* Maintain container width consistency with rest of page */
   .cta-section > .container{
     width: min(1200px, 92vw) !important;
@@ -383,10 +383,11 @@ footer .grid.cols-3{
   }
 
   .cta-section .cta-card{
-    max-width: 320px !important;
+    width: 100% !important;
+    max-width: none !important;
     padding-top: 3.0rem !important;
     padding-bottom: 3.0rem !important;
-    min-height: 450px !important;
+    min-height: auto !important;
     display: flex;
     flex-direction: column;
     justify-content: center;

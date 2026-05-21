@@ -335,13 +335,35 @@ footer .grid.cols-3{
   .cta-section .cta-actions .btn{width:auto}
 }
 
-@media (max-width: 900px){
-  /* Mobile/tablet: make CTA card wider + taller without affecting other sections */
+@media (max-width: 1200px){
   .cta-section > .container{
     width: min(1200px, 92vw) !important;
     padding-inline: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media (max-width: 768px){
+  /* Override responsive.css container width to maintain CTA alignment */
+  .cta-section > .container{
+    width: min(1200px, 92vw) !important;
+    padding-inline: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  .cta-section .cta-card{
+    width: 100% !important;
+    max-width: none !important;
+    padding: 3.1rem clamp(1.35rem, 6vw, 1.8rem) !important;
+  }
+}
+
+@media (max-width: 900px){
+  /* Mobile/tablet: match regular container width */
+  .cta-section > .container{
+    width: min(1200px, 92vw) !important;
+    padding-inline: 0 !important;
+    margin: 0 auto !important;
   }
 
   .cta-section .cta-card{
@@ -353,10 +375,11 @@ footer .grid.cols-3{
 
 /* 420px breakpoint is critical for CTA sizing and padding */
 @media (max-width: 420px){
-  /* Undo the 98vw + zero padding container rule so the CTA doesn't feel edge-to-edge */
+  /* Maintain container width consistency with rest of page */
   .cta-section > .container{
-    width: 100% !important;
-    padding-inline: 20px !important;
+    width: min(1200px, 92vw) !important;
+    padding-inline: 0 !important;
+    margin: 0 auto !important;
   }
 
   .cta-section .cta-card{

@@ -259,6 +259,41 @@ footer .grid.cols-3{
   flex-wrap: nowrap !important;
 }
 
+/* -------------------------------------------
+   Itinerary: Experience Highlights icon layout
+   ------------------------------------------- */
+/* Itinerary pages render highlights cards as:
+   <div class="card"><div class="hl-icon">…</div><h3>…</h3><p class="muted">…</p></div>
+   Use CSS grid to keep the icon inline with the heading.
+*/
+#highlights .card{
+  display: grid !important;
+  grid-template-columns: 44px 1fr;
+  grid-template-areas:
+    "icon title"
+    ". body";
+  column-gap: 14px;
+  row-gap: 8px;
+  align-items: start;
+}
+
+#highlights .card .hl-icon{
+  grid-area: icon;
+  align-self: center;
+  margin: 0;
+}
+
+#highlights .card h3{
+  grid-area: title;
+  align-self: center;
+  margin: 0;
+}
+
+#highlights .card p{
+  grid-area: body;
+  margin: 0;
+}
+
 /* ------------------------------
    Form CTA button height
    ------------------------------ */

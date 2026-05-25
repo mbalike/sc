@@ -346,7 +346,7 @@ footer .grid.cols-3{
 @media (max-width: 768px){
   /* Override responsive.css container width to maintain CTA alignment */
   .cta-section > .container{
-    width: min(1200px, 92vw) !important;
+    width: min(1200px, 90vw) !important;
     padding-inline: 0 !important;
     margin: 0 auto !important;
   }
@@ -361,7 +361,7 @@ footer .grid.cols-3{
 @media (max-width: 900px){
   /* Mobile/tablet: match regular container width */
   .cta-section > .container{
-    width: min(1200px, 92vw) !important;
+    width: min(1200px, 90vw) !important;
     padding-inline: 0 !important;
     margin: 0 auto !important;
   }
@@ -377,7 +377,7 @@ footer .grid.cols-3{
 @media (max-width: 430px){
   /* Maintain container width consistency with rest of page */
   .cta-section > .container{
-    width: min(1200px, 92vw) !important;
+    width: min(1200px, 90vw) !important;
     padding-inline: 0 !important;
     margin: 0 auto !important;
   }

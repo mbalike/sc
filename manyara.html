@@ -14,7 +14,12 @@
   <link rel="stylesheet" href="assets/css/destinations.css">
   <link rel="stylesheet" href="assets/css/header-footer.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
-  <style>.hero{ --hero-bg:url('assets/img/lake-manyara-national.jpg') center/cover no-repeat; }</style>
+  <style>
+    .hero{ --hero-bg:url('assets/img/lake-manyara-national.jpg') center/cover no-repeat; }
+    @media (max-width:420px){
+      .hero .cta .btn{ max-width:80%; }
+    }
+  </style>
 </head>
 <body>
   <div id="top" aria-hidden="true"></div>

@@ -109,10 +109,11 @@ nav li.has-submenu .submenu a[aria-current="page"]{color:#FF69B4;background:#fff
 .hero .kicker{font-weight:800; letter-spacing:.14em; text-transform:uppercase; font-size:.78rem}
 .hero h1{font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;font-weight:800;line-height:1.05;font-size:clamp(2.2rem,5.4vw,3.6rem);margin:.5rem 0 .8rem;background:linear-gradient(135deg, #fff, #ffe7a6 30%, #ffd15a 40%, #fff 60%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 6px 28px rgba(0,0,0,.45)}
 .hero .subtitle{max-width:70ch; color:#f0f0f0}
+
 .hero .cta{display:flex; gap:.7rem; flex-wrap:wrap; margin-top:1rem; justify-content:flex-start}
 
-/* Match contact page hero CTA sizing: make CTA buttons at least 140px wide on larger screens */
-.hero .cta .btn{min-width:140px;width:auto !important}
+/* Hero CTA buttons: reduce width ~25% vs prior sizing (140px -> 105px). */
+.hero .cta .btn{min-width:105px;width:auto !important}
 
 @media (min-width: 901px){
   .hero .inner{
@@ -126,7 +127,7 @@ nav li.has-submenu .submenu a[aria-current="page"]{color:#FF69B4;background:#fff
     text-align: left !important;
   }
   .hero .cta .btn{
-    min-width:140px;
+    min-width:105px;
     width:auto;
   }
 }
@@ -140,11 +141,18 @@ nav li.has-submenu .submenu a[aria-current="page"]{color:#FF69B4;background:#fff
     justify-self: center !important;
     width: 100% !important;
   }
-  .hero .cta .btn{
+  /* Use a higher-specificity selector so this wins even if responsive.css is loaded after this file. */
+  .hero .cta .btn.btn{
     width: 100% !important;
-    max-width: 320px !important;
+    max-width: 240px !important;
     justify-content: center;
   }
+}
+
+/* Extra-small phones: keep the CTA buttons even narrower (80% -> 60%).
+   This overrides per-page inline styles on some destination detail pages. */
+@media (max-width: 420px){
+  .hero .cta .btn.btn{ max-width: 60% !important; }
 }
 
 /* Respect reduced motion preferences: hide video, rely on image */
